@@ -1,0 +1,38 @@
+{
+    "name": "nextjs-vcard-project",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "export": "next build && next export",
+        "start": "next start",
+        "eslint:check": "eslint -c .eslintrc --ext .js,.jsx,.ts,.tsx .",
+        "eslint:fix": "npm run eslint:check -- --fix",
+        "prettier:check": "prettier --check .",
+        "prettier:fix": "prettier --write ."
+    },
+    "dependencies": {
+        "@types/node": "18.14.2",
+        "@types/react": "18.0.28",
+        "@types/react-dom": "18.0.11",
+        "next": "13.2.3",
+        "next-seo": "^5.15.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "typescript": "4.9.5"
+    },
+    "devDependencies": {
+        "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+        "@typescript-eslint/eslint-plugin": "^5.54.0",
+        "eslint": "^8.35.0",
+        "eslint-config-next": "^13.2.3",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-jest": "^27.2.1",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-sort-keys": "^2.3.5",
+        "eslint-plugin-testing-library": "^5.10.2",
+        "jest": "^29.4.3",
+        "prettier": "^2.8.4"
+    }
+}

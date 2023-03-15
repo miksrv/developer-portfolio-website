@@ -1,0 +1,36 @@
+.skills {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: -0.5em -1em;
+}
+
+.item {
+    flex: 1 0 45%;
+    padding: 0 1em;
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 600px) {
+    .item {
+        flex: 1 0 100%;
+    }
+}
+
+.tagsCloud {
+    text-align: center;
+}
+
+.label {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: baseline;
+    background-color: #21ba45;
+    padding: 0.5833em 0.833em;
+    font-weight: 700;
+    border-radius: 0.28571429rem;
+    border-color: #21ba45;
+    color: #fff;
+    margin: 8px 4px 0;
+    font-size: 0.9em;
+}

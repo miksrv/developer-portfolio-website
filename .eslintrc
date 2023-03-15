@@ -1,0 +1,127 @@
+{
+    "env": {
+        "browser": true, // Browser global variables like `window` etc.
+        "commonjs": true, // CommonJS global variables and CommonJS scoping.Allows require, exports and module.
+        "es2021": true, // Enable all ECMAScript features except for modules.
+        "jest": true, // Jest global variables like `it` etc.
+        "node": true // Defines things like process.env when generating through node
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jest/recommended",
+        "plugin:testing-library/react",
+        "plugin:import/typescript",
+        "plugin:prettier/recommended"
+    ],
+    "overrides": [
+        {
+            "files": ["**/*.ts?(x)"],
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "ecmaFeatures": {
+                    "jsx": true
+                },
+                "ecmaVersion": "latest",
+                "sourceType": "module"
+            },
+            "plugins": ["@typescript-eslint"],
+            "rules": {
+                "@typescript-eslint/no-array-constructor": "warn",
+                "no-array-constructor": "off"
+            }
+        }
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "import",
+        "sort-keys",
+        "react",
+        "@typescript-eslint",
+        "prettier"
+    ],
+    "root": true, // For configuration cascading.
+    "rules": {
+        "jest/no-mocks-import": "off",
+        "react/react-in-jsx-scope": "off",
+        "comma-dangle": ["warn", "never"],
+        "eol-last": "error",
+        "jsx-quotes": ["warn", "prefer-single"],
+        "max-len": [
+            "warn",
+            {
+                "code": 120,
+                "ignoreTemplateLiterals": true,
+                "ignoreStrings": true
+            }
+        ],
+        "no-console": "warn",
+        "no-duplicate-imports": "warn",
+        "no-restricted-imports": [
+            "error",
+            {
+                "paths": [
+                    {
+                        "message": "Please use import foo from 'lodash-es/foo' instead.",
+                        "name": "lodash"
+                    },
+                    {
+                        "message": "Avoid using chain since it is non tree-shakable. Try out flow instead.",
+                        "name": "lodash-es/chain"
+                    },
+                    {
+                        "importNames": ["chain"],
+                        "message": "Avoid using chain since it is non tree-shakable. Try out flow instead.",
+                        "name": "lodash-es"
+                    },
+                    {
+                        "message": "Please use import foo from 'lodash-es/foo' instead.",
+                        "name": "lodash-es"
+                    }
+                ],
+                "patterns": ["lodash/**", "lodash/fp/**"]
+            }
+        ],
+        "@typescript-eslint/no-unused-vars": "warn",
+        "object-curly-spacing": ["warn", "always"],
+        "quotes": ["warn", "single"],
+        "react/jsx-filename-extension": [
+            "error",
+            {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        ],
+        "react/prop-types": "warn",
+        "sort-imports": [
+            "warn",
+            {
+                "ignoreCase": false,
+                "ignoreDeclarationSort": true,
+                "ignoreMemberSort": false
+            }
+        ],
+        "sort-keys/sort-keys-fix": [
+            "warn",
+            "asc",
+            {
+                "caseSensitive": true,
+                "minKeys": 2,
+                "natural": false
+            }
+        ]
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}

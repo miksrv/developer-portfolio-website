@@ -1,0 +1,37 @@
+.social {
+    background-color: #21ba45;
+    margin: 1rem 0;
+    border-radius: 0.28571429rem;
+    padding: 1em 4em;
+    box-shadow: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link {
+    display: inline-block;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: transition, background-color 0.25s linear 0s, -webkit-transition;
+    width: 60px;
+    height: 60px;
+    line-height: 65px;
+    text-align: center;
+}
+
+.link:hover {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.link svg {
+    width: 36px;
+    fill: #fff;
+    margin-bottom: -10px;
+}
+
+@media screen and (max-width: 600px) {
+    .social {
+        padding: 1em 1em;
+    }
+}
