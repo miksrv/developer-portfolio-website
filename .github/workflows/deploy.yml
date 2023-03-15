@@ -9,7 +9,7 @@ jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
