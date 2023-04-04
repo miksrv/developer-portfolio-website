@@ -18,49 +18,57 @@ export const skillList: TSkill[] = [
     },
     {
         icon: EIcons.redux,
-        level: 73,
+        level: 86,
         name: 'Redux and Redux Toolkit'
     },
     {
-        level: 48,
-        name: 'NodeJS / jQuery / Angular'
+        icon: [EIcons.nodejs, EIcons.webpack],
+        level: 47,
+        name: 'NodeJS and Webpack'
+    },
+    {
+        icon: [EIcons.npm, EIcons.yarn],
+        level: 69,
+        name: 'NPM and Yarn'
     },
     {
         icon: [EIcons.html, EIcons.css],
         level: 95,
-        name: 'HTML, CSS'
+        name: 'HTML, CSS (Sass and Less)'
     },
     {
-        level: 80,
-        name: 'SCSS / Sass / Less'
-    },
-    {
-        icon: EIcons.php,
-        level: 83,
-        name: 'PHP 7.4 / CodeIgniter'
-    },
-    {
-        level: 56,
-        name: 'Laravel / Yii / 1C Bitrix'
-    },
-    {
-        level: 61,
-        name: 'PostgreSQL / MySQL / SQLite'
-    },
-    {
+        icon: [EIcons.git, EIcons.gitlab, EIcons.github],
         level: 86,
-        name: 'GIT / SVN'
+        name: 'Git, Gitlab and Github'
     },
     {
-        level: 28,
-        name: 'Python, C++'
-    },
-    {
+        icon: [EIcons.playwright, EIcons.jest, EIcons.rtl],
         level: 65,
-        name: 'Linux / Docker / Jenkins'
+        name: 'Playwright, Jest and RTL'
     },
     {
-        level: 57,
-        name: 'Photoshop / Blender 3D'
+        icon: [EIcons.eslint, EIcons.prettier],
+        level: 77,
+        name: 'ESLint and Prettier'
+    },
+    {
+        icon: [EIcons.php, EIcons.python],
+        level: 52,
+        name: 'PHP and Python'
+    },
+    {
+        icon: [EIcons.laravel, EIcons.codeigniter, EIcons.yii],
+        level: 56,
+        name: 'Laravel, Codeigniter and Yii'
+    },
+    {
+        icon: [EIcons.postgresql, EIcons.mysql, EIcons.sqlite],
+        level: 61,
+        name: 'PostgreSQL, MySQL and SQLite'
+    },
+    {
+        icon: [EIcons.docker],
+        level: 43,
+        name: 'Docker'
     }
 ]

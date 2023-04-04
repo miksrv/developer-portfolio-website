@@ -8,6 +8,7 @@ export enum EIcons {
     telegram,
     vkontakte,
     github,
+    gitlab,
     pikabu,
     linkedin,
     typescript,
@@ -15,11 +16,29 @@ export enum EIcons {
     reactjs,
     redux,
     nextjs,
+    nodejs,
+    yarn,
+    npm,
+    webpack,
     vuejs,
     jquery,
     html,
     css,
-    php
+    php,
+    postgresql,
+    mysql,
+    sqlite,
+    python,
+    laravel,
+    yii,
+    codeigniter,
+    git,
+    playwright,
+    jest,
+    rtl,
+    eslint,
+    prettier,
+    docker
 }
 
 export interface ISvgIcon {

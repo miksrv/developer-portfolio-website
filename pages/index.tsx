@@ -3,6 +3,7 @@ import React from 'react'
 
 import About from '@/components/about/about'
 import Projects from '@/components/projects/projects'
+import SkillsCloud from '@/components/skills-cloud/skillsCloud'
 import Skills from '@/components/skills/skills'
 import SocialNetworks from '@/components/social-networks/socialNetworks'
 
@@ -40,6 +41,15 @@ const Page: React.FC = () => {
                 lower the level will be.
             </p>
             <Skills />
+            <h2 className={'subTitle'}>Technical Skills Cloud</h2>
+            <p className={'subTitleInfo'}>
+                In my work and hobbies, I use not only the skills of a front-end
+                developer, but also those who know the areas of analytics,
+                devops engineering, database architect, web designer, API
+                backend development and much more. Here is the stack of useful
+                technologies I use the most.
+            </p>
+            <SkillsCloud />
         </div>
     )
 }
