@@ -1,6 +1,8 @@
 import React from 'react'
+import { isArray } from 'util'
 
 import Progress from '@/components/progress/progress'
+import SvgIcons from '@/components/svgIcons/svgIcons'
 
 import { skillList } from '@/data/skillList'
 import { skillTags } from '@/data/skillTags'
@@ -17,6 +19,20 @@ const Skills: React.FC = () => {
                             className={styles.item}
                             key={item.name}
                         >
+                            {item.icon ? (
+                                Array.isArray(item.icon) ? (
+                                    item.icon.map((icon) => (
+                                        <SvgIcons
+                                            name={icon}
+                                            key={icon}
+                                        />
+                                    ))
+                                ) : (
+                                    <SvgIcons name={item.icon} />
+                                )
+                            ) : (
+                                ''
+                            )}
                             <label>{item.name}</label>
                             <Progress value={item.level} />
                         </div>

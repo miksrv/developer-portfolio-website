@@ -9,7 +9,17 @@ export enum EIcons {
     vkontakte,
     github,
     pikabu,
-    linkedin
+    linkedin,
+    typescript,
+    javascript,
+    reactjs,
+    redux,
+    nextjs,
+    vuejs,
+    jquery,
+    html,
+    css,
+    php
 }
 
 export interface ISvgIcon {
@@ -30,6 +40,7 @@ export type TProject = {
 export type TSkill = {
     name: string
     level: number
+    icon?: EIcons | EIcons[]
 }
 
 export type TSocialNetwork = {
