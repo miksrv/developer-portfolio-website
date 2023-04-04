@@ -1,5 +1,4 @@
 import React from 'react'
-import { isArray } from 'util'
 
 import Progress from '@/components/progress/progress'
 import SvgIcons from '@/components/svgIcons/svgIcons'

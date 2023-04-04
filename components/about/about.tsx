@@ -37,7 +37,7 @@ export const About: React.FC = () => {
                 <Image
                     className={styles.avatar}
                     src={avatarPic}
-                    alt={"Hi I'm - Misha - Picture of the author"}
+                    alt="Hi I'm - Misha - Picture of the author"
                     width={278}
                     height={360}
                 />

@@ -19,4 +19,4 @@ The project was originally created using React, but then I decided to rewrite it
 
 1. Install NodeJS, Yarn and clone this repository.
 2. In the repository directory, run the command in the terminal: `yarn install`.
-3. After installing the node modules, run the following command in a terminal: `yarn dev` and open a browser at *http://localhost:3000/*.
+3. After installing the node modules, run the following command in a terminal: `yarn dev` and open a browser at _http://localhost:3000/_.

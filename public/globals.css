@@ -42,7 +42,7 @@ a {
     margin: 2em 0 0;
 }
 .subTitle:before {
-    content: "";
+    content: '';
     display: inline-block;
     width: 5px;
     height: 100%;
