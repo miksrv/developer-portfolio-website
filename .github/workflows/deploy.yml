@@ -30,7 +30,7 @@ jobs:
 
       - name: Build
         run: |
-          export dateNow=$(date +"%d.%m.%Y")
+          export dateNow=$(date +"%m.%d.%Y")
           echo "export const update = '$dateNow';" > update.ts
           yarn run export
 

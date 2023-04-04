@@ -17,6 +17,13 @@ export const About: React.FC = () => {
     const birthTime = new Date('1989-09-09T05:15:00').getTime()
     const expTime = new Date('2007-10-15T10:00:00').getTime()
 
+    const dateUpdate = new Date(update).toLocaleDateString('en-us', {
+        day: 'numeric',
+        month: 'short',
+        weekday: 'long',
+        year: 'numeric'
+    })
+
     const tick = () => {
         const ageCalc = ((Date.now() - birthTime) / divisor).toFixed(9)
         const expCalc = ((Date.now() - expTime) / divisor).toFixed(9)
@@ -64,7 +71,7 @@ export const About: React.FC = () => {
                     </div>
                     <div className={styles.gridList}>
                         <div className={styles.gridKey}>Updated</div>
-                        <div className={styles.gridValue}>{update}</div>
+                        <div className={styles.gridValue}>{dateUpdate}</div>
                     </div>
                     <p className={styles.description}>
                         I&apos;m a software engineer specialised in frontend and
