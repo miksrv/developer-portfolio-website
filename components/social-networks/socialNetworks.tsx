@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SvgIcons from '@/components/social-networks/svgIcons'
+import SvgIcons from '@/components/svgIcons/svgIcons'
 
 import { socialNetworks } from '@/data/socialNetworks'
 

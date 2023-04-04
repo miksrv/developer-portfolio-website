@@ -1,35 +1,41 @@
-import { TSkill } from '@/types'
+import { EIcons, TSkill } from '@/types'
 
 export const skillList: TSkill[] = [
     {
-        level: 89,
-        name: 'JavaScript'
+        icon: [EIcons.javascript, EIcons.jquery],
+        level: 83,
+        name: 'Vanilla JavaScript and jQuery'
     },
     {
-        level: 71,
+        icon: EIcons.typescript,
+        level: 80,
         name: 'TypeScript'
     },
     {
-        level: 92,
-        name: 'ReactJS'
+        icon: [EIcons.reactjs, EIcons.nextjs, EIcons.vuejs],
+        level: 89,
+        name: 'ReactJS, NextJS and Vue'
     },
     {
+        icon: EIcons.redux,
         level: 73,
-        name: 'Redux (RTK)'
+        name: 'Redux and Redux Toolkit'
     },
     {
         level: 48,
         name: 'NodeJS / jQuery / Angular'
     },
     {
+        icon: [EIcons.html, EIcons.css],
         level: 95,
-        name: 'HTML / CSS'
+        name: 'HTML, CSS'
     },
     {
         level: 80,
         name: 'SCSS / Sass / Less'
     },
     {
+        icon: EIcons.php,
         level: 83,
         name: 'PHP 7.4 / CodeIgniter'
     },

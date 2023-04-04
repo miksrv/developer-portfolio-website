@@ -47,7 +47,7 @@ export const About: React.FC = () => {
                         <span className={styles.sectionTitleSecond}>Misha</span>
                     </h1>
                     <h3 className={styles.subTitle}>
-                        Programmer, Engineer and Dreamer
+                        Software Engineer, Astronomer and Dreamer
                     </h3>
                     <div className={styles.divider} />
                     <div className={styles.gridList}>
@@ -59,19 +59,24 @@ export const About: React.FC = () => {
                         <div className={styles.gridValue}>{myExp}</div>
                     </div>
                     <div className={styles.gridList}>
+                        <div className={styles.gridKey}>Location</div>
+                        <div className={styles.gridValue}>California, USA</div>
+                    </div>
+                    <div className={styles.gridList}>
                         <div className={styles.gridKey}>Updated</div>
                         <div className={styles.gridValue}>{update}</div>
                     </div>
                     <p className={styles.description}>
-                        I am a developer, create interactive information systems
-                        and complex web projects from scratch, doing technical
-                        support. I am fond of programming, tourism, photography,
-                        astronomy, radio electronics and some other.
+                        I&apos;m a software engineer specialised in frontend and
+                        backend development for complex scalable web apps. I
+                        have rich experience in application development and
+                        testing, development team management and project
+                        management.
                     </p>
                     <p className={styles.description}>
-                        I run my own projects and am always ready to communicate
-                        with interesting people. You can Contact me in any
-                        convenient way.
+                        In ordinary life, together with my family, I am fond of
+                        tourism and amateur astronomy. A description of my
+                        amateur projects can be found below.
                     </p>
                 </div>
             </div>
