@@ -1,13 +1,12 @@
 name: Deployment
 
 on:
-#  push:
-  pull_request:
+  push:
     branches:
       - main
 
 jobs:
-  ftp-deploy:
+  ssh-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
