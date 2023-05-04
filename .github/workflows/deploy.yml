@@ -27,14 +27,13 @@ jobs:
             node_modules
             ~/.npm
             ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-modules-${{ hashFiles('client/yarn.lock') }}
+          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-modules-
             ${{ runner.os }}-
 
       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         name: Install dependencies
-        working-directory: client
         run: yarn install
 
       - name: Cache UI build
@@ -54,7 +53,6 @@ jobs:
           echo "export const update = '$dateNow'" > update.ts
           yarn build
           yarn export
-        working-directory: client
 
       - name: Configure SSH
         env:
