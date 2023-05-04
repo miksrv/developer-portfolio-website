@@ -14,7 +14,7 @@ export const projects: TProject[] = [
     {
         image: imageAstro,
         label: 'Homemade observatory',
-        link: 'https://observatory.miksoft.pro/'
+        link: 'https://astro.miksoft.pro/'
     },
     {
         image: imageOrion,
