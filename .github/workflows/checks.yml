@@ -54,7 +54,7 @@ jobs:
       - if: ${{ steps.cache-build.outputs.cache-hit != 'true' }}
         name: Build UI
         run: |
-          export dateNow=$(date +"%d.%m.%Y %H:%M")
+          export dateNow=$(date +"%Y-%m-%dT%H:%M")
           echo "export const update = '$dateNow'" > update.ts
           yarn build
           yarn export
