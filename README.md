@@ -3,7 +3,7 @@
 [![Checks](https://github.com/miksrv/nextjs-vcard-project/actions/workflows/checks.yml/badge.svg)](https://github.com/miksrv/nextjs-vcard-project/actions/workflows/checks.yml)
 [![Deployment](https://github.com/miksrv/nextjs-vcard-project/actions/workflows/deploy.yml/badge.svg)](https://github.com/miksrv/nextjs-vcard-project/actions/workflows/deploy.yml)
 
-[ DEMO ](https://miksoft.pro)
+🌐 https://miksoft.pro
 
 This repository contains the source code for a virtual business card rewritten using NextJS + Typescript. As a result of the simplified use of components and the rethinking of the architecture, the design has been improved and optimized with the latest development trends in mind.
 
