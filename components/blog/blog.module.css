@@ -109,7 +109,9 @@
 }
 
 @media screen and (max-width: 600px) {
-    .sliderImage, .slider, .sliderItem {
+    .sliderImage,
+    .slider,
+    .sliderItem {
         height: 300px;
     }
     .blogDate {
