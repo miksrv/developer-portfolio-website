@@ -2,6 +2,7 @@ import { NextSeo } from 'next-seo'
 import React from 'react'
 
 import About from '@/components/about/about'
+import Blog from '@/components/blog/blog'
 import Projects from '@/components/projects/projects'
 import SkillsCloud from '@/components/skills-cloud/skillsCloud'
 import Skills from '@/components/skills/skills'
@@ -50,6 +51,8 @@ const Page: React.FC = () => {
                 technologies I use the most.
             </p>
             <SkillsCloud />
+            <h2 className={'subTitle'}>My astronomy blog</h2>
+            <Blog />
         </div>
     )
 }
