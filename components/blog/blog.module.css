@@ -66,6 +66,9 @@
     fill: transparent !important;
     margin: 0 3px 0 3px;
 }
+.sliderDotsContainer > li {
+    height: 16px;
+}
 .sliderDots:hover {
     opacity: 0.8 !important;
 }
@@ -103,4 +106,15 @@
     width: auto;
     margin: 0 auto;
     object-fit: contain;
+}
+
+@media screen and (max-width: 600px) {
+    .sliderImage, .slider, .sliderItem {
+        height: 300px;
+    }
+    .blogDate {
+        float: none;
+        margin-top: 10px;
+        display: block;
+    }
 }
