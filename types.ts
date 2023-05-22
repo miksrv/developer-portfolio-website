@@ -38,7 +38,13 @@ export enum EIcons {
     rtl,
     eslint,
     prettier,
-    docker
+    docker,
+    eye,
+    repost,
+    comment,
+    like,
+    left,
+    right
 }
 
 export interface ISvgIcon {
