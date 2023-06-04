@@ -102,10 +102,10 @@ section:last-of-type {
     float: right;
     display: inline-block;
     line-height: 30px;
-    background-color: #229ED9;
+    background-color: #229ed9;
     padding: 1px 7px;
     border-radius: 0.28571429rem;
-    color: #FFF;
+    color: #fff;
     font-size: 14px;
 }
 .subscribeTelegram:hover {
