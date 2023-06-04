@@ -83,6 +83,9 @@ section {
 section:first-of-type {
     margin-top: 0;
 }
+section:last-of-type {
+    margin-bottom: 0;
+}
 
 .wrapperContent {
     max-width: 800px;
@@ -93,4 +96,24 @@ section:first-of-type {
     .wrapperContent {
         padding: 0 1em;
     }
+}
+
+.subscribeTelegram {
+    float: right;
+    display: inline-block;
+    line-height: 30px;
+    background-color: #229ed9;
+    padding: 1px 7px;
+    border-radius: 0.28571429rem;
+    color: #fff;
+    font-size: 14px;
+}
+.subscribeTelegram:hover {
+    background-color: #1077a8;
+}
+.subscribeTelegram svg {
+    height: 27px;
+    fill: #fff;
+    float: left;
+    margin-right: 4px;
 }

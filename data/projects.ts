@@ -17,13 +17,13 @@ export const projects: TProject[] = [
         link: 'https://astro.miksoft.pro/'
     },
     {
-        image: imageOrion,
-        label: 'Science projects',
-        link: 'https://vk.com/astrorion'
-    },
-    {
         image: imageGreen,
         label: 'Greenexp travel project',
         link: 'https://greenexp.ru'
+    },
+    {
+        image: imageOrion,
+        label: 'Science projects',
+        link: 'https://vk.com/astrorion'
     }
 ]
