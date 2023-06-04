@@ -31,5 +31,6 @@ export const skillTags: string[] = [
     'Drupal',
     'Joomla',
     'MODx',
-    'Docker'
+    'Docker',
+    'Jenkins'
 ]

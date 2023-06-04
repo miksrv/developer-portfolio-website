@@ -44,7 +44,9 @@ export enum EIcons {
     comment,
     like,
     left,
-    right
+    right,
+    facebook,
+    instagram
 }
 
 export interface ISvgIcon {
