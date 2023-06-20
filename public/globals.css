@@ -65,7 +65,7 @@ a {
 main {
     -webkit-transition: opacity 0.4s ease-out;
     transition: opacity 0.4s ease-out;
-    background: hsla(0, 0%, 87.8%, 0.7);
+    background: hsla(0, 0%, 93.8%, 0.7);
     height: 100%;
     min-height: 100vh;
     padding: 0 0 2em;
