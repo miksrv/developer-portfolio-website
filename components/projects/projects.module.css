@@ -2,20 +2,23 @@
     display: flex;
     justify-content: space-between;
     margin: 1em -0.5em;
+    flex-wrap: wrap;
 }
 
 .item {
-    padding: 0.4em 0.4em 0;
-    margin: 0 0.5em;
+    flex: 1 0 23%;
+    padding: 0.2em 0.2em 0;
+    margin: 0 0.2em 0.4em;
     background: #fff;
     border-radius: 0.3em;
 }
 
 .item img {
     width: 100%;
-    height: 143px;
+    height: 190px;
     border-radius: 0.3em;
     margin-bottom: -3px;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 600px) {
