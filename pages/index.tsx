@@ -1,15 +1,11 @@
 import { NextSeo } from 'next-seo'
 import React from 'react'
 
-import { EIcons } from '@/types'
-
 import About from '@/components/about/about'
-import Blog from '@/components/blog/blog'
 import Projects from '@/components/projects/projects'
 import SkillsCloud from '@/components/skills-cloud/skillsCloud'
 import Skills from '@/components/skills/skills'
 import SocialNetworks from '@/components/social-networks/socialNetworks'
-import SvgIcons from '@/components/svgIcons/svgIcons'
 
 const Page: React.FC = () => (
     <div className={'wrapperContent'}>
@@ -57,17 +53,6 @@ const Page: React.FC = () => (
             I use the most.
         </p>
         <SkillsCloud />
-        <h2 className={'subTitle blog'}>
-            My astronomy blog
-            <a
-                href={'https://t.me/+QpMO8yF37DRVPail'}
-                title={'Subscribe to the channel'}
-                className={'subscribeTelegram'}
-            >
-                <SvgIcons name={EIcons.telegram} /> Subscribe
-            </a>
-        </h2>
-        <Blog />
     </div>
 )
 
