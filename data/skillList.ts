@@ -13,7 +13,7 @@ export const skillList: TSkill[] = [
     },
     {
         icon: [EIcons.reactjs, EIcons.nextjs, EIcons.vuejs],
-        level: 89,
+        level: 91,
         name: 'ReactJS, NextJS and Vue'
     },
     {
