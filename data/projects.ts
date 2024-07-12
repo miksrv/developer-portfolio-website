@@ -1,5 +1,3 @@
-import { TProject } from '@/types'
-
 import imageAsteroid from '@/public/project-asteroid.jpg'
 import imageGreen from '@/public/project-greenexp.jpg'
 import imageMeteo from '@/public/project-meteostation.jpg'
@@ -8,6 +6,7 @@ import imageAstro from '@/public/project-observatory.jpg'
 import imageOrenburzhie from '@/public/project-orenburzhie.jpg'
 import imageOrion from '@/public/project-orion.jpg'
 import imageRia from '@/public/project-ria56.jpg'
+import { TProject } from '@/types'
 
 export const projects: TProject[] = [
     {

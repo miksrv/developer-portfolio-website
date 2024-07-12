@@ -2,6 +2,7 @@
     "trailingComma": "none",
     "tabWidth": 4,
     "semi": false,
+    "printWidth": 120,
     "singleQuote": true,
     "quoteProps": "as-needed",
     "jsxSingleQuote": true,
@@ -9,16 +10,5 @@
     "bracketSameLine": false,
     "arrowParens": "always",
     "endOfLine": "lf",
-    "singleAttributePerLine": true,
-    "importOrder": [
-        "@/types",
-        "@/components/(.*)$",
-        "@/public/(.*)$",
-        "@/update",
-        "@/data/(.*)$",
-        "^[./]"
-    ],
-    "importOrderGroupNamespaceSpecifiers": true,
-    "importOrderSeparation": true,
-    "importOrderSortSpecifiers": true
+    "singleAttributePerLine": true
 }

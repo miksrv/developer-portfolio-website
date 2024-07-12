@@ -1,10 +1,11 @@
+import React from 'react'
 import { AppProps } from 'next/app'
 import { Montserrat } from 'next/font/google'
 import Head from 'next/head'
 
-import { Header } from '@/components/header/header'
-
 import '@/public/globals.css'
+
+import { Header } from '@/components/header/header'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -12,17 +13,17 @@ const App = ({ Component, pageProps }: AppProps) => (
     <>
         <Head>
             <meta
-                name='viewport'
-                content='width=device-width, initial-scale=1, shrink-to-fit=no'
+                name={'viewport'}
+                content={'width=device-width, initial-scale=1, shrink-to-fit=no'}
             />
             <link
-                rel='shortcut icon'
-                href='/favicon.png'
-                key='shortcutIcon'
+                rel={'shortcut icon'}
+                href={'/favicon.png'}
+                key={'shortcutIcon'}
             />
             <link
-                rel='manifest'
-                href='/manifest.json'
+                rel={'manifest'}
+                href={'/manifest.json'}
             />
         </Head>
         <main className={montserrat.className}>

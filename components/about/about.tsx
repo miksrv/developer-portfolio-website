@@ -1,13 +1,12 @@
 'use client'
 
-import Image from 'next/image'
 import React from 'react'
-
-import avatarPic from '@/public/avatar.jpg'
-
-import { update } from '@/update'
+import Image from 'next/image'
 
 import styles from './about.module.css'
+
+import avatarPic from '@/public/avatar.jpg'
+import { update } from '@/update'
 
 export const About: React.FC = () => {
     const [myAge, setMyAge] = React.useState<string>('')
@@ -50,12 +49,9 @@ export const About: React.FC = () => {
                 />
                 <div className={styles.describe}>
                     <h1 className={styles.sectionTitle}>
-                        Hi I&apos;m -{' '}
-                        <span className={styles.sectionTitleSecond}>Misha</span>
+                        Hi I&apos;m - <span className={styles.sectionTitleSecond}>Misha</span>
                     </h1>
-                    <h3 className={styles.subTitle}>
-                        Software Engineer, Astronomer and Dreamer
-                    </h3>
+                    <h3 className={styles.subTitle}>Software Engineer, Astronomer and Dreamer</h3>
                     <div className={styles.divider} />
                     <div className={styles.gridList}>
                         <div className={styles.gridKey}>My age</div>
@@ -74,16 +70,13 @@ export const About: React.FC = () => {
                         <div className={styles.gridValue}>{dateUpdate}</div>
                     </div>
                     <p className={styles.description}>
-                        I&apos;m a software engineer specialised in frontend and
-                        backend development for complex scalable web apps. I
-                        have rich experience in application development and
-                        testing, development team management and project
-                        management.
+                        I&apos;m a software engineer specialised in frontend and backend development for complex
+                        scalable web apps. I have rich experience in application development and testing, development
+                        team management and project management.
                     </p>
                     <p className={styles.description}>
-                        In ordinary life, together with my family, I am fond of
-                        tourism and amateur astronomy. A description of my
-                        amateur projects can be found below.
+                        In ordinary life, together with my family, I am fond of tourism and amateur astronomy. A
+                        description of my amateur projects can be found below.
                     </p>
                 </div>
             </div>
