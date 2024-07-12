@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import { AppProps } from 'next/app'
 import { Montserrat } from 'next/font/google'
 import Head from 'next/head'
