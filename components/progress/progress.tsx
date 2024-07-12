@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { IProgress } from '@/types'
-
 import styles from './progress.module.css'
+
+import { IProgress } from '@/types'
 
 const Progress: React.FC<IProgress> = ({ value }) => (
     <div className={styles.progress}>

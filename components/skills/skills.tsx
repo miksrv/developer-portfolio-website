@@ -1,11 +1,10 @@
 import React from 'react'
 
+import styles from './skills.module.css'
+
 import Progress from '@/components/progress/progress'
 import SvgIcons from '@/components/svgIcons/svgIcons'
-
 import { skillList } from '@/data/skillList'
-
-import styles from './skills.module.css'
 
 const Skills: React.FC = () => (
     <section>

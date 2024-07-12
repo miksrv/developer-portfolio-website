@@ -1,10 +1,9 @@
 import React from 'react'
 
-import SvgIcons from '@/components/svgIcons/svgIcons'
-
-import { socialNetworks } from '@/data/socialNetworks'
-
 import styles from './socialNetworks.module.css'
+
+import SvgIcons from '@/components/svgIcons/svgIcons'
+import { socialNetworks } from '@/data/socialNetworks'
 
 const SocialNetworks: React.FC = () => (
     <div className={styles.social}>

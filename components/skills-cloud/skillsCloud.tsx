@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { skillTags } from '@/data/skillTags'
-
 import styles from './skillsCloud.module.css'
+
+import { skillTags } from '@/data/skillTags'
 
 const SkillsCloud: React.FC = () => (
     <div className={styles.tagsCloud}>

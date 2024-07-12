@@ -1,8 +1,7 @@
-import Image from 'next/image'
 import React from 'react'
+import Image from 'next/image'
 
 import styles from '@/components/projects/projects.module.css'
-
 import { projects } from '@/data/projects'
 
 const Projects: React.FC = () => (

@@ -1,10 +1,11 @@
+import React  from 'react'
 import { AppProps } from 'next/app'
 import { Montserrat } from 'next/font/google'
 import Head from 'next/head'
 
-import { Header } from '@/components/header/header'
-
 import '@/public/globals.css'
+
+import { Header } from '@/components/header/header'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
