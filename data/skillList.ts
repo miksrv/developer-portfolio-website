@@ -3,12 +3,12 @@ import { EIcons, TSkill } from '@/types'
 export const skillList: TSkill[] = [
     {
         icon: [EIcons.javascript, EIcons.jquery],
-        level: 83,
+        level: 84,
         name: 'Vanilla JavaScript and jQuery'
     },
     {
         icon: EIcons.typescript,
-        level: 80,
+        level: 82,
         name: 'TypeScript'
     },
     {
@@ -23,12 +23,12 @@ export const skillList: TSkill[] = [
     },
     {
         icon: [EIcons.nodejs, EIcons.webpack],
-        level: 47,
+        level: 50,
         name: 'NodeJS and Webpack'
     },
     {
         icon: [EIcons.npm, EIcons.yarn],
-        level: 69,
+        level: 70,
         name: 'NPM and Yarn'
     },
     {
@@ -43,32 +43,32 @@ export const skillList: TSkill[] = [
     },
     {
         icon: [EIcons.playwright, EIcons.jest, EIcons.rtl],
-        level: 65,
+        level: 69,
         name: 'Playwright, Jest and RTL'
     },
     {
         icon: [EIcons.eslint, EIcons.prettier],
-        level: 77,
+        level: 79,
         name: 'ESLint and Prettier'
     },
     {
         icon: [EIcons.php, EIcons.python],
-        level: 52,
+        level: 51,
         name: 'PHP and Python'
     },
     {
         icon: [EIcons.laravel, EIcons.codeigniter, EIcons.yii],
-        level: 56,
+        level: 47,
         name: 'Laravel, Codeigniter and Yii'
     },
     {
         icon: [EIcons.postgresql, EIcons.mysql, EIcons.sqlite],
-        level: 61,
+        level: 58,
         name: 'PostgreSQL, MySQL and SQLite'
     },
     {
         icon: [EIcons.docker],
-        level: 43,
+        level: 63,
         name: 'Docker'
     }
 ]

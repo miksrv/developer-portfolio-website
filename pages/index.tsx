@@ -34,7 +34,7 @@ const Page: React.FC = () => (
         <Projects />
         <h2 className={'subTitle'}>My Experience</h2>
         <p className={'subTitleInfo'}>
-            I have over 15 years of experience in creating software for a variety of clients - from government agencies
+            I have over 16 years of experience in creating software for a variety of clients - from government agencies
             to private companies. Below is a brief overview of my main technical skills and technologies that I use most
             frequently. I set the level of technology proficiency to be approximate, depending on the number of projects
             in which this technology was used and how often I use it. The longer I do not use any technology, the lower

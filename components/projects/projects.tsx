@@ -12,6 +12,8 @@ const Projects: React.FC = () => (
                 key={item.link}
                 href={item.link}
                 title={item.label}
+                target={'_blank'}
+                rel={'noreferrer'}
             >
                 <Image
                     className={styles.avatar}
