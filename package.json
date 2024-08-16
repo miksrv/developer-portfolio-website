@@ -1,7 +1,19 @@
 {
     "name": "nextjs-vcard-project",
-    "version": "0.1.8",
-    "private": true,
+    "version": "1.0.8",
+    "private": false,
+    "description": "A personal website showcasing my portfolio and skills as a software developer.",
+    "keywords": ["software developer", "portfolio", "vCard", "next.js", "react"],
+    "author": "Misha Topchilo <miksoft.tm@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/nextjs-vcard-project.git"
+    },
+    "homepage": "https://yourwebsite.com",
+    "bugs": {
+        "url": "https://github.com/yourusername/nextjs-vcard-project/issues"
+    },
     "scripts": {
         "dev": "next dev",
         "build": "next build",
