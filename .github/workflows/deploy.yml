@@ -1,89 +1,89 @@
 name: Deploy
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  ssh-deploy:
-    name: Production
-    runs-on: ubuntu-latest
+    ssh-deploy:
+        name: Production
+        runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
+        steps:
+            - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-          cache-dependency-path: yarn.lock
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: 'npm'
+                  cache-dependency-path: yarn.lock
 
-      - name: Cache node modules
-        uses: actions/cache@v4
-        id: cache-npm
-        with:
-          path: |
-            node_modules
-            ~/.npm
-            ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-modules-
-            ${{ runner.os }}-
+            - name: Cache node modules
+              uses: actions/cache@v4
+              id: cache-npm
+              with:
+                  path: |
+                      node_modules
+                      ~/.npm
+                      ${{ github.workspace }}/.next/cache
+                  key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
+                  restore-keys: |
+                      ${{ runner.os }}-modules-
+                      ${{ runner.os }}-
 
-      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        name: Install dependencies
-        run: yarn install
+            - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+              name: Install dependencies
+              run: yarn install
 
-      - name: Cache UI build
-        uses: actions/cache@v4
-        id: cache-build
-        with:
-          path: out
-          key: ${{ runner.os }}-build-${{ hashFiles('**/*.ts', '**/*.tsx') }}
-          restore-keys: |
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+            - name: Cache UI build
+              uses: actions/cache@v4
+              id: cache-build
+              with:
+                  path: .next
+                  key: ${{ runner.os }}-build-${{ hashFiles('**/*.ts', '**/*.tsx') }}
+                  restore-keys: |
+                      ${{ runner.os }}-build-
+                      ${{ runner.os }}-
 
-      - if: ${{ steps.cache-build.outputs.cache-hit != 'true' }}
-        name: Build UI
-        run: |
-          export dateNow=$(date +"%Y-%m-%dT%H:%M")
-          echo "export const update = '$dateNow'" > update.ts
-          yarn build
+            - if: ${{ steps.cache-build.outputs.cache-hit != 'true' }}
+              name: Build UI
+              run: |
+                  export dateNow=$(date +"%Y-%m-%dT%H:%M")
+                  echo "export const update = '$dateNow'" > update.ts
+                  yarn build
 
-      # - name: Configure SSH
-      #   env:
-      #     SSH_HOST: ${{secrets.SSH_HOST}}
-      #     SSH_PORT: ${{secrets.SSH_PORT}}
-      #     SSH_USER: ${{secrets.SSH_USER}}
-      #     SSH_KEY: ${{secrets.SSH_KEY}}
-      #   run: |
-      #     mkdir -p ~/.ssh/
-      #     echo "$SSH_KEY" > ~/.ssh/authorized_keys
-      #     chmod 400 ~/.ssh/authorized_keys
-      #     cat >>~/.ssh/config <<END
-      #     Host vps
-      #       HostName $SSH_HOST
-      #       Port $SSH_PORT
-      #       User $SSH_USER
-      #       IdentityFile ~/.ssh/authorized_keys
-      #       StrictHostKeyChecking no
-      #     END
+            # - name: Configure SSH
+            #   env:
+            #     SSH_HOST: ${{secrets.SSH_HOST}}
+            #     SSH_PORT: ${{secrets.SSH_PORT}}
+            #     SSH_USER: ${{secrets.SSH_USER}}
+            #     SSH_KEY: ${{secrets.SSH_KEY}}
+            #   run: |
+            #     mkdir -p ~/.ssh/
+            #     echo "$SSH_KEY" > ~/.ssh/authorized_keys
+            #     chmod 400 ~/.ssh/authorized_keys
+            #     cat >>~/.ssh/config <<END
+            #     Host vps
+            #       HostName $SSH_HOST
+            #       Port $SSH_PORT
+            #       User $SSH_USER
+            #       IdentityFile ~/.ssh/authorized_keys
+            #       StrictHostKeyChecking no
+            #     END
 
-      # - name: Send files
-      #   run: rsync -avz -e ssh ./out/ vps:/var/www/miksoft.pro
+            # - name: Send files
+            #   run: rsync -avz -e ssh ./out/ vps:/var/www/miksoft.pro
 
-      - name: Install LFTP
-        run: sudo apt install lftp
+            - name: Install LFTP
+              run: sudo apt install lftp
 
-      - name: Configure LFTP
-        run: mkdir ~/.lftp && echo "set ssl:verify-certificate false;" >> ~/.lftp/rc
+            - name: Configure LFTP
+              run: mkdir ~/.lftp && echo "set ssl:verify-certificate false;" >> ~/.lftp/rc
 
-      - name: Load Secrets
-        run: echo "machine ${{ secrets.FTP_HOSTNAME }} login ${{ secrets.FTP_USERNAME }} password ${{ secrets.FTP_PASSWORD }}" > ~/.netrc
+            - name: Load Secrets
+              run: echo "machine ${{ secrets.FTP_HOSTNAME }} login ${{ secrets.FTP_USERNAME }} password ${{ secrets.FTP_PASSWORD }}" > ~/.netrc
 
-      - name: Upload Folder
-        run: lftp -e "mirror --parallel=100 -R out/ /" ${{ secrets.FTP_HOSTNAME }}
+            - name: Upload Folder
+              run: lftp -e "mirror --parallel=100 -R out/ /" ${{ secrets.FTP_HOSTNAME }}
