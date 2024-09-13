@@ -1,39 +1,47 @@
-import { EIcons, TSocialNetwork } from '@/types'
+import { IconTypes } from '@/components/icon/types'
 
-export const socialNetworks: TSocialNetwork[] = [
+type ExternalLinkType = {
+    link: string
+    label: string
+    icon: IconTypes
+}
+
+const data: ExternalLinkType[] = [
     {
-        icon: EIcons.telegram,
+        icon: 'telegram',
         label: 'Telegram',
         link: 'https://t.me/miksoft'
     },
     {
-        icon: EIcons.pikabu,
+        icon: 'pikabu',
         label: 'Pikabu',
         link: 'https://pikabu.ru/@miksoft'
     },
     {
-        icon: EIcons.github,
+        icon: 'github',
         label: 'GitHub',
         link: 'https://github.com/miksrv'
     },
     {
-        icon: EIcons.instagram,
+        icon: 'instagram',
         label: 'Instagram',
         link: 'https://instagram.com/miksoft.pro'
     },
     {
-        icon: EIcons.facebook,
+        icon: 'facebook',
         label: 'Facebook',
         link: 'https://facebook.com/miksoft.pro'
     },
     {
-        icon: EIcons.linkedin,
+        icon: 'linkedin',
         label: 'LinkedIn',
         link: 'https://www.linkedin.com/in/mikcatsvill/'
     },
     {
-        icon: EIcons.vkontakte,
+        icon: 'vkontakte',
         label: 'VKontakte',
         link: 'https://vk.com/miksoft'
     }
 ]
+
+export default data

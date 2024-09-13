@@ -1,0 +1,19 @@
+:root {
+    --font-size: 14px;
+    --font-family: -apple-system, system-ui, 'Helvetica Neue', Roboto, sans-serif;
+    --letter-spacing: 0.00938em;
+    --line-height: 1.5;
+
+    --highlight-color: #bea123;
+
+    --container-width: 800px;
+
+    --body-background: #1b1b1b;
+    --container-background: #2c2d2e;
+
+    --border-radius: 4px;
+
+    --text-color-primary: #e1e3e6;
+    --text-color-secondary: #a5a5a9;
+    --text-color-third: #76787a;
+}

@@ -1,0 +1,18 @@
+.tagsCloud
+    margin-top: 1em
+    text-align: center
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 6px
+
+    li
+        color: var(--text-color-secondary)
+        background-color: var(--container-background)
+        border-radius: var(--border-radius)
+        transition: background-color .8s ease-in-out, color .8s linear
+        padding: 2px 6px
+
+        &:hover
+            background-color: var(--highlight-color)
+            color: var(--text-color-primary)

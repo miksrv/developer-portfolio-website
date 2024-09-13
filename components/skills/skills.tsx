@@ -1,37 +1,32 @@
 import React from 'react'
 
-import styles from './skills.module.css'
+import Progress from '../progress'
 
-import Progress from '@/components/progress/progress'
-import SvgIcons from '@/components/svgIcons/svgIcons'
-import { skillList } from '@/data/skillList'
+import { data } from './data'
+import styles from './styles.module.sass'
+
+import Icon from '@/components/icon'
 
 const Skills: React.FC = () => (
     <section>
-        <div className={styles.skills}>
-            {skillList.map((item) => (
-                <div
-                    className={styles.item}
-                    key={item.name}
-                >
-                    {item.icon ? (
-                        Array.isArray(item.icon) ? (
-                            item.icon.map((icon) => (
-                                <SvgIcons
+        <div className={styles.skillContainer}>
+            <ul className={styles.skillList}>
+                {data.map((item, i) => (
+                    <li key={`skill-${i}`}>
+                        <div className={styles.label}>
+                            {item.icon?.map((icon, n) => (
+                                <Icon
+                                    key={`icon-${i}-${n}`}
                                     name={icon}
-                                    key={icon}
                                 />
-                            ))
-                        ) : (
-                            <SvgIcons name={item.icon} />
-                        )
-                    ) : (
-                        ''
-                    )}
-                    <label>{item.name}</label>
-                    <Progress value={item.level} />
-                </div>
-            ))}
+                            ))}
+                            <label>{item.name}</label>
+                        </div>
+
+                        <Progress value={item.level} />
+                    </li>
+                ))}
+            </ul>
         </div>
     </section>
 )

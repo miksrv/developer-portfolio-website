@@ -1,0 +1,28 @@
+.externalLinksContainer
+    background-color: var(--container-background)
+    padding: 14px 20px
+    display: flex
+    justify-content: space-between
+    border-radius: var(--border-radius)
+    margin: 40px auto
+
+    .link
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 50%
+        text-decoration: none
+        transition: background-color 0.25s linear
+        width: 60px
+        height: 60px
+
+        svg
+            width: 36px
+            fill: var(--text-color-primary)
+            transition: fill 0.25s linear
+
+        &:hover
+            background-color: var(--body-background)
+
+            svg
+                fill: var(--highlight-color)

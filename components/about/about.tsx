@@ -1,12 +1,15 @@
-'use client'
-
 import React from 'react'
 import Image from 'next/image'
 
-import styles from './about.module.css'
+import styles from './styles.module.sass'
 
 import avatarPic from '@/public/avatar.jpg'
 import { update } from '@/update'
+
+type FactType = {
+    title?: string
+    value?: string
+}
 
 export const About: React.FC = () => {
     const [myAge, setMyAge] = React.useState<string>('')
@@ -31,52 +34,70 @@ export const About: React.FC = () => {
         setMyExp(expCalc)
     }
 
+    const factsList: FactType[] = [
+        {
+            title: 'My age',
+            value: myAge
+        },
+        {
+            title: 'Experience',
+            value: myExp
+        },
+        {
+            title: 'Location',
+            value: 'California, USA'
+        },
+        {
+            title: 'Updated',
+            value: dateUpdate
+        }
+    ]
+
     React.useEffect(() => {
         const timer = setInterval(() => tick(), 50)
 
         return () => clearInterval(timer)
-    })
+    }, [])
 
     return (
-        <section>
-            <div className={styles.grid}>
+        <section className={styles.aboutSection}>
+            <div className={styles.avatarContainer}>
                 <Image
                     className={styles.avatar}
                     src={avatarPic}
-                    alt="Hi I'm - Misha - Picture of the author"
-                    width={278}
-                    height={360}
+                    layout={'fill'}
+                    objectFit={'cover'}
+                    alt={"Hi I'm - Misha - Picture of the author"}
                 />
-                <div className={styles.describe}>
-                    <h1 className={styles.sectionTitle}>
-                        Hi I&apos;m - <span className={styles.sectionTitleSecond}>Misha</span>
+            </div>
+            <div className={styles.infoContainer}>
+                <div className={styles.title}>
+                    <h1>
+                        {"Hi I'm - "}
+                        <span>{'Misha'}</span>
                     </h1>
-                    <h3 className={styles.subTitle}>Software Engineer, Astronomer and Dreamer</h3>
-                    <div className={styles.divider} />
-                    <div className={styles.gridList}>
-                        <div className={styles.gridKey}>My age</div>
-                        <div className={styles.gridValue}>{myAge}</div>
-                    </div>
-                    <div className={styles.gridList}>
-                        <div className={styles.gridKey}>Experience</div>
-                        <div className={styles.gridValue}>{myExp}</div>
-                    </div>
-                    <div className={styles.gridList}>
-                        <div className={styles.gridKey}>Location</div>
-                        <div className={styles.gridValue}>California, USA</div>
-                    </div>
-                    <div className={styles.gridList}>
-                        <div className={styles.gridKey}>Updated</div>
-                        <div className={styles.gridValue}>{dateUpdate}</div>
-                    </div>
-                    <p className={styles.description}>
-                        I&apos;m a software engineer specialised in frontend and backend development for complex
-                        scalable web apps. I have rich experience in application development and testing, development
-                        team management and project management.
+                    <h3 className={styles.subTitle}>{'Software Engineer, Astronomer and Dreamer'}</h3>
+                </div>
+
+                <ul className={styles.factsList}>
+                    {factsList?.map(({ title, value }, i) => (
+                        <li key={`fact-${i}`}>
+                            <div className={styles.key}>{title}</div>
+                            <div className={styles.value}>{value}</div>
+                        </li>
+                    ))}
+                </ul>
+
+                <div className={styles.description}>
+                    <p>
+                        {
+                            'I am a software engineer specializing in frontend and backend development for scalable web applications. With extensive experience in application development, testing, and managing both development teams and projects, I am focused on delivering high-quality and efficient solutions.'
+                        }
                     </p>
-                    <p className={styles.description}>
-                        In ordinary life, together with my family, I am fond of tourism and amateur astronomy. A
-                        description of my amateur projects can be found below.
+                    <p>
+                        {
+                            'Outside of work, I enjoy traveling and amateur astronomy with my family. You can learn more about my personal projects on this website.'
+                        }
                     </p>
                 </div>
             </div>

@@ -1,0 +1,122 @@
+@import ../../styles/variables
+
+.projectsContainer
+    display: flex
+    flex-direction: column
+    gap: 15px
+    margin: 20px auto
+
+    @media screen and (max-width: $mobileMaxWidth)
+        flex-direction: row
+        flex-wrap: wrap
+
+    & > div
+        display: flex
+        justify-content: space-between
+        background-color: var(--container-background)
+        padding: 10px
+        border-radius: var(--border-radius)
+
+        @media screen and (max-width: $mobileMaxWidth)
+            flex-direction: row
+            flex-basis: calc(50% - 8px)
+            width: calc(50% - 8px)
+            justify-content: center
+            align-items: center
+            font-size: 0
+
+        img
+            border-radius: var(--border-radius)
+            filter: grayscale(100%)
+            transition: all 1.5s ease
+            margin-bottom: -5px
+
+            @media screen and (max-width: $mobileMaxWidth)
+                margin: 0 auto
+                width: 100%
+                height: 100%
+
+        .description
+            width: 100%
+            padding-left: 10px
+            display: flex
+            justify-content: space-between
+            flex-direction: column
+
+            @media screen and (max-width: $mobileMaxWidth)
+                display: none
+
+            h2
+                font-weight: 300
+                font-size: 18px
+
+            p
+                margin: 5px 0
+                color: var(--text-color-secondary)
+
+        .info
+            display: flex
+            align-items: center
+
+            svg
+                width: 18px
+                height: 18px
+                fill: var(--text-color-third)
+                margin-right: 5px
+                transition: fill 0.25s linear
+
+            a
+                transition: color 0.25s linear
+                color: var(--text-color-secondary)
+
+            @media screen and (max-width: $mobileMaxWidth)
+                display: none
+
+        &:hover
+            img
+                filter: grayscale(0%)
+
+            .info
+                svg
+                    fill: var(--text-color-secondary)
+
+                a
+                    color: var(--highlight-color)
+
+/*.projects {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    margin: 1em -0.5em;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+/*.item {*/
+/*    flex: 1 0 23%;*/
+/*    padding: 0.2em 0.2em 0;*/
+/*    margin: 0 0.2em 0.4em;*/
+/*    background: var(--modal-background);*/
+/*    border-radius: 0.3em;*/
+/*}*/
+
+/*.item img {*/
+/*    width: 100%;*/
+/*    height: 190px;*/
+/*    border-radius: 0.3em;*/
+/*    margin-bottom: -5px;*/
+/*    object-fit: cover;*/
+/*}*/
+
+/*@media screen and (max-width: 600px) {*/
+/*    .projects {*/
+/*        flex-wrap: wrap;*/
+/*        justify-content: center;*/
+/*    }*/
+
+/*    .item {*/
+/*        flex-basis: 45%;*/
+/*    }*/
+
+/*    .item img {*/
+/*        height: auto;*/
+/*    }*/
+/*}*/

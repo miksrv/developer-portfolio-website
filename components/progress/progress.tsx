@@ -1,14 +1,16 @@
 import React from 'react'
 
-import styles from './progress.module.css'
+import styles from './styles.module.sass'
 
-import { IProgress } from '@/types'
+interface ProgressProps {
+    value?: number
+}
 
-const Progress: React.FC<IProgress> = ({ value }) => (
+const Progress: React.FC<ProgressProps> = ({ value }) => (
     <div className={styles.progress}>
         <div
-            className={styles.barLine}
-            style={{ width: `${value}%` }}
+            className={styles.line}
+            style={{ width: `${value ?? 0}%` }}
         />
     </div>
 )
