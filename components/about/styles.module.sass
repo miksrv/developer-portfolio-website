@@ -1,0 +1,63 @@
+@import ../../styles/variables
+
+$avatarDesktopWidth: 45%
+
+.aboutSection
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+    .avatarContainer
+        flex-basis: calc($avatarDesktopWidth - 8px)
+        width: calc($avatarDesktopWidth - 8px)
+        height: 370px
+
+        img
+            border-radius: var(--border-radius)
+
+        @media screen and (max-width: $mobileMaxWidth)
+            margin-bottom: 20px
+
+    .infoContainer
+        flex-basis: calc(100% - $avatarDesktopWidth - 8px)
+        width: calc(100% - $avatarDesktopWidth - 8px)
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        min-height: 330px
+
+        .title
+            h1
+                margin-bottom: 0
+                font-weight: 300
+                font-size: 2em
+
+                span
+                    font-weight: 700
+                    color: var(--highlight-color)
+
+        .subTitle
+            margin-top: 10px
+            padding-bottom: 5px
+            font-weight: 400
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+
+        .factsList
+            li
+                display: flex
+                justify-content: flex-start
+
+                .key
+                    width: 200px
+                    color: var(--text-color-third)
+
+        .description
+            p:not(:last-of-type)
+                margin-bottom: 10px
+
+    .avatarContainer, .infoContainer
+        position: relative
+
+        @media screen and (max-width: $mobileMaxWidth)
+            flex-basis: 100%
+            width: 100%
