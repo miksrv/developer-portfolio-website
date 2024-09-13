@@ -1,30 +1,52 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
-import styles from '@/components/projects/projects.module.css'
-import { projects } from '@/data/projects'
+import { data } from './data'
+import styles from './styles.module.sass'
+
+import Icon from '@/components/icon'
 
 const Projects: React.FC = () => (
-    <div className={styles.projects}>
-        {projects.map((item) => (
-            <a
-                className={styles.item}
-                key={item.link}
-                href={item.link}
-                title={item.label}
-                target={'_blank'}
-                rel={'noreferrer'}
+    <section className={styles.projectsContainer}>
+        {data?.map((item, i) => (
+            <div
+                key={`project-${i}`}
+                className={styles[i % 2 === 0 ? 'even' : 'odd']}
             >
-                <Image
-                    className={styles.avatar}
-                    src={item.image}
-                    alt={item.label}
-                    width={176}
-                    height={176}
-                />
-            </a>
+                <Link
+                    href={item.link}
+                    title={item.title}
+                    target={'_blank'}
+                >
+                    <Image
+                        src={item.image}
+                        alt={item.title}
+                        width={176}
+                        height={176}
+                    />
+                </Link>
+
+                <div className={styles.description}>
+                    <div>
+                        <h2>{item.title}</h2>
+                        {item?.description && <p>{item.description}</p>}
+                    </div>
+
+                    <div className={styles.info}>
+                        <Icon name={'web'} />
+                        <Link
+                            href={item.link}
+                            title={item.title}
+                            target={'_blank'}
+                        >
+                            {item.link.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                        </Link>
+                    </div>
+                </div>
+            </div>
         ))}
-    </div>
+    </section>
 )
 
 export default Projects

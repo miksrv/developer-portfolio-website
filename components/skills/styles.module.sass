@@ -1,0 +1,33 @@
+@import ../../styles/variables
+
+.skillContainer
+    padding: 15px
+    margin: 20px auto
+    background-color: var(--container-background)
+    border-radius: var(--border-radius)
+
+    .skillList
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        gap: 15px
+
+        li
+            flex-basis: calc(50% - 8px)
+            width: calc(50% - 8px)
+
+            .label
+                display: flex
+                justify-content: flex-start
+                align-items: center
+                margin-bottom: 5px
+                padding: 0 2px
+
+                svg
+                    width: 18px
+                    height: 18px
+                    margin-right: 10px
+
+            @media screen and (max-width: $mobileMaxWidth)
+                flex-basis: 100%
+                width: 100%

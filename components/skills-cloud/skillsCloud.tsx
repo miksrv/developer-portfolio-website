@@ -1,19 +1,16 @@
 import React from 'react'
 
-import styles from './skillsCloud.module.css'
-
-import { skillTags } from '@/data/skillTags'
+import { data } from './data'
+import styles from './styles.module.sass'
 
 const SkillsCloud: React.FC = () => (
-    <div className={styles.tagsCloud}>
-        {skillTags.map((item) => (
-            <div
-                key={item}
-                className={styles.label}
-            >
-                {item}
-            </div>
-        ))}
-    </div>
+    <section>
+        <ul className={styles.tagsCloud}>
+            {data.map((item, i) => (
+                <li key={`cloud-item-${i}`}>{item}</li>
+            ))}
+        </ul>
+    </section>
 )
+
 export default SkillsCloud

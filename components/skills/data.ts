@@ -1,73 +1,79 @@
-import { EIcons, TSkill } from '@/types'
+import { IconTypes } from '@/components/icon/types'
 
-export const skillList: TSkill[] = [
+export type SkillItemType = {
+    name: string
+    level: number
+    icon?: IconTypes[]
+}
+
+export const data: SkillItemType[] = [
     {
-        icon: [EIcons.javascript, EIcons.jquery],
+        icon: ['javascript', 'jquery'],
         level: 84,
         name: 'Vanilla JavaScript and jQuery'
     },
     {
-        icon: EIcons.typescript,
+        icon: ['typescript'],
         level: 82,
         name: 'TypeScript'
     },
     {
-        icon: [EIcons.reactjs, EIcons.nextjs, EIcons.vuejs],
+        icon: ['reactjs', 'nextjs', 'vuejs'],
         level: 91,
         name: 'ReactJS, NextJS and Vue'
     },
     {
-        icon: EIcons.redux,
+        icon: ['redux'],
         level: 86,
         name: 'Redux and Redux Toolkit'
     },
     {
-        icon: [EIcons.nodejs, EIcons.webpack],
+        icon: ['nodejs', 'webpack'],
         level: 50,
         name: 'NodeJS and Webpack'
     },
     {
-        icon: [EIcons.npm, EIcons.yarn],
+        icon: ['npm', 'yarn'],
         level: 70,
         name: 'NPM and Yarn'
     },
     {
-        icon: [EIcons.html, EIcons.css],
+        icon: ['html', 'css'],
         level: 95,
         name: 'HTML, CSS (Sass and Less)'
     },
     {
-        icon: [EIcons.git, EIcons.gitlab, EIcons.github],
+        icon: ['git', 'gitlab', 'github'],
         level: 86,
         name: 'Git, Gitlab and Github'
     },
     {
-        icon: [EIcons.playwright, EIcons.jest, EIcons.rtl],
+        icon: ['playwright', 'jest', 'rtl'],
         level: 69,
         name: 'Playwright, Jest and RTL'
     },
     {
-        icon: [EIcons.eslint, EIcons.prettier],
+        icon: ['eslint', 'prettier'],
         level: 79,
         name: 'ESLint and Prettier'
     },
     {
-        icon: [EIcons.php, EIcons.python],
+        icon: ['php', 'python'],
         level: 51,
         name: 'PHP and Python'
     },
     {
-        icon: [EIcons.laravel, EIcons.codeigniter, EIcons.yii],
+        icon: ['laravel', 'codeigniter', 'yii'],
         level: 47,
         name: 'Laravel, Codeigniter and Yii'
     },
     {
-        icon: [EIcons.postgresql, EIcons.mysql, EIcons.sqlite],
+        icon: ['postgresql', 'mysql', 'sqlite'],
         level: 58,
         name: 'PostgreSQL, MySQL and SQLite'
     },
     {
-        icon: [EIcons.docker],
+        icon: ['docker'],
         level: 63,
         name: 'Docker'
     }

@@ -1,4 +1,4 @@
-export const skillTags: string[] = [
+export const data: string[] = [
     'Typescript',
     'JavaScript',
     'ReactJS',
