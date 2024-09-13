@@ -6,7 +6,7 @@ interface ProgressProps {
     value?: number
 }
 
-const Progress: React.FC<ProgressProps> = ({ value }) => (
+export const Progress: React.FC<ProgressProps> = ({ value }) => (
     <div className={styles.progress}>
         <div
             className={styles.line}
