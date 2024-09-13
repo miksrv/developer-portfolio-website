@@ -67,13 +67,13 @@ export const About: React.FC = () => {
                     src={avatarPic}
                     layout={'fill'}
                     objectFit={'cover'}
-                    alt={'Hi I\'m - Misha - Picture of the author'}
+                    alt={"Hi I'm - Misha - Picture of the author"}
                 />
             </div>
             <div className={styles.infoContainer}>
                 <div className={styles.title}>
                     <h1>
-                        {'Hi I\'m - '}
+                        {"Hi I'm - "}
                         <span>{'Misha'}</span>
                     </h1>
                     <h3 className={styles.subTitle}>{'Software Engineer, Astronomer and Dreamer'}</h3>

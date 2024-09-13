@@ -8,7 +8,9 @@ const MainPage: React.FC = () => (
     <>
         <NextSeo
             title={'Hi, Im Misha - Programmer, Engineer and Dreamer'}
-            description={'I am a software engineer specializing in frontend and backend development for scalable web applications. With extensive experience in application development, testing, and managing both development teams and projects, I am focused on delivering high-quality and efficient solutions.'}
+            description={
+                'I am a software engineer specializing in frontend and backend development for scalable web applications. With extensive experience in application development, testing, and managing both development teams and projects, I am focused on delivering high-quality and efficient solutions.'
+            }
             openGraph={{
                 images: [
                     {
