@@ -3,10 +3,10 @@
 import React, { useEffect } from 'react'
 
 interface StarFieldProps {
-    speedFactor?: number;
-    backgroundColor?: string;
-    starColor?: [number, number, number];
-    starCount?: number;
+    speedFactor?: number
+    backgroundColor?: string
+    starColor?: [number, number, number]
+    starCount?: number
 }
 
 export const StarField: React.FC<StarFieldProps> = (props) => {
