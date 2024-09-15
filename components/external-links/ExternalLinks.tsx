@@ -7,18 +7,20 @@ import styles from './styles.module.sass'
 import Icon from '@/components/icon'
 
 const ExternalLinks: React.FC = () => (
-    <section className={styles.externalLinksContainer}>
-        {data?.map((item) => (
-            <Link
-                key={item.link}
-                href={item.link}
-                title={item.label}
-                target={'_blank'}
-                className={styles.link}
-            >
-                <Icon name={item.icon} />
-            </Link>
-        ))}
+    <section>
+        <div className={styles.externalLinksContainer}>
+            {data?.map((item) => (
+                <Link
+                    key={item.link}
+                    href={item.link}
+                    title={item.label}
+                    target={'_blank'}
+                    className={styles.link}
+                >
+                    <Icon name={item.icon} />
+                </Link>
+            ))}
+        </div>
     </section>
 )
 
