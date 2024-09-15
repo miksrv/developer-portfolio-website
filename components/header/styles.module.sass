@@ -1,6 +1,11 @@
+@import ../../styles/variables
+
 .header
     background-color: var(--container-background)
     margin-bottom: 50px
+
+    @media screen and (max-width: $mobileMaxWidth)
+        margin-bottom: 10px
 
     section
         height: 50px

@@ -9,9 +9,9 @@ import Icon from '@/components/icon'
 const ExternalLinks: React.FC = () => (
     <section>
         <div className={styles.externalLinksContainer}>
-            {data?.map((item) => (
+            {data?.map((item, i) => (
                 <Link
-                    key={item.link}
+                    key={`link-${i}`}
                     href={item.link}
                     title={item.label}
                     target={'_blank'}
