@@ -3,6 +3,7 @@ import { NextSeo } from 'next-seo'
 
 import About from '@/components/about'
 import ExternalLinks from '@/components/external-links'
+import StarField from '@/components/star-field'
 
 const MainPage: React.FC = () => (
     <>
@@ -24,7 +25,15 @@ const MainPage: React.FC = () => (
             }}
         />
 
+        <StarField
+            starCount={1000}
+            starColor={[255, 255, 255]}
+            speedFactor={0.05}
+            backgroundColor={'black'}
+        />
+
         <About />
+
         <ExternalLinks />
     </>
 )
