@@ -24,7 +24,9 @@ $avatarDesktopWidth: 45%
         display: flex
         flex-direction: column
         justify-content: space-between
-        min-height: 330px
+
+        @media screen and (max-width: $mobileMaxWidth)
+            gap: 20px
 
         .title
             h1

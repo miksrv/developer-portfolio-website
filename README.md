@@ -9,7 +9,7 @@ This repository contains the source code for a virtual business card rewritten u
 
 In the repository you will find sample code that you can use as a template for creating your own business card. In addition, in the future, I will regularly add new features and update the interface to provide the best experience for users.
 
-![UI example](./public/interface.jpg)
+![UI example](./public/main.jpg)
 
 Feel free to use this repository for any purpose related to the development of virtual business cards. I am always ready to discuss any questions related to the use of this repository and help you in its work.
 
