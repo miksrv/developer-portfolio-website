@@ -3,6 +3,7 @@
 .github
 .yarn
 *.css
+README.md
 eslint.config.mjs
 site.webmanifest
 node_modules
