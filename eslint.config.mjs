@@ -121,7 +121,8 @@ export default [
                 {
                     code: 120,
                     ignoreTemplateLiterals: true,
-                    ignoreStrings: true
+                    ignoreStrings: true,
+                    ignoreComments: true
                 }
             ],
             'one-var': ['error', 'never'],
