@@ -9,11 +9,11 @@ export const menu: MenuItemType[] = [
         url: '/'
     },
     {
-        label: 'My Projects',
+        label: 'Projects',
         url: '/projects'
     },
     {
-        label: 'My Skills',
+        label: 'Skills',
         url: '/skills'
     }
 ]

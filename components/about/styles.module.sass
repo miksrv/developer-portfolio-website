@@ -28,18 +28,45 @@ $avatarDesktopWidth: 45%
         @media screen and (max-width: $mobileMaxWidth)
             gap: 20px
 
-        .title
-            h1
-                margin-bottom: 0
-                font-weight: 300
-                font-size: 2em
+        .header
+            .title
+                display: flex
+                justify-content: flex-start
 
-                span
-                    font-weight: 700
-                    color: var(--highlight-color)
+                h1
+                    margin-bottom: 0
+                    font-weight: 300
+                    font-size: 2em
+
+                    span
+                        font-weight: 700
+                        color: var(--highlight-color)
+
+            .links
+                display: flex
+                gap: 10px
+                margin-left: 15px
+
+                a
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    text-decoration: none
+                    transition: background-color 0.25s linear
+
+                    svg
+                        width: 24px
+                        fill: var(--text-color-secondary)
+                        transition: fill 0.25s linear
+
+                    &:hover
+                        background-color: var(--body-background)
+
+                        svg
+                            fill: var(--text-color-primary)
 
         .subTitle
-            margin-top: 10px
+            margin-top: 5px
             padding-bottom: 5px
             font-weight: 400
             border-bottom: 1px solid rgba(255, 255, 255, 0.1)
