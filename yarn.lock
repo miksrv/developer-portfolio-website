@@ -1118,13 +1118,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.3.6":
-  version: 18.3.6
-  resolution: "@types/react@npm:18.3.6"
+"@types/react@npm:18.3.7":
+  version: 18.3.7
+  resolution: "@types/react@npm:18.3.7"
   dependencies:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10c0/e347787a496f2006fe61358316e040c22548a1669559277b72dad39e2f1f713080115be9fe6c30f9d1d28a54054b96cf6c06471be6967a3605e31f5b84a6cec7
+  checksum: 10c0/460f40eadf1fd035344b2ff9061d5c2314db9403f76d05fff7724c78543737c95829e1628567c63d27b542647867eca5b6f284dfd38f1d3b70754f32c4cbecb7
   languageName: node
   linkType: hard
 
@@ -2099,6 +2099,35 @@ __metadata:
   checksum: 10c0/c38cfc8eeb9fda09febb44bcd85e467c970d4e3bf526095394e5a4f18bc26dd0cf6b22c69c1fa9969261521c593836db335c2795218f6d781a512aea2fb8209d
   languageName: node
   linkType: hard
+
+"developer-portfolio-website@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "developer-portfolio-website@workspace:."
+  dependencies:
+    "@eslint/compat": "npm:^1.1.1"
+    "@eslint/js": "npm:^9.10.0"
+    "@next/eslint-plugin-next": "npm:^14.2.11"
+    "@types/node": "npm:22.5.5"
+    "@types/react": "npm:18.3.7"
+    "@types/react-dom": "npm:18.3.0"
+    eslint: "npm:^9.10.0"
+    eslint-plugin-eslint-comments: "npm:^3.2.0"
+    eslint-plugin-eslint-plugin: "npm:^6.2.0"
+    eslint-plugin-import: "npm:^2.30.0"
+    eslint-plugin-jest: "npm:^28.8.3"
+    eslint-plugin-react: "npm:^7.36.1"
+    eslint-plugin-simple-import-sort: "npm:^12.1.1"
+    jest: "npm:^29.7.0"
+    next: "npm:14.2.11"
+    next-seo: "npm:^6.6.0"
+    prettier: "npm:^3.3.3"
+    react: "npm:18.3.1"
+    react-dom: "npm:18.3.1"
+    sass: "npm:^1.78.0"
+    typescript: "npm:5.6.2"
+    typescript-eslint: "npm:^8.6.0"
+  languageName: unknown
+  linkType: soft
 
 "diff-sequences@npm:^29.6.3":
   version: 29.6.3
@@ -4553,35 +4582,6 @@ __metadata:
   checksum: 10c0/af460310f2455e257da91de7213851e5efebfeeca93243730ff4773d55c3adae30cfadd3321cf5a83ee54432bc6d5def4f72fbf0cbd6f95dbbcdab55ab18cd83
   languageName: node
   linkType: hard
-
-"nextjs-vcard-project@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "nextjs-vcard-project@workspace:."
-  dependencies:
-    "@eslint/compat": "npm:^1.1.1"
-    "@eslint/js": "npm:^9.10.0"
-    "@next/eslint-plugin-next": "npm:^14.2.11"
-    "@types/node": "npm:22.5.5"
-    "@types/react": "npm:18.3.6"
-    "@types/react-dom": "npm:18.3.0"
-    eslint: "npm:^9.10.0"
-    eslint-plugin-eslint-comments: "npm:^3.2.0"
-    eslint-plugin-eslint-plugin: "npm:^6.2.0"
-    eslint-plugin-import: "npm:^2.30.0"
-    eslint-plugin-jest: "npm:^28.8.3"
-    eslint-plugin-react: "npm:^7.36.1"
-    eslint-plugin-simple-import-sort: "npm:^12.1.1"
-    jest: "npm:^29.7.0"
-    next: "npm:14.2.11"
-    next-seo: "npm:^6.6.0"
-    prettier: "npm:^3.3.3"
-    react: "npm:18.3.1"
-    react-dom: "npm:18.3.1"
-    sass: "npm:^1.78.0"
-    typescript: "npm:5.6.2"
-    typescript-eslint: "npm:^8.6.0"
-  languageName: unknown
-  linkType: soft
 
 "node-gyp@npm:latest":
   version: 10.2.0

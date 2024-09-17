@@ -5,28 +5,27 @@ import Progress from '../progress'
 import { data } from './data'
 import styles from './styles.module.sass'
 
-import Icon from '@/components/icon'
-
 const Skills: React.FC = () => (
     <section>
         <div className={styles.skillContainer}>
-            <ul className={styles.skillList}>
-                {data.map((item, i) => (
-                    <li key={`skill-${i}`}>
-                        <div className={styles.label}>
-                            {item.icon?.map((icon, n) => (
-                                <Icon
-                                    key={`icon-${i}-${n}`}
-                                    name={icon}
-                                />
-                            ))}
-                            <label>{item.name}</label>
-                        </div>
-
-                        <Progress value={item.level} />
-                    </li>
-                ))}
-            </ul>
+            {data.map((group, i) => (
+                <div
+                    key={`group-${i}`}
+                    className={styles.skillGroup}
+                >
+                    <h3>{group.group}</h3> {/* Заголовок группы */}
+                    <ul className={styles.skillList}>
+                        {group.skills.map((skill, j) => (
+                            <li key={`skill-${i}-${j}`}>
+                                <div className={styles.label}>
+                                    <label>{skill.name}</label>
+                                </div>
+                                <Progress value={skill.level} /> {/* Компонент прогресса */}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
         </div>
     </section>
 )

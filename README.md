@@ -4,7 +4,7 @@ This project provides a fully customizable, modern developer portfolio template 
 
 <!-- PROJECT TITLE -->
 <div align="center">
-<img src="https://miksoft.pro/avatar.jpg" alt="Project Logo" width="150" height="150" style="object-fit: cover">
+<img src="https://miksoft.pro/avatar.jpg" alt="Project Logo" width="150" height="200" />
 <h3>Create Your Personal Developer Portfolio</h3>
 <a href="https://github.com/miksrv/developer-portfolio-website"><strong>Explore the docs »</strong></a>
 <br /><br />
@@ -16,6 +16,8 @@ This project provides a fully customizable, modern developer portfolio template 
 ·
 <a href="#contact">Contact</a>
 </div>
+
+<br />
 
 <!-- PROJECT BADGES -->
 <div align="center">
@@ -38,11 +40,13 @@ This project provides a fully customizable, modern developer portfolio template 
 
 - [Key Features](#key-features)
 - [Why Use This Portfolio Template?](#why-use-this-portfolio-template)
+- [Built With](#built-with)
 - [About of Project](#about-of-project)
 - [How to use](#how-to-use)
+- [Contact](#contact)
 
 <!-- KEY FEATURES -->
-## Key Features:
+### Key Features:
 - **Built with React and Next.js**: Fast, scalable, and SEO-friendly framework.
 - **Customizable Design**: Easily adjust the layout, colors, and sections to suit your needs.
 - **Responsive Layout**: Optimized for all screen sizes, ensuring a seamless experience on any device.
@@ -53,7 +57,7 @@ This project provides a fully customizable, modern developer portfolio template 
   (<a href="#top">Back to top</a>)
 </p>
 
-## Why Use This Portfolio Template?
+### Why Use This Portfolio Template?
 
 - **Professional Presentation**: A portfolio is more than just a collection of work—it's a personal brand statement. With this template, you can professionally showcase your skills, projects, and expertise, leaving a lasting impression on potential employers or clients.
 
@@ -67,9 +71,23 @@ This project provides a fully customizable, modern developer portfolio template 
   (<a href="#top">Back to top</a>)
 </p>
 
-<!-- ABOUT OF PROJECT -->
+### Built With
 
-## About of Project
+The Arduino Weather Station project leverages a wide range of technologies across various layers of the system:
+
+- [![JavaScript][js-badge]][js-url] Core languages used in frontend development.
+- [![TypeScript][ts-badge]][ts-url] TypeScript extends JavaScript by adding types to the language.
+- [![NextJS][nextjs-badge]][nextjs-url] React-based frontend framework for building the user interface.
+- [![NodeJS][nodejs-badge]][nodejs-url] JavaScript runtime used for frontend development and package management.
+- [![Sass][sass-badge]][sass-url] Styling the user interface.
+- [![GitHub Actions][githubactions-badge]][githubactions-url] Continuous integration and deployment pipeline for automating tests and deployment processes.
+
+<p align="right">
+  (<a href="#top">Back to top</a>)
+</p>
+
+<!-- ABOUT OF PROJECT -->
+### About of Project
 
 This project is a complete solution for building a high-quality developer portfolio website, perfect for showcasing your skills, projects, and experiences in a sleek and modern design. Built with React and Next.js, this template is optimized for performance and SEO, ensuring that your portfolio stands out not only in appearance but also in search engine visibility. It’s fully customizable, allowing you to adapt the design, structure, and content to match your personal branding or freelance work.
 
@@ -89,7 +107,7 @@ Feel free to use this repository for any purpose related to the development of v
   (<a href="#top">Back to top</a>)
 </p>
 
-## How to Use
+### How to Use
 
 1. **Install Prerequisites**: Ensure you have [NodeJS](https://nodejs.org/en/download/) and [Yarn](https://yarnpkg.com/getting-started/install) installed on your system.
 
@@ -114,6 +132,18 @@ Feel free to use this repository for any purpose related to the development of v
 
 5. **Access the Application**: Open your browser and go to [http://localhost:3000/](http://localhost:3000/) to view the portfolio.
 
+<p align="right">
+  (<a href="#top">Back to top</a>)
+</p>
+
+### Contact
+
+Misha - [miksoft.pro](https://miksoft.pro)
+
+<p align="right">
+  (<a href="#top">Back to top</a>)
+</p>
+
 <!-- MARKDOWN VARIABLES (LINKS, IMAGES) -->
 [contributors-badge]: https://img.shields.io/github/contributors/miksrv/developer-portfolio-website.svg?style=for-the-badge
 [contributors-url]: https://github.com/miksrv/developer-portfolio-website/graphs/contributors
@@ -125,3 +155,16 @@ Feel free to use this repository for any purpose related to the development of v
 [issues-url]: https://github.com/miksrv/developer-portfolio-website/issues
 [license-badge]: https://img.shields.io/github/license/miksrv/developer-portfolio-website.svg?style=for-the-badge
 [license-url]: https://github.com/miksrv/developer-portfolio-website/blob/master/LICENSE.txt
+
+[js-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000
+[js-url]: https://www.javascript.com/
+[ts-badge]: https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff
+[ts-url]: https://www.typescriptlang.org/
+[nextjs-badge]: https://img.shields.io/badge/Next.js-black?logo=next.js&logoColor=white
+[nextjs-url]: https://nextjs.org/
+[nodejs-badge]: https://img.shields.io/badge/Node.js-6DA55F?logo=node.js&logoColor=white
+[nodejs-url]: https://nodejs.org/
+[sass-badge]: https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff
+[sass-url]: https://sass-lang.com/
+[githubactions-badge]: https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white
+[githubactions-url]: https://docs.github.com/en/actions

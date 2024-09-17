@@ -1,14 +1,23 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import styles from './styles.module.sass'
 
+import Icon from '@/components/icon'
+import { IconTypes } from '@/components/icon/types'
 import avatarPic from '@/public/avatar.jpg'
 import { update } from '@/update'
 
 type FactType = {
     title?: string
     value?: string
+}
+
+type LinkType = {
+    link: string
+    label: string
+    icon: IconTypes
 }
 
 export const About: React.FC = () => {
@@ -53,6 +62,29 @@ export const About: React.FC = () => {
         }
     ]
 
+    const linksList: LinkType[] = [
+        {
+            icon: 'github',
+            label: 'GitHub',
+            link: 'https://github.com/miksrv'
+        },
+        {
+            icon: 'telegram',
+            label: 'Telegram',
+            link: 'https://t.me/miksoft'
+        },
+        {
+            icon: 'facebook',
+            label: 'Facebook',
+            link: 'https://facebook.com/miksoft.pro'
+        },
+        {
+            icon: 'linkedin',
+            label: 'LinkedIn',
+            link: 'https://www.linkedin.com/in/mikcatsvill/'
+        }
+    ]
+
     React.useEffect(() => {
         const timer = setInterval(() => tick(), 50)
 
@@ -71,11 +103,27 @@ export const About: React.FC = () => {
                 />
             </div>
             <div className={styles.infoContainer}>
-                <div className={styles.title}>
-                    <h1>
-                        {"Hi I'm - "}
-                        <span>{'Misha'}</span>
-                    </h1>
+                <div className={styles.header}>
+                    <div className={styles.title}>
+                        <h1>
+                            {"Hi I'm - "}
+                            <span>{'Misha'}</span>
+                        </h1>
+
+                        <div className={styles.links}>
+                            {linksList?.map((item, i) => (
+                                <Link
+                                    key={`link-${i}`}
+                                    href={item.link}
+                                    title={item.label}
+                                    target={'_blank'}
+                                    className={styles.link}
+                                >
+                                    <Icon name={item.icon} />
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
                     <h3 className={styles.subTitle}>{'Software Engineer, Astronomer and Dreamer'}</h3>
                 </div>
 

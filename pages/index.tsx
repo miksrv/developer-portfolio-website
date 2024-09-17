@@ -2,7 +2,6 @@ import React from 'react'
 import { NextSeo } from 'next-seo'
 
 import About from '@/components/about'
-import ExternalLinks from '@/components/external-links'
 import StarField from '@/components/star-field'
 
 const MainPage: React.FC = () => (
@@ -33,8 +32,6 @@ const MainPage: React.FC = () => (
         />
 
         <About />
-
-        <ExternalLinks />
     </>
 )
 

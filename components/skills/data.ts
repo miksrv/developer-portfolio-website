@@ -1,80 +1,88 @@
-import { IconTypes } from '@/components/icon/types'
-
-export type SkillItemType = {
+type SkillItemType = {
     name: string
     level: number
-    icon?: IconTypes[]
 }
 
-export const data: SkillItemType[] = [
+type SkillGroupType = {
+    group: string
+    skills: SkillItemType[]
+}
+
+export const data: SkillGroupType[] = [
     {
-        icon: ['javascript', 'jquery'],
-        level: 84,
-        name: 'Vanilla JavaScript and jQuery'
+        group: 'Frontend',
+        skills: [
+            {
+                name: 'TypeScript',
+                level: 80
+            },
+            {
+                name: 'React, Next.js',
+                level: 90
+            },
+            {
+                name: 'Redux',
+                level: 86
+            },
+            {
+                name: 'ESLint & Prettier',
+                level: 79
+            }
+        ]
     },
     {
-        icon: ['typescript'],
-        level: 82,
-        name: 'TypeScript'
+        group: 'Backend',
+        skills: [
+            {
+                name: 'Node.js',
+                level: 70
+            },
+            {
+                name: 'PHP',
+                level: 80
+            },
+            {
+                name: 'Python',
+                level: 50
+            },
+            {
+                name: 'SQL',
+                level: 60
+            }
+        ]
     },
     {
-        icon: ['reactjs', 'nextjs', 'vuejs'],
-        level: 91,
-        name: 'ReactJS, NextJS and Vue'
+        group: 'Testing',
+        skills: [
+            {
+                name: 'Playwright',
+                level: 70
+            },
+            {
+                name: 'Jest',
+                level: 80
+            },
+            {
+                name: 'RTL',
+                level: 80
+            }
+        ]
     },
     {
-        icon: ['redux'],
-        level: 86,
-        name: 'Redux and Redux Toolkit'
-    },
-    {
-        icon: ['nodejs', 'webpack'],
-        level: 50,
-        name: 'NodeJS and Webpack'
-    },
-    {
-        icon: ['npm', 'yarn'],
-        level: 70,
-        name: 'NPM and Yarn'
-    },
-    {
-        icon: ['html', 'css'],
-        level: 95,
-        name: 'HTML, CSS (Sass and Less)'
-    },
-    {
-        icon: ['git', 'gitlab', 'github'],
-        level: 86,
-        name: 'Git, Gitlab and Github'
-    },
-    {
-        icon: ['playwright', 'jest', 'rtl'],
-        level: 69,
-        name: 'Playwright, Jest and RTL'
-    },
-    {
-        icon: ['eslint', 'prettier'],
-        level: 79,
-        name: 'ESLint and Prettier'
-    },
-    {
-        icon: ['php', 'python'],
-        level: 51,
-        name: 'PHP and Python'
-    },
-    {
-        icon: ['laravel', 'codeigniter', 'yii'],
-        level: 47,
-        name: 'Laravel, Codeigniter and Yii'
-    },
-    {
-        icon: ['postgresql', 'mysql', 'sqlite'],
-        level: 58,
-        name: 'PostgreSQL, MySQL and SQLite'
-    },
-    {
-        icon: ['docker'],
-        level: 63,
-        name: 'Docker'
+        group: 'DevOps',
+        skills: [
+            {
+                name: 'Docker',
+                level: 60
+            },
+            {
+                name: 'Git',
+                level: 90
+            },
+            {
+                name: 'Linux',
+                level: 90
+            }
+        ]
     }
 ]
