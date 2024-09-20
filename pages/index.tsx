@@ -2,6 +2,7 @@ import React from 'react'
 import { NextSeo } from 'next-seo'
 
 import About from '@/components/about'
+import Introduce from '@/components/introduce'
 import StarField from '@/components/star-field'
 
 const MainPage: React.FC = () => (
@@ -30,6 +31,8 @@ const MainPage: React.FC = () => (
             speedFactor={0.05}
             backgroundColor={'black'}
         />
+
+        <Introduce />
 
         <About />
     </>

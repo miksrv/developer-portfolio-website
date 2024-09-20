@@ -110,7 +110,6 @@ export const StarField: React.FC<StarFieldProps> = (props) => {
 
                 requestAnimationFrame(init)
 
-                // add window resize listener:
                 window.addEventListener('resize', function () {
                     w = window.innerWidth
                     h = window.innerHeight
