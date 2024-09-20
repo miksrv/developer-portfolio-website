@@ -1,92 +1,13 @@
 @import ../../styles/variables
 
-$avatarDesktopWidth: 45%
-
 .aboutSection
-    display: flex
-    justify-content: space-between
-    flex-wrap: wrap
+    margin: 40px auto 0
 
-    .avatarContainer
-        flex-basis: calc($avatarDesktopWidth - 8px)
-        width: calc($avatarDesktopWidth - 8px)
-        height: 370px
+.aboutContainer
+    padding: 15px
+    background-color: var(--container-background)
+    border-radius: var(--border-radius)
+    color: var(--text-color-secondary)
 
-        img
-            border-radius: var(--border-radius)
-
-        @media screen and (max-width: $mobileMaxWidth)
-            margin-bottom: 20px
-
-    .infoContainer
-        flex-basis: calc(100% - $avatarDesktopWidth - 8px)
-        width: calc(100% - $avatarDesktopWidth - 8px)
-        display: flex
-        flex-direction: column
-        justify-content: space-between
-
-        @media screen and (max-width: $mobileMaxWidth)
-            gap: 20px
-
-        .header
-            .title
-                display: flex
-                justify-content: flex-start
-
-                h1
-                    margin-bottom: 0
-                    font-weight: 300
-                    font-size: 2em
-
-                    span
-                        font-weight: 700
-                        color: var(--highlight-color)
-
-            .links
-                display: flex
-                gap: 10px
-                margin-left: 15px
-
-                a
-                    display: flex
-                    justify-content: center
-                    align-items: center
-                    text-decoration: none
-                    transition: background-color 0.25s linear
-
-                    svg
-                        width: 24px
-                        fill: var(--text-color-secondary)
-                        transition: fill 0.25s linear
-
-                    &:hover
-                        background-color: var(--body-background)
-
-                        svg
-                            fill: var(--text-color-primary)
-
-        .subTitle
-            margin-top: 5px
-            padding-bottom: 5px
-            font-weight: 400
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1)
-
-        .factsList
-            li
-                display: flex
-                justify-content: flex-start
-
-                .key
-                    width: 200px
-                    color: var(--text-color-third)
-
-        .description
-            p:not(:last-of-type)
-                margin-bottom: 10px
-
-    .avatarContainer, .infoContainer
-        position: relative
-
-        @media screen and (max-width: $mobileMaxWidth)
-            flex-basis: 100%
-            width: 100%
+    p:not(:last-of-type)
+        margin-bottom: 10px
