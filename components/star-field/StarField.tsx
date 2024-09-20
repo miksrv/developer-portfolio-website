@@ -16,9 +16,9 @@ export const StarField: React.FC<StarFieldProps> = (props) => {
         const canvas = document.getElementById('starfield') as HTMLCanvasElement
 
         if (canvas) {
-            const c = canvas.getContext('2d')
+            const canvasRendering = canvas.getContext('2d')
 
-            if (c) {
+            if (canvasRendering) {
                 let w = window.innerWidth
                 let h = window.innerHeight
 
@@ -49,15 +49,13 @@ export const StarField: React.FC<StarFieldProps> = (props) => {
                 const stars = makeStars(starCount)
 
                 const clear = () => {
-                    c.fillStyle = backgroundColor
-                    c.fillRect(0, 0, canvas.width, canvas.height)
+                    canvasRendering.fillStyle = backgroundColor
+                    canvasRendering.fillRect(0, 0, canvas.width, canvas.height)
                 }
 
                 const putPixel = (x: number, y: number, brightness: number) => {
-                    const rgb =
-                        'rgba(' + starColor[0] + ',' + starColor[1] + ',' + starColor[2] + ',' + brightness + ')'
-                    c.fillStyle = rgb
-                    c.fillRect(x, y, 1, 1)
+                    canvasRendering.fillStyle = 'rgba(' + starColor[0] + ',' + starColor[1] + ',' + starColor[2] + ',' + brightness + ')'
+                    canvasRendering.fillRect(x, y, 1, 1)
                 }
 
                 const moveStars = (distance: number) => {
