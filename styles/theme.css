@@ -16,4 +16,6 @@
     --text-color-primary: #e1e3e6;
     --text-color-secondary: #a5a5a9;
     --text-color-third: #76787a;
+
+    --box-shadow: 0 20px 25px -5px rgba(0,0,0,.4),0 8px 10px -6px rgba(0,0,0,.4);
 }

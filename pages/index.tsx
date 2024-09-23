@@ -2,6 +2,7 @@ import React from 'react'
 import { NextSeo } from 'next-seo'
 
 import About from '@/components/about'
+import GithubActivity from '@/components/github-activity'
 import Introduce from '@/components/introduce'
 import StarField from '@/components/star-field'
 
@@ -35,6 +36,8 @@ const MainPage: React.FC = () => (
         <Introduce />
 
         <About />
+
+        <GithubActivity />
     </>
 )
 

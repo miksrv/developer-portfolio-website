@@ -1,9 +1,8 @@
 import React from 'react'
+import Image from 'next/image'
 
 import photo from './photo.jpg'
-
 import styles from './styles.module.sass'
-import Image from 'next/image'
 
 export const About: React.FC = () => {
     return (
