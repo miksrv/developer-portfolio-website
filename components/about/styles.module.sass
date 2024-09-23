@@ -8,6 +8,24 @@
     background-color: var(--container-background)
     border-radius: var(--border-radius)
     color: var(--text-color-secondary)
+    display: flex
+    justify-content: space-between
+    flex-direction: row-reverse
+    gap: 10px
 
     p:not(:last-of-type)
         margin-bottom: 10px
+
+    img
+        height: 100%
+        width: 158px
+        object-fit: cover
+        border-radius: var(--border-radius)
+        box-shadow: var(--box-shadow)
+
+    @media screen and (max-width: $mobileMaxWidth)
+        display: block
+
+        img
+            float: right
+            margin: 0 10px
