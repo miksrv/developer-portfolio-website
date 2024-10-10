@@ -14,7 +14,7 @@ body
     background-color: var(--body-background)
 
     main
-        padding-bottom: 20px
+        padding: 60px 0 5px
 
     a
         color: var(--highlight-color)
@@ -44,7 +44,7 @@ body
     .pageTitle
         position: relative
         padding-left: 20px
-        margin-bottom: 20px
+        margin: 5px 0 20px
         font-weight: 300
 
         &:before
@@ -56,3 +56,28 @@ body
             position: absolute
             left: 0
             top: 0
+
+    .footerLinks
+        margin: 20px auto 10px
+        display: flex
+        justify-content: space-around
+        gap: 15px
+
+        a
+            text-decoration: none
+            width: 100%
+            background: rgb(255, 255, 255, .03)
+            border-radius: 6px
+            padding: 10px
+            transition: background-color 0.25s ease-in-out
+            display: flex
+            justify-content: center
+            align-items: center
+
+            &:hover
+                background: rgb(255, 255, 255, .07)
+
+            svg
+                width: 20px
+                height: 20px
+                fill: var(--highlight-color)
