@@ -1,5 +1,11 @@
 # developer-portfolio-website
 
+## 1.1.2
+
+### Patch Changes
+
+-   Implemented GitHub Release Action
+
 ## 1.1.1
 
 ### Patch Changes
