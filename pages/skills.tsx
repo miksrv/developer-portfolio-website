@@ -1,6 +1,8 @@
 import React from 'react'
+import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 
+import Icon from '@/components/icon'
 import Skills from '@/components/skills'
 import SkillsCloud from '@/components/skills-cloud'
 
@@ -35,6 +37,16 @@ const SkillsPage: React.FC = () => (
 
         <Skills />
         <SkillsCloud />
+
+        <section className={'footerLinks'}>
+            <Link
+                href={'/projects'}
+                title={'View my pet projects'}
+            >
+                <Icon name={'left'} />
+                {'Projects'}
+            </Link>
+        </section>
     </>
 )
 

@@ -4,17 +4,17 @@ This project provides a fully customizable, modern developer portfolio template 
 
 <!-- PROJECT TITLE -->
 <div align="center">
-<img src="https://miksoft.pro/avatar.jpg" alt="Project Logo" width="150" height="200" />
-<h3>Create Your Personal Developer Portfolio</h3>
-<a href="https://github.com/miksrv/developer-portfolio-website"><strong>Explore the docs »</strong></a>
-<br /><br />
-<a href="https://miksoft.pro" target="_blank">Demo</a>
-·
-<a href="https://github.com/miksrv/developer-portfolio-website/issues/new?assignees=miksrv&labels=bug&projects=&template=1-bug.yml&title=%5BBug%5D%3A+">Report Bug</a>
-·
-<a href="https://github.com/miksrv/developer-portfolio-website/issues/new?assignees=miksrv&labels=enhancement&template=2-feature-request.yml&title=%5BFeature%5D%3A+">Request Feature</a>
-·
-<a href="#contact">Contact</a>
+  <img src="https://miksoft.pro/avatar.jpg" alt="Project Logo" width="150" height="200" />
+  <h3>Create Your Personal Developer Portfolio</h3>
+  <a href="CHANGELOG.md" target="_blank">Changelog</a>
+  ·
+  <a href="https://miksoft.pro" target="_blank">Demo</a>
+  ·
+  <a href="https://github.com/miksrv/developer-portfolio-website/issues/new?assignees=miksrv&labels=bug&projects=&template=1-bug.yml&title=%5BBug%5D%3A+">Report Bug</a>
+  ·
+  <a href="https://github.com/miksrv/developer-portfolio-website/issues/new?assignees=miksrv&labels=enhancement&template=2-feature-request.yml&title=%5BFeature%5D%3A+">Request Feature</a>
+  ·
+  <a href="#contact">Contact</a>
 </div>
 
 <br />

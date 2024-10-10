@@ -41,4 +41,6 @@ export type IconTypes =
     // | 'right'
     | 'web'
     | 'facebook'
+    | 'left'
+    | 'right'
 // | 'instagram'
