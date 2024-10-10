@@ -1,0 +1,25 @@
+name: Create GitHub Release
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - 'CHANGELOG.md'
+
+jobs:
+    release:
+        name: Release
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Create Release and Push Tags
+              id: changesets
+              uses: changesets/action@v1
+              with:
+                  publish: false
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
