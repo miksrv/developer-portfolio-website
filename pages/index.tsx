@@ -1,10 +1,14 @@
 import React from 'react'
+import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 
 import About from '@/components/about'
-import GithubActivity from '@/components/github-activity'
+import Icon from '@/components/icon'
 import Introduce from '@/components/introduce'
 import StarField from '@/components/star-field'
+
+const GithubActivity = dynamic(() => import('@/components/github-activity'), { ssr: false })
 
 const MainPage: React.FC = () => (
     <>
@@ -38,6 +42,16 @@ const MainPage: React.FC = () => (
         <About />
 
         <GithubActivity />
+
+        <section className={'footerLinks'}>
+            <Link
+                href={'/projects'}
+                title={'View my pet projects'}
+            >
+                {'Projects'}
+                <Icon name={'right'} />
+            </Link>
+        </section>
     </>
 )
 

@@ -1,6 +1,8 @@
 import React from 'react'
+import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 
+import Icon from '@/components/icon'
 import Projects from '@/components/projects'
 
 const ProjectsPage: React.FC = () => (
@@ -33,6 +35,24 @@ const ProjectsPage: React.FC = () => (
         </section>
 
         <Projects />
+
+        <section className={'footerLinks'}>
+            <Link
+                href={'/'}
+                title={'View about me'}
+            >
+                <Icon name={'left'} />
+                {'About me'}
+            </Link>
+
+            <Link
+                href={'/skills'}
+                title={'View my technical skills'}
+            >
+                {'Skills'}
+                <Icon name={'right'} />
+            </Link>
+        </section>
     </>
 )
 
