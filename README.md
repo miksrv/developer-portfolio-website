@@ -43,6 +43,7 @@ This project provides a fully customizable, modern developer portfolio template 
 - [Built With](#built-with)
 - [About of Project](#about-of-project)
 - [How to use](#how-to-use)
+- [Contributing](#contributing)
 - [Contact](#contact)
 
 <!-- KEY FEATURES -->
@@ -131,6 +132,67 @@ Feel free to use this repository for any purpose related to the development of v
    ```
 
 5. **Access the Application**: Open your browser and go to [http://localhost:3000/](http://localhost:3000/) to view the portfolio.
+
+<p align="right">
+  (<a href="#top">Back to top</a>)
+</p>
+
+### Contributing
+
+Contributions are what make the open-source community an incredible environment for learning, inspiration, and innovation. Your contributions are highly valued and greatly appreciated, whether it’s reporting bugs, suggesting improvements, or creating new features.
+
+To contribute:
+
+1. **Fork the project** by clicking the "Fork" button at the top of this page.
+2. **Clone your fork locally**:
+    ```bash
+    git clone https://github.com/your-username/arduino-weather-station.git
+    ```
+3. **Create a new feature branch** for your work:
+    ```bash
+    git checkout -b feature/AmazingFeature
+    ```
+4. **Make your changes**, and ensure they meet the project's coding standards.
+5. **Commit your changes**:
+    ```bash
+    git commit -m "Add AmazingFeature"
+    ```
+6. **Push your changes** to your forked repository:
+    ```bash
+    git push origin feature/AmazingFeature
+    ```
+7. **Open a pull request** from your feature branch to the main repository.
+
+#### Creating a New Release
+
+Once your pull request has been approved and merged, follow these steps to create a new release if your changes require it:
+
+1. **Ensure your branch is up-to-date with `main`**:
+    ```bash
+    git checkout main
+    git pull origin main
+    ```
+2. **Add details to the `CHANGELOG.md`**:
+    - Update the changelog with a clear description of the new feature, improvement, or bug fix.
+    - Use an appropriate versioning convention (e.g., `v1.0.1`, `v1.1.0`).
+
+3. **Create a new tag** for the release:
+    ```bash
+    git tag -a vX.X.X -m "Release notes for version X.X.X"
+    ```
+    - Replace `vX.X.X` with the new version (e.g., `v1.0.1`).
+    - Write detailed release notes in the tag message, highlighting key changes or new features.
+
+4. **Push the tag and changes** to the repository:
+    ```bash
+    git push origin vX.X.X
+    ```
+    - This will automatically trigger the GitHub action to create a new release if there are changes in `CHANGELOG.md` and a new tag is present.
+
+5. **Open a pull request** for your branch if not yet merged:
+    - Once the pull request is merged into `main` and the new tag is pushed, a GitHub Release will be created automatically.
+
+We encourage contributions of all kinds, whether big or small. Your efforts help improve the project for everyone!
 
 <p align="right">
   (<a href="#top">Back to top</a>)

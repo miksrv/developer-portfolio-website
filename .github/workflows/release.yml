@@ -6,6 +6,8 @@ on:
             - main
         paths:
             - 'CHANGELOG.md'
+        tags:
+            - 'v*.*.*'
 
 jobs:
     release:
@@ -15,11 +17,11 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
-            - name: Create Release and Push Tags
-              id: changesets
-              uses: changesets/action@v1
+            - name: Create Release
+              uses: softprops/action-gh-release@v2
               with:
-                  publish: false
+                  files: |
+                      CHANGELOG.md
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
