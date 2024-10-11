@@ -40,11 +40,11 @@ const SkillsPage: React.FC = () => (
 
         <section className={'footerLinks'}>
             <Link
-                href={'/projects'}
-                title={'View my pet projects'}
+                href={'/experience'}
+                title={'View my experience'}
             >
                 <Icon name={'left'} />
-                {'Projects'}
+                {'Experience'}
             </Link>
         </section>
     </>
