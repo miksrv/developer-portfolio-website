@@ -46,10 +46,10 @@ const ProjectsPage: React.FC = () => (
             </Link>
 
             <Link
-                href={'/skills'}
-                title={'View my technical skills'}
+                href={'/experience'}
+                title={'View my experience'}
             >
-                {'Skills'}
+                {'Experience'}
                 <Icon name={'right'} />
             </Link>
         </section>

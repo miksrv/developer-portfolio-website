@@ -20,8 +20,6 @@
         "url": "https://github.com/miksrv/developer-portfolio-website/issues"
     },
     "scripts": {
-        "changeset": "npx changeset",
-        "changeversion": "npx changeset version",
         "dev": "next dev",
         "build": "next build",
         "export": "next build && next export",

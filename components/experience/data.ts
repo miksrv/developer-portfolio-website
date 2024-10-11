@@ -137,7 +137,7 @@ export const data: ExperienceType[] = [
     {
         period: 'Jun 2021 - Nov 2022',
         role: 'Senior Frontend Developer',
-        duties: 'Led the development of a quality assurance portal for microservices, streamlining code and component reviews. Developed a Bitbucket integration API to automate project data extraction and implemented test automation using React Testing Library and Jest for UI testing. Created automated UI tests for over 36 microservices and designed Playwright integration tests. Enhanced CI/CD pipelines with added test and code quality checks. Built a microservice to send test statistics to the quality portal and developed a plugin for test report aggregation with Allure. Contributed to Agile task management, wrote technical documentation, and implemented accessibility testing, while continuously improving the portal\'s features and functionality. Regularly conducted code reviews to ensure high-quality standards.',
+        duties: "Led the development of a quality assurance portal for microservices, streamlining code and component reviews. Developed a Bitbucket integration API to automate project data extraction and implemented test automation using React Testing Library and Jest for UI testing. Created automated UI tests for over 36 microservices and designed Playwright integration tests. Enhanced CI/CD pipelines with added test and code quality checks. Built a microservice to send test statistics to the quality portal and developed a plugin for test report aggregation with Allure. Contributed to Agile task management, wrote technical documentation, and implemented accessibility testing, while continuously improving the portal's features and functionality. Regularly conducted code reviews to ensure high-quality standards.",
         skills: [
             {
                 area: 'Frontend',
@@ -197,20 +197,11 @@ export const data: ExperienceType[] = [
         skills: [
             {
                 area: 'Frontend',
-                stack: [
-                    Frontend.JavaScript,
-                    Frontend.jQuery,
-                    Frontend.CSS,
-                    Frontend.HTML
-                ]
+                stack: [Frontend.JavaScript, Frontend.jQuery, Frontend.CSS, Frontend.HTML]
             },
             {
                 area: 'Backend',
-                stack: [
-                    Backend.RestAPI,
-                    Backend.PHP,
-                    Backend.MySQL
-                ]
+                stack: [Backend.RestAPI, Backend.PHP, Backend.MySQL]
             },
             {
                 area: 'CI/CD & DevOps',
@@ -229,23 +220,11 @@ export const data: ExperienceType[] = [
         skills: [
             {
                 area: 'Frontend',
-                stack: [
-                    Frontend.JavaScript,
-                    Frontend.jQuery,
-                    Frontend.CSS,
-                    Frontend.HTML
-                ]
+                stack: [Frontend.JavaScript, Frontend.jQuery, Frontend.CSS, Frontend.HTML]
             },
             {
                 area: 'Backend',
-                stack: [
-                    Backend.RestAPI,
-                    Backend.PHP,
-                    Backend.Yii,
-                    Backend.MySQL,
-                    Backend.PostgreSQL,
-                    Backend.Delphi
-                ]
+                stack: [Backend.RestAPI, Backend.PHP, Backend.Yii, Backend.MySQL, Backend.PostgreSQL, Backend.Delphi]
             },
             {
                 area: 'CI/CD & DevOps',
@@ -260,20 +239,11 @@ export const data: ExperienceType[] = [
         skills: [
             {
                 area: 'Frontend',
-                stack: [
-                    Frontend.JavaScript,
-                    Frontend.jQuery,
-                    Frontend.CSS,
-                    Frontend.HTML,
-                    Frontend.Bootstrap
-                ]
+                stack: [Frontend.JavaScript, Frontend.jQuery, Frontend.CSS, Frontend.HTML, Frontend.Bootstrap]
             },
             {
                 area: 'Backend',
-                stack: [
-                    Backend.PHP,
-                    Backend.MySQL
-                ]
+                stack: [Backend.PHP, Backend.MySQL]
             },
             {
                 area: 'CI/CD & DevOps',
@@ -288,10 +258,7 @@ export const data: ExperienceType[] = [
         skills: [
             {
                 area: 'Backend',
-                stack: [
-                    Backend.PHP,
-                    Backend.MySQL
-                ]
+                stack: [Backend.PHP, Backend.MySQL]
             },
             {
                 area: 'CI/CD & DevOps',

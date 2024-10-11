@@ -13,6 +13,10 @@ export const menu: MenuItemType[] = [
         url: '/projects'
     },
     {
+        label: 'Experience',
+        url: '/experience'
+    },
+    {
         label: 'Skills',
         url: '/skills'
     }

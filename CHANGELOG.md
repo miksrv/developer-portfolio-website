@@ -1,5 +1,14 @@
 # developer-portfolio-website
 
+## 1.1.2
+
+### Patch Changes
+
+-   Added Experience Page and UI Component
+-   Updated Footer navigation
+-   Updated Header menu
+-   Implemented Experience Data
+
 ## 1.1.1
 
 ### Patch Changes
