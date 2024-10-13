@@ -1,6 +1,6 @@
 {
     "name": "developer-portfolio-website",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Fully customizable, modern developer portfolio template built with Typescript, React and Next.js",
     "keywords": [
         "software developer",
@@ -30,6 +30,7 @@
         "prettier:fix": "prettier --write ."
     },
     "dependencies": {
+        "dayjs": "^1.11.13",
         "next": "14.2.15",
         "next-seo": "^6.6.0",
         "react": "18.3.1",
