@@ -6,6 +6,7 @@ import styles from './styles.module.sass'
 
 import Icon from '@/components/icon'
 import { IconTypes } from '@/components/icon/types'
+import { experience, ExperienceType } from '@/data/experience'
 import avatarPic from '@/public/avatar.jpg'
 import { update } from '@/update'
 
@@ -20,13 +21,28 @@ type LinkType = {
     icon: IconTypes
 }
 
+const findEarliestDate = (experience: ExperienceType[]): string | undefined => {
+    const allDates = experience
+        .flatMap((exp) => exp.period)
+        .map((dateStr) => new Date(dateStr))
+        .filter((date) => !isNaN(date.getTime()))
+
+    if (allDates.length === 0) {
+        return undefined
+    }
+
+    const earliestDate = new Date(Math.min(...allDates.map((date) => date.getTime())))
+
+    return earliestDate.toISOString().split('T')[0]
+}
+
+const divisor = 1000 * 60 * 60 * 24 * 365.2421897
+const birthTime = new Date('1989-09-09T05:15:00').getTime()
+const expTime = new Date(findEarliestDate(experience) ?? '2007-10-15T10:00:00').getTime()
+
 export const Introduce: React.FC = () => {
     const [myAge, setMyAge] = React.useState<string>('')
     const [myExp, setMyExp] = React.useState<string>('')
-
-    const divisor = 1000 * 60 * 60 * 24 * 365.2421897
-    const birthTime = new Date('1989-09-09T05:15:00').getTime()
-    const expTime = new Date('2007-10-15T10:00:00').getTime()
 
     const dateUpdate = new Date(update).toLocaleDateString('en-us', {
         day: 'numeric',
