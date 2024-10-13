@@ -1,5 +1,15 @@
 # developer-portfolio-website
 
+## 1.1.3
+
+### Patch Changes
+
+-   Updated UI libraries
+-   Improved experience data
+-   Improved UI Experience component
+-   Fixed navigation error (added .htaccess)
+-   Improved main page, added navigation
+
 ## 1.1.2
 
 ### Patch Changes

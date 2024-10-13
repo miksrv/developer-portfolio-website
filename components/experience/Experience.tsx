@@ -1,17 +1,26 @@
 import React from 'react'
 
-import { data } from './data'
 import styles from './styles.module.sass'
+
+import { experience } from '@/data/experience'
+import { formatDate, formatPeriod } from '@/utils/date'
 
 const Experience: React.FC = () => (
     <section>
         <ul className={styles.experienceList}>
-            {data?.map((item, i) => (
+            {experience?.map((item, i) => (
                 <li
                     className={styles.experienceRole}
                     key={`experience-${i}`}
                 >
-                    <div className={styles.period}>{item.period}</div>
+                    <div className={styles.dates}>
+                        <div className={styles.date}>
+                            {formatDate(item.period?.[0], 'MMM YYYY')}
+                            {' - '}
+                            {item.period?.[1] ? formatDate(item.period?.[1], 'MMM YYYY') : 'Present'}
+                        </div>
+                        <div className={styles.period}>{formatPeriod(item.period)}</div>
+                    </div>
                     <h3 className={styles.role}>{item.role}</h3>
                     <div className={styles.duties}>{item.duties}</div>
 

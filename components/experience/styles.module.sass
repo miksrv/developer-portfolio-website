@@ -7,15 +7,23 @@
         border-left: 1px solid rgb(67 67 67 / 1)
         border-bottom: 1px solid rgb(67 67 67 / 1)
 
-        .period
+        .dates
             position: absolute
             left: -15px
             top: 10px
-            padding: 5px 10px
             font-size: var(--font-size-small)
-            border-radius: var(--border-radius)
-            border: 1px solid var(--highlight-color)
-            background-color: var(--body-background)
+            display: flex
+            align-items: center
+
+            .date
+                padding: 5px 10px
+                border-radius: var(--border-radius)
+                border: 1px solid var(--highlight-color)
+                background-color: var(--body-background)
+
+            .period
+                margin-left: 10px
+                color: var(--text-color-secondary)
 
         .role
             margin-bottom: 10px
