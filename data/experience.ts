@@ -182,7 +182,7 @@ export const experience: ExperienceType[] = [
         ]
     },
     {
-        period: ['07/01/2011', '06/01/2022'],
+        period: ['07/01/2011', '06/01/2012'],
         role: 'Full-Stack Developer',
         duties: 'Designed and developed the architecture for a custom content management system (CMS) using PHP and Laravel, creating an intuitive administrator interface. Implemented a scalable PostgreSQL database structure and developed various custom modules, including news, articles, and user management. Prototyped MVPs based on client specifications and built APIs for integration with hotel and air ticket booking services. Delivered custom websites on the CMS platform and provided ongoing technical support, including user documentation.',
         skills: [

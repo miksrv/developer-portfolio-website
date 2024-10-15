@@ -1,0 +1,69 @@
+name: Quality Gate
+
+on:
+    push:
+        branches:
+            - main
+        tags:
+            - 'v*'
+    pull_request:
+        types: [opened, synchronize, reopened]
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    sonarcloud:
+        if: github.event.pull_request.draft == false
+        name: SonarCloud
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Install Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: 'yarn'
+                  cache-dependency-path: 'yarn.lock'
+
+            - name: Cache node modules
+              uses: actions/cache@v4
+              id: cache-npm
+              with:
+                  path: |
+                      node_modules
+                      ~/.npm
+                  key: ${{ runner.os }}-modules-${{ hashFiles('yarn.lock') }}
+                  restore-keys: |
+                      ${{ runner.os }}-modules-
+                      ${{ runner.os }}-
+
+            - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+              name: Install dependencies
+              run: yarn install
+
+#            - name: UI Unit Tests
+#              run: yarn test:coverage
+
+            - name: Extract version from tag or branch
+              id: version
+              run: |
+                  if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+                    echo "VERSION=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
+                  else
+                    echo "VERSION=$(jq -r '.version' package.json)" >> $GITHUB_ENV
+                  fi
+
+            - name: SonarCloud Scan
+              uses: sonarsource/sonarcloud-github-action@master
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+              with:
+                  args: >
+                      -Dsonar.projectVersion=${{ env.VERSION }}

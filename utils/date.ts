@@ -6,7 +6,7 @@ export const formatPeriod = (dates: string[]): string => {
     const [start, end] = dates
 
     const startDate = dayjs(start, 'MM/DD/YYYY')
-    const endDate = end ? dayjs(end, 'MM/DD/YYYY') : dayjs()
+    const endDate = end ? dayjs(end, 'MM/DD/YYYY') : dayjs(new Date())
 
     if (startDate.isAfter(endDate)) {
         return ''
