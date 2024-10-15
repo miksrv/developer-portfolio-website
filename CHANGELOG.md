@@ -1,5 +1,15 @@
 # developer-portfolio-website
 
+## 1.1.4
+
+### Patch Changes
+
+-   Updated UI libraries
+-   Updated README.md
+-   Added SonarCloud
+-   Fixed experience dates
+-   Improved SkillCloud UI component
+
 ## 1.1.3
 
 ### Patch Changes
