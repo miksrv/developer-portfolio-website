@@ -18,7 +18,6 @@ jest.mock('./photo.jpg', () => ({
     default: 'mocked-photo.jpg'
 }))
 
-
 describe('About Component', () => {
     it('renders the section title', () => {
         render(<About />)
@@ -34,17 +33,13 @@ describe('About Component', () => {
 
     it('renders the first paragraph about programming', () => {
         render(<About />)
-        const firstParagraph = screen.getByText(
-            /Programming is both my profession and my hobby/i
-        )
+        const firstParagraph = screen.getByText(/Programming is both my profession and my hobby/i)
         expect(firstParagraph).toBeInTheDocument()
     })
 
     it('renders the second paragraph about hobbies and family', () => {
         render(<About />)
-        const secondParagraph = screen.getByText(
-            /Outside of coding, my hobbies are a big part of my life/i
-        )
+        const secondParagraph = screen.getByText(/Outside of coding, my hobbies are a big part of my life/i)
         expect(secondParagraph).toBeInTheDocument()
     })
 })

@@ -59,8 +59,7 @@ export const StarField: React.FC<StarFieldProps> = (props) => {
             }
 
             const putPixel = (x: number, y: number, brightness: number) => {
-                canvasRendering.fillStyle =
-                    `rgba(${starColor[0]}, ${starColor[1]}, ${starColor[2]}, ${brightness})`
+                canvasRendering.fillStyle = `rgba(${starColor[0]}, ${starColor[1]}, ${starColor[2]}, ${brightness})`
                 canvasRendering.fillRect(x, y, 1, 1)
             }
 

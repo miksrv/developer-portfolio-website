@@ -30,13 +30,9 @@ describe('Experience Component', () => {
 
         experience.forEach((item) => {
             const formattedStartDate = `${item.period?.[0]}-MMM YYYY`
-            const formattedEndDate = item.period?.[1]
-                ? `${item.period?.[1]}-MMM YYYY`
-                : 'Present'
+            const formattedEndDate = item.period?.[1] ? `${item.period?.[1]}-MMM YYYY` : 'Present'
 
-            const dateElement = screen.getByText(
-                `${formattedStartDate} - ${formattedEndDate}`
-            )
+            const dateElement = screen.getByText(`${formattedStartDate} - ${formattedEndDate}`)
             expect(dateElement).toBeInTheDocument()
 
             const dutiesElement = screen.getByText(item.duties)

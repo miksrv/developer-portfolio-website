@@ -74,10 +74,14 @@ describe('StarField Component', () => {
     })
 
     test('handles custom props correctly', () => {
-        render(<StarField speedFactor={0.1}
-backgroundColor='blue'
-starColor={[100, 150, 200]}
-starCount={1000} />)
+        render(
+            <StarField
+                speedFactor={0.1}
+                backgroundColor='blue'
+                starColor={[100, 150, 200]}
+                starCount={1000}
+            />
+        )
 
         const canvas = screen.getByRole('presentation')
         expect(canvas).toBeInTheDocument()

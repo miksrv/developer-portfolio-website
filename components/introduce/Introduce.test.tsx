@@ -1,3 +1,5 @@
+import React from 'react'
+
 import '@testing-library/jest-dom'
 
 import Introduce from './Introduce'
@@ -68,10 +70,14 @@ describe('Introduce Component', () => {
         act(() => {
             jest.advanceTimersByTime(1000)
 
-            const ageValue = screen.getByText((content, element) => !!(element?.tagName === 'LI' && element.textContent?.startsWith('My age')))
+            const ageValue = screen.getByText(
+                (content, element) => !!(element?.tagName === 'LI' && element.textContent?.startsWith('My age'))
+            )
             expect(ageValue).toBeInTheDocument()
 
-            const expValue = screen.getByText((content, element) => !!(element?.tagName === 'LI' && element.textContent?.startsWith('Experience')))
+            const expValue = screen.getByText(
+                (content, element) => !!(element?.tagName === 'LI' && element.textContent?.startsWith('Experience'))
+            )
             expect(expValue).toBeInTheDocument()
         })
     })
