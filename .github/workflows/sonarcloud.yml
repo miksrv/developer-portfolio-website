@@ -47,8 +47,8 @@ jobs:
               name: Install dependencies
               run: yarn install
 
-#            - name: UI Unit Tests
-#              run: yarn test:coverage
+            - name: UI Unit Tests
+              run: yarn test:coverage
 
             - name: Extract version from tag or branch
               id: version
