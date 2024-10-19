@@ -28,14 +28,14 @@ describe('StarField Component', () => {
         jest.restoreAllMocks()
     })
 
-    test('renders a canvas element', () => {
+    it('renders a canvas element', () => {
         render(<StarField />)
         const canvas = screen.getByRole('presentation')
         expect(canvas).toBeInTheDocument()
         expect(canvas.tagName).toBe('CANVAS')
     })
 
-    test('applies the correct styles to the canvas element', () => {
+    it('applies the correct styles to the canvas element', () => {
         render(<StarField />)
         const canvas = screen.getByRole('presentation')
         expect(canvas).toHaveStyle({
@@ -73,7 +73,7 @@ describe('StarField Component', () => {
         expect(canvas.height).toBe(newHeight)
     })
 
-    test('handles custom props correctly', () => {
+    it('handles custom props correctly', () => {
         render(
             <StarField
                 speedFactor={0.1}
