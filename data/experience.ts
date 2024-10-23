@@ -14,7 +14,7 @@ export type ExperienceType = {
 
 export const experience: ExperienceType[] = [
     {
-        period: ['09/01//2021'],
+        period: ['09/01/2021'],
         role: 'Senior Frontend Developer',
         duties: 'Developed scalable, modular components for the client application using modern architectural patterns. Designed solutions for key functions such as client-server interactions, REST API integration, and service integrations. Implemented automatic UI tests (unit and integration) to enhance solution quality. Optimized application architecture, including authentication, logging, and data processing. Created and maintained a test environment with tools for screenshot testing and API simulation to streamline development. Contributed to code quality by implementing analysis tools, CI/CD processes, and conducting regular QA sessions. Collaborated with the UI/UX team to enhance UI components and improve application usability.',
         skills: [
@@ -78,7 +78,7 @@ export const experience: ExperienceType[] = [
     {
         period: ['07/01/2021', '11/01/2022'],
         role: 'Senior Frontend Developer',
-        duties: "Led the development of a quality assurance portal for microservices, streamlining code and component reviews. Developed a Bitbucket integration API to automate project data extraction and implemented test automation using React Testing Library and Jest for UI testing. Created automated UI tests for over 36 microservices and designed Playwright integration tests. Enhanced CI/CD pipelines with added test and code quality checks. Built a microservice to send test statistics to the quality portal and developed a plugin for test report aggregation with Allure. Contributed to Agile task management, wrote technical documentation, and implemented accessibility testing, while continuously improving the portal's features and functionality. Regularly conducted code reviews to ensure high-quality standards.",
+        duties: 'Led the development of a quality assurance portal for microservices, streamlining code and component reviews. Developed a Bitbucket integration API to automate project data extraction and implemented test automation using React Testing Library and Jest for UI testing. Created automated UI tests for over 36 microservices and designed Playwright integration tests. Enhanced CI/CD pipelines with added test and code quality checks. Built a microservice to send test statistics to the quality portal and developed a plugin for test report aggregation with Allure. Contributed to Agile task management, wrote technical documentation, and implemented accessibility testing, while continuously improving the portal\'s features and functionality. Regularly conducted code reviews to ensure high-quality standards.',
         skills: [
             {
                 area: 'Frontend',
