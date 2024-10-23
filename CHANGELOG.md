@@ -12,6 +12,8 @@
 -   Added new UI tests
 -   Fixed experience data
 
+## 1.1.4
+
 ### Patch Changes
 
 -   Updated UI libraries
