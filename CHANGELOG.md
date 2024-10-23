@@ -1,5 +1,17 @@
 # developer-portfolio-website
 
+## 1.1.5
+
+### Patch Changes
+
+-   Updated UI libraries
+-   Setup UI tests
+-   Implemented UI tests for components
+-   Fixed Linter and Prettier issues
+-   Updated SonarCloud config file
+-   Added new UI tests
+-   Fixed experience data
+
 ## 1.1.4
 
 ### Patch Changes

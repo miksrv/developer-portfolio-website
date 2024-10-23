@@ -14,7 +14,7 @@ export type ExperienceType = {
 
 export const experience: ExperienceType[] = [
     {
-        period: ['09/01//2021'],
+        period: ['09/01/2021'],
         role: 'Senior Frontend Developer',
         duties: 'Developed scalable, modular components for the client application using modern architectural patterns. Designed solutions for key functions such as client-server interactions, REST API integration, and service integrations. Implemented automatic UI tests (unit and integration) to enhance solution quality. Optimized application architecture, including authentication, logging, and data processing. Created and maintained a test environment with tools for screenshot testing and API simulation to streamline development. Contributed to code quality by implementing analysis tools, CI/CD processes, and conducting regular QA sessions. Collaborated with the UI/UX team to enhance UI components and improve application usability.',
         skills: [
