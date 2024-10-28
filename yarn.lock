@@ -1452,12 +1452,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.7.9":
-  version: 22.7.9
-  resolution: "@types/node@npm:22.7.9"
+"@types/node@npm:22.8.1":
+  version: 22.8.1
+  resolution: "@types/node@npm:22.8.1"
   dependencies:
-    undici-types: "npm:~6.19.2"
-  checksum: 10c0/2d1917702b9d9ede8e4d8151cd8b1af8bc147d543486474ffbe0742e38764ea73105939e6a767addf7a4c39e842e16eae762bff90617d7b7f9ee3fbbb2d23bfa
+    undici-types: "npm:~6.19.8"
+  checksum: 10c0/83550fdf72a7db5b55eceac3f4fb038844eaee20202bdd2297a8248370cfa08317bda1605b781a8043eda4f173b75e73632e652fc85509eb14dfef78fa17337f
   languageName: node
   linkType: hard
 
@@ -2672,13 +2672,13 @@ __metadata:
     "@testing-library/react": "npm:^16.0.1"
     "@types/identity-obj-proxy": "npm:^3.0.2"
     "@types/jest": "npm:^29.5.14"
-    "@types/node": "npm:22.7.9"
+    "@types/node": "npm:22.8.1"
     "@types/react": "npm:18.3.12"
     "@types/react-dom": "npm:18.3.1"
     dayjs: "npm:^1.11.13"
     eslint: "npm:^9.13.0"
     eslint-plugin-eslint-comments: "npm:^3.2.0"
-    eslint-plugin-eslint-plugin: "npm:^6.2.0"
+    eslint-plugin-eslint-plugin: "npm:^6.3.1"
     eslint-plugin-import: "npm:^2.31.0"
     eslint-plugin-jest: "npm:^28.8.3"
     eslint-plugin-react: "npm:^7.37.2"
@@ -2692,7 +2692,7 @@ __metadata:
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
     react-github-calendar: "npm:^4.5.1"
-    sass: "npm:^1.80.3"
+    sass: "npm:^1.80.4"
     ts-jest: "npm:^29.2.5"
     ts-node: "npm:^10.9.2"
     typescript: "npm:5.6.3"
@@ -3053,15 +3053,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-eslint-plugin@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "eslint-plugin-eslint-plugin@npm:6.2.0"
+"eslint-plugin-eslint-plugin@npm:^6.3.1":
+  version: 6.3.1
+  resolution: "eslint-plugin-eslint-plugin@npm:6.3.1"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.4.0"
     estraverse: "npm:^5.3.0"
   peerDependencies:
     eslint: ">=8.23.0"
-  checksum: 10c0/33f27062aaa93ec61eb1f80daf7d967fe4e63ace44abb3954f1c893fe416019e6e267cc4b748bf93afc44b705d6c36597a4c7d20da4251cebf872c24d1cc700d
+  checksum: 10c0/675d76a9302254e95e4ff28658038780f1b2d2ebbb88743fff0781f8105fd2a5f0c3b0d6c4e01f7588bf307be6eed346bad2654079d16aa73d49f50b1794c92d
   languageName: node
   linkType: hard
 
@@ -6201,9 +6201,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.80.3":
-  version: 1.80.3
-  resolution: "sass@npm:1.80.3"
+"sass@npm:^1.80.4":
+  version: 1.80.4
+  resolution: "sass@npm:1.80.4"
   dependencies:
     "@parcel/watcher": "npm:^2.4.1"
     chokidar: "npm:^4.0.0"
@@ -6211,7 +6211,7 @@ __metadata:
     source-map-js: "npm:>=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 10c0/fa08043fc36b854717b6eaf6247ee11341d0aff5e17a645965071866bd677930c9c9467d82ed5a4a666d7897a82be8a61427cd81b808e6b9e2d3b32cf278bebd
+  checksum: 10c0/58ca0f2d10720cde6621ee62f4bdbb537ea2ac572c565d5f02309f8271a5e1e880ad8c163b933e52b22b3dc0550973fb5a6033a500248e6a0d89dd050c1743cf
   languageName: node
   linkType: hard
 
@@ -6955,7 +6955,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~6.19.2":
+"undici-types@npm:~6.19.8":
   version: 6.19.8
   resolution: "undici-types@npm:6.19.8"
   checksum: 10c0/078afa5990fba110f6824823ace86073b4638f1d5112ee26e790155f481f2a868cc3e0615505b6f4282bdf74a3d8caad715fd809e870c2bb0704e3ea6082f344
