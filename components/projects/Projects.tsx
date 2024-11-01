@@ -6,6 +6,7 @@ import { data } from './data'
 import styles from './styles.module.sass'
 
 import Icon from '@/components/icon'
+import { iconNames } from '@/components/icon/types'
 
 const Projects: React.FC = () => (
     <section className={styles.projectsContainer}>
@@ -34,7 +35,7 @@ const Projects: React.FC = () => (
                     </div>
 
                     <div className={styles.info}>
-                        <Icon name={'web'} />
+                        <Icon name={iconNames.web} />
                         <Link
                             href={item.link}
                             title={item.title}

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 
 import Icon from '@/components/icon'
+import { iconNames } from '@/components/icon/types'
 import Projects from '@/components/projects'
 
 const ProjectsPage: React.FC = () => (
@@ -41,7 +42,7 @@ const ProjectsPage: React.FC = () => (
                 href={'/'}
                 title={'View about me'}
             >
-                <Icon name={'left'} />
+                <Icon name={iconNames.left} />
                 {'About me'}
             </Link>
 
@@ -50,7 +51,7 @@ const ProjectsPage: React.FC = () => (
                 title={'View my experience'}
             >
                 {'Experience'}
-                <Icon name={'right'} />
+                <Icon name={iconNames.right} />
             </Link>
         </section>
     </>

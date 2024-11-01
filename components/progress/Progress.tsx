@@ -13,6 +13,7 @@ export const Progress: React.FC<ProgressProps> = ({ value }) => (
             .map((_, i) => (
                 <span
                     key={`progress-segment-${i}`}
+                    role={'progressbar-segment'}
                     className={(value || 0) >= (i + 1) * 10 ? styles.active : undefined}
                 />
             ))}

@@ -5,6 +5,7 @@ import { NextSeo } from 'next-seo'
 
 import About from '@/components/about'
 import Icon from '@/components/icon'
+import { iconNames } from '@/components/icon/types'
 import Introduce from '@/components/introduce'
 import StarField from '@/components/star-field'
 
@@ -49,7 +50,7 @@ const MainPage: React.FC = () => (
                 title={'View my pet projects'}
             >
                 {'Projects'}
-                <Icon name={'right'} />
+                <Icon name={iconNames.right} />
             </Link>
         </section>
     </>
