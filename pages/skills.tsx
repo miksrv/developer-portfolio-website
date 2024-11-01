@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 
 import Icon from '@/components/icon'
+import { iconNames } from '@/components/icon/types'
 import Skills from '@/components/skills'
 import SkillsCloud from '@/components/skills-cloud'
 
@@ -43,7 +44,7 @@ const SkillsPage: React.FC = () => (
                 href={'/experience'}
                 title={'View my experience'}
             >
-                <Icon name={'left'} />
+                <Icon name={iconNames.left} />
                 {'Experience'}
             </Link>
         </section>

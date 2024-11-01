@@ -4,6 +4,7 @@ import { NextSeo } from 'next-seo'
 
 import Experience from '@/components/experience'
 import Icon from '@/components/icon'
+import { iconNames } from '@/components/icon/types'
 
 const ProjectsPage: React.FC = () => (
     <>
@@ -45,7 +46,7 @@ const ProjectsPage: React.FC = () => (
                 href={'/projects'}
                 title={'View my pet projects'}
             >
-                <Icon name={'left'} />
+                <Icon name={iconNames.left} />
                 {'Projects'}
             </Link>
 
@@ -54,7 +55,7 @@ const ProjectsPage: React.FC = () => (
                 title={'View my technical skills'}
             >
                 {'Skills'}
-                <Icon name={'right'} />
+                <Icon name={iconNames.right} />
             </Link>
         </section>
     </>
