@@ -1,5 +1,14 @@
 # developer-portfolio-website
 
+## 1.1.6
+
+### Patch Changes
+
+-   Upgraded Next.js version from 14.2.16 to 15.0.2
+-   Updated UI libraries
+-   Refactoring Icon UI component
+-   Added UI tests for Progress and Icon components
+
 ## 1.1.5
 
 ### Patch Changes
