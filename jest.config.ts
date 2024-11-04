@@ -17,7 +17,14 @@ const config: Config = {
             }
         ]
     },
-    collectCoverageFrom: ['components/**/*.{ts,tsx}', '!components/**/*.d.ts', '!components/**/*.test.tsx', '!*.d.ts'],
+    collectCoverageFrom: [
+        'components/**/*.{ts,tsx}',
+        '!components/**/*.d.ts',
+        '!components/**/*.test.tsx',
+        '!components/**/index.ts',
+        '!components/**/data.ts',
+        '!*.d.ts'
+    ],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
     transformIgnorePatterns: ['node_modules/(?!(module-to-transform)/)', '/.next/']
 }
