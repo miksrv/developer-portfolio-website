@@ -2,6 +2,14 @@ import dayjs from 'dayjs'
 
 import { formatDate, formatPeriod } from './date'
 
+const testCases = [
+    { dates: ['01/01/2020', '01/01/2022'], expected: '2 yrs' },
+    { dates: ['01/01/2022', '01/01/2020'], expected: '' },
+    { dates: ['01/01/2022', '06/01/2022'], expected: '5 mos' },
+    { dates: ['01/01/2021', '01/01/2022'], expected: '1 yr' },
+    { dates: ['01/01/2021', '06/01/2022'], expected: '1 yr 5 mos' }
+]
+
 describe('formatDate', () => {
     it('should format date with default format', () => {
         const date = '2023-10-01'
@@ -18,33 +26,10 @@ describe('formatDate', () => {
 })
 
 describe('formatPeriod', () => {
-    it('should format period correctly when end date is provided', () => {
-        const dates = ['01/01/2020', '01/01/2022']
-        const formattedPeriod = formatPeriod(dates)
-        expect(formattedPeriod).toBe('2 yrs')
-    })
-
-    it('should return empty string if start date is after end date', () => {
-        const dates = ['01/01/2022', '01/01/2020']
-        const formattedPeriod = formatPeriod(dates)
-        expect(formattedPeriod).toBe('')
-    })
-
-    it('should format period correctly when period is less than a year', () => {
-        const dates = ['01/01/2022', '06/01/2022']
-        const formattedPeriod = formatPeriod(dates)
-        expect(formattedPeriod).toBe('5 mos')
-    })
-
-    it('should format period correctly when period is exactly one year', () => {
-        const dates = ['01/01/2021', '01/01/2022']
-        const formattedPeriod = formatPeriod(dates)
-        expect(formattedPeriod).toBe('1 yr')
-    })
-
-    it('should format period correctly when period is more than a year but less than two years', () => {
-        const dates = ['01/01/2021', '06/01/2022']
-        const formattedPeriod = formatPeriod(dates)
-        expect(formattedPeriod).toBe('1 yr 5 mos')
+    testCases.forEach(({ dates, expected }) => {
+        it(`should format period correctly for dates ${dates}`, () => {
+            const formattedPeriod = formatPeriod(dates)
+            expect(formattedPeriod).toBe(expected)
+        })
     })
 })
