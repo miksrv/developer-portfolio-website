@@ -4,6 +4,15 @@ import Image from 'next/image'
 import photo from './photo.jpg'
 import styles from './styles.module.sass'
 
+/**
+ * The About component displays information about the developer, including a photo and a brief description.
+ *
+ * @component
+ * @example
+ * return (
+ *   <About />
+ * )
+ */
 export const About: React.FC = () => {
     return (
         <section className={styles.aboutSection}>
