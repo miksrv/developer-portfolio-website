@@ -5,6 +5,15 @@ import styles from './styles.module.sass'
 import { experience } from '@/data/experience'
 import { formatDate, formatPeriod } from '@/utils/date'
 
+/**
+ * The Experience component displays a list of professional experiences, including roles, dates, duties, and skills.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Experience />
+ * )
+ */
 const Experience: React.FC = () => (
     <section>
         <ul className={styles.experienceList}>
