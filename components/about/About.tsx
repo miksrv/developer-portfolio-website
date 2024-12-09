@@ -30,7 +30,7 @@ export const About: React.FC = () => {
                     </p>
                     <p>
                         {
-                            'Outside of coding, my hobbies are a big part of my life. I’m an amateur astronomer and have built a fully automated remote observatory that I can control from anywhere in the world. I also love traveling, especially hiking and exploring nature with my family. My children are a constant source of inspiration, motivating me both in life and in work.'
+                            'Outnside of coding, my hobbies are a big part of my life. I’m an amateur astronomer and have built a fully automated remote observatory that I can control from anywhere in the world. I also love traveling, especially hiking and exploring nature with my family. My children are a constant source of inspiration, motivating me both in life and in work.'
                         }
                     </p>
                 </div>
