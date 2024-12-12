@@ -9,16 +9,14 @@ const explicitTheme: ThemeInput = {
     dark: ['#1b1b1b', '#524508', '#6C590A', '#867C0C', '#FFC107']
 }
 
-export const GithubActivity: React.FC = () => {
-    return (
-        <section className={styles.activitySection}>
-            <h2 className={'pageTitle'}>{'Work activity'}</h2>
-            <GitHubCalendar
-                username={'miksrv'}
-                theme={explicitTheme}
-            />
-        </section>
-    )
-}
+export const GithubActivity: React.FC = () => (
+    <section className={styles.activitySection}>
+        <h2 className={'pageTitle'}>{'Work activity'}</h2>
+        <GitHubCalendar
+            username={'miksrv'}
+            theme={explicitTheme}
+        />
+    </section>
+)
 
 export default GithubActivity

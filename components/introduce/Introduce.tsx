@@ -9,6 +9,7 @@ import { IconTypes } from '@/components/icon/types'
 import { experience, ExperienceType } from '@/data/experience'
 import avatarPic from '@/public/avatar.jpg'
 import { update } from '@/update'
+import { cn } from '@/utils/tools'
 
 type FactType = {
     title?: string
@@ -108,10 +109,9 @@ export const Introduce: React.FC = () => {
     }, [])
 
     return (
-        <section className={styles.introduceSection}>
+        <section className={cn(styles.introduceSection)}>
             <div className={styles.avatarContainer}>
                 <Image
-                    className={styles.avatar}
                     src={avatarPic}
                     layout={'fill'}
                     objectFit={'cover'}
