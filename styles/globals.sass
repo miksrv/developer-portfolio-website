@@ -81,3 +81,14 @@ body
                 width: 20px
                 height: 20px
                 fill: var(--highlight-color)
+
+.animate
+    opacity: 0
+    transform: translateY(-20px)
+    animation: slideDown 0.9s forwards
+    transition: opacity 0.7s ease-in-out
+
+@keyframes slideDown
+    to
+        opacity: 1
+        transform: translateY(0)
