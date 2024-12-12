@@ -1,5 +1,15 @@
 # developer-portfolio-website
 
+## 1.1.7
+
+### Patch Changes
+
+- Updated UI libraries
+- Created function cn (concat class names)
+- Improved CSS
+- Added favicon
+- Fixed code-style
+
 ## 1.1.6
 
 ### Patch Changes
