@@ -127,9 +127,9 @@ export const Introduce: React.FC = () => {
                         </h1>
 
                         <div className={styles.links}>
-                            {linksList?.map((item, i) => (
+                            {linksList?.map((item) => (
                                 <Link
-                                    key={`link-${i}`}
+                                    key={`link-${item.link}`}
                                     href={item.link}
                                     title={item.label}
                                     target={'_blank'}
@@ -144,8 +144,8 @@ export const Introduce: React.FC = () => {
                 </div>
 
                 <ul className={styles.factsList}>
-                    {factsList?.map(({ title, value }, i) => (
-                        <li key={`fact-${i}`}>
+                    {factsList?.map(({ title, value }) => (
+                        <li key={`fact-${title}`}>
                             <div className={styles.key}>{title}</div>
                             <div className={styles.value}>{value}</div>
                         </li>

@@ -12,7 +12,7 @@ const Projects: React.FC = () => (
     <section className={styles.projectsContainer}>
         {data?.map((item, i) => (
             <div
-                key={`project-${i}`}
+                key={`project-${item.link}`}
                 className={styles[i % 2 === 0 ? 'even' : 'odd']}
             >
                 <Link

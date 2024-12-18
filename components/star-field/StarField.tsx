@@ -128,7 +128,7 @@ export const StarField: React.FC<StarFieldProps> = (props) => {
         <canvas
             ref={canvasRef}
             id={'starfield'}
-            role={'presentation'}
+            role={'img'}
             style={{
                 padding: 0,
                 margin: 0,

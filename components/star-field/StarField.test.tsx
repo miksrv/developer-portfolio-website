@@ -30,14 +30,14 @@ describe('StarField Component', () => {
 
     it('renders a canvas element', () => {
         render(<StarField />)
-        const canvas = screen.getByRole('presentation')
+        const canvas = screen.getByRole('img')
         expect(canvas).toBeInTheDocument()
         expect(canvas.tagName).toBe('CANVAS')
     })
 
     it('applies the correct styles to the canvas element', () => {
         render(<StarField />)
-        const canvas = screen.getByRole('presentation')
+        const canvas = screen.getByRole('img')
         expect(canvas).toHaveStyle({
             position: 'fixed',
             top: '0',
@@ -83,7 +83,7 @@ describe('StarField Component', () => {
             />
         )
 
-        const canvas = screen.getByRole('presentation')
+        const canvas = screen.getByRole('img')
         expect(canvas).toBeInTheDocument()
     })
 })

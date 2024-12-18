@@ -11,7 +11,7 @@ describe('Progress Component', () => {
     it('renders 10 segments for progress bar', () => {
         render(<Progress value={50} />)
 
-        const segments = screen.getAllByRole('progressbar-segment')
+        const segments = screen.getByRole('progressbar').children
         expect(segments).toHaveLength(10)
     })
 
