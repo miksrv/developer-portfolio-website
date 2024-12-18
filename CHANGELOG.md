@@ -1,5 +1,13 @@
 # developer-portfolio-website
 
+## 1.1.8
+
+### Patch Changes
+
+- Updated UI libraries
+- Fixed SonarCloud issues
+- Improved Release GitHub Action
+
 ## 1.1.7
 
 ### Patch Changes

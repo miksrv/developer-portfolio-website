@@ -2,10 +2,6 @@ name: Create GitHub Release
 
 on:
     push:
-        branches:
-            - main
-        paths:
-            - 'CHANGELOG.md'
         tags:
             - 'v*.*.*'
 
@@ -24,4 +20,3 @@ jobs:
                       CHANGELOG.md
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
