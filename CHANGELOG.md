@@ -1,5 +1,12 @@
 # developer-portfolio-website
 
+## 1.1.9
+
+### Patch Changes
+
+- Updated UI libraries
+- Fixed theme layout for mobile devices
+
 ## 1.1.8
 
 ### Patch Changes
