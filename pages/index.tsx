@@ -7,7 +7,6 @@ import About from '@/components/about'
 import Icon from '@/components/icon'
 import { iconNames } from '@/components/icon/types'
 import Introduce from '@/components/introduce'
-import StarField from '@/components/star-field'
 
 const GithubActivity = dynamic(() => import('@/components/github-activity'), { ssr: false })
 
@@ -29,13 +28,6 @@ const MainPage: React.FC = () => (
                 locale: 'en-US',
                 siteName: 'miksoft.pro'
             }}
-        />
-
-        <StarField
-            starCount={1000}
-            starColor={[255, 255, 255]}
-            speedFactor={0.05}
-            backgroundColor={'black'}
         />
 
         <Introduce />

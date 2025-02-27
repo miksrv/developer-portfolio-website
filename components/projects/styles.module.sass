@@ -1,4 +1,4 @@
-@import ../../styles/variables
+@use '../../styles/variables' as variables
 
 .projectsContainer
     display: flex
@@ -6,7 +6,7 @@
     gap: 15px
     margin: 20px auto
 
-    @media screen and (max-width: $mobileMaxWidth)
+    @media screen and (max-width: variables.$mobileMaxWidth)
         flex-direction: row
         flex-wrap: wrap
 
@@ -17,7 +17,7 @@
         padding: 10px
         border-radius: var(--border-radius)
 
-        @media screen and (max-width: $mobileMaxWidth)
+        @media screen and (max-width: variables.$mobileMaxWidth)
             flex-direction: row
             flex-basis: calc(50% - 8px)
             width: calc(50% - 8px)
@@ -32,7 +32,7 @@
             transition: all 1.5s ease
             margin-bottom: -5px
 
-            @media screen and (max-width: $mobileMaxWidth)
+            @media screen and (max-width: variables.$mobileMaxWidth)
                 margin: 0 auto
                 width: 100%
                 height: 100%
@@ -44,7 +44,7 @@
             justify-content: space-between
             flex-direction: column
 
-            @media screen and (max-width: $mobileMaxWidth)
+            @media screen and (max-width: variables.$mobileMaxWidth)
                 display: none
 
             h2
@@ -70,7 +70,7 @@
                 transition: color 0.25s linear
                 color: var(--text-color-secondary)
 
-            @media screen and (max-width: $mobileMaxWidth)
+            @media screen and (max-width: variables.$mobileMaxWidth)
                 display: none
 
         &:hover
