@@ -1,10 +1,9 @@
 <a id="top"></a>
 
-This project provides a fully customizable, modern developer portfolio template built with React and Next.js. Perfect for showcasing your skills, experience, and projects in a clean and professional design. Whether you’re a developer looking to create a personal brand or a freelancer needing a fast, responsive portfolio, this template offers everything you need.
-
+A modern and flexible portfolio template for React and Next.js developers. Perfect for showcasing your skills, experience, and projects. Clean, professional design, easy customization, and fast loading — everything you need to stand out from the crowd. A great choice for both personal brands and freelancers who value a convenient and stylish portfolio.
 <!-- PROJECT TITLE -->
 <div align="center">
-  <img src="https://miksoft.pro/avatar.jpg" alt="Project Logo" width="150" height="200" />
+  <img src="./docs/intro.gif" alt="Project Logo"  />
   <h3>Create Your Personal Developer Portfolio</h3>
   <a href="CHANGELOG.md" target="_blank">Changelog</a>
   ·

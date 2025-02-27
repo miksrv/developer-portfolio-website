@@ -30,11 +30,11 @@ const MainPage: React.FC = () => (
             }}
         />
 
-            <Introduce />
+        <Introduce />
 
-            <About />
+        <About />
 
-            <GithubActivity />
+        <GithubActivity />
 
         <section className={'footerLinks'}>
             <Link

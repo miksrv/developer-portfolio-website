@@ -1,5 +1,18 @@
 # developer-portfolio-website
 
+## 1.1.10
+
+### Patch Changes
+
+- Migrate from 18 to 19 React
+- Updated all UI libraries
+- Improved UI SASS files
+- Implemented PageTransition component
+- Added StarField for all pages
+- Improved StarField component
+- Updated README.md
+- Removed CI/CD Release Action
+
 ## 1.1.9
 
 ### Patch Changes
