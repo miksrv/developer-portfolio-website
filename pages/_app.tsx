@@ -1,11 +1,14 @@
 import React from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 import '@/styles/theme.css'
 import '@/styles/globals.sass'
 
 import Header from '@/components/header'
+import PageTransition from '@/components/page-transition'
+import StarField from '@/components/star-field'
 
 const App = ({ Component, pageProps }: AppProps) => (
     <>
@@ -57,8 +60,17 @@ const App = ({ Component, pageProps }: AppProps) => (
 
         <Header />
 
+        <StarField
+            starCount={1000}
+            starColor={[255, 255, 255]}
+            speedFactor={0.05}
+            backgroundColor={'black'}
+        />
+
         <main>
-            <Component {...pageProps} />
+            <PageTransition>
+                <Component {...pageProps} />
+            </PageTransition>
         </main>
 
         {process.env.NODE_ENV === 'production' && (

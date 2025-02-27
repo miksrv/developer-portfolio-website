@@ -1,54 +1,79 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useCallback, useEffect, useRef } from 'react'
 
+/**
+ * Props for the StarField component.
+ */
 interface StarFieldProps {
+    /**
+     * Factor to control the speed of the star field animation.
+     * @default 0.05
+     */
     speedFactor?: number
+
+    /**
+     * Background color of the star field.
+     * @default 'black'
+     */
     backgroundColor?: string
+
+    /**
+     * RGB color of the stars.
+     * @default [255, 255, 255]
+     */
     starColor?: [number, number, number]
+
+    /**
+     * Number of stars to render in the star field.
+     * @default 5000
+     */
     starCount?: number
 }
 
-export const StarField: React.FC<StarFieldProps> = (props) => {
-    const { speedFactor = 0.05, backgroundColor = 'black', starColor = [255, 255, 255], starCount = 5000 } = props
+export const StarField: React.FC<StarFieldProps> = ({
+    speedFactor = 0.05,
+    backgroundColor = 'black',
+    starColor = [255, 255, 255],
+    starCount = 5000
+}) => {
     const canvasRef = useRef<HTMLCanvasElement>(null)
 
-    useEffect(() => {
+    const handleResize = useCallback(() => {
         const canvas = canvasRef.current
         if (canvas) {
             canvas.width = window.innerWidth
             canvas.height = window.innerHeight
         }
-
-        const handleResize = () => {
-            if (canvas) {
-                canvas.width = window.innerWidth
-                canvas.height = window.innerHeight
-            }
-        }
-
-        window.addEventListener('resize', handleResize)
-        return () => {
-            window.removeEventListener('resize', handleResize)
-        }
     }, [])
 
     useEffect(() => {
-        const canvas = document.getElementById('starfield') as HTMLCanvasElement
-        const canvasRendering = canvas.getContext('2d')
-        let w = window.innerWidth
-        let h = window.innerHeight
+        const canvas = canvasRef.current
+        if (canvas) {
+            handleResize()
+            window.addEventListener('resize', handleResize)
+        }
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [handleResize])
+
+    useEffect(() => {
+        const canvas = canvasRef.current
+        const canvasRendering = canvas?.getContext('2d')
+        const w = window.innerWidth
+        const h = window.innerHeight
+
+        if (!canvas) {
+            return
+        }
 
         if (canvasRendering) {
             const makeStars = (count: number) => {
-                const out = []
-                for (let i = 0; i < count; i++) {
-                    const s = {
-                        x: Math.random() * 1600 - 800,
-                        y: Math.random() * 900 - 450,
-                        z: Math.random() * 1000
-                    }
-                    out.push(s)
-                }
-                return out
+                return Array.from({ length: count }, () => ({
+                    x: Math.random() * 1600 - 800,
+                    y: Math.random() * 900 - 450,
+                    z: Math.random() * 1000
+                }))
             }
 
             const stars = makeStars(starCount)
@@ -64,22 +89,16 @@ export const StarField: React.FC<StarFieldProps> = (props) => {
             }
 
             const moveStars = (distance: number) => {
-                const count = stars.length
-                for (let i = 0; i < count; i++) {
-                    const s = stars[i]
-                    s.z -= distance
-                    while (s.z <= 1) {
-                        s.z += 1000
+                stars.forEach((star) => {
+                    star.z -= distance
+                    if (star.z <= 1) {
+                        star.z += 1000
                     }
-                }
+                })
             }
 
-            let prevTime: number
             const tick = (time: number) => {
-                if (prevTime === undefined) {
-                    prevTime = time
-                }
-                const elapsed = time - prevTime
+                const elapsed = time - (prevTime || time)
                 prevTime = time
 
                 moveStars(elapsed * speedFactor)
@@ -88,33 +107,22 @@ export const StarField: React.FC<StarFieldProps> = (props) => {
                 const cx = w / 2
                 const cy = h / 2
 
-                const count = stars.length
-                for (let i = 0; i < count; i++) {
-                    const star = stars[i]
+                stars.forEach((star) => {
                     const x = cx + star.x / (star.z * 0.001)
                     const y = cy + star.y / (star.z * 0.001)
 
-                    if (x < 0 || x >= w || y < 0 || y >= h) {
-                        continue
+                    if (x >= 0 && x < w && y >= 0 && y < h) {
+                        const d = star.z / 1000.0
+                        const b = 1 - d * d
+                        putPixel(x, y, b)
                     }
-
-                    const d = star.z / 1000.0
-                    const b = 1 - d * d
-
-                    putPixel(x, y, b)
-                }
+                })
 
                 requestAnimationFrame(tick)
             }
 
+            let prevTime: number
             requestAnimationFrame(tick)
-
-            window.addEventListener('resize', function () {
-                w = window.innerWidth
-                h = window.innerHeight
-                canvas.width = w
-                canvas.height = h
-            })
         } else {
             console.error('Could not get 2d context from canvas element')
         }
