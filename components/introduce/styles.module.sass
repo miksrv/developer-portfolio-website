@@ -1,4 +1,4 @@
-@import ../../styles/variables
+@use '../../styles/variables' as variables
 
 $avatarDesktopWidth: 45%
 
@@ -16,7 +16,7 @@ $avatarDesktopWidth: 45%
             border-radius: var(--border-radius)
             box-shadow: var(--box-shadow)
 
-        @media screen and (max-width: $mobileMaxWidth)
+        @media screen and (max-width: variables.$mobileMaxWidth)
             margin-bottom: 20px
 
     .infoContainer
@@ -26,7 +26,7 @@ $avatarDesktopWidth: 45%
         flex-direction: column
         justify-content: space-between
 
-        @media screen and (max-width: $mobileMaxWidth)
+        @media screen and (max-width: variables.$mobileMaxWidth)
             gap: 20px
 
         .header
@@ -81,7 +81,7 @@ $avatarDesktopWidth: 45%
                     width: 200px
                     color: var(--text-color-third)
 
-                    @media screen and (max-width: $mobileMaxWidth)
+                    @media screen and (max-width: variables.$mobileMaxWidth)
                         width: 150px
 
         .description
@@ -91,6 +91,6 @@ $avatarDesktopWidth: 45%
     .avatarContainer, .infoContainer
         position: relative
 
-        @media screen and (max-width: $mobileMaxWidth)
+        @media screen and (max-width: variables.$mobileMaxWidth)
             flex-basis: 100%
             width: 100%

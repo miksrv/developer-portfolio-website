@@ -1,4 +1,4 @@
-@import ../../styles/variables
+@use '../../styles/variables' as variables
 
 .aboutSection
     margin: 40px auto 0
@@ -23,7 +23,7 @@
         border-radius: var(--border-radius)
         box-shadow: var(--box-shadow)
 
-    @media screen and (max-width: $mobileMaxWidth)
+    @media screen and (max-width: variables.$mobileMaxWidth)
         display: block
 
         img

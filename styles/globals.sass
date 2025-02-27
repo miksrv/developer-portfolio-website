@@ -1,4 +1,4 @@
-@import variables
+@use 'variables' as variables
 
 *
     box-sizing: border-box
@@ -27,7 +27,7 @@ body
         position: relative
         z-index: 2
 
-        @media screen and (max-width: $mobileMaxWidth)
+        @media screen and (max-width: variables.$mobileMaxWidth)
             padding: 0 10px
 
     ul
