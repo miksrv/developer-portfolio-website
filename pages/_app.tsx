@@ -1,13 +1,15 @@
 import React from 'react'
 import { AppProps } from 'next/app'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
 import '@/styles/theme.css'
 import '@/styles/globals.sass'
 
 import Header from '@/components/header'
-import PageTransition from '@/components/page-transition'
 import StarField from '@/components/star-field'
+
+const PageTransition = dynamic(() => import('@/components/page-transition'), { ssr: false })
 
 const App = ({ Component, pageProps }: AppProps) => (
     <>

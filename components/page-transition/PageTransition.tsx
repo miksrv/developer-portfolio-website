@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 
@@ -12,8 +12,15 @@ interface PageTransitionProps {
     children: ReactNode
 }
 
+const useForceRerender = () => {
+    const [_, setTick] = useState(0)
+    useEffect(() => setTick((t) => t + 1), [])
+}
+
 export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
     const pathname = usePathname()
+
+    useForceRerender()
 
     return (
         <AnimatePresence mode={'wait'}>
