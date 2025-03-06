@@ -2,8 +2,6 @@ import React, { ReactNode } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 
-import usePreserveStyles from '@/utils/usePreserveStyles'
-
 const variants = {
     initial: { opacity: 0, y: 50 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.7 } },
@@ -16,8 +14,6 @@ interface PageTransitionProps {
 
 export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
     const pathname = usePathname()
-
-    usePreserveStyles()
 
     return (
         <AnimatePresence mode={'wait'}>
