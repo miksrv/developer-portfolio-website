@@ -22,7 +22,6 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "export": "next build && next export",
         "start": "next start",
         "test": "jest",
         "test:coverage": "jest --coverage",
@@ -34,6 +33,7 @@
     "dependencies": {
         "dayjs": "^1.11.13",
         "framer-motion": "^12.4.7",
+        "mini-css-extract-plugin": "^2.9.2",
         "next": "15.2.0",
         "next-seo": "^6.6.0",
         "react": "19.0.0",
