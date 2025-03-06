@@ -3,8 +3,8 @@ import { useEffect } from 'react'
 const usePreserveStyles = () => {
     useEffect(() => {
         const styles = document.querySelectorAll<HTMLStyleElement>('style[data-n-href]')
-        const clonedStyles: HTMLStyleElement[] = Array.from(styles).map((style) =>
-            style.cloneNode(true) as HTMLStyleElement
+        const clonedStyles: HTMLStyleElement[] = Array.from(styles).map(
+            (style) => style.cloneNode(true) as HTMLStyleElement
         )
 
         return () => {
