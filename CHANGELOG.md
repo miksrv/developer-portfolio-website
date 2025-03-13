@@ -1,5 +1,15 @@
 # developer-portfolio-website
 
+## 1.1.11
+
+### Patch Changes
+
+- Improved CSS styles
+- Replaced main photo
+- Updated UI libraries
+- Added animation for each section on pages
+- Improved PageTransition component
+
 ## 1.1.10
 
 ### Patch Changes
