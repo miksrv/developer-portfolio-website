@@ -6,7 +6,6 @@ import '@/styles/theme.css'
 import '@/styles/globals.sass'
 
 import Header from '@/components/header'
-import PageTransition from '@/components/page-transition'
 import StarField from '@/components/star-field'
 
 const App = ({ Component, pageProps }: AppProps) => (
@@ -67,9 +66,7 @@ const App = ({ Component, pageProps }: AppProps) => (
         />
 
         <main>
-            <PageTransition>
-                <Component {...pageProps} />
-            </PageTransition>
+            <Component {...pageProps} />
         </main>
 
         {process.env.NODE_ENV === 'production' && (
