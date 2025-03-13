@@ -7,9 +7,8 @@ import styles from './styles.module.sass'
 import Icon from '@/components/icon'
 import { IconTypes } from '@/components/icon/types'
 import { experience, ExperienceType } from '@/data/experience'
-import avatarPic from '@/public/avatar.jpg'
+import avatarPic from '@/public/avatar.jpeg'
 import { update } from '@/update'
-import { cn } from '@/utils/tools'
 
 type FactType = {
     title?: string
@@ -109,7 +108,7 @@ export const Introduce: React.FC = () => {
     }, [])
 
     return (
-        <section className={cn(styles.introduceSection)}>
+        <section className={styles.introduceSection}>
             <div className={styles.avatarContainer}>
                 <Image
                     src={avatarPic}

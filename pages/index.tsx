@@ -7,6 +7,7 @@ import About from '@/components/about'
 import Icon from '@/components/icon'
 import { iconNames } from '@/components/icon/types'
 import Introduce from '@/components/introduce'
+import PageTransition from '@/components/page-transition'
 
 const GithubActivity = dynamic(() => import('@/components/github-activity'), { ssr: false })
 
@@ -30,21 +31,23 @@ const MainPage: React.FC = () => (
             }}
         />
 
-        <Introduce />
+        <PageTransition>
+            <Introduce />
 
-        <About />
+            <About />
 
-        <GithubActivity />
+            <GithubActivity />
 
-        <section className={'footerLinks'}>
-            <Link
-                href={'/projects'}
-                title={'View my pet projects'}
-            >
-                {'Projects'}
-                <Icon name={iconNames.right} />
-            </Link>
-        </section>
+            <section className={'footerLinks'}>
+                <Link
+                    href={'/projects'}
+                    title={'View my pet projects'}
+                >
+                    {'Projects'}
+                    <Icon name={iconNames.right} />
+                </Link>
+            </section>
+        </PageTransition>
     </>
 )
 

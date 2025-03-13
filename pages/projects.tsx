@@ -4,6 +4,7 @@ import { NextSeo } from 'next-seo'
 
 import Icon from '@/components/icon'
 import { iconNames } from '@/components/icon/types'
+import PageTransition from '@/components/page-transition'
 import Projects from '@/components/projects'
 
 const ProjectsPage: React.FC = () => (
@@ -26,34 +27,38 @@ const ProjectsPage: React.FC = () => (
             }}
         />
 
-        <section>
-            <h1 className={'pageTitle'}>{'My projects'}</h1>
-            <p>
-                {
-                    'This section showcases a selection of my personal projects, which I actively maintain and develop. As a passionate software engineer with a deep interest in both astronomy and programming, these projects reflect the intersection of my hobbies and technical expertise. The majority of these applications are built using modern web technologies like Next.js and React.js, designed to be scalable, efficient, and user-friendly. Each project represents my commitment to continuous learning and experimentation with new tools and frameworks. Explore the projects below to see how my interests shape my development process.'
-                }
-            </p>
-        </section>
+        <PageTransition>
+            <section>
+                <h1 className={'pageTitle'}>{'My projects'}</h1>
+                <p>
+                    {
+                        'This section showcases a selection of my personal projects, which I actively maintain and develop. As a passionate software engineer with a deep interest in both astronomy and programming, these projects reflect the intersection of my hobbies and technical expertise. The majority of these applications are built using modern web technologies like Next.js and React.js, designed to be scalable, efficient, and user-friendly. Each project represents my commitment to continuous learning and experimentation with new tools and frameworks. Explore the projects below to see how my interests shape my development process.'
+                    }
+                </p>
+            </section>
+        </PageTransition>
 
         <Projects />
 
-        <section className={'footerLinks'}>
-            <Link
-                href={'/'}
-                title={'View about me'}
-            >
-                <Icon name={iconNames.left} />
-                {'About me'}
-            </Link>
+        <PageTransition>
+            <section className={'footerLinks'}>
+                <Link
+                    href={'/'}
+                    title={'View about me'}
+                >
+                    <Icon name={iconNames.left} />
+                    {'About me'}
+                </Link>
 
-            <Link
-                href={'/experience'}
-                title={'View my experience'}
-            >
-                {'Experience'}
-                <Icon name={iconNames.right} />
-            </Link>
-        </section>
+                <Link
+                    href={'/experience'}
+                    title={'View my experience'}
+                >
+                    {'Experience'}
+                    <Icon name={iconNames.right} />
+                </Link>
+            </section>
+        </PageTransition>
     </>
 )
 
