@@ -7,8 +7,8 @@ const parentVariants = {
     animate: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.3, // Интервал между анимациями вложенных компонентов
-            delayChildren: 0.2 // Задержка перед запуском анимации первого компонента
+            staggerChildren: 0.3,
+            delayChildren: 0.2
         }
     },
     exit: { opacity: 0 }
@@ -27,12 +27,12 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
     const pathname = usePathname()
 
     return (
-        <AnimatePresence mode='wait'>
+        <AnimatePresence mode={'wait'}>
             <motion.div
                 key={pathname}
-                initial='initial'
-                animate='animate'
-                exit='exit'
+                initial={'initial'}
+                animate={'animate'}
+                exit={'exit'}
                 variants={parentVariants}
             >
                 {React.Children.map(children, (child, index) => (
