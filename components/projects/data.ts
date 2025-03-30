@@ -1,8 +1,8 @@
 import { StaticImageData } from 'next/image'
 
 import geometki from './images/geometki.jpg'
+import space from './images/lookatstars.jpg'
 import meteo from './images/meteostation.jpg'
-import space from './images/nearspace.jpg'
 import astro from './images/observatory.jpg'
 
 type ProjectType = {
@@ -37,7 +37,7 @@ export const data: ProjectType[] = [
     {
         image: space,
         title: 'Astronomical Project',
-        link: 'https://t.me/nearspace',
+        link: 'https://t.me/look_at_stars',
         description:
             'Focused on making astronomy accessible, this project shares engaging, science-based content via Telegram. It promotes space knowledge through articles, event updates, and visuals, making complex topics easy to understand. The goal is to inspire curiosity and contribute to the public’s appreciation for space and science.'
     }
