@@ -27,8 +27,8 @@ A modern and flexible portfolio template for React and Next.js developers. Perfe
 [![Issues][issues-badge]][issues-url]
 [![MIT License][license-badge]][license-url]
 
-[![Checks](https://github.com/miksrv/nextjs-vcard-project/actions/workflows/checks.yml/badge.svg)](https://github.com/miksrv/nextjs-vcard-project/actions/workflows/checks.yml)
-[![Deployment](https://github.com/miksrv/nextjs-vcard-project/actions/workflows/deploy.yml/badge.svg)](https://github.com/miksrv/nextjs-vcard-project/actions/workflows/deploy.yml)
+[![Checks](https://github.com/miksrv/developer-portfolio-website/actions/workflows/checks.yml/badge.svg)](https://github.com/miksrv/developer-portfolio-website/actions/workflows/checks.yml)
+[![Deployment](https://github.com/miksrv/developer-portfolio-website/actions/workflows/deploy.yml/badge.svg)](https://github.com/miksrv/developer-portfolio-website/actions/workflows/deploy.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=miksrv_developer-portfolio-website&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=miksrv_developer-portfolio-website)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=miksrv_developer-portfolio-website&metric=coverage)](https://sonarcloud.io/summary/new_code?id=miksrv_developer-portfolio-website)
 
