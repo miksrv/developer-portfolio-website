@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image'
 
+import asteroid from './images/asteroid.jpg'
 import geometki from './images/geometki.jpg'
 import space from './images/lookatstars.jpg'
 import meteo from './images/meteostation.jpg'
@@ -33,6 +34,13 @@ export const data: ProjectType[] = [
         link: 'https://meteo.miksoft.pro/',
         description:
             'An Arduino-based weather station that collects and uploads real-time data to a remote server. It features an API for accessing current and historical weather data, as well as forecasts. This station supports the observatory by providing environmental data, ensuring accurate weather monitoring for optimal operations.'
+    },
+    {
+        image: asteroid,
+        title: 'Asteroid Monitoring',
+        link: 'https://asteroid.miksoft.pro/',
+        description:
+            'Asteroid Monitoring is a system that fetches and displays real-time data about asteroids approaching Earth using the NASA NeoWS API. The application provides detailed information on each object, including: Time of close approach, Distance from Earth, Relative velocity, Estimated size range, Orbit visualization. It is designed to be user-friendly and informative, making complex data accessible to everyone.'
     },
     {
         image: space,
