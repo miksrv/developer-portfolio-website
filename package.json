@@ -4,7 +4,13 @@
     "description": "Fully customizable, modern developer portfolio template built with Typescript, React and Next.js",
     "author": "Misha Topchilo <miksoft.tm@gmail.com>",
     "license": "MIT",
-    "keywords": ["software developer", "portfolio", "typescript", "next.js", "react"],
+    "keywords": [
+        "software developer",
+        "portfolio",
+        "typescript",
+        "next.js",
+        "react"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/miksrv/developer-portfolio-website.git"
