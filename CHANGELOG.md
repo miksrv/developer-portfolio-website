@@ -1,4 +1,15 @@
-# developer-portfolio-website
+# Changelog
+
+## 1.1.12
+
+### Patch Changes
+
+- Added new one project - `Asteroid Monitoring`
+- Updated yarn version from `4.5.0` to `4.8.1`
+- Updated all UI libraries
+- Improved package.json
+- Fixed App meta tags for dark mode
+- Improved site manifest
 
 ## 1.1.11
 

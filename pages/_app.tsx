@@ -28,6 +28,10 @@ const App = ({ Component, pageProps }: AppProps) => (
                 content={'#1b1b1b'}
                 media={'(prefers-color-scheme: dark)'}
             />
+            <meta
+                name={'theme-color'}
+                content={'#1b1b1b'}
+            />
             <link
                 rel={'apple-touch-icon'}
                 sizes={'180x180'}
