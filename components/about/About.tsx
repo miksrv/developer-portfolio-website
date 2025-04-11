@@ -24,7 +24,7 @@ export const About: React.FC = () => (
             <div>
                 <p>
                     {
-                        'Programming is both my profession and my hobby, which is why I truly enjoy my work as a developer. With over 14 years of experience, I have the skills to tackle a wide range of challenges, from building interactive web applications to leading development teams.'
+                        'Programming is both my profession and my hobby, which is why I truly enjoy my work as a developer. With over 19+ years of experience, I have the skills to tackle a wide range of challenges, from building interactive web applications to leading development teams.'
                     }
                 </p>
                 <p>
