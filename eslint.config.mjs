@@ -50,9 +50,7 @@ export default [
             '**/.next/**',
             '**/out/**',
             '**/next-env.d.ts',
-            '**/middleware.ts',
-            // Scripts
-            '**/utils/generateSitemap.js'
+            '**/middleware.ts'
         ]
     },
 

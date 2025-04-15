@@ -21,11 +21,10 @@
     },
     "scripts": {
         "dev": "next dev",
-        "build": "next build && npm run generate-sitemap",
+        "build": "next build",
         "start": "next start",
         "test": "jest",
         "test:coverage": "jest --coverage",
-        "generate-sitemap": "node utils/generateSitemap.js",
         "eslint:check": "eslint",
         "eslint:fix": "eslint --fix",
         "prettier:check": "prettier --check .",
