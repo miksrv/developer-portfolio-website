@@ -1,6 +1,6 @@
 {
     "name": "developer-portfolio-website",
-    "version": "1.1.12",
+    "version": "1.1.13",
     "description": "Fully customizable, modern developer portfolio template built with Typescript, React and Next.js",
     "author": "Misha Topchilo <miksoft.tm@gmail.com>",
     "license": "MIT",
@@ -21,10 +21,11 @@
     },
     "scripts": {
         "dev": "next dev",
-        "build": "next build",
+        "build": "next build && npm run generate-sitemap",
         "start": "next start",
         "test": "jest",
         "test:coverage": "jest --coverage",
+        "generate-sitemap": "node utils/generateSitemap.js",
         "eslint:check": "eslint",
         "eslint:fix": "eslint --fix",
         "prettier:check": "prettier --check .",

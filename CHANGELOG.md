@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.1.13
+
+### Patch Changes
+
+- Added robots.txt
+- Implemented script for generating sitemap.xml
+- Removed unused webpack section from next.config.js
+- Implemented 404 page
+- Improved global styles
+- Improved ESLint ignore config (`eslint.config.mjs`)
+
 ## 1.1.12
 
 ### Patch Changes

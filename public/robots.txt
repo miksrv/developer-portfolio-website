@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Prohibit indexing of authorization pages
+# Disallow: /auth
+# Disallow: /en/auth
+
+# Specify the main mirror of the site
+Host: https://miksoft.pro
+
+# Sitemap for accelerated indexing
+# Sitemap: https://miksoft.pro/sitemap.xml

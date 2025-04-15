@@ -48,8 +48,11 @@ export default [
             '**/next-i18next.config.js',
             '**/next.config.js',
             '**/.next/**',
+            '**/out/**',
             '**/next-env.d.ts',
-            '**/middleware.ts'
+            '**/middleware.ts',
+            // Scripts
+            '**/utils/generateSitemap.js'
         ]
     },
 
