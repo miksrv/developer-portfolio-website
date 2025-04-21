@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.14
+
+### Patch Changes
+
+- Added Timezone for an Introduce section
+- Updated UI libraries
+- Added sitemap.xml
+- Updated .htaccess
+
 ## 1.1.13
 
 ### Patch Changes
