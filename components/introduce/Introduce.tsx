@@ -73,6 +73,10 @@ export const Introduce: React.FC = () => {
             value: 'California, USA'
         },
         {
+            title: 'Timezone',
+            value: 'Pacific, UTC-07:00'
+        },
+        {
             title: 'Updated',
             value: dateUpdate
         }
