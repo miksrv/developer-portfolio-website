@@ -1681,12 +1681,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:19.1.7":
-  version: 19.1.7
-  resolution: "@types/react@npm:19.1.7"
+"@types/react@npm:19.1.8":
+  version: 19.1.8
+  resolution: "@types/react@npm:19.1.8"
   dependencies:
     csstype: "npm:^3.0.2"
-  checksum: 10c0/3bb8fb865debad4328b0d623e1c669f2ee90e9302638a64e65a0a1c61efca4f4ef91f58b55ff94075358c190d80bb8472a5823c6901d8cdc9009dd436a1dcab1
+  checksum: 10c0/4908772be6dc941df276931efeb0e781777fa76e4d5d12ff9f75eb2dcc2db3065e0100efde16fde562c5bafa310cc8f50c1ee40a22640459e066e72cd342143e
   languageName: node
   linkType: hard
 
@@ -3090,7 +3090,7 @@ __metadata:
     "@types/identity-obj-proxy": "npm:^3.0.2"
     "@types/jest": "npm:^29.5.14"
     "@types/node": "npm:22.15.31"
-    "@types/react": "npm:19.1.7"
+    "@types/react": "npm:19.1.8"
     "@types/react-dom": "npm:19.1.6"
     dayjs: "npm:^1.11.13"
     eslint: "npm:^9.28.0"
@@ -3111,7 +3111,7 @@ __metadata:
     react: "npm:19.1.0"
     react-dom: "npm:19.1.0"
     react-github-calendar: "npm:^4.5.7"
-    sass: "npm:^1.89.1"
+    sass: "npm:^1.89.2"
     ts-jest: "npm:^29.3.4"
     ts-node: "npm:^10.9.2"
     typescript: "npm:5.8.3"
@@ -7088,9 +7088,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.89.1":
-  version: 1.89.1
-  resolution: "sass@npm:1.89.1"
+"sass@npm:^1.89.2":
+  version: 1.89.2
+  resolution: "sass@npm:1.89.2"
   dependencies:
     "@parcel/watcher": "npm:^2.4.1"
     chokidar: "npm:^4.0.0"
@@ -7101,7 +7101,7 @@ __metadata:
       optional: true
   bin:
     sass: sass.js
-  checksum: 10c0/4406c441f71f5e0ec056345e6091cef51fd1786dac6e5b3eb1e87df464c40b3278219cc51df98309c36794503787ab0fe88fd45f2b0464f22000b68e755883ee
+  checksum: 10c0/752ccc7581b0c6395f63918116c20924e99943a86d79e94f5c4a0d41b1e981fe1f0ecd1ee82fff21496f81dbc91f68fb35a498166562ec8ec53e7aad7c3dbd9d
   languageName: node
   linkType: hard
 
