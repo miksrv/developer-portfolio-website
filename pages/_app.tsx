@@ -1,12 +1,13 @@
 import React from 'react'
+
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import '@/styles/theme.css'
-import '@/styles/globals.sass'
-
 import Header from '@/components/header'
 import StarField from '@/components/star-field'
+
+import '@/styles/theme.css'
+import '@/styles/globals.sass'
 
 const App = ({ Component, pageProps }: AppProps) => (
     <>

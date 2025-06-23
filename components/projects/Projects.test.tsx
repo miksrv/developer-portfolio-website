@@ -1,15 +1,17 @@
 import React from 'react'
 
-import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
 
 import Projects from './Projects'
-import styles from './styles.module.sass'
 
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
+
+import styles from './styles.module.sass'
 
 jest.mock('next/image', () => ({
     __esModule: true,
     default: jest.fn(({ src, alt }) => (
+        // eslint-disable-next-line next/no-img-element
         <img
             src={src}
             alt={alt}

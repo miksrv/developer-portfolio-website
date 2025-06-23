@@ -3509,6 +3509,7 @@ __metadata:
     next-seo: "npm:^6.8.0"
     prettier: "npm:^3.6.0"
     react: "npm:19.1.0"
+    react-activity-calendar: "npm:^2.7.12"
     react-dom: "npm:19.1.0"
     react-github-calendar: "npm:^4.5.7"
     sass: "npm:^1.89.2"
@@ -7248,7 +7249,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-activity-calendar@npm:^2.7.11":
+"react-activity-calendar@npm:^2.7.11, react-activity-calendar@npm:^2.7.12":
   version: 2.7.12
   resolution: "react-activity-calendar@npm:2.7.12"
   dependencies:

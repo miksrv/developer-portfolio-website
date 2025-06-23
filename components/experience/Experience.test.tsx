@@ -1,14 +1,15 @@
 import React from 'react'
 
-import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
+
+import { experience } from '@/data/experience'
 
 import Experience from './Experience'
 
-import { experience } from '@/data/experience'
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
 
 jest.mock('@/utils/date', () => ({
-    formatDate: jest.fn((date, format) => `${date}-${format}`),
+    formatDate: jest.fn((date: string, format: string) => `${date}-${format}`),
     formatPeriod: jest.fn(() => 'mocked period')
 }))
 

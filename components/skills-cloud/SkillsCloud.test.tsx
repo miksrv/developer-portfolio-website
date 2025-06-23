@@ -1,11 +1,12 @@
 import React from 'react'
 
-import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
 
 import SkillsCloud from './SkillsCloud'
-import styles from './SkillsCloud.module.css'
 
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
+
+import styles from './SkillsCloud.module.css'
 
 jest.mock('@/data/skills', () => ({
     Frontend: {
@@ -50,12 +51,12 @@ describe('SkillsCloud Component', () => {
     it('renders the correct number of skills', () => {
         render(<SkillsCloud />)
         const skillItems = screen.getAllByRole('listitem')
-        expect(skillItems.length).toBe(8) // 2 навыка в каждом разделе (Frontend, Backend, Testing, DevOps)
+        expect(skillItems).toHaveLength(8) // 2 skills in each section (Frontend, Backend, Testing, DevOps)
     })
 
     it('applies correct styles to the skills list', () => {
         const { container } = render(<SkillsCloud />)
-        const tagsCloud = container.querySelector(`.${styles.tagsCloud}`)
+        const tagsCloud = container.querySelector(`.${styles.tagsCloud as string}`)
         expect(tagsCloud).toBeInTheDocument()
     })
 })

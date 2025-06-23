@@ -1,14 +1,16 @@
 import React from 'react'
+
 import Image from 'next/image'
 import Link from 'next/link'
-
-import { data } from './data'
-import styles from './styles.module.sass'
 
 import Icon from '@/components/icon'
 import { iconNames } from '@/components/icon/types'
 import PageTransition from '@/components/page-transition'
 import { cn } from '@/utils/tools'
+
+import { data } from './data'
+
+import styles from './styles.module.sass'
 
 const Projects: React.FC = () => (
     <section className={styles.projectsContainer}>

@@ -1,6 +1,7 @@
 <a id="top"></a>
 
 A modern and flexible portfolio template for React and Next.js developers. Perfect for showcasing your skills, experience, and projects. Clean, professional design, easy customization, and fast loading — everything you need to stand out from the crowd. A great choice for both personal brands and freelancers who value a convenient and stylish portfolio.
+
 <!-- PROJECT TITLE -->
 <div align="center">
   <img src="./docs/intro.gif" alt="Project Logo"  />
@@ -37,6 +38,7 @@ A modern and flexible portfolio template for React and Next.js developers. Perfe
 ---
 
 <!-- TABLE OF CONTENTS -->
+
 ### Table of Contents
 
 - [Key Features](#key-features)
@@ -48,7 +50,9 @@ A modern and flexible portfolio template for React and Next.js developers. Perfe
 - [Contact](#contact)
 
 <!-- KEY FEATURES -->
+
 ### Key Features:
+
 - **Built with React and Next.js**: Fast, scalable, and SEO-friendly framework.
 - **Customizable Design**: Easily adjust the layout, colors, and sections to suit your needs.
 - **Responsive Layout**: Optimized for all screen sizes, ensuring a seamless experience on any device.
@@ -89,6 +93,7 @@ The Arduino Weather Station project leverages a wide range of technologies acros
 </p>
 
 <!-- ABOUT OF PROJECT -->
+
 ### About of Project
 
 This project is a complete solution for building a high-quality developer portfolio website, perfect for showcasing your skills, projects, and experiences in a sleek and modern design. Built with React and Next.js, this template is optimized for performance and SEO, ensuring that your portfolio stands out not only in appearance but also in search engine visibility. It’s fully customizable, allowing you to adapt the design, structure, and content to match your personal branding or freelance work.
@@ -115,22 +120,22 @@ Feel free to use this repository for any purpose related to the development of v
 
 2. **Clone the Repository**: Clone [this repository](https://github.com/miksrv/developer-portfolio-website.git) to your local machine:
 
-   ```bash
-   git clone https://github.com/miksrv/developer-portfolio-website.git
-   ```
+    ```bash
+    git clone https://github.com/miksrv/developer-portfolio-website.git
+    ```
 
 3. **Install Dependencies**: Navigate to the project directory and install all necessary dependencies:
 
-   ```bash
-   cd developer-portfolio-website
-   yarn install
-   ```
+    ```bash
+    cd developer-portfolio-website
+    yarn install
+    ```
 
 4. **Run the Development Server**: After the installation is complete, start the local development server:
 
-   ```bash
-   yarn dev
-   ```
+    ```bash
+    yarn dev
+    ```
 
 5. **Access the Application**: Open your browser and go to [http://localhost:3000/](http://localhost:3000/) to view the portfolio.
 
@@ -178,6 +183,7 @@ Once your pull request has been approved and merged, follow these steps to creat
     - Use an appropriate versioning convention (e.g., `v1.0.1`, `v1.1.0`).
 
 3. **Create a new tag** for the release:
+
     ```bash
     git tag -a vX.X.X -m "Release notes for version X.X.X"
     ```
@@ -185,6 +191,7 @@ Once your pull request has been approved and merged, follow these steps to creat
     - Write detailed release notes in the tag message, highlighting key changes or new features.
 
 4. **Push the tag and changes** to the repository:
+
     ```bash
     git push origin vX.X.X
     ```
@@ -208,6 +215,7 @@ Misha - [miksoft.pro](https://miksoft.pro)
 </p>
 
 <!-- MARKDOWN VARIABLES (LINKS, IMAGES) -->
+
 [contributors-badge]: https://img.shields.io/github/contributors/miksrv/developer-portfolio-website.svg?style=for-the-badge
 [contributors-url]: https://github.com/miksrv/developer-portfolio-website/graphs/contributors
 [forks-badge]: https://img.shields.io/github/forks/miksrv/developer-portfolio-website.svg?style=for-the-badge
@@ -218,7 +226,6 @@ Misha - [miksoft.pro](https://miksoft.pro)
 [issues-url]: https://github.com/miksrv/developer-portfolio-website/issues
 [license-badge]: https://img.shields.io/github/license/miksrv/developer-portfolio-website.svg?style=for-the-badge
 [license-url]: https://github.com/miksrv/developer-portfolio-website/blob/master/LICENSE.txt
-
 [js-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000
 [js-url]: https://www.javascript.com/
 [ts-badge]: https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff

@@ -1,21 +1,20 @@
 import React from 'react'
 
-import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
 
 import About from './About'
 
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
 
 jest.mock('next/image', () => ({
     __esModule: true,
-    default: (props: any) => {
-        return (
-            <img
-                alt=''
-                {...props}
-            />
-        )
-    }
+    default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+        // eslint-disable-next-line next/no-img-element
+        <img
+            alt=''
+            {...props}
+        />
+    )
 }))
 
 jest.mock('./photo.jpg', () => ({

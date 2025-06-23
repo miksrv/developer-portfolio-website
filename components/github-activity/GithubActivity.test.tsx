@@ -1,21 +1,19 @@
 import React from 'react'
 
-import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
 
 import GithubActivity from './GithubActivity'
 
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
 
 jest.mock('react-github-calendar', () => ({
     __esModule: true,
-    default: (props: any) => {
-        return (
-            <div
-                data-testid='github-calendar'
-                {...props}
-            />
-        )
-    }
+    default: (props: React.ReactElement) => (
+        <div
+            data-testid='github-calendar'
+            {...props}
+        />
+    )
 }))
 
 describe('GithubActivity Component', () => {

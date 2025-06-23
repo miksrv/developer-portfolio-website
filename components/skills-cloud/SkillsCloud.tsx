@@ -1,8 +1,8 @@
 import React from 'react'
 
-import styles from './styles.module.sass'
-
 import { Backend, DevOps, Frontend, Testing } from '@/data/skills'
+
+import styles from './styles.module.sass'
 
 const SkillsCloud: React.FC = () => (
     <section>
