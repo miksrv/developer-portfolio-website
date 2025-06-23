@@ -3,6 +3,7 @@ import React from 'react'
 import Progress from '../progress'
 
 import { data } from './data'
+
 import styles from './styles.module.sass'
 
 const Skills: React.FC = () => (

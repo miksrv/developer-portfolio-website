@@ -1,15 +1,17 @@
 import React from 'react'
 
-import '@testing-library/jest-dom'
-
-import Introduce from './Introduce'
+import { act, render, screen } from '@testing-library/react'
 
 import { update } from '@/update'
 import { formatDate } from '@/utils/date'
-import { act, render, screen } from '@testing-library/react'
+
+import Introduce from './Introduce'
+
+import '@testing-library/jest-dom'
 
 jest.mock('next/image', () => ({
     __esModule: true,
+    // eslint-disable-next-line next/no-img-element
     default: jest.fn(() => <img alt='mocked image' />)
 }))
 

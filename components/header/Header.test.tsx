@@ -1,12 +1,12 @@
 import React from 'react'
-import { usePathname } from 'next/navigation'
 
-import '@testing-library/jest-dom'
+import { usePathname } from 'next/navigation'
+import { render, screen } from '@testing-library/react'
 
 import Header from './Header'
 import { menu } from './menu'
 
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
 
 jest.mock('next/navigation', () => ({
     usePathname: jest.fn()

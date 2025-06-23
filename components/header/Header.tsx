@@ -1,8 +1,10 @@
 import React from 'react'
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import { menu } from './menu'
+
 import styles from './styles.module.sass'
 
 export const Header: React.FC = () => {

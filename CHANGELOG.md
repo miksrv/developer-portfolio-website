@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.15
+
+### Patch Changes
+
+- Updated UI libraries
+- New config for ESLint and Prettier
+- Updated config files
+- Fixed ESLint and Prettier issues
+- Refactoring code-style
+
 ## 1.1.14
 
 ### Patch Changes

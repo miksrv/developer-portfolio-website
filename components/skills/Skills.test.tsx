@@ -1,11 +1,12 @@
 import React from 'react'
 
-import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
 
 import Skills from './Skills'
-import styles from './styles.module.sass'
 
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
+
+import styles from './styles.module.sass'
 
 jest.mock('../progress', () => ({
     __esModule: true,
@@ -58,10 +59,10 @@ describe('Skills Component', () => {
         render(<Skills />)
 
         const skillGroups = screen.getAllByRole('heading', { level: 3 })
-        expect(skillGroups.length).toBe(2)
+        expect(skillGroups).toHaveLength(2)
 
         const skillItems = screen.getAllByRole('listitem')
-        expect(skillItems.length).toBe(4)
+        expect(skillItems).toHaveLength(4)
     })
 
     it('applies correct styles to the skill container', () => {

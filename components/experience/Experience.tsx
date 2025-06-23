@@ -1,10 +1,10 @@
 import React from 'react'
 
-import styles from './styles.module.sass'
-
 import PageTransition from '@/components/page-transition'
 import { experience } from '@/data/experience'
 import { formatDate, formatPeriod } from '@/utils/date'
+
+import styles from './styles.module.sass'
 
 /**
  * The Experience component displays a list of professional experiences, including roles, dates, duties, and skills.

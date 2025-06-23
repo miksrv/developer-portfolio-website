@@ -1,12 +1,13 @@
 import React from 'react'
 
-import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
 
 import StarField from './StarField'
 
-import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
 
 describe('StarField Component', () => {
+    // eslint-disable-next-line jest/no-hooks
     beforeAll(() => {
         const mockGetContext = jest.fn().mockReturnValue({
             fillRect: jest.fn(),

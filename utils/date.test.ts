@@ -27,7 +27,7 @@ describe('formatDate', () => {
 
 describe('formatPeriod', () => {
     testCases.forEach(({ dates, expected }) => {
-        it(`should format period correctly for dates ${dates}`, () => {
+        it(`should format period correctly for dates ${dates.join(', ')}`, () => {
             const formattedPeriod = formatPeriod(dates)
             expect(formattedPeriod).toBe(expected)
         })

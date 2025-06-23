@@ -1,14 +1,15 @@
 import React from 'react'
+
 import Image from 'next/image'
 import Link from 'next/link'
-
-import styles from './styles.module.sass'
 
 import Icon from '@/components/icon'
 import { IconTypes } from '@/components/icon/types'
 import { experience, ExperienceType } from '@/data/experience'
 import avatarPic from '@/public/avatar.jpeg'
 import { update } from '@/update'
+
+import styles from './styles.module.sass'
 
 type FactType = {
     title?: string
@@ -118,6 +119,7 @@ export const Introduce: React.FC = () => {
                     src={avatarPic}
                     layout={'fill'}
                     objectFit={'cover'}
+                    // eslint-disable-next-line quotes
                     alt={"Hi I'm - Misha - Picture of the author"}
                 />
             </div>
@@ -125,7 +127,9 @@ export const Introduce: React.FC = () => {
                 <div className={styles.header}>
                     <div className={styles.title}>
                         <h1>
+                            {/* eslint-disable-next-line quotes */}
                             {"Hi I'm - "}
+                            {/* eslint-disable-next-line react/jsx-max-depth */}
                             <span>{'Misha'}</span>
                         </h1>
 
