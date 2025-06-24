@@ -14,7 +14,7 @@ const SkillsPage: React.FC = () => (
         <NextSeo
             title={'My technical skills'}
             description={
-                'With over 10+ years of experience in software development for clients ranging from government agencies to private companies, I’ve built a broad skill set across various technologies. Below is a summary of my key technical skills, ranked by usage frequency and proficiency based on past projects. My expertise spans frontend and backend development, analytics, DevOps, database architecture, web design, and API development, all of which I regularly employ in both professional work and personal projects.'
+                'With over 19+ years of experience in software development for clients ranging from government agencies to private companies, I’ve built a broad skill set across various technologies. Below is a summary of my key technical skills, ranked by usage frequency and proficiency based on past projects. My expertise spans frontend and backend development, analytics, DevOps, database architecture, web design, and API development, all of which I regularly employ in both professional work and personal projects.'
             }
             openGraph={{
                 images: [
