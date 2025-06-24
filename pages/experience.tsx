@@ -12,7 +12,9 @@ const ProjectsPage: React.FC = () => (
     <>
         <NextSeo
             title={'Experience'}
-            description={''}
+            description={
+                'This page highlights my professional experience as a Fullstack Developer, showcasing my expertise in frontend and backend development, project leadership, and contributions across industries such as media, fintech, and e-commerce. Discover my career achievements, technical skills, and the impact I’ve made on various projects.'
+            }
             openGraph={{
                 images: [
                     {

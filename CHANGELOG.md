@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.16
+
+### Patch Changes
+
+- Upgraded yarn version from `4.8.1` to `4.9.2`
+- Added description for `experience` page
+
 ## 1.1.15
 
 ### Patch Changes
