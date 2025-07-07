@@ -187,6 +187,7 @@ Once your pull request has been approved and merged, follow these steps to creat
     ```bash
     git tag -a vX.X.X -m "Release notes for version X.X.X"
     ```
+
     - Replace `vX.X.X` with the new version (e.g., `v1.0.1`).
     - Write detailed release notes in the tag message, highlighting key changes or new features.
 
@@ -195,6 +196,7 @@ Once your pull request has been approved and merged, follow these steps to creat
     ```bash
     git push origin vX.X.X
     ```
+
     - This will automatically trigger the GitHub action to create a new release if there are changes in `CHANGELOG.md` and a new tag is present.
 
 5. **Open a pull request** for your branch if not yet merged:
