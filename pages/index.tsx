@@ -12,6 +12,27 @@ import PageTransition from '@/components/page-transition'
 
 const GithubActivity = dynamic(() => import('@/components/github-activity'), { ssr: false })
 
+// Example of using githubFetch directly
+// const [result, setResult] = useState<{
+//     status: number
+//     isLoading: boolean
+//     data: any
+//     error: string | null
+// }>({
+//     status: 0,
+//     isLoading: true,
+//     data: null,
+//     error: null
+// })
+//
+// useEffect(() => {
+//     async function loadUser() {
+//         const response = await githubFetch('/user')
+//         setResult(response)
+//     }
+//     void loadUser()
+// }, [])
+
 const MainPage: React.FC = () => (
     <>
         <NextSeo
