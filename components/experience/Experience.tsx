@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PageTransition from '@/components/page-transition'
+import { PageTransition } from '@/components/page-transition'
 import { experience } from '@/data/experience'
 import { formatDate, formatPeriod } from '@/utils/date'
 

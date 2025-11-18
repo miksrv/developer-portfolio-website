@@ -9,3 +9,7 @@ export const iconNames = {
 } as const
 
 export type IconTypes = keyof typeof iconNames
+
+export interface IconProps {
+    name: IconTypes
+}

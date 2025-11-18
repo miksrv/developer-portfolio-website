@@ -18,7 +18,7 @@ const config: Config = {
         ]
     },
     setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
-    collectCoverageFrom: ['components/**/*.{ts,tsx}', '!components/**/*.d.ts', '!components/**/*.test.{ts,tsx}', '!components/**/index.ts', '!components/**/types.ts'],
+    collectCoverageFrom: ['components/**/*.{ts,tsx}', '!components/**/*.d.ts', '!components/**/*.test.{ts,tsx}', '!components/**/index.ts', '!components/**/types.ts', '!components/**/constants.ts'],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
     transformIgnorePatterns: ['node_modules/(?!(module-to-transform)/)', '/.next/']
 }
