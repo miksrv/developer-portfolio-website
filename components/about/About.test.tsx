@@ -4,8 +4,6 @@ import { render, screen } from '@testing-library/react'
 
 import { About } from './About'
 
-import '@testing-library/jest-dom'
-
 jest.mock('next/image', () => ({
     __esModule: true,
     default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (

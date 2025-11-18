@@ -4,8 +4,6 @@ import { render, screen } from '@testing-library/react'
 
 import { Projects } from './Projects'
 
-import '@testing-library/jest-dom'
-
 import styles from './styles.module.sass'
 
 jest.mock('next/image', () => ({

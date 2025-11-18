@@ -6,8 +6,6 @@ import { render, screen } from '@testing-library/react'
 import { Header } from './Header'
 import { menu } from './menu'
 
-import '@testing-library/jest-dom'
-
 jest.mock('next/navigation', () => ({
     usePathname: jest.fn()
 }))

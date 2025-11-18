@@ -4,8 +4,6 @@ import { render, screen } from '@testing-library/react'
 
 import { SkillsCloud } from './SkillsCloud'
 
-import '@testing-library/jest-dom'
-
 import styles from './SkillsCloud.module.css'
 
 jest.mock('@/data/skills', () => ({

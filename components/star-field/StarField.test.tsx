@@ -2,9 +2,7 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import StarField from './StarField'
-
-import '@testing-library/jest-dom'
+import { StarField } from './StarField'
 
 describe('StarField Component', () => {
     // eslint-disable-next-line jest/no-hooks

@@ -4,8 +4,6 @@ import { render, screen } from '@testing-library/react'
 
 import { Progress } from './Progress'
 
-import '@testing-library/jest-dom'
-
 import styles from './styles.module.sass'
 
 describe('Progress Component', () => {

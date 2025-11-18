@@ -5,9 +5,6 @@ import { render } from '@testing-library/react'
 import { Icon } from './Icon'
 import { iconNames } from './types'
 
-import '@testing-library/jest-dom/jest-globals'
-import '@testing-library/jest-dom'
-
 describe('Icon Component', () => {
     const iconKeys = Object.keys(iconNames) as Array<keyof typeof iconNames>
 
