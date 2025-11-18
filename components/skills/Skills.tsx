@@ -1,12 +1,12 @@
 import React from 'react'
 
-import Progress from '../progress'
+import { Progress } from '../progress'
 
 import { data } from './data'
 
 import styles from './styles.module.sass'
 
-const Skills: React.FC = () => (
+export const Skills: React.FC = () => (
     <section>
         <div className={styles.skillContainer}>
             {data.map((group, i) => (
@@ -30,5 +30,3 @@ const Skills: React.FC = () => (
         </div>
     </section>
 )
-
-export default Skills

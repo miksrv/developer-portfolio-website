@@ -5,7 +5,7 @@ import { act, render, screen } from '@testing-library/react'
 import { update } from '@/update'
 import { formatDate } from '@/utils/date'
 
-import Introduce from './Introduce'
+import { Introduce } from './Introduce'
 
 import '@testing-library/jest-dom'
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { render } from '@testing-library/react'
 
-import Icon from './Icon'
+import { Icon } from './Icon'
 import { iconNames } from './types'
 
 import '@testing-library/jest-dom/jest-globals'

@@ -3,10 +3,10 @@ import React from 'react'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 
-import Icon from '@/components/icon'
+import { Icon } from '@/components/icon'
 import { iconNames } from '@/components/icon/types'
-import PageTransition from '@/components/page-transition'
-import Projects from '@/components/projects'
+import { PageTransition } from '@/components/page-transition'
+import { Projects } from '@/components/projects'
 
 const ProjectsPage: React.FC = () => (
     <>

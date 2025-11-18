@@ -3,7 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import Icon from '@/components/icon'
+import { Icon } from '@/components/icon'
 import { IconTypes } from '@/components/icon/types'
 import { experience, ExperienceType } from '@/data/experience'
 import avatarPic from '@/public/avatar.jpeg'
@@ -178,5 +178,3 @@ export const Introduce: React.FC = () => {
         </section>
     )
 }
-
-export default Introduce

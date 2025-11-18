@@ -48,5 +48,3 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
         </AnimatePresence>
     )
 }
-
-export default PageTransition

@@ -1,1 +1,1 @@
-export { default } from './SkillsCloud'
+export { SkillsCloud } from './SkillsCloud'

@@ -69,5 +69,3 @@ export const Icon: React.FC<IconProps> = ({ name }) => {
             )
     }
 }
-
-export default Icon

@@ -15,7 +15,7 @@ import styles from './styles.module.sass'
  *   <Experience />
  * )
  */
-const Experience: React.FC = () => (
+export const Experience: React.FC = () => (
     <section>
         <ul className={styles.experienceList}>
             <PageTransition>
@@ -51,5 +51,3 @@ const Experience: React.FC = () => (
         </ul>
     </section>
 )
-
-export default Experience

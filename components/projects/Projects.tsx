@@ -3,16 +3,16 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import Icon from '@/components/icon'
+import { Icon } from '@/components/icon'
 import { iconNames } from '@/components/icon/types'
-import PageTransition from '@/components/page-transition'
+import { PageTransition } from '@/components/page-transition'
 import { cn } from '@/utils/tools'
 
 import { data } from './data'
 
 import styles from './styles.module.sass'
 
-const Projects: React.FC = () => (
+export const Projects: React.FC = () => (
     <section className={styles.projectsContainer}>
         <PageTransition>
             {data?.map((item, i) => (
@@ -55,5 +55,3 @@ const Projects: React.FC = () => (
         </PageTransition>
     </section>
 )
-
-export default Projects

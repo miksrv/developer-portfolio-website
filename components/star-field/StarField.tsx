@@ -153,5 +153,3 @@ export const StarField: React.FC<StarFieldProps> = ({
         />
     )
 }
-
-export default StarField

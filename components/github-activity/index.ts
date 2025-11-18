@@ -1,1 +1,1 @@
-export { default } from './GithubActivity'
+export { GithubActivity } from './GithubActivity'

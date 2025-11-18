@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react'
 
 import { experience } from '@/data/experience'
 
-import Experience from './Experience'
+import { Experience } from './Experience'
 
 import '@testing-library/jest-dom'
 
@@ -45,9 +45,6 @@ describe('Experience Component', () => {
 
                 skillAreaElements.forEach((skillAreaElement) => {
                     expect(skillAreaElement).toBeInTheDocument()
-
-                    // const stackElement = skillAreaElement.nextElementSibling
-                    // expect(stackElement).toHaveTextContent(skill.stack.join(', '))
                 })
             })
         })

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import GithubActivity from './GithubActivity'
+import { GithubActivity } from './GithubActivity'
 
 import '@testing-library/jest-dom'
 

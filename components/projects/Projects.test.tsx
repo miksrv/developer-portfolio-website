@@ -2,7 +2,7 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import Projects from './Projects'
+import { Projects } from './Projects'
 
 import '@testing-library/jest-dom'
 

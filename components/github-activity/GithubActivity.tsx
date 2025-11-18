@@ -20,4 +20,5 @@ export const GithubActivity: React.FC = () => (
     </section>
 )
 
+// For Dynamic Import
 export default GithubActivity

@@ -3,7 +3,7 @@ import React from 'react'
 import { usePathname } from 'next/navigation'
 import { render, screen } from '@testing-library/react'
 
-import Header from './Header'
+import { Header } from './Header'
 import { menu } from './menu'
 
 import '@testing-library/jest-dom'

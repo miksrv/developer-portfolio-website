@@ -4,13 +4,13 @@ import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 
-import About from '@/components/about'
-import Icon from '@/components/icon'
+import { About } from '@/components/about'
+import { Icon } from '@/components/icon'
 import { iconNames } from '@/components/icon/types'
-import Introduce from '@/components/introduce'
-import PageTransition from '@/components/page-transition'
+import { Introduce } from '@/components/introduce'
+import { PageTransition } from '@/components/page-transition'
 
-const GithubActivity = dynamic(() => import('@/components/github-activity'), { ssr: false })
+const GithubActivity = dynamic(() => import('@/components/github-activity/GithubActivity'), { ssr: false })
 
 const MainPage: React.FC = () => (
     <>

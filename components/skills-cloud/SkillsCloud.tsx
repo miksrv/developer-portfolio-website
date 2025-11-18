@@ -4,7 +4,7 @@ import { Backend, DevOps, Frontend, Testing } from '@/data/skills'
 
 import styles from './styles.module.sass'
 
-const SkillsCloud: React.FC = () => (
+export const SkillsCloud: React.FC = () => (
     <section>
         <ul className={styles.tagsCloud}>
             {[
@@ -18,5 +18,3 @@ const SkillsCloud: React.FC = () => (
         </ul>
     </section>
 )
-
-export default SkillsCloud
