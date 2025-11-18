@@ -5,12 +5,24 @@ import '@testing-library/jest-dom/jest-globals'
 
 jest.mock('next/image', () => ({
     __esModule: true,
-    default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
-        // eslint-disable-next-line next/no-img-element
+    default: jest.fn(({ src, alt }) => (
         <img
-            alt=''
-            {...props}
+            src={src}
+            alt={alt}
+            data-testid='project-image'
         />
+    ))
+}))
+
+jest.mock('next/link', () => ({
+    __esModule: true,
+    default: ({ href, children, ...props }: any) => (
+        <a
+            href={href}
+            {...props}
+        >
+            {children}
+        </a>
     )
 }))
 
