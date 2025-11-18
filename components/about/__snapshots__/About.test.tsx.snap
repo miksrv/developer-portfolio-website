@@ -11,6 +11,7 @@ exports[`About Component matches the snapshot 1`] = `
     <div>
       <img
         alt="Photo of me"
+        data-testid="project-image"
         src="mocked-photo.jpg"
       />
       <div>
