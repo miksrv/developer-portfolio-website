@@ -6,8 +6,10 @@ import { PageTransition } from './PageTransition'
 
 // Mock framer-motion to render plain divs with props for inspection
 jest.mock('framer-motion', () => ({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     AnimatePresence: ({ children }: any) => <div data-testid='animate-presence'>{children}</div>,
     motion: {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         div: ({ children, ...props }: any) => (
             <div
                 data-testid='motion-div'

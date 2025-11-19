@@ -28,7 +28,7 @@ jest.mock('@/data/experience', () => ({
 }))
 
 jest.mock('@/utils/date', () => ({
-    formatDate: (date: string, _format: string) => (date === null ? 'Present' : `formatted-${date}`),
+    formatDate: (date: string, _format: string) => (date == null ? 'Present' : `formatted-${date}`),
     formatPeriod: (period: [string, string | null]) => `period-${period[0]}-${period[1]}`
 }))
 

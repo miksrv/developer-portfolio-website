@@ -12,8 +12,7 @@ jest.mock('./styles.module.sass', () => ({
 // Mock GitHubCalendar
 const mockGitHubCalendar = jest.fn(() => <div data-testid='github-calendar' />)
 jest.mock('react-github-calendar', () => ({
-    // @ts-ignore Ignore TS error for mock
-    GitHubCalendar: (props: any) => mockGitHubCalendar(props)
+    GitHubCalendar: () => mockGitHubCalendar()
 }))
 
 describe('GithubActivity', () => {

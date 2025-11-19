@@ -4,8 +4,6 @@ import { render, screen } from '@testing-library/react'
 
 import { Projects } from './Projects'
 
-import styles from './styles.module.sass'
-
 jest.mock('@/components/icon', () => ({
     Icon: ({ name }: { name: string }) => (
         <span
