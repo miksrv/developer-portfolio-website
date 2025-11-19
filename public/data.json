@@ -1,0 +1,28 @@
+{
+    "about": {
+        "title": "Hi, Im Misha - Programmer, Engineer and Dreamer",
+        "description": "I am a software engineer specializing in frontend and backend development for scalable web applications. With extensive experience in application development, testing, and managing both development teams and projects, I am focused on delivering high-quality and efficient solutions."
+    },
+    "links": [
+        {
+            "icon": "github",
+            "label": "GitHub",
+            "link": "https://github.com/miksrv"
+        },
+        {
+            "icon": "telegram",
+            "label": "Telegram",
+            "link": "https://t.me/miksoft"
+        },
+        {
+            "icon": "facebook",
+            "label": "Facebook",
+            "link": "https://facebook.com/miksoft.pro"
+        },
+        {
+            "icon": "linkedin",
+            "label": "LinkedIn",
+            "link": "https://www.linkedin.com/in/mikcatsvill/"
+        }
+    ]
+}
