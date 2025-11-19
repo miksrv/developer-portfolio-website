@@ -16,12 +16,6 @@ type FactType = {
     value?: string
 }
 
-type LinkType = {
-    link: string
-    label: string
-    icon: IconTypes
-}
-
 const findEarliestDate = (experience: ExperienceType[]): string | undefined => {
     const allDates = experience
         .flatMap((exp) => exp.period)
@@ -42,6 +36,8 @@ const birthTime = new Date('1989-09-09T05:15:00').getTime()
 const expTime = new Date(findEarliestDate(experience) ?? '2007-10-15T10:00:00').getTime()
 
 export const Introduce: React.FC = () => {
+    const data = useSiteData()
+
     const [myAge, setMyAge] = React.useState<string>('')
     const [myExp, setMyExp] = React.useState<string>('')
 
@@ -83,29 +79,6 @@ export const Introduce: React.FC = () => {
         }
     ]
 
-    const contactLinks: LinkType[] = [
-        {
-            icon: 'github',
-            label: 'GitHub',
-            link: 'https://github.com/miksrv'
-        },
-        {
-            icon: 'telegram',
-            label: 'Telegram',
-            link: 'https://t.me/miksoft'
-        },
-        {
-            icon: 'facebook',
-            label: 'Facebook',
-            link: 'https://facebook.com/miksoft.pro'
-        },
-        {
-            icon: 'linkedin',
-            label: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/mikcatsvill/'
-        }
-    ]
-
     useEffect(() => {
         const timer = setInterval(() => tick(), 50)
 
@@ -134,7 +107,7 @@ export const Introduce: React.FC = () => {
                         </h1>
 
                         <div className={styles.links}>
-                            {contactLinks?.map((item) => (
+                            {data?.contactLinks?.map((item) => (
                                 <Link
                                     key={`link-${String(item.link)}`}
                                     href={item.link}
