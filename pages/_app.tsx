@@ -3,8 +3,7 @@ import React from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import Header from '@/components/header'
-import StarField from '@/components/star-field'
+import { Header, StarField } from '@/components'
 
 import '@/styles/theme.css'
 import '@/styles/globals.sass'

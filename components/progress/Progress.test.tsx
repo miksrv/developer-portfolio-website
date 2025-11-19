@@ -2,9 +2,7 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import Progress from './Progress'
-
-import '@testing-library/jest-dom'
+import { Progress } from './Progress'
 
 import styles from './styles.module.sass'
 

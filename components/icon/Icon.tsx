@@ -1,10 +1,6 @@
 import React from 'react'
 
-import { IconTypes } from './types'
-
-interface IconProps {
-    name: IconTypes
-}
+import { IconProps } from './types'
 
 export const Icon: React.FC<IconProps> = ({ name }) => {
     switch (name) {
@@ -69,5 +65,3 @@ export const Icon: React.FC<IconProps> = ({ name }) => {
             )
     }
 }
-
-export default Icon

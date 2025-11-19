@@ -17,16 +17,10 @@ const config: Config = {
             }
         ]
     },
-    collectCoverageFrom: [
-        'components/**/*.{ts,tsx}',
-        '!components/**/*.d.ts',
-        '!components/**/*.test.tsx',
-        '!components/**/index.ts',
-        '!components/**/data.ts',
-        '!*.d.ts'
-    ],
+    setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.tsx'],
+    collectCoverageFrom: ['components/**/*.{ts,tsx}', '!components/**/*.d.ts', '!components/**/*.test.{ts,tsx}', '!components/**/index.ts', '!components/**/types.ts', '!components/**/constants.ts'],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-    transformIgnorePatterns: ['node_modules/(?!(module-to-transform)/)', '/.next/']
+    transformIgnorePatterns: ['node_modules/(?!(react-github-calendar|react-activity-calendar)/)', '/.next/']
 }
 
 export default config

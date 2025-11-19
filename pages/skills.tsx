@@ -3,11 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 
-import Icon from '@/components/icon'
-import { iconNames } from '@/components/icon/types'
-import PageTransition from '@/components/page-transition'
-import Skills from '@/components/skills'
-import SkillsCloud from '@/components/skills-cloud'
+import { Icon, iconNames, PageTransition, Skills, SkillsCloud } from '@/components'
 
 const SkillsPage: React.FC = () => (
     <>

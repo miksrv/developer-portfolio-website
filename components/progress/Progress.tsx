@@ -1,10 +1,8 @@
 import React from 'react'
 
-import styles from './styles.module.sass'
+import { ProgressProps } from './types'
 
-interface ProgressProps {
-    value?: number
-}
+import styles from './styles.module.sass'
 
 export const Progress: React.FC<ProgressProps> = ({ value }) => (
     <div
@@ -21,5 +19,3 @@ export const Progress: React.FC<ProgressProps> = ({ value }) => (
             ))}
     </div>
 )
-
-export default Progress

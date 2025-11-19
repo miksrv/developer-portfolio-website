@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PageTransition from '@/components/page-transition'
+import { PageTransition } from '@/components'
 import { experience } from '@/data/experience'
 import { formatDate, formatPeriod } from '@/utils/date'
 
@@ -15,7 +15,7 @@ import styles from './styles.module.sass'
  *   <Experience />
  * )
  */
-const Experience: React.FC = () => (
+export const Experience: React.FC = () => (
     <section>
         <ul className={styles.experienceList}>
             <PageTransition>
@@ -51,5 +51,3 @@ const Experience: React.FC = () => (
         </ul>
     </section>
 )
-
-export default Experience

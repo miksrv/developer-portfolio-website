@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThemeInput } from 'react-activity-calendar'
-import GitHubCalendar from 'react-github-calendar'
+import { GitHubCalendar } from 'react-github-calendar'
 
 import styles from './styles.module.sass'
 
@@ -20,4 +20,5 @@ export const GithubActivity: React.FC = () => (
     </section>
 )
 
+// For Dynamic Import
 export default GithubActivity

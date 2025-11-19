@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`PageTransition matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="animate-presence"
+  >
+    <div
+      animate="animate"
+      data-testid="motion-div"
+      exit="exit"
+      initial="initial"
+      variants="[object Object]"
+    >
+      <div
+        data-testid="motion-div"
+        variants="[object Object]"
+      >
+        <div>
+          Snapshot Child
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

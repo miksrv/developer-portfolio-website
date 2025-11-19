@@ -3,10 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 
-import Experience from '@/components/experience'
-import Icon from '@/components/icon'
-import { iconNames } from '@/components/icon/types'
-import PageTransition from '@/components/page-transition'
+import { Experience, Icon, iconNames, PageTransition } from '@/components'
 
 const ProjectsPage: React.FC = () => (
     <>

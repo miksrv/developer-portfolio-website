@@ -1,1 +1,1 @@
-export { default } from './Introduce'
+export { Introduce } from './Introduce'

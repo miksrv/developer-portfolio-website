@@ -1,30 +1,11 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { usePathname } from 'next/navigation'
 
-const parentVariants = {
-    initial: { opacity: 0 },
-    animate: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.3,
-            delayChildren: 0.2
-        }
-    },
-    exit: { opacity: 0 }
-}
+import { childVariants, parentVariants } from './constants'
 
-const childVariants = {
-    initial: { opacity: 0, y: 50 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-}
-
-interface PageTransitionProps {
-    children: ReactNode
-}
-
-export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
+export const PageTransition: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ children }) => {
     const pathname = usePathname()
 
     return (
@@ -48,5 +29,3 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
         </AnimatePresence>
     )
 }
-
-export default PageTransition

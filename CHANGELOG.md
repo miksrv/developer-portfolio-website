@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.1.17
+
+### Patch Changes
+
+- Fixed ESLint config, Improved UI Tests
+- Updated Jest setup, added new mocks
+- Created new UI Unit tests and Updated old Ui Unit tests
+- Refactoring UI Component types and constants
+- Refactoring UI Unit tests
+- Refactoring code-style, removed default imports
+- Added CI/CD timeout
+- Fixed and Improved CI/CD deploy action
+- Update README.md
+- Updated UI Libraries
+
 ## 1.1.16
 
 ### Patch Changes

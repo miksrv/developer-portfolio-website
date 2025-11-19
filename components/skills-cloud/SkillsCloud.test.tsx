@@ -2,9 +2,7 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import SkillsCloud from './SkillsCloud'
-
-import '@testing-library/jest-dom'
+import { SkillsCloud } from './SkillsCloud'
 
 import styles from './SkillsCloud.module.css'
 

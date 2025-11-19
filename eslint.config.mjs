@@ -272,7 +272,7 @@ export default defineConfig([
                         '**/*.spec.{ts,tsx}',
                         '**/stories/*.stories.{ts,tsx}',
                         '**/storybook/**/*.stories.{ts,tsx}',
-                        '**/setupTests.ts',
+                        '**/jest.setup.tsx',
                     ],
                 },
             ],
