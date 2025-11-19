@@ -1,0 +1,24 @@
+{
+    "contactLinks": [
+        {
+            "icon": "github",
+            "label": "GitHub",
+            "link": "https://github.com/miksrv"
+        },
+        {
+            "icon": "telegram",
+            "label": "Telegram",
+            "link": "https://t.me/miksoft"
+        },
+        {
+            "icon": "facebook",
+            "label": "Facebook",
+            "link": "https://facebook.com/miksoft.pro"
+        },
+        {
+            "icon": "linkedin",
+            "label": "LinkedIn",
+            "link": "https://www.linkedin.com/in/mikcatsvill/"
+        }
+    ]
+}

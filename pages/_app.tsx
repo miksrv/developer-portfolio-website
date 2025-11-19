@@ -4,6 +4,7 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import { Header, StarField } from '@/components'
+import { DataProvider } from '@/utils'
 
 import '@/styles/theme.css'
 import '@/styles/globals.sass'
@@ -60,8 +61,6 @@ const App = ({ Component, pageProps }: AppProps) => (
             />
         </Head>
 
-        <Header />
-
         <StarField
             starCount={1000}
             starColor={[255, 255, 255]}
@@ -69,9 +68,13 @@ const App = ({ Component, pageProps }: AppProps) => (
             backgroundColor={'black'}
         />
 
-        <main>
-            <Component {...pageProps} />
-        </main>
+        <DataProvider>
+            <Header />
+
+            <main>
+                <Component {...pageProps} />
+            </main>
+        </DataProvider>
 
         {process.env.NODE_ENV === 'production' && (
             <div

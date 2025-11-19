@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -7,18 +7,13 @@ import { Icon, IconTypes } from '@/components'
 import { experience, ExperienceType } from '@/data/experience'
 import avatarPic from '@/public/avatar.jpeg'
 import { update } from '@/update'
+import { useSiteData } from '@/utils'
 
 import styles from './styles.module.sass'
 
 type FactType = {
     title?: string
     value?: string
-}
-
-type LinkType = {
-    link: string
-    label: string
-    icon: IconTypes
 }
 
 const findEarliestDate = (experience: ExperienceType[]): string | undefined => {
@@ -41,6 +36,8 @@ const birthTime = new Date('1989-09-09T05:15:00').getTime()
 const expTime = new Date(findEarliestDate(experience) ?? '2007-10-15T10:00:00').getTime()
 
 export const Introduce: React.FC = () => {
+    const data = useSiteData()
+
     const [myAge, setMyAge] = React.useState<string>('')
     const [myExp, setMyExp] = React.useState<string>('')
 
@@ -82,30 +79,7 @@ export const Introduce: React.FC = () => {
         }
     ]
 
-    const linksList: LinkType[] = [
-        {
-            icon: 'github',
-            label: 'GitHub',
-            link: 'https://github.com/miksrv'
-        },
-        {
-            icon: 'telegram',
-            label: 'Telegram',
-            link: 'https://t.me/miksoft'
-        },
-        {
-            icon: 'facebook',
-            label: 'Facebook',
-            link: 'https://facebook.com/miksoft.pro'
-        },
-        {
-            icon: 'linkedin',
-            label: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/mikcatsvill/'
-        }
-    ]
-
-    React.useEffect(() => {
+    useEffect(() => {
         const timer = setInterval(() => tick(), 50)
 
         return () => clearInterval(timer)
@@ -133,15 +107,15 @@ export const Introduce: React.FC = () => {
                         </h1>
 
                         <div className={styles.links}>
-                            {linksList?.map((item) => (
+                            {data?.contactLinks?.map((item) => (
                                 <Link
-                                    key={`link-${item.link}`}
+                                    key={`link-${String(item.link)}`}
                                     href={item.link}
                                     title={item.label}
                                     target={'_blank'}
                                     className={styles.link}
                                 >
-                                    <Icon name={item.icon} />
+                                    <Icon name={item.icon as IconTypes} />
                                 </Link>
                             ))}
                         </div>
