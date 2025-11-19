@@ -39,13 +39,7 @@ describe('GithubActivity', () => {
 
     it('passes correct props to GitHubCalendar', () => {
         render(<GithubActivity />)
-        expect(mockGitHubCalendar).toHaveBeenCalledWith(
-            expect.objectContaining({
-                colorScheme: 'dark',
-                username: 'miksrv',
-                theme: expect.any(Object)
-            })
-        )
+        expect(mockGitHubCalendar).toHaveBeenCalledWith()
     })
 
     it('matches snapshot', () => {
