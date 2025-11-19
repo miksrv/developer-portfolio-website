@@ -1,15 +1,13 @@
-import React, { createContext } from 'react'
+import React from 'react'
 
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import { Header, StarField } from '@/components'
-import data from '@/public/data.json'
+import { DataProvider } from '@/utils'
 
 import '@/styles/theme.css'
 import '@/styles/globals.sass'
-
-export const DataContext = createContext<typeof data | undefined>(undefined)
 
 const App = ({ Component, pageProps }: AppProps) => (
     <>
@@ -63,20 +61,20 @@ const App = ({ Component, pageProps }: AppProps) => (
             />
         </Head>
 
-        <DataContext.Provider value={data}>
-            <Header />
+        <StarField
+            starCount={1000}
+            starColor={[255, 255, 255]}
+            speedFactor={0.05}
+            backgroundColor={'black'}
+        />
 
-            <StarField
-                starCount={1000}
-                starColor={[255, 255, 255]}
-                speedFactor={0.05}
-                backgroundColor={'black'}
-            />
+        <DataProvider>
+            <Header />
 
             <main>
                 <Component {...pageProps} />
             </main>
-        </DataContext.Provider>
+        </DataProvider>
 
         {process.env.NODE_ENV === 'production' && (
             <div

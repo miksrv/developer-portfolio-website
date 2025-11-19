@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -7,6 +7,7 @@ import { Icon, IconTypes } from '@/components'
 import { experience, ExperienceType } from '@/data/experience'
 import avatarPic from '@/public/avatar.jpeg'
 import { update } from '@/update'
+import { useSiteData } from '@/utils'
 
 import styles from './styles.module.sass'
 
@@ -82,7 +83,7 @@ export const Introduce: React.FC = () => {
         }
     ]
 
-    const linksList: LinkType[] = [
+    const contactLinks: LinkType[] = [
         {
             icon: 'github',
             label: 'GitHub',
@@ -105,7 +106,7 @@ export const Introduce: React.FC = () => {
         }
     ]
 
-    React.useEffect(() => {
+    useEffect(() => {
         const timer = setInterval(() => tick(), 50)
 
         return () => clearInterval(timer)
@@ -133,15 +134,15 @@ export const Introduce: React.FC = () => {
                         </h1>
 
                         <div className={styles.links}>
-                            {linksList?.map((item) => (
+                            {contactLinks?.map((item) => (
                                 <Link
-                                    key={`link-${item.link}`}
+                                    key={`link-${String(item.link)}`}
                                     href={item.link}
                                     title={item.label}
                                     target={'_blank'}
                                     className={styles.link}
                                 >
-                                    <Icon name={item.icon} />
+                                    <Icon name={item.icon as IconTypes} />
                                 </Link>
                             ))}
                         </div>

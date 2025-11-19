@@ -1,1 +1,1 @@
-export { useData } from './useData'
+export { DataProvider, useSiteData } from './DataProvider'
