@@ -38,14 +38,22 @@ describe('Introduce Component', () => {
         jest.useRealTimers()
     })
 
-    it('renders links correctly', () => {
+    it('renders links correctly', async () => {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports,@typescript-eslint/no-var-requires
+        jest.spyOn(require('@/utils'), 'useSiteData').mockReturnValue({
+            contactLinks: [
+                { link: 'https://github.com/miksrv', label: 'GitHub', icon: 'github' },
+                { link: 'https://t.me/miksoft', label: 'Telegram', icon: 'telegram' }
+            ]
+        })
+
         render(<Introduce />)
 
-        const githubLink = screen.getByTitle('GitHub')
+        const githubLink = await screen.findByTitle('GitHub')
         expect(githubLink).toBeInTheDocument()
         expect(githubLink).toHaveAttribute('href', 'https://github.com/miksrv')
 
-        const telegramLink = screen.getByTitle('Telegram')
+        const telegramLink = await screen.findByTitle('Telegram')
         expect(telegramLink).toBeInTheDocument()
         expect(telegramLink).toHaveAttribute('href', 'https://t.me/miksoft')
     })
