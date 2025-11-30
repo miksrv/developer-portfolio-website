@@ -4,32 +4,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Icon, IconTypes } from '@/components'
-import { experience, ExperienceType } from '@/data/experience'
+import { experience } from '@/data/experience'
 import avatarPic from '@/public/avatar.jpeg'
 import { update } from '@/update'
 import { useSiteData } from '@/utils'
 
+import { FactType } from './types'
+import { findEarliestDate } from './utils'
+
 import styles from './styles.module.sass'
-
-type FactType = {
-    title?: string
-    value?: string
-}
-
-const findEarliestDate = (experience: ExperienceType[]): string | undefined => {
-    const allDates = experience
-        .flatMap((exp) => exp.period)
-        .map((dateStr) => new Date(dateStr))
-        .filter((date) => !isNaN(date.getTime()))
-
-    if (allDates.length === 0) {
-        return undefined
-    }
-
-    const earliestDate = new Date(Math.min(...allDates.map((date) => date.getTime())))
-
-    return earliestDate.toISOString().split('T')[0]
-}
 
 const divisor = 1000 * 60 * 60 * 24 * 365.2421897
 const birthTime = new Date('1989-09-09T05:15:00').getTime()
@@ -67,11 +50,11 @@ export const Introduce: React.FC = () => {
         },
         {
             title: 'Location',
-            value: 'California, USA'
+            value: data?.biography?.location
         },
         {
             title: 'Timezone',
-            value: 'Pacific, UTC-07:00'
+            value: data?.biography?.timezone
         },
         {
             title: 'Updated',
@@ -103,7 +86,7 @@ export const Introduce: React.FC = () => {
                             {/* eslint-disable-next-line quotes */}
                             {"Hi I'm - "}
                             {/* eslint-disable-next-line react/jsx-max-depth */}
-                            <span>{'Misha'}</span>
+                            <span>{data?.biography?.name}</span>
                         </h1>
 
                         <div className={styles.links}>
@@ -120,12 +103,12 @@ export const Introduce: React.FC = () => {
                             ))}
                         </div>
                     </div>
-                    <h3 className={styles.subTitle}>{'Software Engineer, Astronomer and Dreamer'}</h3>
+                    <h3 className={styles.subTitle}>{data?.biography?.title}</h3>
                 </div>
 
                 <ul className={styles.factsList}>
                     {factsList?.map(({ title, value }) => (
-                        <li key={`fact-${title}`}>
+                        <li key={`fact-${String(title)}`}>
                             <div className={styles.key}>{title}</div>
                             <div className={styles.value}>{value}</div>
                         </li>

@@ -1,4 +1,10 @@
 {
+    "biography": {
+        "name": "Misha",
+        "title": "Software Engineer, Astronomer and Dreamer",
+        "location": "California, USA",
+        "timezone": "Pacific, UTC-07:00"
+    },
     "contactLinks": [
         {
             "icon": "github",
