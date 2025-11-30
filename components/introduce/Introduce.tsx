@@ -4,31 +4,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Icon, IconTypes } from '@/components'
-import { experience, ExperienceType } from '@/data/experience'
+import { experience } from '@/data/experience'
 import avatarPic from '@/public/avatar.jpeg'
 import { update } from '@/update'
 import { useSiteData } from '@/utils'
+
+import { findEarliestDate } from './utils'
 
 import styles from './styles.module.sass'
 
 type FactType = {
     title?: string
     value?: string
-}
-
-const findEarliestDate = (experience: ExperienceType[]): string | undefined => {
-    const allDates = experience
-        .flatMap((exp) => exp.period)
-        .map((dateStr) => new Date(dateStr))
-        .filter((date) => !isNaN(date.getTime()))
-
-    if (allDates.length === 0) {
-        return undefined
-    }
-
-    const earliestDate = new Date(Math.min(...allDates.map((date) => date.getTime())))
-
-    return earliestDate.toISOString().split('T')[0]
 }
 
 const divisor = 1000 * 60 * 60 * 24 * 365.2421897
