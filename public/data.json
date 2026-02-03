@@ -26,5 +26,101 @@
             "label": "LinkedIn",
             "link": "https://www.linkedin.com/in/mikcatsvill/"
         }
-    ]
+    ],
+    "skills": [
+        {
+            "group": "Frontend",
+            "skills": [
+                {
+                    "name": "TypeScript",
+                    "level": 80
+                },
+                {
+                    "name": "React, Next.js",
+                    "level": 90
+                },
+                {
+                    "name": "Redux",
+                    "level": 86
+                },
+                {
+                    "name": "ESLint & Prettier",
+                    "level": 79
+                }
+            ]
+        },
+        {
+            "group": "Backend",
+            "skills": [
+                {
+                    "name": "Node.js",
+                    "level": 70
+                },
+                {
+                    "name": "PHP",
+                    "level": 80
+                },
+                {
+                    "name": "Python",
+                    "level": 50
+                },
+                {
+                    "name": "SQL",
+                    "level": 60
+                }
+            ]
+        },
+        {
+            "group": "Testing",
+            "skills": [
+                {
+                    "name": "Playwright",
+                    "level": 70
+                },
+                {
+                    "name": "Jest",
+                    "level": 80
+                },
+                {
+                    "name": "RTL",
+                    "level": 80
+                }
+            ]
+        },
+        {
+            "group": "DevOps",
+            "skills": [
+                {
+                    "name": "Docker",
+                    "level": 60
+                },
+                {
+                    "name": "Git",
+                    "level": 90
+                },
+                {
+                    "name": "Linux",
+                    "level": 90
+                }
+            ]
+        }
+    ],
+    "seo": {
+        "index": {
+            "title": "Hi, Im Misha - Programmer, Engineer and Dreamer",
+            "description": "I am a software engineer specializing in frontend and backend development for scalable web applications. With extensive experience in application development, testing, and managing both development teams and projects, I am focused on delivering high-quality and efficient solutions."
+        },
+        "skills": {
+            "title": "My technical skills",
+            "description": "With over 19+ years of experience in software development for clients ranging from government agencies to private companies, I’ve built a broad skill set across various technologies. Below is a summary of my key technical skills, ranked by usage frequency and proficiency based on past projects. My expertise spans frontend and backend development, analytics, DevOps, database architecture, web design, and API development, all of which I regularly employ in both professional work and personal projects."
+        },
+        "experience": {
+            "title": "My professional experience",
+            "description": "Over the past 19+ years, I have worked with a diverse range of clients, from government agencies to private companies, gaining extensive experience in software development. My expertise spans frontend and backend development, analytics, DevOps, database architecture, web design, and API development. Below is a summary of my key professional experiences and roles throughout my career."
+        },
+        "projects": {
+            "title": "My personal projects",
+            "description": "In addition to my professional work, I have developed several personal projects that showcase my skills and interests in software development. These projects range from web applications to tools that solve specific problems or enhance productivity. Below is a summary of some of my notable personal projects."
+        }
+    }
 }

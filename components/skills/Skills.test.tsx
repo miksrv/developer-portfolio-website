@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react'
 import { Skills } from './Skills'
 
 // Mock data
-jest.mock('./data', () => ({
+jest.mock('./types', () => ({
     data: [
         {
             group: 'Frontend',
@@ -29,6 +29,24 @@ jest.mock('../progress', () => ({
             data-value={value}
         />
     )
+}))
+
+jest.mock('@/utils', () => ({
+    useSiteData: () => ({
+        skills: [
+            {
+                group: 'Frontend',
+                skills: [
+                    { name: 'React', level: 90 },
+                    { name: 'TypeScript', level: 80 }
+                ]
+            },
+            {
+                group: 'Backend',
+                skills: [{ name: 'Node.js', level: 70 }]
+            }
+        ]
+    })
 }))
 
 describe('Skills', () => {

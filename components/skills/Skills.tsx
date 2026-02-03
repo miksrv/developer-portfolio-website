@@ -1,32 +1,39 @@
 import React from 'react'
 
-import { Progress } from '../progress'
+import { SkillGroupType, SkillItemType } from '@/components/skills/types'
+import { useSiteData } from '@/utils'
 
-import { data } from './data'
+import { Progress } from '../progress'
 
 import styles from './styles.module.sass'
 
-export const Skills: React.FC = () => (
-    <section>
-        <div className={styles.skillContainer}>
-            {data.map((group, i) => (
-                <div
-                    key={`group-${i}`}
-                    className={styles.skillGroup}
-                >
-                    <h3>{group.group}</h3> {/* Заголовок группы */}
-                    <ul className={styles.skillList}>
-                        {group.skills.map((skill, j) => (
-                            <li key={`skill-${i}-${j}`}>
-                                <div className={styles.label}>
-                                    <label>{skill.name}</label>
-                                </div>
-                                <Progress value={skill.level} /> {/* Компонент прогресса */}
-                            </li>
-                        ))}
-                    </ul>
+export const Skills: React.FC = () => {
+    const data = useSiteData()
+
+    return (
+        !!data?.skills?.length && (
+            <section>
+                <div className={styles.skillContainer}>
+                    {data?.skills?.map((group: SkillGroupType, i) => (
+                        <div
+                            key={`group-${String(i)}`}
+                            className={styles.skillGroup}
+                        >
+                            <h3>{group.group}</h3>
+                            <ul className={styles.skillList}>
+                                {group?.skills?.map((skill: SkillItemType, j) => (
+                                    <li key={`skill-${String(i)}-${String(j)}`}>
+                                        <div className={styles.label}>
+                                            <label>{skill.name}</label>
+                                        </div>
+                                        <Progress value={skill.level} />
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
                 </div>
-            ))}
-        </div>
-    </section>
-)
+            </section>
+        )
+    )
+}

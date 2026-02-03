@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 import { Icon, IconTypes } from '@/components'
 import { experience } from '@/data/experience'
-import avatarPic from '@/public/avatar.jpeg'
+import avatarPic from '@/public/avatar.jpg'
 import { update } from '@/update'
 import { useSiteData } from '@/utils'
 
