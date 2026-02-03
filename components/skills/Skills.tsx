@@ -11,27 +11,29 @@ export const Skills: React.FC = () => {
     const data = useSiteData()
 
     return (
-        <section>
-            <div className={styles.skillContainer}>
-                {data?.skills?.map((group: SkillGroupType, i) => (
-                    <div
-                        key={`group-${String(i)}`}
-                        className={styles.skillGroup}
-                    >
-                        <h3>{group.group}</h3>
-                        <ul className={styles.skillList}>
-                            {group?.skills?.map((skill: SkillItemType, j) => (
-                                <li key={`skill-${String(i)}-${String(j)}`}>
-                                    <div className={styles.label}>
-                                        <label>{skill.name}</label>
-                                    </div>
-                                    <Progress value={skill.level} />
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-            </div>
-        </section>
+        !!data?.skills?.length && (
+            <section>
+                <div className={styles.skillContainer}>
+                    {data?.skills?.map((group: SkillGroupType, i) => (
+                        <div
+                            key={`group-${String(i)}`}
+                            className={styles.skillGroup}
+                        >
+                            <h3>{group.group}</h3>
+                            <ul className={styles.skillList}>
+                                {group?.skills?.map((skill: SkillItemType, j) => (
+                                    <li key={`skill-${String(i)}-${String(j)}`}>
+                                        <div className={styles.label}>
+                                            <label>{skill.name}</label>
+                                        </div>
+                                        <Progress value={skill.level} />
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </section>
+        )
     )
 }
