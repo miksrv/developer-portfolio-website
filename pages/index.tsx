@@ -19,7 +19,7 @@ const MainPage: React.FC = () => (
                 images: [
                     {
                         height: 1333,
-                        url: 'https://miksoft.pro/avatar.jpeg',
+                        url: 'https://miksoft.pro/avatar.jpg',
                         width: 1000
                     }
                 ],
