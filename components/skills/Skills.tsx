@@ -15,17 +15,17 @@ export const Skills: React.FC = () => {
             <div className={styles.skillContainer}>
                 {data?.skills?.map((group, i) => (
                     <div
-                        key={`group-${i}`}
+                        key={`group-${String(i)}`}
                         className={styles.skillGroup}
                     >
-                        <h3>{group.group}</h3> {/* Заголовок группы */}
+                        <h3>{group.group}</h3>
                         <ul className={styles.skillList}>
                             {group.skills.map((skill, j) => (
-                                <li key={`skill-${i}-${j}`}>
+                                <li key={`skill-${String(i)}-${String(j)}`}>
                                     <div className={styles.label}>
                                         <label>{skill.name}</label>
                                     </div>
-                                    <Progress value={skill.level} /> {/* Компонент прогресса */}
+                                    <Progress value={skill.level} />
                                 </li>
                             ))}
                         </ul>
