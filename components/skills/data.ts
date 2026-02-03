@@ -3,7 +3,7 @@ type SkillItemType = {
     level: number
 }
 
-type SkillGroupType = {
+export type SkillGroupType = {
     group: string
     skills: SkillItemType[]
 }
