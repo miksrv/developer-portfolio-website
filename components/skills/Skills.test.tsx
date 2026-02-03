@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react'
 import { Skills } from './Skills'
 
 // Mock data
-jest.mock('./data', () => ({
+jest.mock('./types', () => ({
     data: [
         {
             group: 'Frontend',
