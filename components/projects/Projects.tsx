@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Icon } from '@/components/icon'
 import { iconNames } from '@/components/icon/types'
 import { PageTransition } from '@/components/page-transition'
+import { childVariants, parentVariants } from '@/components/page-transition/constants'
 import { useSiteData } from '@/utils'
 import { cn } from '@/utils/tools'
 
@@ -18,7 +19,10 @@ export const Projects: React.FC = () => {
 
     return (
         <section className={styles.projectsContainer}>
-            <PageTransition>
+            <PageTransition
+                parentVariants={parentVariants.slide}
+                childVariants={childVariants.slide}
+            >
                 {data?.projects.map((item: ProjectType, i) => (
                     <div
                         key={`project-${item?.link}`}

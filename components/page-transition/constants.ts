@@ -13,13 +13,12 @@ export const parentVariants = {
     slide: {
         initial: { x: '-100vw', opacity: 0 },
         animate: {
-            x: 0,
+            x: '0',
             opacity: 1,
             transition: {
-                type: 'spring',
                 stiffness: 50,
-                staggerChildren: 0.2,
-                delayChildren: 0.1
+                staggerChildren: 0.3,
+                delayChildren: 0.5
             }
         },
         exit: { x: '100vw', opacity: 0 }
