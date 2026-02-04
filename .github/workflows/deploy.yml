@@ -88,16 +88,15 @@ jobs:
 
             - name: Upload Folder
               run: |
-                  lftp -c "
+                  lftp -d -c "
                     set ftp:passive-mode true;
-                    set ftp:list-options -a;
-                    set net:timeout 10;
-                    set net:max-retries 3;
-                    set net:reconnect-interval-base 5;
-                    open ${{ secrets.FTP_HOSTNAME }};
+                    set ftp:ssl-allow no;
+                    set net:timeout 30;
+                    set net:max-retries 2;
+                    open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOSTNAME }};
                     mirror -R \
-                      --parallel=10 \
+                      --parallel=2 \
                       --delete \
                       --verbose \
-                      out/ /;
+                      out/ ./;
                   "
