@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Experience matches snapshot 1`] = `
+<DocumentFragment>
+  <section>
+    <ul
+      class="experienceList"
+    >
+      <div
+        style="opacity: 0; transform: translateX(-100vw);"
+      >
+        <div
+          style="opacity: 0; transform: translateX(50px);"
+        >
+          <li
+            class="experienceRole"
+          >
+            <div
+              class="dates"
+            >
+              <div
+                class="date"
+              >
+                formatted-2020-01-01 - formatted-2021-01-01
+              </div>
+              <div
+                class="period"
+              >
+                period-2020-01-01-2021-01-01
+              </div>
+            </div>
+            <h3
+              class="role"
+            >
+              Frontend Developer
+            </h3>
+            <div
+              class="duties"
+            >
+              Developed UI components
+            </div>
+            <ul
+              class="skills"
+            >
+              <li>
+                <span
+                  class="area"
+                >
+                  Frontend:
+                </span>
+                <span
+                  class="stack"
+                >
+                  React, TypeScript
+                </span>
+              </li>
+              <li>
+                <span
+                  class="area"
+                >
+                  Testing:
+                </span>
+                <span
+                  class="stack"
+                >
+                  Jest, RTL
+                </span>
+              </li>
+            </ul>
+          </li>
+        </div>
+        <div
+          style="opacity: 0; transform: translateX(50px);"
+        >
+          <li
+            class="experienceRole"
+          >
+            <div
+              class="dates"
+            >
+              <div
+                class="date"
+              >
+                formatted-2021-02-01 - Present
+              </div>
+              <div
+                class="period"
+              >
+                period-2021-02-01-null
+              </div>
+            </div>
+            <h3
+              class="role"
+            >
+              Fullstack Developer
+            </h3>
+            <div
+              class="duties"
+            >
+              Built APIs
+            </div>
+          </li>
+        </div>
+      </div>
+    </ul>
+  </section>
+</DocumentFragment>
+`;

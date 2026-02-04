@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Projects matches snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="projectsContainer"
+  >
+    <div
+      data-testid="pagetransition"
+    >
+      <div
+        class="item even"
+      >
+        <a
+          href="https://project1.com"
+          target="_blank"
+          title="Project 1"
+        >
+          <img
+            alt="Project 1"
+            data-testid="project-image"
+            src="/images/project1.png"
+          />
+        </a>
+        <div
+          class="description"
+        >
+          <div>
+            <h2>
+              Project 1
+            </h2>
+            <p>
+              Description for Project 1
+            </p>
+          </div>
+          <div
+            class="info"
+          >
+            <div>
+              <span
+                data-name="web"
+                data-testid="icon"
+              />
+              <a
+                href="https://project1.com"
+                target="_blank"
+                title="Project 1 Website Live"
+              >
+                project1.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="item odd"
+      >
+        <a
+          href="https://project2.com"
+          target="_blank"
+          title="Project 2"
+        >
+          <img
+            alt="Project 2"
+            data-testid="project-image"
+            src="/images/project2.png"
+          />
+        </a>
+        <div
+          class="description"
+        >
+          <div>
+            <h2>
+              Project 2
+            </h2>
+            <p>
+              Description for Project 2
+            </p>
+          </div>
+          <div
+            class="info"
+          >
+            <div>
+              <span
+                data-name="web"
+                data-testid="icon"
+              />
+              <a
+                href="https://project2.com"
+                target="_blank"
+                title="Project 2 Website Live"
+              >
+                project2.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;

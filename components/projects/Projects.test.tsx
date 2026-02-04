@@ -12,25 +12,30 @@ jest.mock('@/components/icon', () => ({
         />
     )
 }))
+
 jest.mock('@/components/page-transition', () => ({
     PageTransition: ({ children }: { children: React.ReactNode }) => <div data-testid='pagetransition'>{children}</div>
 }))
-jest.mock('./data', () => ({
-    data: [
-        {
-            title: 'Project 1',
-            link: 'https://project1.com',
-            image: '/images/project1.png',
-            description: 'Description for Project 1'
-        },
-        {
-            title: 'Project 2',
-            link: 'https://project2.com',
-            image: '/images/project2.png',
-            description: 'Description for Project 2'
-        }
-    ]
+
+jest.mock('@/utils', () => ({
+    useSiteData: () => ({
+        projects: [
+            {
+                title: 'Project 1',
+                link: 'https://project1.com',
+                image: '/images/project1.png',
+                description: 'Description for Project 1'
+            },
+            {
+                title: 'Project 2',
+                link: 'https://project2.com',
+                image: '/images/project2.png',
+                description: 'Description for Project 2'
+            }
+        ]
+    })
 }))
+
 jest.mock('./styles.module.sass', () => ({
     projectsContainer: 'projectsContainer',
     item: 'item',
