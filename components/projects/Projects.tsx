@@ -20,8 +20,8 @@ export const Projects: React.FC = () => {
     return (
         <section className={styles.projectsContainer}>
             <PageTransition
-                parentVariants={parentVariants.slide}
-                childVariants={childVariants.slide}
+                parentVariants={parentVariants.scale}
+                childVariants={childVariants.scale}
             >
                 {data?.projects.map((item: ProjectType, i) => (
                     <div
