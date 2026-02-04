@@ -89,7 +89,15 @@ jobs:
             - name: Upload Folder
               run: |
                   lftp -c "
+                    set ftp:passive-mode true;
+                    set ftp:list-options -a;
+                    set net:timeout 10;
+                    set net:max-retries 3;
+                    set net:reconnect-interval-base 5;
                     open ${{ secrets.FTP_HOSTNAME }};
-                    glob -a mrm *
-                    mirror --parallel=100 -R out/ /
+                    mirror -R \
+                      --parallel=10 \
+                      --delete \
+                      --verbose \
+                      out/ /;
                   "
