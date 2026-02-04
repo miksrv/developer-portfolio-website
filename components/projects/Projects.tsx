@@ -9,9 +9,8 @@ import { PageTransition } from '@/components/page-transition'
 import { useSiteData } from '@/utils'
 import { cn } from '@/utils/tools'
 
-import { ProjectType } from './data'
+import { ProjectType } from './types'
 
-// import { data } from './data'
 import styles from './styles.module.sass'
 
 export const Projects: React.FC = () => {
@@ -53,7 +52,7 @@ export const Projects: React.FC = () => {
                                             title={`${item.title} GitHub Source Code`}
                                             target={'_blank'}
                                         >
-                                            {item.link.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                                            {'GitHub Repository'}
                                         </Link>
                                     </div>
                                 )}
