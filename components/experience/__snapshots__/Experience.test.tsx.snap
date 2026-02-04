@@ -7,10 +7,10 @@ exports[`Experience matches snapshot 1`] = `
       class="experienceList"
     >
       <div
-        style="opacity: 0;"
+        style="opacity: 0; transform: translateX(-100vw);"
       >
         <div
-          style="opacity: 0; transform: translateY(50px);"
+          style="opacity: 0; transform: translateX(50px);"
         >
           <li
             class="experienceRole"
@@ -70,7 +70,7 @@ exports[`Experience matches snapshot 1`] = `
           </li>
         </div>
         <div
-          style="opacity: 0; transform: translateY(50px);"
+          style="opacity: 0; transform: translateX(50px);"
         >
           <li
             class="experienceRole"

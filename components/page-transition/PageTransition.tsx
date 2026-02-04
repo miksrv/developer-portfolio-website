@@ -1,11 +1,20 @@
 import React from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, Variants } from 'framer-motion'
 
 import { usePathname } from 'next/navigation'
 
-import { childVariants, parentVariants } from './constants'
+import { childVariants as defaultChildVariants, parentVariants as defaultParentVariants } from './constants'
 
-export const PageTransition: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ children }) => {
+type PageTransitionProps = React.HTMLAttributes<HTMLDivElement> & {
+    parentVariants?: Variants
+    childVariants?: Variants
+}
+
+export const PageTransition: React.FC<PageTransitionProps> = ({
+    children,
+    parentVariants = defaultParentVariants.fade,
+    childVariants = defaultChildVariants.fade
+}) => {
     const pathname = usePathname()
 
     return (

@@ -1,4 +1,4 @@
-import { ExperienceType } from '@/data/experience'
+import { ExperienceType } from '@/components/experience/types'
 
 import { findEarliestDate } from './utils'
 

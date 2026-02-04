@@ -19,14 +19,16 @@ jest.mock('@/update', () => ({
     update: '2023-08-01T00:00:00Z'
 }))
 
-jest.mock('@/data/experience', () => ({
-    experience: [
-        {
-            title: 'Software Engineer',
-            period: ['2010-01-01'],
-            company: 'Tech Inc'
-        }
-    ]
+jest.mock('@/utils', () => ({
+    useSiteData: () => ({
+        experience: [
+            {
+                title: 'Software Engineer',
+                period: ['2010-01-01'],
+                company: 'Tech Inc'
+            }
+        ]
+    })
 }))
 
 describe('Introduce Component', () => {

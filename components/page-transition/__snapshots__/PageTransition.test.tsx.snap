@@ -10,11 +10,9 @@ exports[`PageTransition matches snapshot 1`] = `
       data-testid="motion-div"
       exit="exit"
       initial="initial"
-      variants="[object Object]"
     >
       <div
         data-testid="motion-div"
-        variants="[object Object]"
       >
         <div>
           Snapshot Child

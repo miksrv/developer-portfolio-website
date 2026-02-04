@@ -1,9 +1,10 @@
 import React from 'react'
 
-import { SkillGroupType, SkillItemType } from '@/components/skills/types'
 import { useSiteData } from '@/utils'
 
 import { Progress } from '../progress'
+
+import { SkillGroupType, SkillItemType } from './types'
 
 import styles from './styles.module.sass'
 

@@ -6,23 +6,36 @@ import { SkillsCloud } from './SkillsCloud'
 
 import styles from './SkillsCloud.module.css'
 
-jest.mock('@/data/skills', () => ({
-    Frontend: {
-        skill1: 'React',
-        skill2: 'JavaScript'
-    },
-    Backend: {
-        skill1: 'Node.js',
-        skill2: 'Express'
-    },
-    Testing: {
-        skill1: 'Jest',
-        skill2: 'Cypress'
-    },
-    DevOps: {
-        skill1: 'Docker',
-        skill2: 'Kubernetes'
-    }
+// Mock useSiteData to provide experience data
+jest.mock('@/utils', () => ({
+    useSiteData: () => ({
+        experience: [
+            {
+                period: ['2020', '2021'],
+                role: 'Frontend Developer',
+                duties: 'Developed UI',
+                skills: [{ area: 'Frontend', stack: ['React', 'JavaScript'] }]
+            },
+            {
+                period: ['2021', '2022'],
+                role: 'Backend Developer',
+                duties: 'Developed API',
+                skills: [{ area: 'Backend', stack: ['Node.js', 'Express'] }]
+            },
+            {
+                period: ['2022', '2023'],
+                role: 'QA Engineer',
+                duties: 'Tested apps',
+                skills: [{ area: 'Testing', stack: ['Jest', 'Cypress'] }]
+            },
+            {
+                period: ['2023', '2024'],
+                role: 'DevOps',
+                duties: 'Maintained infra',
+                skills: [{ area: 'DevOps', stack: ['Docker', 'Kubernetes'] }]
+            }
+        ]
+    })
 }))
 
 describe('SkillsCloud Component', () => {
@@ -32,10 +45,8 @@ describe('SkillsCloud Component', () => {
         expect(skillsSection).toBeInTheDocument()
     })
 
-    it('renders all skills from Frontend, Backend, Testing, and DevOps', () => {
+    it('renders all skills from experience', () => {
         render(<SkillsCloud />)
-
-        // Проверяем наличие каждого навыка
         expect(screen.getByText('React')).toBeInTheDocument()
         expect(screen.getByText('JavaScript')).toBeInTheDocument()
         expect(screen.getByText('Node.js')).toBeInTheDocument()
@@ -49,7 +60,7 @@ describe('SkillsCloud Component', () => {
     it('renders the correct number of skills', () => {
         render(<SkillsCloud />)
         const skillItems = screen.getAllByRole('listitem')
-        expect(skillItems).toHaveLength(8) // 2 skills in each section (Frontend, Backend, Testing, DevOps)
+        expect(skillItems).toHaveLength(8)
     })
 
     it('applies correct styles to the skills list', () => {

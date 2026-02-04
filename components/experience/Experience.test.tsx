@@ -2,29 +2,32 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import { experience as mockExperience } from '@/data/experience'
-
 import { Experience } from './Experience'
 
-// Mock dependencies
-jest.mock('@/data/experience', () => ({
-    experience: [
-        {
-            period: ['2020-01-01', '2021-01-01'],
-            role: 'Frontend Developer',
-            duties: 'Developed UI components',
-            skills: [
-                { area: 'Frontend', stack: ['React', 'TypeScript'] },
-                { area: 'Testing', stack: ['Jest', 'RTL'] }
-            ]
-        },
-        {
-            period: ['2021-02-01', null],
-            role: 'Fullstack Developer',
-            duties: 'Built APIs',
-            skills: []
-        }
-    ]
+// Define mock experience data
+const mockExperience = [
+    {
+        period: ['2020-01-01', '2021-01-01'],
+        role: 'Frontend Developer',
+        duties: 'Developed UI components',
+        skills: [
+            { area: 'Frontend', stack: ['React', 'TypeScript'] },
+            { area: 'Testing', stack: ['Jest', 'RTL'] }
+        ]
+    },
+    {
+        period: ['2021-02-01', null],
+        role: 'Fullstack Developer',
+        duties: 'Built APIs',
+        skills: []
+    }
+]
+
+// Mock useSiteData to provide experience data
+jest.mock('@/utils', () => ({
+    useSiteData: () => ({
+        experience: mockExperience
+    })
 }))
 
 jest.mock('@/utils/date', () => ({
@@ -40,11 +43,9 @@ describe('Experience', () => {
 
     it('renders all experience items', () => {
         render(<Experience />)
-        expect(
-            screen
-                .getAllByRole('listitem', { name: '', hidden: true })
-                .filter((li) => li.className.includes('experienceRole'))
-        ).toHaveLength(mockExperience.length)
+        // Find all listitems with a role and check for the role class
+        const items = screen.getAllByRole('listitem').filter((li) => li.className.includes('experienceRole'))
+        expect(items).toHaveLength(mockExperience.length)
     })
 
     it('renders role, duties, and dates for each experience', () => {
@@ -71,8 +72,10 @@ describe('Experience', () => {
 
     it('does not render skills list if skills are empty', () => {
         render(<Experience />)
-        // The second experience has no skills, so only one skills list should be present
-        expect(screen.getAllByRole('list').length).toBeGreaterThan(1)
+        // Only one experience has skills, so only one skills list should be present
+        // Find all ul elements with the skills class
+        const skillsLists = document.querySelectorAll('ul[class*="skills"]')
+        expect(skillsLists).toHaveLength(1)
     })
 
     it('matches snapshot', () => {

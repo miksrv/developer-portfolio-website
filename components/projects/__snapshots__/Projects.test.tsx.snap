@@ -36,17 +36,19 @@ exports[`Projects matches snapshot 1`] = `
           <div
             class="info"
           >
-            <span
-              data-name="web"
-              data-testid="icon"
-            />
-            <a
-              href="https://project1.com"
-              target="_blank"
-              title="Project 1"
-            >
-              project1.com
-            </a>
+            <div>
+              <span
+                data-name="web"
+                data-testid="icon"
+              />
+              <a
+                href="https://project1.com"
+                target="_blank"
+                title="Project 1 Website Live"
+              >
+                project1.com
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -78,17 +80,19 @@ exports[`Projects matches snapshot 1`] = `
           <div
             class="info"
           >
-            <span
-              data-name="web"
-              data-testid="icon"
-            />
-            <a
-              href="https://project2.com"
-              target="_blank"
-              title="Project 2"
-            >
-              project2.com
-            </a>
+            <div>
+              <span
+                data-name="web"
+                data-testid="icon"
+              />
+              <a
+                href="https://project2.com"
+                target="_blank"
+                title="Project 2 Website Live"
+              >
+                project2.com
+              </a>
+            </div>
           </div>
         </div>
       </div>
