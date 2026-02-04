@@ -26,7 +26,7 @@ export const Progress: React.FC<ProgressProps> = ({ value = 0 }) => {
                             animate={{ opacity: isActive ? 1 : 0.1 }}
                             transition={{
                                 duration: 0.3,
-                                delay: 0.8 + (isActive ? i * 0.2 : 0.3)
+                                delay: 0.8 + (isActive ? i * 0.05 : 0.3)
                             }}
                         />
                     )
