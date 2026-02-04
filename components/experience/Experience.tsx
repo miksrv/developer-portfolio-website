@@ -1,24 +1,19 @@
 import React from 'react'
 
 import { PageTransition } from '@/components'
+import { childVariants, parentVariants } from '@/components/page-transition/constants'
 import { experience } from '@/data/experience'
 import { formatDate, formatPeriod } from '@/utils/date'
 
 import styles from './styles.module.sass'
 
-/**
- * The Experience component displays a list of professional experiences, including roles, dates, duties, and skills.
- *
- * @component
- * @example
- * return (
- *   <Experience />
- * )
- */
 export const Experience: React.FC = () => (
     <section>
         <ul className={styles.experienceList}>
-            <PageTransition>
+            <PageTransition
+                parentVariants={parentVariants.slide}
+                childVariants={childVariants.slide}
+            >
                 {experience?.map((item, i) => (
                     <li
                         className={styles.experienceRole}
