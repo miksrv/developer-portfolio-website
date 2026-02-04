@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.2.0
+
+### Minor Changes
+
+- Migrated all data (projects, experience, skills) to JSON format, removed old TypeScript data files
+- Updated UI components to work with new JSON data
+- Added and improved animations for main UI components (PageTransition, SkillsCloud, Progress, Experience)
+- Refactored project image storage: moved images to the public directory
+- Updated and added unit tests, removed outdated snapshots
+- Fixed and improved TypeScript types, optimized component imports
+- Improved SEO for project, experience, and skills pages
+- Regularly updated UI libraries and dependencies
+- Enhanced code structure and quality, maintained consistent code style
+
 ## 1.1.17
 
 ### Patch Changes
