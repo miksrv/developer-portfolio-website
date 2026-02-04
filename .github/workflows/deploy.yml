@@ -86,12 +86,10 @@ jobs:
             - name: Load Secrets
               run: echo "machine ${{ secrets.FTP_HOSTNAME }} login ${{ secrets.FTP_USERNAME }} password ${{ secrets.FTP_PASSWORD }}" > ~/.netrc
 
-            - name: Upload via LFTP (SFTP protocol)
+            - name: Upload Folder
               run: |
-                  lftp -d -c "
-                    set sftp:auto-confirm yes;
-                    set net:timeout 30;
-                    set net:max-retries 2;
-                    open -u ${{ secrets.SSH_USER }},${{ secrets.SSH_PASSWORD }} -p 2222 sftp://${{ secrets.SSH_HOST }};
-                    mirror -R --delete --verbose out/ domains/miksoft.pro/public_html/;
+                  lftp -c "
+                    open ${{ secrets.FTP_HOSTNAME }};
+                    glob -a mrm *
+                    mirror --parallel=100 -R out/ /
                   "
