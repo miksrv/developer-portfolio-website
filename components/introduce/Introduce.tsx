@@ -70,10 +70,10 @@ export const Introduce: React.FC = () => {
     ]
 
     useEffect(() => {
-        const timer = setInterval(() => tick(), 50)
+        const timer = setInterval(() => tick(), 100)
 
         return () => clearInterval(timer)
-    }, [])
+    }, [birthTime, expTime])
 
     return (
         <section className={styles.introduceSection}>

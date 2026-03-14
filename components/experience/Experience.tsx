@@ -22,7 +22,7 @@ export const Experience: React.FC = () => {
                     {data?.experience?.map((item: ExperienceType, i) => (
                         <li
                             className={styles.experienceRole}
-                            key={`${item.period?.[0]}-${item.period?.[1]}`}
+                            key={`exp-${i}`}
                         >
                             <div className={styles.dates}>
                                 <div className={styles.date}>
