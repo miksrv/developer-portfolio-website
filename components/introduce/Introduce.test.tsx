@@ -96,7 +96,7 @@ describe('Introduce Component', () => {
 
     it('renders the description text', () => {
         render(<Introduce />)
-        const description = screen.getByText(/Fullstack Software Engineer/i)
+        const description = screen.getByText(/production systems/i)
         expect(description).toBeInTheDocument()
     })
 })

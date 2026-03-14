@@ -124,16 +124,16 @@ export const Introduce: React.FC = () => {
 
                 <div className={styles.description}>
                     <p>
-                        {'I’m a'} <b>{'Fullstack Software Engineer'}</b>{' '}
-                        {'specializing in scalable web applications, working across both'} <b>{'frontend'}</b> and{' '}
-                        <b>{'backend'}</b>{' '}
+                        {'I architect and deliver'} <b>{'production systems'}</b>{' '}
+                        {'end-to-end - owning everything from system design and'} <b>{'backend'}</b> {' APIs to '}
+                        <b>{'frontend'}</b>{' '}
                         {
-                            'development. With a focus on delivering efficient and high-quality solutions, I manage projects for clients in various industries.'
+                            'products. I define technical direction and lead engineering delivery for clients across industries.'
                         }
                     </p>
                     <p>
                         {
-                            'In my free time, you can often find me exploring the night skies with my homemade observatory or enjoying travel adventures with my family.'
+                            'Outside work, I run a fully automated home observatory for remote astrophotography and spend time hiking and traveling with my family.'
                         }
                     </p>
                 </div>

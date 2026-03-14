@@ -22,14 +22,14 @@ describe('About Component', () => {
         expect(image.getAttribute('src')).toContain('mocked-photo.jpg')
     })
 
-    it('renders the first paragraph about programming', () => {
+    it('renders the first paragraph about engineering background', () => {
         render(<About />)
-        expect(screen.getByText(/Programming is both my profession and my hobby/i)).toBeInTheDocument()
+        expect(screen.getByText(/I architect and deliver full-stack systems/i)).toBeInTheDocument()
     })
 
     it('renders the second paragraph about hobbies and family', () => {
         render(<About />)
-        expect(screen.getByText(/Outside of coding, my hobbies are a big part of my life/i)).toBeInTheDocument()
+        expect(screen.getByText(/Outside engineering, I design and operate/i)).toBeInTheDocument()
     })
 
     it('matches the snapshot', () => {
