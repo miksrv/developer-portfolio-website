@@ -32,6 +32,7 @@ export const Projects: React.FC = () => {
                             href={item.link}
                             title={item.title}
                             target={'_blank'}
+                            rel={'noopener noreferrer'}
                         >
                             <Image
                                 src={item.image}
@@ -55,6 +56,7 @@ export const Projects: React.FC = () => {
                                             href={item.github}
                                             title={`${item.title} GitHub Source Code`}
                                             target={'_blank'}
+                                            rel={'noopener noreferrer'}
                                         >
                                             {'GitHub Repository'}
                                         </Link>
@@ -68,6 +70,7 @@ export const Projects: React.FC = () => {
                                             href={item.link}
                                             title={`${item.title} Website Live`}
                                             target={'_blank'}
+                                            rel={'noopener noreferrer'}
                                         >
                                             {item.link.replace(/^https?:\/\//, '').replace(/\/$/, '')}
                                         </Link>

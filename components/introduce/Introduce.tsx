@@ -80,8 +80,8 @@ export const Introduce: React.FC = () => {
             <div className={styles.avatarContainer}>
                 <Image
                     src={avatarPic}
-                    layout={'fill'}
-                    objectFit={'cover'}
+                    fill
+                    style={{ objectFit: 'cover' }}
                     // eslint-disable-next-line quotes
                     alt={"Hi I'm - Misha - Picture of the author"}
                 />
@@ -103,6 +103,7 @@ export const Introduce: React.FC = () => {
                                     href={item.link}
                                     title={item.label}
                                     target={'_blank'}
+                                    rel={'noopener noreferrer'}
                                     className={styles.link}
                                 >
                                     <Icon name={item.icon as IconTypes} />

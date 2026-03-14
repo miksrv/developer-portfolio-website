@@ -13,6 +13,7 @@ exports[`Projects matches snapshot 1`] = `
       >
         <a
           href="https://project1.com"
+          rel="noopener noreferrer"
           target="_blank"
           title="Project 1"
         >
@@ -43,6 +44,7 @@ exports[`Projects matches snapshot 1`] = `
               />
               <a
                 href="https://project1.com"
+                rel="noopener noreferrer"
                 target="_blank"
                 title="Project 1 Website Live"
               >
@@ -57,6 +59,7 @@ exports[`Projects matches snapshot 1`] = `
       >
         <a
           href="https://project2.com"
+          rel="noopener noreferrer"
           target="_blank"
           title="Project 2"
         >
@@ -87,6 +90,7 @@ exports[`Projects matches snapshot 1`] = `
               />
               <a
                 href="https://project2.com"
+                rel="noopener noreferrer"
                 target="_blank"
                 title="Project 2 Website Live"
               >
