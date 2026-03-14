@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.2.1
+
+### Patch Changes
+
+- Fixed stale closure in `Introduce.tsx` setInterval by adding birthTime/expTime to deps array
+- Cancelled requestAnimationFrame loop on cleanup in `StarField.tsx`; removed window.onresize = null
+- Replaced runtime fetch with static JSON import in `DataProvider.tsx`
+- Renamed `experience.tsx` component from ProjectsPage to ExperiencePage
+- Replaced unstable list keys in `Experience.tsx` with index-based keys
+- Added WAI-ARIA attributes to progressbar in `Progress.tsx`
+- Memoized skill-set derivation and changed motion keys in `SkillsCloud.tsx`
+- Reduced setInterval interval in `Introduce.tsx` for fewer re-renders
+- Added default case and dev warning for unknown names in `Icon.tsx`
+- Fixed active-class test in `Header.test.tsx`
+- Updated messaging and copy in data.json, Introduce, and About components
+- Revised biography, hero, About section, skills, and project descriptions for senior engineering focus
+- Updated SEO titles and meta descriptions for senior/staff positioning
+- Refreshed tests and snapshots for new copy
+- Removed maximum-scale=1 from viewport meta tag for accessibility (`pages/_app.tsx`)
+- Improved sitemap.xml with lastmod dates and homepage priority (`public/sitemap.xml`)
+- Added lang="en" to html in `_document.tsx` for accessibility (`pages/_document.tsx`)
+- Replaced deprecated Next.js Image props in `Introduce.tsx`
+- Added rel="noopener noreferrer" to all target="\_blank" links in Introduce and Projects
+- Lightened --text-color-third for WCAG AA/AAA contrast in `styles/theme.css`
+- All tests pass; refreshed Projects snapshot for rel attribute addition
+
 ## 1.2.0
 
 ### Minor Changes
