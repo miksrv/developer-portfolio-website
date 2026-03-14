@@ -12,6 +12,10 @@ export const Progress: React.FC<ProgressProps> = ({ value = 0 }) => {
         <div
             className={styles.progress}
             role={'progressbar'}
+            aria-valuenow={value}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label={'Skill level'}
         >
             {Array(segments)
                 .fill(0)

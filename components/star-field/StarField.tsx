@@ -35,6 +35,7 @@ export const StarField: React.FC<StarFieldProps> = ({
         const canvasRendering = canvas?.getContext('2d')
         const w = window.innerWidth
         const h = window.innerHeight
+        let rafId = 0
 
         if (!canvas) {
             return
@@ -70,6 +71,8 @@ export const StarField: React.FC<StarFieldProps> = ({
                 })
             }
 
+            let prevTime: number
+
             const tick = (time: number) => {
                 const elapsed = time - (prevTime || time)
                 prevTime = time
@@ -91,17 +94,16 @@ export const StarField: React.FC<StarFieldProps> = ({
                     }
                 })
 
-                requestAnimationFrame(tick)
+                rafId = requestAnimationFrame(tick)
             }
 
-            let prevTime: number
-            requestAnimationFrame(tick)
+            rafId = requestAnimationFrame(tick)
         } else {
             console.error('Could not get 2d context from canvas element')
         }
 
         return () => {
-            window.onresize = null
+            cancelAnimationFrame(rafId)
         }
     }, [starColor, backgroundColor, speedFactor, starCount])
 

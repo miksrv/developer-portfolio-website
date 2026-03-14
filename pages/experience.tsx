@@ -6,7 +6,7 @@ import { NextSeo } from 'next-seo'
 import { Experience, Icon, iconNames, PageTransition } from '@/components'
 import { useSiteData } from '@/utils'
 
-const ProjectsPage: React.FC = () => {
+const ExperiencePage: React.FC = () => {
     const data = useSiteData()
 
     return (
@@ -57,4 +57,4 @@ const ProjectsPage: React.FC = () => {
     )
 }
 
-export default ProjectsPage
+export default ExperiencePage

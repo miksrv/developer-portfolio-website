@@ -1,6 +1,6 @@
 <a id="top"></a>
 
-A modern and flexible portfolio template for React and Next.js developers. Perfect for showcasing your skills, experience, and projects. Clean, professional design, easy customization, and fast loading — everything you need to stand out from the crowd. A great choice for both personal brands and freelancers who value a convenient and stylish portfolio.
+A modern and flexible portfolio template for React and Next.js developers. Perfect for showcasing your skills, experience, and projects. Clean, professional design, easy customization, and fast loading - everything you need to stand out from the crowd. A great choice for both personal brands and freelancers who value a convenient and stylish portfolio.
 
 <!-- PROJECT TITLE -->
 <div align="center">
@@ -65,7 +65,7 @@ A modern and flexible portfolio template for React and Next.js developers. Perfe
 
 ### Why Use This Portfolio Template?
 
-- **Professional Presentation**: A portfolio is more than just a collection of work—it's a personal brand statement. With this template, you can professionally showcase your skills, projects, and expertise, leaving a lasting impression on potential employers or clients.
+- **Professional Presentation**: A portfolio is more than just a collection of work-it's a personal brand statement. With this template, you can professionally showcase your skills, projects, and expertise, leaving a lasting impression on potential employers or clients.
 
 - **Boost Your Online Visibility**: In today’s digital world, a strong online presence is key to getting noticed. This portfolio is optimized for SEO, helping to increase your visibility in search engines, so your profile is more likely to be found by the right people.
 

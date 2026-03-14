@@ -1,7 +1,7 @@
 {
     "biography": {
         "name": "Misha",
-        "title": "Software Engineer, Astronomer and Dreamer",
+        "title": "Software Architect & Tech Lead",
         "location": "California, USA",
         "timezone": "Pacific, UTC-07:00",
         "birthDate": "1989-09-09T05:15:00"
@@ -45,7 +45,7 @@
                     "level": 86
                 },
                 {
-                    "name": "ESLint & Prettier",
+                    "name": "API & System Design",
                     "level": 79
                 }
             ]
@@ -66,7 +66,7 @@
                     "level": 50
                 },
                 {
-                    "name": "SQL",
+                    "name": "SQL & Database Design",
                     "level": 60
                 }
             ]
@@ -89,14 +89,14 @@
             ]
         },
         {
-            "group": "DevOps",
+            "group": "Infrastructure",
             "skills": [
                 {
                     "name": "Docker",
                     "level": 60
                 },
                 {
-                    "name": "Git",
+                    "name": "Git & CI/CD",
                     "level": 90
                 },
                 {
@@ -112,33 +112,33 @@
             "title": "Homemade Observatory",
             "link": "https://astro.miksoft.pro/",
             "github": "https://github.com/miksrv/astronomy-portal",
-            "description": "A fully automated homemade observatory integrated with an online service. It uses Raspberry Pi, Arduino, and Python for remote control, automation, and image analysis. The web service includes user authentication, real-time images, observatory data, and a calendar for celestial events, combining hardware and software for home-based astronomical exploration."
+            "description": "End-to-end platform integrating Raspberry Pi, Arduino, and Python for automated telescope control and image capture. The web layer provides real-time data streaming, user authentication, and a celestial events calendar - hardware and full-stack software designed and built from scratch."
         },
         {
             "image": "/projects/meteostation.jpg",
             "title": "Arduino Weather Station",
             "link": "https://meteo.miksoft.pro/",
             "github": "https://github.com/miksrv/arduino-weather-station",
-            "description": "An Arduino-based weather station that collects and uploads real-time data to a remote server. It features an API for accessing current and historical weather data, as well as forecasts. This station supports the observatory by providing environmental data, ensuring accurate weather monitoring for optimal operations."
+            "description": "Arduino-powered sensor system with a REST API serving real-time and historical weather data. Integrated into the observatory pipeline to gate imaging sessions on atmospheric conditions - embedded firmware, backend API, and frontend dashboard built in-house."
         },
         {
             "image": "/projects/asteroid.jpg",
             "title": "Asteroid Monitoring",
             "link": "https://asteroid.miksoft.pro/",
             "github": "https://github.com/miksrv/asteroid-monitoring",
-            "description": "Asteroid Monitoring is a system that fetches and displays real-time data about asteroids approaching Earth using the NASA NeoWS API. The application provides detailed information on each object, including: Time of close approach, Distance from Earth, Relative velocity, Estimated size range, Orbit visualization. It is designed to be user-friendly and informative, making complex data accessible to everyone."
+            "description": "Real-time data platform consuming the NASA NeoWS API to track near-Earth asteroids. Surfaces close-approach timing, velocity, size estimates, and orbit trajectories - transforming raw orbital mechanics data into an accessible, production-deployed web application."
         },
         {
             "image": "/projects/geometki.jpg",
             "title": "Interesting places and attractions",
             "link": "https://geometki.com/",
-            "description": "This portal, built on a microservice architecture using Next.js, PHP, and MySQL, helps users discover and share interesting places. It features a user dashboard, map integration, and the ability to upload photos and comments. Users can contribute to existing places and engage with a gamified system of levels, experience points, and reputation, promoting an interactive community."
+            "description": "Production geo-discovery portal built on microservice architecture with Next.js, PHP, and MySQL. Features map integration, user-generated content, photo uploads, and a gamified reputation system - designed, architected, and shipped end-to-end."
         },
         {
             "image": "/projects/lookatstars.jpg",
             "title": "Astronomical Project",
             "link": "https://t.me/look_at_stars",
-            "description": "Focused on making astronomy accessible, this project shares engaging, science-based content via Telegram. It promotes space knowledge through articles, event updates, and visuals, making complex topics easy to understand. The goal is to inspire curiosity and contribute to the public’s appreciation for space and science."
+            "description": "Astronomy outreach channel delivering science-accurate content, celestial event coverage, and astrophotography to a growing audience. Built and operated end-to-end - content pipeline, production workflow, and community management."
         }
     ],
     "experience": [
@@ -314,20 +314,20 @@
     ],
     "seo": {
         "index": {
-            "title": "Hi, Im Misha - Programmer, Engineer and Dreamer",
-            "description": "I am a software engineer specializing in frontend and backend development for scalable web applications. With extensive experience in application development, testing, and managing both development teams and projects, I am focused on delivering high-quality and efficient solutions."
+            "title": "Misha - Software Architect & Tech Lead",
+            "description": "Software architect and tech lead with 19+ years designing production systems, leading engineering teams, and delivering full-stack applications across frontend, backend, and infrastructure."
         },
         "skills": {
-            "title": "My technical skills",
-            "description": "With over 19+ years of experience in software development for clients ranging from government agencies to private companies, I’ve built a broad skill set across various technologies. Below is a summary of my key technical skills, ranked by usage frequency and proficiency based on past projects. My expertise spans frontend and backend development, analytics, DevOps, database architecture, web design, and API development, all of which I regularly employ in both professional work and personal projects."
+            "title": "Technical Skills",
+            "description": "19+ years building and shipping production systems for government agencies, media companies, and tech startups. Skills span full-stack development, system architecture, DevOps, and database design - applied across professional engagements and open-source projects."
         },
         "experience": {
-            "title": "My professional experience",
-            "description": "Over the past 19+ years, I have worked with a diverse range of clients, from government agencies to private companies, gaining extensive experience in software development. My expertise spans frontend and backend development, analytics, DevOps, database architecture, web design, and API development. Below is a summary of my key professional experiences and roles throughout my career."
+            "title": "Professional Experience",
+            "description": "19+ years of engineering leadership across government, media, and tech. Delivered full-stack systems from greenfield to production, led cross-functional teams, and defined technical direction across frontend, backend, and infrastructure."
         },
         "projects": {
-            "title": "My personal projects",
-            "description": "In addition to my professional work, I have developed several personal projects that showcase my skills and interests in software development. These projects range from web applications to tools that solve specific problems or enhance productivity. Below is a summary of some of my notable personal projects."
+            "title": "Personal Projects",
+            "description": "Side projects built end-to-end - from embedded hardware integration to full-stack web platforms. Each is deployed in production and reflects real system design decisions, not toy examples."
         }
     }
 }

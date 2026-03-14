@@ -23,15 +23,17 @@ describe('Header Component', () => {
         })
     })
 
-    it('applies active class to the link matching the current pathname', () => {
-        const activePath = '/about'
-        ;(usePathname as jest.Mock).mockReturnValue(activePath)
+    it('applies active class only to the link matching the current pathname', () => {
+        ;(usePathname as jest.Mock).mockReturnValue('/projects')
 
         render(<Header />)
 
         menu.forEach((link) => {
-            if (link.label !== 'About') {
-                const menuItem = screen.getByText(link.label)
+            const menuItem = screen.getByText(link.label)
+
+            if (link.url === '/projects') {
+                expect(menuItem).toHaveClass('active')
+            } else {
                 expect(menuItem).not.toHaveClass('active')
             }
         })

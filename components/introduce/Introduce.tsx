@@ -70,18 +70,18 @@ export const Introduce: React.FC = () => {
     ]
 
     useEffect(() => {
-        const timer = setInterval(() => tick(), 50)
+        const timer = setInterval(() => tick(), 100)
 
         return () => clearInterval(timer)
-    }, [])
+    }, [birthTime, expTime])
 
     return (
         <section className={styles.introduceSection}>
             <div className={styles.avatarContainer}>
                 <Image
                     src={avatarPic}
-                    layout={'fill'}
-                    objectFit={'cover'}
+                    fill
+                    style={{ objectFit: 'cover' }}
                     // eslint-disable-next-line quotes
                     alt={"Hi I'm - Misha - Picture of the author"}
                 />
@@ -103,6 +103,7 @@ export const Introduce: React.FC = () => {
                                     href={item.link}
                                     title={item.label}
                                     target={'_blank'}
+                                    rel={'noopener noreferrer'}
                                     className={styles.link}
                                 >
                                     <Icon name={item.icon as IconTypes} />
@@ -124,16 +125,16 @@ export const Introduce: React.FC = () => {
 
                 <div className={styles.description}>
                     <p>
-                        {'I’m a'} <b>{'Fullstack Software Engineer'}</b>{' '}
-                        {'specializing in scalable web applications, working across both'} <b>{'frontend'}</b> and{' '}
-                        <b>{'backend'}</b>{' '}
+                        {'I architect and deliver'} <b>{'production systems'}</b>{' '}
+                        {'end-to-end - owning everything from system design and'} <b>{'backend'}</b> {' APIs to '}
+                        <b>{'frontend'}</b>{' '}
                         {
-                            'development. With a focus on delivering efficient and high-quality solutions, I manage projects for clients in various industries.'
+                            'products. I define technical direction and lead engineering delivery for clients across industries.'
                         }
                     </p>
                     <p>
                         {
-                            'In my free time, you can often find me exploring the night skies with my homemade observatory or enjoying travel adventures with my family.'
+                            'Outside work, I run a fully automated home observatory for remote astrophotography and spend time hiking and traveling with my family.'
                         }
                     </p>
                 </div>

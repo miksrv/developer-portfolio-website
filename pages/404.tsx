@@ -16,7 +16,7 @@ const NotFound: NextPage<NotFoundProps> = () => (
             noindex={true}
         />
         <div className={'container'}>
-            <h1>{'404 — Lost in Space'}</h1>
+            <h1>{'404 - Lost in Space'}</h1>
             <h2>{'Oops! This page drifted off into a black hole'}</h2>
             <div className={'description'}>
                 <div>
