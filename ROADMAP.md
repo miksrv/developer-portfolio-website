@@ -14,6 +14,7 @@ single-source-of-truth data model (`data.json`). Component structure is solid an
 consistently organised.
 
 **Primary gaps:**
+
 - Homepage signals nothing about what has been built (zero project preview)
 - No call to action or contact path anywhere on the site
 - Hardcoded text in components breaks the single source of truth
@@ -37,6 +38,7 @@ sees: name, a facts list, a bio paragraph, and a GitHub calendar — nothing abo
 what was actually shipped.
 
 **Scope:**
+
 - Add `"featured": true` flag to 2–3 entries in `data.json` projects array.
   Recommended: Observatory, Geometki, Asteroid Monitoring.
 - Add an optional `limit` prop to the existing `Projects` component, or create a
@@ -54,11 +56,12 @@ The stack is invisible from the homepage. Recruiters screening for TypeScript,
 React, or Python have to navigate to `/skills` and parse progress bars.
 
 **Scope:**
+
 - Create a `TechStack` component that renders a single inline row of technology
   name tags.
 - Add a curated `"stack"` array to the `biography` object in `data.json`
   (8–10 items: `["TypeScript", "React", "Next.js", "Node.js", "PHP", "Python",
-  "PostgreSQL", "Docker"]`).
+"PostgreSQL", "Docker"]`).
 - Place below `<Introduce>`, above `<About>`.
 - Style: small pill tags, `container-background`, hover → `highlight-color`. No
   levels or icons. Purely a fast-scan signal.
@@ -71,11 +74,12 @@ There is no call to action anywhere on the site. Social icons exist but are smal
 and easy to miss. Every effective engineering portfolio has a clear contact path.
 
 **Scope:**
+
 - Create a `ContactCta` component with:
-  - One line of text (e.g., "Open to senior engineering roles and consulting."),
-    sourced from a new `"availability"` field in `data.json` biography.
-  - Two link buttons: primary → LinkedIn, secondary → email (pulled from
-    `contactLinks` in `data.json` by icon type).
+    - One line of text (e.g., "Open to senior engineering roles and consulting."),
+      sourced from a new `"availability"` field in `data.json` biography.
+    - Two link buttons: primary → LinkedIn, secondary → email (pulled from
+      `contactLinks` in `data.json` by icon type).
 - Place after `<GithubActivity>`, before the footer nav links.
 - Keep minimal: one `<section>`, two `<a>` tags, no form.
 
@@ -89,6 +93,7 @@ Recruiters need to know current status in the first 3 seconds. The facts list
 shows location and timezone but not current employer or open-to-work status.
 
 **Scope:**
+
 - Add `"availability"` string to `data.json` biography object.
 - Add a new fact row to `factsList` in `Introduce.tsx`: label "Status", value from
   `data.biography.availability`.
@@ -110,6 +115,7 @@ to maintain a single source of truth. Currently, updating copy requires editing
 component source files rather than data.
 
 **Scope:**
+
 - Add `"description"` (array of paragraphs) to `data.json` biography for the hero.
 - Add `"about"` (array of paragraphs) to `data.json` biography for the about section.
 - Add `"skillsIntro"` string to `data.json` seo.skills for the skills page intro.
@@ -122,6 +128,7 @@ component source files rather than data.
 **File:** `public/data.json`
 
 Two project titles read as vague or informal:
+
 - `"Interesting places and attractions"` → `"Geo-Discovery Portal"`
 - `"Astronomical Project"` → `"Astronomy Outreach Channel"`
 
@@ -134,14 +141,15 @@ Even if current AI work is limited, including relevant skills demonstrates aware
 and positions the profile for AI-adjacent roles.
 
 **Scope:** Add a new skill group to `data.json`:
+
 ```json
 {
-  "group": "AI & Automation",
-  "skills": [
-    { "name": "LLM API integration", "level": 65 },
-    { "name": "Prompt engineering",  "level": 60 },
-    { "name": "Automation pipelines","level": 70 }
-  ]
+    "group": "AI & Automation",
+    "skills": [
+        { "name": "LLM API integration", "level": 65 },
+        { "name": "Prompt engineering", "level": 60 },
+        { "name": "Automation pipelines", "level": 70 }
+    ]
 }
 ```
 
@@ -170,6 +178,7 @@ experience page this creates walls of similar-looking text, making it hard to
 scan. Top engineering portfolios use expand/collapse for details.
 
 **Scope:**
+
 - Show only the first 2 sentences (or first 140 characters) of duties by default.
 - Add a "Show more / Show less" toggle per entry.
 - Use a `useState<boolean>(false)` per list item, or a shared `expandedIndex` state.
@@ -186,6 +195,7 @@ these can overflow. More importantly, on mobile the touch targets are small.
 A standard hamburger drawer resolves both issues.
 
 **Scope:**
+
 - Render a hamburger button on screens ≤ 768px (`$mobileMaxWidth`).
 - Show/hide a full-screen or slide-in nav overlay on toggle.
 - Use `useState<boolean>` for open/close; close on link click or outside tap.
@@ -202,6 +212,7 @@ category filter (Frontend, Full-Stack, Hardware, Astronomy) lets visitors quickl
 find relevant work and signals product thinking.
 
 **Scope:**
+
 - Add an optional `"tags": string[]` field to each project in `data.json`.
 - Create a `ProjectFilter` component: a row of tag buttons.
 - `Projects` receives an active filter prop and renders matching items only.
@@ -218,6 +229,7 @@ starfield, header nav, and footer links while formatting the experience section
 as a clean resume printout.
 
 **Scope:**
+
 - Add `@media print` styles: hide `<header>`, `<canvas>`, `.footerLinks`,
   `.activitySection`, `About`, and `SkillsCloud`.
 - Print experience and skills in a two-column layout with standard black-on-white.
@@ -236,6 +248,7 @@ is no loading state — the section appears blank then pops in. A skeleton preve
 layout shift and looks polished.
 
 **Scope:**
+
 - Pass a `loading` JSX element as the `fallback` option in the `dynamic()` call.
 - The skeleton can be a `<div>` with `container-background`, matching the
   approximate calendar dimensions, with a subtle pulse animation.
@@ -266,6 +279,7 @@ essentially invisible. All links, buttons, and interactive tags should show a cl
 focus ring (amber outline matching the `--highlight-color`).
 
 **Scope:** Add to `globals.sass`:
+
 ```sass
 :focus-visible
     outline: 2px solid var(--highlight-color)
@@ -297,6 +311,7 @@ shape is inferred from `data.json` via `typeof data`, which makes the type syste
 brittle — any change to the JSON file silently changes all downstream types.
 
 **Scope:**
+
 - Create `/types/data.ts` with explicit interfaces: `BiographyType`,
   `ProjectType`, `ExperienceType`, `SkillGroupType`, `SeoType`, `SiteDataType`.
 - `DataProvider.tsx` imports from `/types/data.ts` instead of using `typeof data`.
@@ -315,6 +330,7 @@ copy-pasted into every page. If the image URL or siteName changes, all 4 files
 need updating.
 
 **Scope:** Create a `config/seo.ts` constants file:
+
 ```ts
 export const defaultOpenGraph = {
     images: [{ height: 1333, url: 'https://miksoft.pro/avatar.jpg', width: 1000 }],
@@ -322,6 +338,7 @@ export const defaultOpenGraph = {
     siteName: 'miksoft.pro'
 }
 ```
+
 Each page spreads `defaultOpenGraph` and overrides only what differs.
 
 ---
@@ -332,6 +349,7 @@ No error boundaries exist. A rendering error in `GithubActivity` (which calls an
 external API) or any component would crash the entire page.
 
 **Scope:**
+
 - Create `components/error-boundary/ErrorBoundary.tsx` — a standard class component
   implementing `componentDidCatch` and `getDerivedStateFromError`.
 - Wrap `<GithubActivity>` and `<Projects>` with `<ErrorBoundary>`.
@@ -347,6 +365,7 @@ external API) or any component would crash the entire page.
 being fetched. Currently it's undefined — the section is simply absent until loaded.
 
 **Scope:**
+
 ```ts
 const GithubActivity = dynamic(
     () => import('@/components/github-activity/GithubActivity'),
@@ -448,6 +467,7 @@ project images are served at full resolution. The project card images are displa
 at 176×176px but the source files may be significantly larger.
 
 **Scope:**
+
 - Pre-process all images in `/public/projects/` to 352×352px (2× for retina).
 - Convert to WebP format for ~30% size reduction.
 - This is a build-time task, not a code change.
@@ -462,7 +482,10 @@ The `react-github-calendar` component calls `api.github.com` on mount. A
 `<link rel="preconnect">` tag reduces the DNS + TLS handshake time.
 
 ```html
-<link rel="preconnect" href="https://api.github.com" />
+<link
+    rel="preconnect"
+    href="https://api.github.com"
+/>
 ```
 
 ---
@@ -490,6 +513,7 @@ the main thread and can cause frame drops during scroll. Reducing to 300–400 s
 on mobile maintains the visual effect with significantly less GPU/CPU load.
 
 **Scope:**
+
 - Read `window.innerWidth` in a `useEffect` or use a CSS media query via a custom
   hook to conditionally pass a lower `starCount` prop.
 - Alternatively, reduce the default from 1000 to 600 globally (the difference is
@@ -508,6 +532,7 @@ on mobile maintains the visual effect with significantly less GPU/CPU load.
 **Placement:** Between `<Introduce>` and `<About>` on `pages/index.tsx`.
 
 **Implementation:**
+
 - New `components/tech-stack/TechStack.tsx`.
 - Reads a `stack: string[]` array from `data.biography` (add to `data.json`).
 - Renders a `<ul>` of `<li>` pill tags identical in style to the SkillsCloud tags.
@@ -522,6 +547,7 @@ on mobile maintains the visual effect with significantly less GPU/CPU load.
 **Placement:** Between `<About>` and `<GithubActivity>` on `pages/index.tsx`.
 
 **Implementation:**
+
 - Add `"featured": true` to chosen projects in `data.json`.
 - Add a `limit?: number` prop to the existing `Projects` component that slices
   the rendered list. Filter for `featured` items first.
@@ -538,11 +564,12 @@ call to action.
 **Placement:** Bottom of `pages/index.tsx`, after `<GithubActivity>`.
 
 **Implementation:**
+
 - New `components/contact-cta/ContactCta.tsx`.
 - Reads `biography.availability` and `contactLinks` from `useSiteData()`.
 - Renders:
-  - H2 or short `<p>` from `availability` field.
-  - Two `<a>` buttons: primary (LinkedIn, from `contactLinks`), secondary (email).
+    - H2 or short `<p>` from `availability` field.
+    - Two `<a>` buttons: primary (LinkedIn, from `contactLinks`), secondary (email).
 - Style: centred section, `container-background`, minimal padding.
 
 ---
@@ -555,22 +582,23 @@ the experience page lets them generate one from the live data.
 **Placement:** Top-right of `pages/experience.tsx`, or near the page title.
 
 **Implementation:**
+
 - A simple `<button onClick={() => window.print()}>Download Resume</button>`.
 - Add `@media print` styles in `globals.sass` to:
-  - Hide header, canvas, footer nav links, About, GitHub calendar.
-  - Render experience and skills in resume format (white background, black text).
-  - Remove animations from progress bars.
+    - Hide header, canvas, footer nav links, About, GitHub calendar.
+    - Render experience and skills in resume format (white background, black text).
+    - Remove animations from progress bars.
 - No external library needed.
 
 ---
 
-### N5 — `ErrorBoundary` component *(see A3 above)*
+### N5 — `ErrorBoundary` component _(see A3 above)_
 
 **Purpose:** Prevent external API failures (GitHub calendar) from crashing the page.
 
 ---
 
-### N6 — Mobile navigation drawer *(see U2 above)*
+### N6 — Mobile navigation drawer _(see U2 above)_
 
 ---
 
@@ -585,6 +613,7 @@ resume data and answers questions like "What stack do you use?", "Are you availa
 for a role in X?", "Tell me about the Observatory project."
 
 **Implementation hints:**
+
 - Use the Anthropic Claude API (`claude-haiku-4-5` model for cost efficiency).
 - System prompt built dynamically from `data.json` at build time.
 - Client-side only (Next.js API route or direct fetch to Claude API with a
@@ -598,39 +627,39 @@ for a role in X?", "Tell me about the Observatory project."
 
 ## Priority Matrix
 
-| ID | Task | Impact | Effort | Priority |
-|----|------|--------|--------|----------|
-| C1 | Remove `maximum-scale=1` | High (a11y) | Trivial | P0 |
-| C2 | Add sitemap.xml + robots.txt | High (SEO) | Low | P0 |
-| C3 | Add `_document.tsx` with lang | High (a11y) | Low | P0 |
-| C4 | Fix deprecated Image API | Medium | Low | P0 |
-| C5 | Add `rel="noopener noreferrer"` | Medium (security) | Trivial | P0 |
-| C6 | Fix color contrast failures | High (a11y) | Low | P0 |
-| H1 | Featured projects on homepage | Very High | Medium | P1 |
-| H2 | Tech-stack strip on homepage | High | Low | P1 |
-| H3 | Contact CTA section | High | Low | P1 |
-| H4 | Current role badge in hero | Medium | Low | P1 |
-| D1 | Move hardcoded text to data.json | High (maintainability) | Medium | P1 |
-| D2 | Improve two project titles | Low | Trivial | P1 |
-| D3 | Add AI/ML skills group | Medium | Low | P1 |
-| U1 | Collapsible experience duties | High (UX) | Medium | P2 |
-| U2 | Mobile nav drawer | Medium | Medium | P2 |
-| U3 | Project category filtering | Medium | Medium | P2 |
-| U4 | Print/PDF resume stylesheet | High (recruiter) | Medium | P2 |
-| U5 | GitHub activity skeleton | Low | Low | P2 |
-| U6 | Skip-to-content link | Medium (a11y) | Trivial | P2 |
-| U7 | `:focus-visible` styles | Medium (a11y) | Low | P2 |
-| U8 | StarField aria-label | Low | Trivial | P2 |
-| A1 | Shared TypeScript interfaces | Medium | Medium | P2 |
-| A2 | Centralise OpenGraph config | Low | Low | P2 |
-| A3 | ErrorBoundary component | Medium | Low | P2 |
-| A4 | Suspense for dynamic imports | Low | Low | P2 |
-| A5 | ExperienceType period tuple | Low | Trivial | P3 |
-| A6 | Icon map refactor | Low | Low | P3 |
-| A7 | Memoize tick with useCallback | Low | Trivial | P3 |
-| A8 | `_document.tsx` (see C3) | — | — | Covered by C3 |
-| P1 | Pre-optimise project images | Medium | Low | P2 |
-| P2 | Resource hint for GitHub API | Low | Trivial | P3 |
-| P3 | Lazy-load project images | Low | Trivial | P3 |
-| P4 | Reduce StarField on mobile | Low | Low | P3 |
-| N7 | AI "Ask Me" widget | Very High (diff.) | High | P3 |
+| ID  | Task                             | Impact                 | Effort  | Priority      |
+| --- | -------------------------------- | ---------------------- | ------- | ------------- |
+| C1  | Remove `maximum-scale=1`         | High (a11y)            | Trivial | P0            |
+| C2  | Add sitemap.xml + robots.txt     | High (SEO)             | Low     | P0            |
+| C3  | Add `_document.tsx` with lang    | High (a11y)            | Low     | P0            |
+| C4  | Fix deprecated Image API         | Medium                 | Low     | P0            |
+| C5  | Add `rel="noopener noreferrer"`  | Medium (security)      | Trivial | P0            |
+| C6  | Fix color contrast failures      | High (a11y)            | Low     | P0            |
+| H1  | Featured projects on homepage    | Very High              | Medium  | P1            |
+| H2  | Tech-stack strip on homepage     | High                   | Low     | P1            |
+| H3  | Contact CTA section              | High                   | Low     | P1            |
+| H4  | Current role badge in hero       | Medium                 | Low     | P1            |
+| D1  | Move hardcoded text to data.json | High (maintainability) | Medium  | P1            |
+| D2  | Improve two project titles       | Low                    | Trivial | P1            |
+| D3  | Add AI/ML skills group           | Medium                 | Low     | P1            |
+| U1  | Collapsible experience duties    | High (UX)              | Medium  | P2            |
+| U2  | Mobile nav drawer                | Medium                 | Medium  | P2            |
+| U3  | Project category filtering       | Medium                 | Medium  | P2            |
+| U4  | Print/PDF resume stylesheet      | High (recruiter)       | Medium  | P2            |
+| U5  | GitHub activity skeleton         | Low                    | Low     | P2            |
+| U6  | Skip-to-content link             | Medium (a11y)          | Trivial | P2            |
+| U7  | `:focus-visible` styles          | Medium (a11y)          | Low     | P2            |
+| U8  | StarField aria-label             | Low                    | Trivial | P2            |
+| A1  | Shared TypeScript interfaces     | Medium                 | Medium  | P2            |
+| A2  | Centralise OpenGraph config      | Low                    | Low     | P2            |
+| A3  | ErrorBoundary component          | Medium                 | Low     | P2            |
+| A4  | Suspense for dynamic imports     | Low                    | Low     | P2            |
+| A5  | ExperienceType period tuple      | Low                    | Trivial | P3            |
+| A6  | Icon map refactor                | Low                    | Low     | P3            |
+| A7  | Memoize tick with useCallback    | Low                    | Trivial | P3            |
+| A8  | `_document.tsx` (see C3)         | —                      | —       | Covered by C3 |
+| P1  | Pre-optimise project images      | Medium                 | Low     | P2            |
+| P2  | Resource hint for GitHub API     | Low                    | Trivial | P3            |
+| P3  | Lazy-load project images         | Low                    | Trivial | P3            |
+| P4  | Reduce StarField on mobile       | Low                    | Low     | P3            |
+| N7  | AI "Ask Me" widget               | Very High (diff.)      | High    | P3            |

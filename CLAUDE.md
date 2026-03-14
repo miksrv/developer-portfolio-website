@@ -32,6 +32,7 @@ Run a single test file: `yarn test components/header/Header.test.tsx`
 **Styling**: SASS modules per component for scoped styles; global theme variables in `/styles/`.
 
 **Special cases**:
+
 - `GithubActivity` is dynamically imported with `ssr: false` (uses `react-github-calendar`)
 - `StarField` uses a canvas-based animation with `useRef`
 - `PageTransition` accepts animation `variants` as props (Framer Motion)

@@ -66,7 +66,7 @@ export const Icon: React.FC<IconProps> = ({ name }) => {
 
         default:
             if (process.env.NODE_ENV === 'development') {
-                console.warn(`Icon: unknown name "${name}"`)
+                console.warn(`Icon: unknown name "${String(name)}"`)
             }
             return null
     }
