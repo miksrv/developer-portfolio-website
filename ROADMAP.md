@@ -123,47 +123,6 @@ component source files rather than data.
 
 ---
 
-### D2 — Improve project titles for weak entries
-
-**File:** `public/data.json`
-
-Two project titles read as vague or informal:
-
-- `"Interesting places and attractions"` → `"Geo-Discovery Portal"`
-- `"Astronomical Project"` → `"Astronomy Outreach Channel"`
-
----
-
-### D3 — Add an AI/ML skills group to `data.json`
-
-The positioning target includes "AI Builder" but the skills page has no AI signal.
-Even if current AI work is limited, including relevant skills demonstrates awareness
-and positions the profile for AI-adjacent roles.
-
-**Scope:** Add a new skill group to `data.json`:
-
-```json
-{
-    "group": "AI & Automation",
-    "skills": [
-        { "name": "LLM API integration", "level": 65 },
-        { "name": "Prompt engineering", "level": 60 },
-        { "name": "Automation pipelines", "level": 70 }
-    ]
-}
-```
-
----
-
-### D4 — Fix hardcoded skills page intro paragraph
-
-**File:** `pages/skills.tsx:34–37`
-
-The skills page has a hardcoded intro paragraph that still contains the old "19+"
-framing and hasn't been updated to match the principal-engineer positioning. It
-should be sourced from `data.json` (see D1) and rewritten to match the site tone.
-
----
 
 ## Section 4 — UI / UX Enhancements
 
@@ -640,8 +599,6 @@ for a role in X?", "Tell me about the Observatory project."
 | H3  | Contact CTA section              | High                   | Low     | P1            |
 | H4  | Current role badge in hero       | Medium                 | Low     | P1            |
 | D1  | Move hardcoded text to data.json | High (maintainability) | Medium  | P1            |
-| D2  | Improve two project titles       | Low                    | Trivial | P1            |
-| D3  | Add AI/ML skills group           | Medium                 | Low     | P1            |
 | U1  | Collapsible experience duties    | High (UX)              | Medium  | P2            |
 | U2  | Mobile nav drawer                | Medium                 | Medium  | P2            |
 | U3  | Project category filtering       | Medium                 | Medium  | P2            |

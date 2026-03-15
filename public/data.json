@@ -30,79 +30,39 @@
     ],
     "skills": [
         {
-            "group": "Frontend",
+            "group": "Frontend Systems",
             "skills": [
-                {
-                    "name": "TypeScript",
-                    "level": 80
-                },
-                {
-                    "name": "React, Next.js",
-                    "level": 90
-                },
-                {
-                    "name": "Redux",
-                    "level": 86
-                },
-                {
-                    "name": "API & System Design",
-                    "level": 79
-                }
+                { "name": "TypeScript", "level": 90 },
+                { "name": "React / Next.js", "level": 92 },
+                { "name": "Redux", "level": 85 },
+                { "name": "UI Architecture", "level": 88 }
             ]
         },
         {
-            "group": "Backend",
+            "group": "Backend Systems",
             "skills": [
-                {
-                    "name": "Node.js",
-                    "level": 70
-                },
-                {
-                    "name": "PHP",
-                    "level": 80
-                },
-                {
-                    "name": "Python",
-                    "level": 50
-                },
-                {
-                    "name": "SQL & Database Design",
-                    "level": 60
-                }
-            ]
-        },
-        {
-            "group": "Testing",
-            "skills": [
-                {
-                    "name": "Playwright",
-                    "level": 70
-                },
-                {
-                    "name": "Jest",
-                    "level": 80
-                },
-                {
-                    "name": "RTL",
-                    "level": 80
-                }
+                { "name": "Node.js", "level": 80 },
+                { "name": "PHP Platforms", "level": 85 },
+                { "name": "Python", "level": 70 },
+                { "name": "System Design", "level": 90 }
             ]
         },
         {
             "group": "Infrastructure",
             "skills": [
-                {
-                    "name": "Docker",
-                    "level": 60
-                },
-                {
-                    "name": "Git & CI/CD",
-                    "level": 90
-                },
-                {
-                    "name": "Linux",
-                    "level": 90
-                }
+                { "name": "Linux", "level": 90 },
+                { "name": "Docker", "level": 75 },
+                { "name": "CI/CD", "level": 90 },
+                { "name": "SQL & Databases", "level": 80 }
+            ]
+        },
+        {
+            "group": "AI & Automation",
+            "skills": [
+                { "name": "LLM Integration", "level": 75 },
+                { "name": "AI Features", "level": 70 },
+                { "name": "Prompt Eng.", "level": 70 },
+                { "name": "Automation", "level": 80 }
             ]
         }
     ],
@@ -130,13 +90,13 @@
         },
         {
             "image": "/projects/geometki.jpg",
-            "title": "Interesting places and attractions",
+            "title": "Geo-Discovery Portal",
             "link": "https://geometki.com/",
             "description": "Production geo-discovery portal built on microservice architecture with Next.js, PHP, and MySQL. Features map integration, user-generated content, photo uploads, and a gamified reputation system - designed, architected, and shipped end-to-end."
         },
         {
             "image": "/projects/lookatstars.jpg",
-            "title": "Astronomical Project",
+            "title": "Astronomy Outreach Channel",
             "link": "https://t.me/look_at_stars",
             "description": "Astronomy outreach channel delivering science-accurate content, celestial event coverage, and astrophotography to a growing audience. Built and operated end-to-end - content pipeline, production workflow, and community management."
         }
@@ -319,7 +279,8 @@
         },
         "skills": {
             "title": "Technical Skills",
-            "description": "19+ years building and shipping production systems for government agencies, media companies, and tech startups. Skills span full-stack development, system architecture, DevOps, and database design - applied across professional engagements and open-source projects."
+            "description": "19+ years building and shipping production systems for government agencies, media companies, and tech startups. Skills span full-stack development, system architecture, DevOps, and database design - applied across professional engagements and open-source projects.",
+            "skillsIntro": "A principal engineer's skills are measured by systems shipped, not years counted. Below is a candid breakdown of the technologies I use regularly across frontend, backend, infrastructure, and AI integration - ranked by real-world proficiency based on production work and open-source projects."
         },
         "experience": {
             "title": "Professional Experience",
