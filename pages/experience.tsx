@@ -56,7 +56,7 @@ const ExperiencePage: React.FC = () => {
                         <p>{data?.seo?.experience?.description}</p>
                     </div>
                     <button
-                        className={styles.printButton}
+                        className={`btnGhost ${styles.printButton}`}
                         onClick={() => window.print()}
                         title={'Download Resume as PDF'}
                     >
