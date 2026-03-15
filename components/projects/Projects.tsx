@@ -39,6 +39,7 @@ export const Projects: React.FC = () => {
                                 alt={item.title}
                                 width={176}
                                 height={176}
+                                loading={'lazy'}
                             />
                         </Link>
 

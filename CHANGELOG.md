@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.2.2
+
+### Patch Changes
+
+- Project titles updated and renamed for clarity
+- Added AI & Automation skill group and improved skills page intro
+- Refactored skills data and removed hardcoded content
+- Cleaned up completed tasks from roadmap and priority matrix
+- Improved accessibility: added aria-label to StarField canvas
+- Enhanced performance: optimized project images, lazy loading, preconnect, and mobile star count
+- Added PrintResume component with print-to-PDF support from any page
+- Unified button styles for footer links and Print Resume, extracted shared ghost-button class
+- Improved print layout and accessibility for resume
+- Various UI and style improvements, removed redundant sections
+
 ## 1.2.1
 
 ### Patch Changes
