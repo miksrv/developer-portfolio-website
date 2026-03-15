@@ -1,0 +1,36 @@
+.pageHeader
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    gap: 20px
+    flex-wrap: wrap
+
+.printButton
+    flex-shrink: 0
+    display: flex
+    align-items: center
+    gap: 8px
+    padding: 8px 16px
+    background: rgb(255, 255, 255, .05)
+    border: 1px solid rgb(255, 255, 255, .12)
+    border-radius: 6px
+    color: var(--text-color-primary)
+    font-size: var(--font-size)
+    font-family: var(--font-family)
+    cursor: pointer
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out
+    white-space: nowrap
+    margin-top: 5px
+
+    svg
+        width: 16px
+        height: 16px
+        flex-shrink: 0
+
+    &:hover
+        background: rgb(255, 255, 255, .1)
+        border-color: var(--highlight-color)
+        color: var(--highlight-color)
+
+    @media print
+        display: none

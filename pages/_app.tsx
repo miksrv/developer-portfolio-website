@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import { Header, StarField } from '@/components'
+import { Header, PrintResume, StarField } from '@/components'
 import { DataProvider } from '@/utils'
 
 import '@/styles/theme.css'
@@ -83,6 +83,8 @@ const App = ({ Component, pageProps }: AppProps) => {
                 <main>
                     <Component {...pageProps} />
                 </main>
+
+                <PrintResume />
             </DataProvider>
 
             {process.env.NODE_ENV === 'production' && (

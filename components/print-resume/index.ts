@@ -1,0 +1,1 @@
+export { PrintResume } from './PrintResume'

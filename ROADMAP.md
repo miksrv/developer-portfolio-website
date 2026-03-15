@@ -22,85 +22,6 @@ consistently organised.
 
 ---
 
-## Section 2 — Homepage Enhancements
-
-The home page currently has no project signal and no contact path. These additions
-have the highest recruiter-effectiveness ROI.
-
----
-
-### H1 — Selected Work block on the homepage
-
-**Priority:** Highest single improvement.
-
-A principal engineer's homepage must show what they've built. Currently a visitor
-sees: name, a facts list, a bio paragraph, and a GitHub calendar — nothing about
-what was actually shipped.
-
-**Scope:**
-
-- Add `"featured": true` flag to 2–3 entries in `data.json` projects array.
-  Recommended: Observatory, Geometki, Asteroid Monitoring.
-- Add an optional `limit` prop to the existing `Projects` component, or create a
-  thin `FeaturedProjects` wrapper that filters by `featured` flag.
-- Place the block between `<About>` and `<GithubActivity>` in `index.tsx`.
-- Add a "View all projects →" link to `/projects` below the cards.
-
-**Data change:** `data.json` projects entries → add `"featured": true`.
-
----
-
-### H2 — Compact tech-stack strip on the homepage
-
-The stack is invisible from the homepage. Recruiters screening for TypeScript,
-React, or Python have to navigate to `/skills` and parse progress bars.
-
-**Scope:**
-
-- Create a `TechStack` component that renders a single inline row of technology
-  name tags.
-- Add a curated `"stack"` array to the `biography` object in `data.json`
-  (8–10 items: `["TypeScript", "React", "Next.js", "Node.js", "PHP", "Python",
-"PostgreSQL", "Docker"]`).
-- Place below `<Introduce>`, above `<About>`.
-- Style: small pill tags, `container-background`, hover → `highlight-color`. No
-  levels or icons. Purely a fast-scan signal.
-
----
-
-### H3 — Contact / CTA section at the bottom of the homepage
-
-There is no call to action anywhere on the site. Social icons exist but are small
-and easy to miss. Every effective engineering portfolio has a clear contact path.
-
-**Scope:**
-
-- Create a `ContactCta` component with:
-    - One line of text (e.g., "Open to senior engineering roles and consulting."),
-      sourced from a new `"availability"` field in `data.json` biography.
-    - Two link buttons: primary → LinkedIn, secondary → email (pulled from
-      `contactLinks` in `data.json` by icon type).
-- Place after `<GithubActivity>`, before the footer nav links.
-- Keep minimal: one `<section>`, two `<a>` tags, no form.
-
-**Data change:** Add `"availability"` and `"email"` to `data.json` biography.
-
----
-
-### H4 — Current role / availability badge in the hero
-
-Recruiters need to know current status in the first 3 seconds. The facts list
-shows location and timezone but not current employer or open-to-work status.
-
-**Scope:**
-
-- Add `"availability"` string to `data.json` biography object.
-- Add a new fact row to `factsList` in `Introduce.tsx`: label "Status", value from
-  `data.biography.availability`.
-- Optionally render a small coloured dot (green = open) before the value.
-
----
-
 ## Section 3 — Content & Data Improvements
 
 ---
@@ -428,23 +349,6 @@ call to action.
 
 ---
 
-### N4 — `PrintResume` button on the Experience page
-
-**Purpose:** Recruiters frequently request a resume. A print-to-PDF button on
-the experience page lets them generate one from the live data.
-
-**Placement:** Top-right of `pages/experience.tsx`, or near the page title.
-
-**Implementation:**
-
-- A simple `<button onClick={() => window.print()}>Download Resume</button>`.
-- Add `@media print` styles in `globals.sass` to:
-    - Hide header, canvas, footer nav links, About, GitHub calendar.
-    - Render experience and skills in resume format (white background, black text).
-    - Remove animations from progress bars.
-- No external library needed.
-
----
 
 ### N5 — `ErrorBoundary` component _(see A3 above)_
 
@@ -481,25 +385,25 @@ for a role in X?", "Tell me about the Observatory project."
 
 ## Priority Matrix
 
-| ID  | Task                             | Impact                 | Effort  | Priority      |
-| --- | -------------------------------- | ---------------------- | ------- | ------------- |
-| H1  | Featured projects on homepage    | Very High              | Medium  | P1            |
-| H2  | Tech-stack strip on homepage     | High                   | Low     | P1            |
-| H3  | Contact CTA section              | High                   | Low     | P1            |
-| H4  | Current role badge in hero       | Medium                 | Low     | P1            |
-| D1  | Move hardcoded text to data.json | High (maintainability) | Medium  | P1            |
-| U1  | Collapsible experience duties    | High (UX)              | Medium  | P2            |
-| U2  | Mobile nav drawer                | Medium                 | Medium  | P2            |
-| U3  | Project category filtering       | Medium                 | Medium  | P2            |
-| U4  | Print/PDF resume stylesheet      | High (recruiter)       | Medium  | P2            |
-| U5  | GitHub activity skeleton         | Low                    | Low     | P2            |
-| U6  | Skip-to-content link             | Medium (a11y)          | Trivial | P2            |
-| U7  | `:focus-visible` styles          | Medium (a11y)          | Low     | P2            |
-| A1  | Shared TypeScript interfaces     | Medium                 | Medium  | P2            |
-| A2  | Centralise OpenGraph config      | Low                    | Low     | P2            |
-| A3  | ErrorBoundary component          | Medium                 | Low     | P2            |
-| A4  | Suspense for dynamic imports     | Low                    | Low     | P2            |
-| A5  | ExperienceType period tuple      | Low                    | Trivial | P3            |
-| A6  | Icon map refactor                | Low                    | Low     | P3            |
-| A7  | Memoize tick with useCallback    | Low                    | Trivial | P3            |
-| N7  | AI "Ask Me" widget               | Very High (diff.)      | High    | P3            |
+| ID  | Task                             | Impact                 | Effort  | Priority |
+| --- | -------------------------------- | ---------------------- | ------- | -------- |
+| H1  | Featured projects on homepage    | Very High              | Medium  | P1       |
+| H2  | Tech-stack strip on homepage     | High                   | Low     | P1       |
+| H3  | Contact CTA section              | High                   | Low     | P1       |
+| H4  | Current role badge in hero       | Medium                 | Low     | P1       |
+| D1  | Move hardcoded text to data.json | High (maintainability) | Medium  | P1       |
+| U1  | Collapsible experience duties    | High (UX)              | Medium  | P2       |
+| U2  | Mobile nav drawer                | Medium                 | Medium  | P2       |
+| U3  | Project category filtering       | Medium                 | Medium  | P2       |
+| U4  | Print/PDF resume stylesheet      | High (recruiter)       | Medium  | P2       |
+| U5  | GitHub activity skeleton         | Low                    | Low     | P2       |
+| U6  | Skip-to-content link             | Medium (a11y)          | Trivial | P2       |
+| U7  | `:focus-visible` styles          | Medium (a11y)          | Low     | P2       |
+| A1  | Shared TypeScript interfaces     | Medium                 | Medium  | P2       |
+| A2  | Centralise OpenGraph config      | Low                    | Low     | P2       |
+| A3  | ErrorBoundary component          | Medium                 | Low     | P2       |
+| A4  | Suspense for dynamic imports     | Low                    | Low     | P2       |
+| A5  | ExperienceType period tuple      | Low                    | Trivial | P3       |
+| A6  | Icon map refactor                | Low                    | Low     | P3       |
+| A7  | Memoize tick with useCallback    | Low                    | Trivial | P3       |
+| N7  | AI "Ask Me" widget               | Very High (diff.)      | High    | P3       |
