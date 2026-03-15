@@ -112,6 +112,7 @@ export const StarField: React.FC<StarFieldProps> = ({
             ref={canvasRef}
             id={'starfield'}
             role={'img'}
+            aria-label={'Animated starfield background'}
             style={{
                 padding: 0,
                 margin: 0,

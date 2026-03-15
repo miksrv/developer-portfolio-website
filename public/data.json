@@ -68,34 +68,34 @@
     ],
     "projects": [
         {
-            "image": "/projects/observatory.jpg",
+            "image": "/projects/observatory.webp",
             "title": "Homemade Observatory",
             "link": "https://astro.miksoft.pro/",
             "github": "https://github.com/miksrv/astronomy-portal",
             "description": "End-to-end platform integrating Raspberry Pi, Arduino, and Python for automated telescope control and image capture. The web layer provides real-time data streaming, user authentication, and a celestial events calendar - hardware and full-stack software designed and built from scratch."
         },
         {
-            "image": "/projects/meteostation.jpg",
+            "image": "/projects/meteostation.webp",
             "title": "Arduino Weather Station",
             "link": "https://meteo.miksoft.pro/",
             "github": "https://github.com/miksrv/arduino-weather-station",
             "description": "Arduino-powered sensor system with a REST API serving real-time and historical weather data. Integrated into the observatory pipeline to gate imaging sessions on atmospheric conditions - embedded firmware, backend API, and frontend dashboard built in-house."
         },
         {
-            "image": "/projects/asteroid.jpg",
+            "image": "/projects/asteroid.webp",
             "title": "Asteroid Monitoring",
             "link": "https://asteroid.miksoft.pro/",
             "github": "https://github.com/miksrv/asteroid-monitoring",
             "description": "Real-time data platform consuming the NASA NeoWS API to track near-Earth asteroids. Surfaces close-approach timing, velocity, size estimates, and orbit trajectories - transforming raw orbital mechanics data into an accessible, production-deployed web application."
         },
         {
-            "image": "/projects/geometki.jpg",
+            "image": "/projects/geometki.webp",
             "title": "Geo-Discovery Portal",
             "link": "https://geometki.com/",
             "description": "Production geo-discovery portal built on microservice architecture with Next.js, PHP, and MySQL. Features map integration, user-generated content, photo uploads, and a gamified reputation system - designed, architected, and shipped end-to-end."
         },
         {
-            "image": "/projects/lookatstars.jpg",
+            "image": "/projects/lookatstars.webp",
             "title": "Astronomy Outreach Channel",
             "link": "https://t.me/look_at_stars",
             "description": "Astronomy outreach channel delivering science-accurate content, celestial event coverage, and astrophotography to a growing audience. Built and operated end-to-end - content pipeline, production workflow, and community management."

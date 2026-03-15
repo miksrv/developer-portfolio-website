@@ -123,7 +123,6 @@ component source files rather than data.
 
 ---
 
-
 ## Section 4 — UI / UX Enhancements
 
 ---
@@ -245,17 +244,6 @@ focus ring (amber outline matching the `--highlight-color`).
     outline-offset: 2px
     border-radius: var(--border-radius)
 ```
-
----
-
-### U8 — `aria-label` on the StarField canvas
-
-**File:** `components/star-field/StarField.tsx:112`
-
-The canvas has `role="img"` but no `aria-label`. Screen readers will announce it
-as an unnamed image.
-
-**Fix:** Add `aria-label={'Animated starfield background'}` to the `<canvas>` element.
 
 ---
 
@@ -387,99 +375,6 @@ const tick = useCallback(() => {
 
 ---
 
-### A8 — Add `_document.tsx` with `lang` attribute and canonical link support
-
-**File:** `pages/_document.tsx` (create)
-
-Next.js Pages Router uses `_document.tsx` for customising the `<html>` and
-`<body>` tags rendered server-side. Currently neither exists, so the `<html>`
-element has no `lang` attribute (WCAG 3.1.1 violation, covered in C3).
-
-```tsx
-import { Html, Head, Main, NextScript } from 'next/document'
-
-export default function Document() {
-    return (
-        <Html lang='en'>
-            <Head />
-            <body>
-                <Main />
-                <NextScript />
-            </body>
-        </Html>
-    )
-}
-```
-
----
-
-## Section 6 — Performance Optimizations
-
----
-
-### P1 — Pre-optimise project images
-
-**File:** `next.config.js`, `/public/projects/`
-
-`images: { unoptimized: true }` is set for the static export. This means all
-project images are served at full resolution. The project card images are displayed
-at 176×176px but the source files may be significantly larger.
-
-**Scope:**
-
-- Pre-process all images in `/public/projects/` to 352×352px (2× for retina).
-- Convert to WebP format for ~30% size reduction.
-- This is a build-time task, not a code change.
-
----
-
-### P2 — Add resource hint for GitHub API
-
-**File:** `pages/_document.tsx` or `pages/_app.tsx`
-
-The `react-github-calendar` component calls `api.github.com` on mount. A
-`<link rel="preconnect">` tag reduces the DNS + TLS handshake time.
-
-```html
-<link
-    rel="preconnect"
-    href="https://api.github.com"
-/>
-```
-
----
-
-### P3 — Lazy-load project images
-
-**File:** `components/projects/Projects.tsx`
-
-Project images currently load eagerly. Cards below the fold should use
-`loading="lazy"` (which Next.js Image supports natively). This reduces initial
-page weight for the projects page.
-
-**Fix:** Add `loading={'lazy'}` prop to the `<Image>` in Projects.tsx (or confirm
-Next.js Image applies it automatically for off-screen images — it does for images
-with `width`/`height`, but not for `fill` layout).
-
----
-
-### P4 — Reduce StarField star count on mobile
-
-**File:** `pages/_app.tsx:65`
-
-The starfield renders 1000 stars unconditionally. On mobile devices this runs on
-the main thread and can cause frame drops during scroll. Reducing to 300–400 stars
-on mobile maintains the visual effect with significantly less GPU/CPU load.
-
-**Scope:**
-
-- Read `window.innerWidth` in a `useEffect` or use a CSS media query via a custom
-  hook to conditionally pass a lower `starCount` prop.
-- Alternatively, reduce the default from 1000 to 600 globally (the difference is
-  visually imperceptible at 800px container width).
-
----
-
 ## Section 7 — New Components & Features
 
 ---
@@ -588,12 +483,6 @@ for a role in X?", "Tell me about the Observatory project."
 
 | ID  | Task                             | Impact                 | Effort  | Priority      |
 | --- | -------------------------------- | ---------------------- | ------- | ------------- |
-| C1  | Remove `maximum-scale=1`         | High (a11y)            | Trivial | P0            |
-| C2  | Add sitemap.xml + robots.txt     | High (SEO)             | Low     | P0            |
-| C3  | Add `_document.tsx` with lang    | High (a11y)            | Low     | P0            |
-| C4  | Fix deprecated Image API         | Medium                 | Low     | P0            |
-| C5  | Add `rel="noopener noreferrer"`  | Medium (security)      | Trivial | P0            |
-| C6  | Fix color contrast failures      | High (a11y)            | Low     | P0            |
 | H1  | Featured projects on homepage    | Very High              | Medium  | P1            |
 | H2  | Tech-stack strip on homepage     | High                   | Low     | P1            |
 | H3  | Contact CTA section              | High                   | Low     | P1            |
@@ -606,7 +495,6 @@ for a role in X?", "Tell me about the Observatory project."
 | U5  | GitHub activity skeleton         | Low                    | Low     | P2            |
 | U6  | Skip-to-content link             | Medium (a11y)          | Trivial | P2            |
 | U7  | `:focus-visible` styles          | Medium (a11y)          | Low     | P2            |
-| U8  | StarField aria-label             | Low                    | Trivial | P2            |
 | A1  | Shared TypeScript interfaces     | Medium                 | Medium  | P2            |
 | A2  | Centralise OpenGraph config      | Low                    | Low     | P2            |
 | A3  | ErrorBoundary component          | Medium                 | Low     | P2            |
@@ -614,9 +502,4 @@ for a role in X?", "Tell me about the Observatory project."
 | A5  | ExperienceType period tuple      | Low                    | Trivial | P3            |
 | A6  | Icon map refactor                | Low                    | Low     | P3            |
 | A7  | Memoize tick with useCallback    | Low                    | Trivial | P3            |
-| A8  | `_document.tsx` (see C3)         | —                      | —       | Covered by C3 |
-| P1  | Pre-optimise project images      | Medium                 | Low     | P2            |
-| P2  | Resource hint for GitHub API     | Low                    | Trivial | P3            |
-| P3  | Lazy-load project images         | Low                    | Trivial | P3            |
-| P4  | Reduce StarField on mobile       | Low                    | Low     | P3            |
 | N7  | AI "Ask Me" widget               | Very High (diff.)      | High    | P3            |
