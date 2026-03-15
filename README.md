@@ -79,7 +79,7 @@ A modern and flexible portfolio template for React and Next.js developers. Perfe
 
 ### Built With
 
-The Arduino Weather Station project leverages a wide range of technologies across various layers of the system:
+This portfolio template is built with the following technologies:
 
 - [![JavaScript][js-badge]][js-url] Core languages used in frontend development.
 - [![TypeScript][ts-badge]][ts-url] TypeScript extends JavaScript by adding types to the language.
@@ -152,7 +152,7 @@ To contribute:
 1. **Fork the project** by clicking the "Fork" button at the top of this page.
 2. **Clone your fork locally**:
     ```bash
-    git clone https://github.com/your-username/arduino-weather-station.git
+    git clone https://github.com/your-username/developer-portfolio-website.git
     ```
 3. **Create a new feature branch** for your work:
     ```bash
@@ -227,7 +227,7 @@ Misha - [miksoft.pro](https://miksoft.pro)
 [issues-badge]: https://img.shields.io/github/issues/miksrv/developer-portfolio-website.svg?style=for-the-badge
 [issues-url]: https://github.com/miksrv/developer-portfolio-website/issues
 [license-badge]: https://img.shields.io/github/license/miksrv/developer-portfolio-website.svg?style=for-the-badge
-[license-url]: https://github.com/miksrv/developer-portfolio-website/blob/master/LICENSE.txt
+[license-url]: https://github.com/miksrv/developer-portfolio-website/blob/main/LICENSE.txt
 [js-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000
 [js-url]: https://www.javascript.com/
 [ts-badge]: https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff

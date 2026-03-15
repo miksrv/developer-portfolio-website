@@ -349,7 +349,6 @@ call to action.
 
 ---
 
-
 ### N5 — `ErrorBoundary` component _(see A3 above)_
 
 **Purpose:** Prevent external API failures (GitHub calendar) from crashing the page.
