@@ -99,4 +99,16 @@ describe('Introduce Component', () => {
         const description = screen.getByText(/production systems/i)
         expect(description).toBeInTheDocument()
     })
+
+    it('calls findEarliestDate when experience entry has a period', () => {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        jest.spyOn(require('@/utils'), 'useSiteData').mockReturnValue({
+            experience: [{ period: ['2010-01-01'], title: 'Developer', company: 'Acme Corp' }]
+        })
+
+        render(<Introduce />)
+
+        expect(screen.getByText('My age')).toBeInTheDocument()
+        expect(screen.getByText('Experience')).toBeInTheDocument()
+    })
 })

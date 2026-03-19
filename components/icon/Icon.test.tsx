@@ -22,4 +22,21 @@ describe('Icon Component', () => {
         const svgElement = container.querySelector('svg')
         expect(svgElement).toHaveAttribute('viewBox', '140 136 240 240')
     })
+
+    it('returns null for an unknown icon name', () => {
+        const { container } = render(<Icon name={'unknown' as any} />)
+        expect(container.firstChild).toBeNull()
+    })
+
+    it('logs a console warning in development mode for unknown icon names', () => {
+        Object.defineProperty(process.env, 'NODE_ENV', { value: 'development', configurable: true, writable: true })
+        const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {})
+
+        render(<Icon name={'unknown' as any} />)
+
+        expect(warnSpy).toHaveBeenCalledWith('Icon: unknown name "unknown"')
+
+        warnSpy.mockRestore()
+        Object.defineProperty(process.env, 'NODE_ENV', { value: 'test', configurable: true, writable: true })
+    })
 })
