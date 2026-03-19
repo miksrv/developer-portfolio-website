@@ -46,6 +46,10 @@ jest.mock('./styles.module.sass', () => ({
 }))
 
 describe('Projects', () => {
+    afterEach(() => {
+        jest.restoreAllMocks()
+    })
+
     it('renders all projects with titles and descriptions', () => {
         render(<Projects />)
         expect(screen.getByText('Project 1')).toBeInTheDocument()
@@ -100,5 +104,22 @@ describe('Projects', () => {
     it('matches snapshot', () => {
         const { asFragment } = render(<Projects />)
         expect(asFragment()).toMatchSnapshot()
+    })
+
+    it('renders GitHub repository link when project has github property', () => {
+        jest.spyOn(require('@/utils'), 'useSiteData').mockReturnValue({
+            projects: [
+                {
+                    title: 'Open Source Project',
+                    link: 'https://example.com',
+                    image: '/images/project.png',
+                    github: 'https://github.com/example/repo'
+                }
+            ]
+        })
+
+        render(<Projects />)
+        expect(screen.getByText('GitHub Repository')).toBeInTheDocument()
+        expect(screen.getByText('GitHub Repository').closest('a')).toHaveAttribute('href', 'https://github.com/example/repo')
     })
 })

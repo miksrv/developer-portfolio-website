@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`PrintResume matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    id="print-resume"
+  >
+    <div>
+      <div>
+        <img
+          alt="John Doe"
+          data-testid="project-image"
+          src="mocked-avatar.jpg"
+        />
+      </div>
+      <div>
+        <h1>
+          John Doe
+        </h1>
+        <p>
+          Software Engineer
+        </p>
+        <p>
+          New York, USA
+        </p>
+        <ul>
+          <li>
+            <span>
+              GitHub:
+            </span>
+             
+            <span>
+              https://github.com/johndoe
+            </span>
+          </li>
+          <li>
+            <span>
+              LinkedIn:
+            </span>
+             
+            <span>
+              https://linkedin.com/in/johndoe
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p>
+      Experienced full-stack developer with 10+ years.
+    </p>
+    <div>
+      <div>
+        <h2>
+          Experience
+        </h2>
+        <div>
+          <div>
+            <span>
+              Jan 2020 – Dec 2022
+            </span>
+            <span>
+              2 yrs 11 mos
+            </span>
+          </div>
+          <h3>
+            Senior Developer
+          </h3>
+          <p>
+            Led development of web applications.
+          </p>
+          <ul>
+            <li>
+              <strong>
+                Frontend:
+              </strong>
+               React, TypeScript
+            </li>
+            <li>
+              <strong>
+                Backend:
+              </strong>
+               Node.js, PostgreSQL
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div>
+            <span>
+              Jun 2018 – Present
+            </span>
+            <span>
+              7 yrs 9 mos
+            </span>
+          </div>
+          <h3>
+            Junior Developer
+          </h3>
+          <p>
+            Assisted in building REST APIs.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h2>
+          Skills
+        </h2>
+        <div>
+          <h3>
+            Frontend
+          </h3>
+          <ul>
+            <li>
+              <span>
+                React
+              </span>
+              <span>
+                <span
+                  style="width: 90%;"
+                />
+              </span>
+            </li>
+            <li>
+              <span>
+                TypeScript
+              </span>
+              <span>
+                <span
+                  style="width: 85%;"
+                />
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>
+            Backend
+          </h3>
+          <ul>
+            <li>
+              <span>
+                Node.js
+              </span>
+              <span>
+                <span
+                  style="width: 80%;"
+                />
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

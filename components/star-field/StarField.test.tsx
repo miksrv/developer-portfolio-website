@@ -85,4 +85,43 @@ describe('StarField Component', () => {
         const canvas = screen.getByRole('img')
         expect(canvas).toBeInTheDocument()
     })
+
+    it('executes the animation tick and draws to the canvas', () => {
+        const mockCtx = { fillRect: jest.fn(), fillStyle: '' }
+        Object.defineProperty(HTMLCanvasElement.prototype, 'getContext', {
+            value: jest.fn().mockReturnValue(mockCtx),
+            writable: true,
+            configurable: true
+        })
+
+        let rafFired = false
+        jest.spyOn(window, 'requestAnimationFrame').mockImplementation((cb) => {
+            if (!rafFired) {
+                rafFired = true
+                cb(0)
+            }
+            return 0
+        })
+        jest.spyOn(window, 'cancelAnimationFrame').mockImplementation(() => {})
+
+        render(<StarField />)
+
+        expect(mockCtx.fillRect).toHaveBeenCalled()
+    })
+
+    it('logs an error when the 2D rendering context is unavailable', () => {
+        Object.defineProperty(HTMLCanvasElement.prototype, 'getContext', {
+            value: jest.fn().mockReturnValue(null),
+            writable: true,
+            configurable: true
+        })
+        jest.spyOn(window, 'requestAnimationFrame').mockImplementation(() => 0)
+        jest.spyOn(window, 'cancelAnimationFrame').mockImplementation(() => {})
+
+        const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
+
+        render(<StarField />)
+
+        expect(consoleSpy).toHaveBeenCalledWith('Could not get 2d context from canvas element')
+    })
 })
