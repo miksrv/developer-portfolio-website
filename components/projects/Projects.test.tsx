@@ -107,6 +107,7 @@ describe('Projects', () => {
     })
 
     it('renders GitHub repository link when project has github property', () => {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
         jest.spyOn(require('@/utils'), 'useSiteData').mockReturnValue({
             projects: [
                 {
@@ -120,6 +121,9 @@ describe('Projects', () => {
 
         render(<Projects />)
         expect(screen.getByText('GitHub Repository')).toBeInTheDocument()
-        expect(screen.getByText('GitHub Repository').closest('a')).toHaveAttribute('href', 'https://github.com/example/repo')
+        expect(screen.getByText('GitHub Repository').closest('a')).toHaveAttribute(
+            'href',
+            'https://github.com/example/repo'
+        )
     })
 })
