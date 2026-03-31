@@ -4,11 +4,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Icon, IconTypes } from '@/components'
-import avatarPic from '@/public/avatar.jpg'
+import avatarPic from '@/public/avatar.webp'
 import { update } from '@/update'
 import { useSiteData } from '@/utils'
 
-import { FactType } from './types'
 import { findEarliestDate } from './utils'
 
 import styles from './styles.module.sass'
@@ -39,35 +38,9 @@ export const Introduce: React.FC = () => {
     })
 
     const tick = () => {
-        const ageCalc = ((Date.now() - birthTime) / divisor).toFixed(9)
-        const expCalc = ((Date.now() - expTime) / divisor).toFixed(9)
-
-        setMyAge(ageCalc)
-        setMyExp(expCalc)
+        setMyAge(((Date.now() - birthTime) / divisor).toFixed(9))
+        setMyExp(((Date.now() - expTime) / divisor).toFixed(9))
     }
-
-    const factsList: FactType[] = [
-        {
-            title: 'My age',
-            value: myAge
-        },
-        {
-            title: 'Experience',
-            value: myExp
-        },
-        {
-            title: 'Location',
-            value: data?.biography?.location
-        },
-        {
-            title: 'Timezone',
-            value: data?.biography?.timezone
-        },
-        {
-            title: 'Updated',
-            value: dateUpdate
-        }
-    ]
 
     useEffect(() => {
         const timer = setInterval(() => tick(), 100)
@@ -77,15 +50,25 @@ export const Introduce: React.FC = () => {
 
     return (
         <section className={styles.introduceSection}>
-            <div className={styles.avatarContainer}>
-                <Image
-                    src={avatarPic}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    // eslint-disable-next-line quotes
-                    alt={"Hi I'm - Misha - Picture of the author"}
+            {/* Avatar with animated glow ring */}
+            <div className={styles.avatarWrapper}>
+                <div
+                    className={styles.avatarGlow}
+                    aria-hidden={'true'}
                 />
+                <div className={styles.avatarContainer}>
+                    <Image
+                        src={avatarPic}
+                        fill
+                        sizes={'(max-width: 768px) 240px, 45vw'}
+                        style={{ objectFit: 'cover' }}
+                        // eslint-disable-next-line quotes
+                        alt={"Hi I'm - Misha - Picture of the author"}
+                        priority
+                    />
+                </div>
             </div>
+
             <div className={styles.infoContainer}>
                 <div className={styles.header}>
                     <div className={styles.title}>
@@ -102,6 +85,7 @@ export const Introduce: React.FC = () => {
                                     key={`link-${String(item.link)}`}
                                     href={item.link}
                                     title={item.label}
+                                    aria-label={item.label}
                                     target={'_blank'}
                                     rel={'noopener noreferrer'}
                                     className={styles.link}
@@ -112,11 +96,40 @@ export const Introduce: React.FC = () => {
                         </div>
                     </div>
                     <h3 className={styles.subTitle}>{data?.biography?.title}</h3>
+                    {data?.biography?.availableForWork && (
+                        <div
+                            className={styles.openToWork}
+                            title={'Open to new opportunities'}
+                        >
+                            <span
+                                className={styles.openToWorkDot}
+                                aria-hidden={'true'}
+                            />
+                            {'Open to opportunities'}
+                        </div>
+                    )}
                 </div>
 
+                {/* Live counter pills */}
+                <div className={styles.counterPills}>
+                    <div className={styles.pill}>
+                        <span className={styles.pillValue}>{myAge}</span>
+                        <span className={styles.pillLabel}>{'My age'}</span>
+                    </div>
+                    <div className={styles.pill}>
+                        <span className={styles.pillValue}>{myExp}</span>
+                        <span className={styles.pillLabel}>{'Experience'}</span>
+                    </div>
+                </div>
+
+                {/* Location / Timezone / Updated */}
                 <ul className={styles.factsList}>
-                    {factsList?.map(({ title, value }) => (
-                        <li key={`fact-${String(title)}`}>
+                    {[
+                        { title: 'Location', value: data?.biography?.location },
+                        { title: 'Timezone', value: data?.biography?.timezone },
+                        { title: 'Updated', value: dateUpdate }
+                    ].map(({ title, value }) => (
+                        <li key={`fact-${title}`}>
                             <div className={styles.key}>{title}</div>
                             <div className={styles.value}>{value}</div>
                         </li>
@@ -125,18 +138,41 @@ export const Introduce: React.FC = () => {
 
                 <div className={styles.description}>
                     <p>
-                        {'I architect and deliver'} <b>{'production systems'}</b>{' '}
-                        {'end-to-end - owning everything from system design and'} <b>{'backend'}</b> {' APIs to '}
-                        <b>{'frontend'}</b>{' '}
-                        {
-                            'products. I define technical direction and lead engineering delivery for clients across industries.'
-                        }
+                        {'I design systems, define'} <b>{'technical direction'}</b>
+                        {', and lead engineering teams through complete delivery cycles — from the first'}{' '}
+                        <b>{'architecture decision'}</b> {'to live production at scale.'}
                     </p>
                     <p>
                         {
-                            'Outside work, I run a fully automated home observatory for remote astrophotography and spend time hiking and traveling with my family.'
+                            '19+ years of end-to-end ownership across government, media, and tech. I take products from 0 to launch and build the teams that sustain them.'
                         }
                     </p>
+                </div>
+
+                {/* CTA buttons */}
+                <div className={styles.ctaGroup}>
+                    <a
+                        href={'#projects'}
+                        className={styles.ctaPrimary}
+                    >
+                        {'View My Work'}
+                    </a>
+                    <a
+                        href={'/'}
+                        className={styles.ctaSecondary}
+                        onClick={(event) => {
+                            event.preventDefault()
+                            window.print()
+                        }}
+                    >
+                        {'Download CV'}
+                    </a>
+                    <a
+                        href={'#contact'}
+                        className={styles.ctaTertiary}
+                    >
+                        {'Contact Me'}
+                    </a>
                 </div>
             </div>
         </section>

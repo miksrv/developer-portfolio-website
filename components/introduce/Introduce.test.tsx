@@ -63,14 +63,10 @@ describe('Introduce Component', () => {
     it('displays facts correctly', () => {
         render(<Introduce />)
 
-        const ageElement = screen.getByText('My age')
-        expect(ageElement).toBeInTheDocument()
-
-        const updatedElement = screen.getByText('Updated')
-        expect(updatedElement).toBeInTheDocument()
-
-        const updateValue = screen.getByText(formatDate(update, 'dddd, MMM D, YYYY'))
-        expect(updateValue).toBeInTheDocument()
+        // Age and Experience are now pill labels
+        expect(screen.getByText('My age')).toBeInTheDocument()
+        expect(screen.getByText('Updated')).toBeInTheDocument()
+        expect(screen.getByText(formatDate(update, 'dddd, MMM D, YYYY'))).toBeInTheDocument()
     })
 
     it('updates age and experience over time', () => {
@@ -81,23 +77,15 @@ describe('Introduce Component', () => {
 
         act(() => {
             jest.advanceTimersByTime(1000)
-
-            const ageValue = screen.getByText(
-                (content, element) => !!(element?.tagName === 'LI' && element.textContent?.startsWith('My age'))
-            )
-            expect(ageValue).toBeInTheDocument()
-
-            const expValue = screen.getByText(
-                (content, element) => !!(element?.tagName === 'LI' && element.textContent?.startsWith('Experience'))
-            )
-            expect(expValue).toBeInTheDocument()
+            // Labels remain visible in counter pills
+            expect(screen.getByText('My age')).toBeInTheDocument()
+            expect(screen.getByText('Experience')).toBeInTheDocument()
         })
     })
 
     it('renders the description text', () => {
         render(<Introduce />)
-        const description = screen.getByText(/production systems/i)
-        expect(description).toBeInTheDocument()
+        expect(screen.getByText(/technical direction/i)).toBeInTheDocument()
     })
 
     it('calls findEarliestDate when experience entry has a period', () => {
@@ -110,5 +98,12 @@ describe('Introduce Component', () => {
 
         expect(screen.getByText('My age')).toBeInTheDocument()
         expect(screen.getByText('Experience')).toBeInTheDocument()
+    })
+
+    it('renders CTA buttons', () => {
+        render(<Introduce />)
+        expect(screen.getByText('View My Work')).toBeInTheDocument()
+        expect(screen.getByText('Download CV')).toBeInTheDocument()
+        expect(screen.getByText('Contact Me')).toBeInTheDocument()
     })
 })
