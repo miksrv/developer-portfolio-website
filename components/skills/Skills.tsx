@@ -24,9 +24,7 @@ export const Skills: React.FC = () => {
                             <ul className={styles.skillList}>
                                 {group?.skills?.map((skill: SkillItemType, j) => (
                                     <li key={`skill-${String(i)}-${String(j)}`}>
-                                        <div className={styles.label}>
-                                            <label>{skill.name}</label>
-                                        </div>
+                                        <label className={styles.label}>{skill.name}</label>
                                         <Progress value={skill.level} />
                                     </li>
                                 ))}
