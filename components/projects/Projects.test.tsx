@@ -39,8 +39,6 @@ jest.mock('@/utils', () => ({
 jest.mock('./styles.module.sass', () => ({
     projectsContainer: 'projectsContainer',
     item: 'item',
-    even: 'even',
-    odd: 'odd',
     description: 'description',
     info: 'info'
 }))
@@ -69,23 +67,16 @@ describe('Projects', () => {
 
     it('renders project links with correct href', () => {
         render(<Projects />)
+        // Image links are aria-hidden, so only the visible website links are accessible
         const links = screen.getAllByRole('link')
         expect(links[0]).toHaveAttribute('href', 'https://project1.com')
-        expect(links[1]).toHaveAttribute('href', 'https://project1.com')
-        expect(links[2]).toHaveAttribute('href', 'https://project2.com')
-        expect(links[3]).toHaveAttribute('href', 'https://project2.com')
+        expect(links[1]).toHaveAttribute('href', 'https://project2.com')
     })
 
     it('renders icon for each project', () => {
         render(<Projects />)
         const icons = screen.getAllByTestId('icon')
         expect(icons).toHaveLength(2)
-    })
-
-    it('applies correct styles for even and odd projects', () => {
-        const { container } = render(<Projects />)
-        expect(container.querySelector('.even')).toBeInTheDocument()
-        expect(container.querySelector('.odd')).toBeInTheDocument()
     })
 
     it('renders PageTransition wrapper', () => {

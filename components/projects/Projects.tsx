@@ -8,7 +8,6 @@ import { iconNames } from '@/components/icon/types'
 import { PageTransition } from '@/components/page-transition'
 import { childVariants, parentVariants } from '@/components/page-transition/constants'
 import { useSiteData } from '@/utils'
-import { cn } from '@/utils/tools'
 
 import { ProjectType } from './types'
 
@@ -23,25 +22,35 @@ export const Projects: React.FC = () => {
                 parentVariants={parentVariants.slide}
                 childVariants={childVariants.slide}
             >
-                {data?.projects.map((item: ProjectType, i) => (
+                {data?.projects.map((item: ProjectType) => (
                     <div
                         key={`project-${item?.link}`}
-                        className={cn(styles.item, styles[i % 2 === 0 ? 'even' : 'odd'])}
+                        className={styles.item}
                     >
-                        <Link
-                            href={item.link}
-                            title={item.title}
-                            target={'_blank'}
-                            rel={'noopener noreferrer'}
-                        >
-                            <Image
-                                src={item.image}
-                                alt={item.title}
-                                width={176}
-                                height={176}
-                                loading={'lazy'}
-                            />
-                        </Link>
+                        <div className={styles.imageWrapper}>
+                            <Link
+                                href={item.link}
+                                title={item.title}
+                                target={'_blank'}
+                                rel={'noopener noreferrer'}
+                                tabIndex={-1}
+                                aria-hidden={'true'}
+                            >
+                                <Image
+                                    src={item.image}
+                                    alt={item.title}
+                                    width={176}
+                                    height={176}
+                                    loading={'lazy'}
+                                />
+                            </Link>
+                            <div
+                                className={styles.imageOverlay}
+                                aria-hidden={'true'}
+                            >
+                                <span>{'View →'}</span>
+                            </div>
+                        </div>
 
                         <div className={styles.description}>
                             <div>
