@@ -22,10 +22,33 @@
         object-fit: cover
         border-radius: var(--border-radius)
         box-shadow: var(--box-shadow)
+        flex-shrink: 0
+        align-self: flex-start
 
     @media screen and (max-width: variables.$mobileMaxWidth)
         display: block
 
         img
             float: right
-            margin: 0 10px
+            margin: 0 0 10px 10px
+
+.bioBullets
+    margin-top: 12px
+    padding-left: 0
+    list-style: none
+    display: flex
+    flex-direction: column
+    gap: 6px
+
+    li
+        position: relative
+        padding-left: 16px
+        color: var(--text-color-secondary)
+        font-size: var(--font-size-small)
+        line-height: 1.5
+
+        &::before
+            content: '—'
+            position: absolute
+            left: 0
+            color: var(--highlight-color)
