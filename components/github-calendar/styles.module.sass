@@ -1,0 +1,106 @@
+@use '../../styles/variables' as variables
+
+.calendarSection
+    margin: 40px auto 0
+
+// ── Scroll wrapper (mobile) ────────────────────────────────────────────────────
+.calendarScroll
+    overflow-x: auto
+    -webkit-overflow-scrolling: touch
+    padding-bottom: 4px     // room for scrollbar on macOS overlay
+    scrollbar-width: thin
+    scrollbar-color: rgba(255, 193, 7, 0.2) transparent
+
+    &::-webkit-scrollbar
+        height: 4px
+
+    &::-webkit-scrollbar-track
+        background: transparent
+
+    &::-webkit-scrollbar-thumb
+        background-color: rgba(255, 193, 7, 0.25)
+        border-radius: 4px
+
+.calendarInner
+    min-width: 600px
+    display: flex
+    flex-direction: column
+    gap: 4px
+
+// ── Month labels ───────────────────────────────────────────────────────────────
+.monthRow
+    display: flex
+    gap: 3px
+
+.monthLabel
+    flex: 1
+    font-size: 10px
+    color: var(--text-color-third)
+    white-space: nowrap
+    overflow: visible
+    line-height: 1.4
+
+// ── Weeks grid ─────────────────────────────────────────────────────────────────
+.weeksContainer
+    display: flex
+    gap: 3px
+    width: 100%
+
+.week
+    display: flex
+    flex-direction: column
+    gap: 3px
+    flex: 1 1 0
+    min-width: 0
+
+// ── Cells ──────────────────────────────────────────────────────────────────────
+.cell,
+.cellEmpty
+    width: 100%
+    aspect-ratio: 1
+    border-radius: 2px
+    min-width: 0
+    min-height: 0
+    flex-shrink: 0
+
+.cell
+    cursor: default
+    transition: opacity 0.15s ease
+    position: relative
+
+    &:hover
+        opacity: 0.75
+        outline: 1px solid rgba(255, 193, 7, 0.5)
+        outline-offset: 1px
+        z-index: 1
+
+.cellEmpty
+    background-color: transparent
+
+// ── Footer ─────────────────────────────────────────────────────────────────────
+.footer
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+    gap: 8px
+    margin-top: 2px
+
+.totalLabel
+    font-size: var(--font-size-small)
+    color: var(--text-color-third)
+
+.legend
+    display: flex
+    align-items: center
+    gap: 4px
+
+.legendText
+    font-size: 10px
+    color: var(--text-color-third)
+
+.legendCell
+    width: 12px
+    height: 12px
+    border-radius: 2px
+    flex-shrink: 0
