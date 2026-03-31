@@ -1,0 +1,51 @@
+@use '../../styles/variables' as variables
+
+.statsSection
+    max-width: var(--container-width)
+    width: 100%
+    margin: 30px auto
+    display: flex
+    justify-content: space-around
+    align-items: center
+    gap: 20px
+    padding: 24px 20px
+    background-color: var(--container-background)
+    border-radius: var(--border-radius)
+    border: 1px solid rgba(255, 193, 7, 0.12)
+    position: relative
+    z-index: 2
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        flex-wrap: wrap
+        gap: 16px
+        padding: 20px 15px
+        margin: 20px 10px
+        width: auto
+
+.statItem
+    text-align: center
+    flex: 0
+
+.statNumber
+    font-size: 3.4em
+    font-weight: 700
+    color: var(--highlight-color)
+    line-height: 1
+    margin-bottom: 6px
+    display: flex
+    align-items: baseline
+    justify-content: center
+    gap: 2px
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        font-size: 2em
+
+.suffix
+    font-size: 0.7em
+    font-weight: 600
+
+.statLabel
+    font-size: var(--font-size-small)
+    color: var(--text-color-secondary)
+    text-transform: uppercase
+    letter-spacing: 0.5px
