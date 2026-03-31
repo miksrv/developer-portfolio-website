@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
-import { AppProps } from 'next/app'
+import { AppProps, NextWebVitalsMetric } from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
 
-import { Header, PrintResume, StarField } from '@/components'
+import { Footer, Header, PrintResume, StarField } from '@/components'
 import { DataProvider } from '@/utils'
 
 import '@/styles/theme.css'
@@ -79,13 +79,21 @@ const App = ({ Component, pageProps }: AppProps) => {
             />
 
             <DataProvider>
+                <a
+                    href={'#main-content'}
+                    className={'skipLink'}
+                >
+                    {'Skip to main content'}
+                </a>
+
                 <Header />
 
-                <main>
+                <main id={'main-content'}>
                     <Component {...pageProps} />
                 </main>
 
                 <PrintResume />
+                <Footer />
             </DataProvider>
 
             {process.env.NODE_ENV === 'production' && (
@@ -124,6 +132,13 @@ const App = ({ Component, pageProps }: AppProps) => {
             )}
         </>
     )
+}
+
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+    if (process.env.NODE_ENV === 'production') {
+        // eslint-disable-next-line no-console
+        console.log(metric)
+    }
 }
 
 export default App
