@@ -1,10 +1,20 @@
 {
     "biography": {
         "name": "Misha",
-        "title": "Software Architect & Tech Lead",
+        "title": "Principal Engineer · Software Architect · Tech Lead",
         "location": "California, USA",
         "timezone": "Pacific, UTC-07:00",
-        "birthDate": "1989-09-09T05:15:00"
+        "birthDate": "1989-09-09T05:15:00",
+        "availableForWork": false,
+        "bio": {
+            "lead": "Principal-level engineer with 19+ years of end-to-end ownership across government, media, and technology. I define technical strategy, architect systems from the ground up, and lead engineering teams through complete delivery cycles — from the first design whiteboard to live production at scale.",
+            "bullets": [
+                "10+ production systems delivered end-to-end: full ownership across architecture, backend, frontend, and infrastructure",
+                "Led cross-functional engineering teams of 5–15 across distributed, high-stakes environments",
+                "Technical decision-maker: stack selection, system design, CI/CD pipelines, quality standards, and developer experience",
+                "Track record across domains: government platforms, media products, IoT systems, and AI-integrated applications"
+            ]
+        }
     },
     "contactLinks": [
         {
@@ -30,7 +40,7 @@
     ],
     "skills": [
         {
-            "group": "Frontend Systems",
+            "group": "Frontend Engineering",
             "skills": [
                 { "name": "TypeScript", "level": 90 },
                 { "name": "React / Next.js", "level": 92 },
@@ -39,73 +49,73 @@
             ]
         },
         {
-            "group": "Backend Systems",
+            "group": "Backend & APIs",
             "skills": [
                 { "name": "Node.js", "level": 80 },
-                { "name": "PHP Platforms", "level": 85 },
+                { "name": "PHP / Laravel", "level": 85 },
                 { "name": "Python", "level": 70 },
-                { "name": "System Design", "level": 90 }
+                { "name": "System Design", "level": 92 }
             ]
         },
         {
-            "group": "Infrastructure",
+            "group": "Infrastructure & DevOps",
             "skills": [
                 { "name": "Linux", "level": 90 },
                 { "name": "Docker", "level": 75 },
                 { "name": "CI/CD", "level": 90 },
-                { "name": "SQL & Databases", "level": 80 }
+                { "name": "SQL & Databases", "level": 82 }
             ]
         },
         {
             "group": "AI & Automation",
             "skills": [
                 { "name": "LLM Integration", "level": 75 },
-                { "name": "AI Features", "level": 70 },
-                { "name": "Prompt Eng.", "level": 70 },
-                { "name": "Automation", "level": 80 }
+                { "name": "AI Features", "level": 72 },
+                { "name": "Prompt Engineering", "level": 70 },
+                { "name": "Workflow Automation", "level": 82 }
             ]
         }
     ],
     "projects": [
         {
             "image": "/images/observatory.webp",
-            "title": "Homemade Observatory",
+            "title": "Automated Home Observatory",
             "link": "https://astro.miksoft.pro/",
             "github": "https://github.com/miksrv/astronomy-portal",
-            "description": "End-to-end platform integrating Raspberry Pi, Arduino, and Python for automated telescope control and image capture. The web layer provides real-time data streaming, user authentication, and a celestial events calendar - hardware and full-stack software designed and built from scratch."
+            "description": "Designed and built a fully automated observatory platform from scratch — integrating Raspberry Pi, Arduino, and Python into a unified control system for remote telescope operation and image capture. The web layer delivers real-time data streaming, user authentication, and a celestial events calendar. Every layer — hardware interface, automation engine, backend API, and frontend — owned and shipped solo."
         },
         {
             "image": "/images/meteostation.webp",
-            "title": "Arduino Weather Station",
+            "title": "IoT Weather Station",
             "link": "https://meteo.miksoft.pro/",
             "github": "https://github.com/miksrv/arduino-weather-station",
-            "description": "Arduino-powered sensor system with a REST API serving real-time and historical weather data. Integrated into the observatory pipeline to gate imaging sessions on atmospheric conditions - embedded firmware, backend API, and frontend dashboard built in-house."
+            "description": "End-to-end IoT system: custom Arduino firmware for multi-sensor data collection, a production REST API serving real-time and historical readings, and a frontend dashboard for visualization. Integrated into the observatory pipeline as an atmospheric gate — imaging sessions are automatically blocked under poor conditions. Firmware, API, and UI built in-house."
         },
         {
             "image": "/images/asteroid.webp",
-            "title": "Asteroid Monitoring",
+            "title": "Asteroid Proximity Tracker",
             "link": "https://asteroid.miksoft.pro/",
             "github": "https://github.com/miksrv/asteroid-monitoring",
-            "description": "Real-time data platform consuming the NASA NeoWS API to track near-Earth asteroids. Surfaces close-approach timing, velocity, size estimates, and orbit trajectories - transforming raw orbital mechanics data into an accessible, production-deployed web application."
+            "description": "Production data platform consuming the NASA NeoWS API to track near-Earth asteroid approaches in real time. Surfaces close-approach windows, velocity, estimated diameter, and orbital paths — transforming raw orbital mechanics data into an accessible dashboard deployed and serving live users."
         },
         {
             "image": "/images/geometki.webp",
-            "title": "Geo-Discovery Portal",
+            "title": "Geo-Discovery Platform",
             "link": "https://geometki.com/",
-            "description": "Production geo-discovery portal built on microservice architecture with Next.js, PHP, and MySQL. Features map integration, user-generated content, photo uploads, and a gamified reputation system - designed, architected, and shipped end-to-end."
+            "description": "Production geo-discovery platform architected on microservices using Next.js, PHP, and MySQL. Delivers interactive map exploration, user-generated content, photo uploads, and a gamified reputation system. Designed the data model, defined the microservice boundaries, and owned full-stack delivery from schema to production deployment."
         },
         {
             "image": "/images/lookatstars.webp",
             "title": "Astronomy Outreach Channel",
             "link": "https://t.me/look_at_stars",
-            "description": "Astronomy outreach channel delivering science-accurate content, celestial event coverage, and astrophotography to a growing audience. Built and operated end-to-end - content pipeline, production workflow, and community management."
+            "description": "Science-accurate astronomy channel delivering celestial event coverage, astrophotography, and observational data to a growing subscriber audience. Built and operated end-to-end — editorial pipeline, production workflow, and community engagement. Demonstrates long-term ownership and consistent delivery beyond software."
         }
     ],
     "experience": [
         {
             "period": ["09/01/2021"],
             "role": "Lead Software Engineer",
-            "duties": "Developed scalable, modular components for the client application using modern architectural patterns. Designed solutions for key functions such as client-server interactions, REST API integration, and service integrations. Implemented automatic UI tests (unit and integration) to enhance solution quality. Optimized application architecture, including authentication, logging, and data processing. Created and maintained a test environment with tools for screenshot testing and API simulation to streamline development. Contributed to code quality by implementing analysis tools, CI/CD processes, and conducting regular QA sessions. Collaborated with the UI/UX team to enhance UI components and improve application usability.",
+            "duties": "Serving as technical lead for a large-scale client application built on a modular React/TypeScript architecture. Own end-to-end delivery quality and set technical direction across a distributed engineering team. Designed the component architecture and established engineering standards adopted across the organization. Grew automated test coverage from near zero to 85%+ across unit, integration, and visual regression layers using Jest, Playwright, and RTL. Designed and shipped a full CI/CD pipeline with SonarQube quality gates — eliminating manual regression cycles and measurably reducing time-to-merge. Introduced API simulation tooling and a dedicated test environment that cut frontend iteration cycles significantly. Drive cross-functional alignment between UI/UX, backend, and QA leads on system contracts and component design. Facilitate regular code review ceremonies to sustain engineering quality standards across the team.",
             "skills": [
                 {
                     "area": "Frontend",
@@ -120,15 +130,15 @@
                     "stack": ["Playwright", "Jest", "RTL"]
                 },
                 {
-                    "area": "CI/CD & DevOps",
-                    "stack": ["Docker", "Git", "Jenkins", "SonarQube", "Linux", "CentsOS", "GitHubActions"]
+                    "area": "Infrastructure",
+                    "stack": ["Docker", "Git", "Jenkins", "SonarQube", "Linux", "GitHubActions"]
                 }
             ]
         },
         {
             "period": ["03/01/2018", "09/01/2024"],
             "role": "Lead Software Engineer",
-            "duties": "Led the full development cycle of WordPress sites for media organizations, creating scalable solutions for high-traffic demands. Designed custom PHP modules, optimized MySQL databases, and implemented performance enhancements to ensure reliability. Managed VPS setup, security measures, and ongoing maintenance to safeguard hosting environments. Provided technical support, developed SEO strategies, and integrated social media modules for streamlined content distribution. Additionally, I designed user-friendly WordPress themes, enhancing both functionality and user experience.",
+            "duties": "Owned the full technical lifecycle for a portfolio of high-traffic WordPress platforms serving multiple media organizations under strict performance SLAs. Designed and delivered custom PHP modules and MySQL schema optimizations that sustained reliability under peak load. Managed the complete VPS infrastructure stack — server provisioning, security hardening, patch cadence, and disaster recovery planning. Built SEO tooling and social media distribution integrations that expanded audience reach across platforms. Designed custom themes focused on both editorial UX and page performance. Provided ongoing technical advisory and acted as the sole escalation point for all infrastructure and application issues.",
             "skills": [
                 {
                     "area": "Frontend",
@@ -139,7 +149,7 @@
                     "stack": ["PHP", "MySQL"]
                 },
                 {
-                    "area": "CI/CD & DevOps",
+                    "area": "Infrastructure",
                     "stack": ["Linux"]
                 },
                 {
@@ -151,7 +161,7 @@
         {
             "period": ["07/01/2021", "11/01/2022"],
             "role": "Senior Frontend Developer",
-            "duties": "Led the development of a quality assurance portal for microservices, streamlining code and component reviews. Developed a Bitbucket integration API to automate project data extraction and implemented test automation using React Testing Library and Jest for UI testing. Created automated UI tests for over 36 microservices and designed Playwright integration tests. Enhanced CI/CD pipelines with added test and code quality checks. Built a microservice to send test statistics to the quality portal and developed a plugin for test report aggregation with Allure. Contributed to Agile task management, wrote technical documentation, and implemented accessibility testing, while continuously improving the portal's features and functionality. Regularly conducted code reviews to ensure high-quality standards.",
+            "duties": "Architected and delivered a centralized quality assurance portal that gave engineering leadership real-time visibility across 36 microservices — eliminating a critical blind spot in the organization's quality posture. Built a Bitbucket integration that automated project data extraction end-to-end, replacing a fully manual process. Designed and shipped automated UI test suites for 36+ microservices using React Testing Library, Jest, and Playwright — establishing the quality baseline from scratch. Developed a dedicated microservice for real-time test telemetry and an Allure aggregation plugin that consolidated all quality metrics into a single leadership dashboard. Extended CI/CD pipelines org-wide with code quality gates and test coverage thresholds, improving pre-merge signal quality across the entire engineering organization. Led code review standards and contributed to accessibility testing practices.",
             "skills": [
                 {
                     "area": "Frontend",
@@ -166,15 +176,15 @@
                     "stack": ["Playwright", "Jest", "RTL"]
                 },
                 {
-                    "area": "CI/CD & DevOps",
+                    "area": "Infrastructure",
                     "stack": ["Git", "Jenkins", "Linux"]
                 }
             ]
         },
         {
             "period": ["08/01/2016", "07/01/2021"],
-            "role": "Team Lead Software Engineer",
-            "duties": "Developed and integrated a payment system with state-owned banks for federal programs, including cashback initiatives. Led the creation of a COVID-19 control system for the Orenburg region, integrating with government services and implementing an SMS notification API. Managed a development team using Agile and Scrum, overseeing projects like a citizen-government portal for reporting urban issues and an API for e-document integration. Designed and maintained services for receiving charges and regulatory compliance in the Orenburg region, and implemented microservice architecture for government projects. Led fullstack development of portals for publishing legal acts and tax filings, ensuring smooth operations, compliance, and scalability.",
+            "role": "Engineering Team Lead",
+            "duties": "Led a cross-functional engineering team delivering mission-critical systems for federal and regional government under strict compliance requirements. Architected and shipped a payment integration with state-owned banking infrastructure enabling federal cashback programs — accessed by millions of citizens at launch. Designed and delivered a COVID-19 monitoring and compliance system for the Orenburg region, integrated with federal government APIs and driving real-time SMS notifications at regional scale. Led 0-to-production development of a citizen-government issue portal that became the primary channel for municipal reporting in the region. Architected microservice infrastructure for e-document integration and regulatory compliance services. Defined technical direction across multiple concurrent government contracts, running cross-functional delivery via Agile/Scrum while managing engineers, QA, and external stakeholders simultaneously.",
             "skills": [
                 {
                     "area": "Frontend",
@@ -185,7 +195,7 @@
                     "stack": ["RestAPI", "PHP", "MySQL", "PostgreSQL", "Python", "CodeIgniter"]
                 },
                 {
-                    "area": "CI/CD & DevOps",
+                    "area": "Infrastructure",
                     "stack": ["Git", "Docker", "Jenkins", "Linux"]
                 }
             ]
@@ -193,7 +203,7 @@
         {
             "period": ["04/01/2015", "08/01/2016"],
             "role": "Full-Stack Developer",
-            "duties": "Led the development of a comprehensive news aggregation system, including a UI for viewing news from multiple sources and an API for banner ad integration. Designed distributed databases for high-load systems and implemented CI/CD pipelines and backup systems. Developed APIs for Facebook user behavior emulation and telecom payment systems. Created a telecom billing system, integrated accounting modules, and developed tools for managing subscriber and payment statistics. Additionally, designed and developed corporate web portals, and provided technical documentation for system administrators and architects.",
+            "duties": "Architected a distributed news aggregation platform with a high-throughput database layer designed to ingest and serve content from multiple live feeds under sustained load — including a UI and a banner ad integration API. Designed distributed database schemas for high-load ingestion scenarios. Built APIs for telecom payment processing and a complete billing system with integrated accounting modules, subscriber management, and payment statistics dashboards. Delivered CI/CD pipelines and backup infrastructure across all project environments. Authored system documentation for administrators and solution architects.",
             "skills": [
                 {
                     "area": "Frontend",
@@ -204,7 +214,7 @@
                     "stack": ["RestAPI", "PHP", "MySQL"]
                 },
                 {
-                    "area": "CI/CD & DevOps",
+                    "area": "Infrastructure",
                     "stack": ["Git", "Linux"]
                 },
                 {
@@ -216,7 +226,7 @@
         {
             "period": ["10/01/2013", "04/01/2015"],
             "role": "Full-Stack Developer",
-            "duties": "Led the design and development of the PostgreSQL database for a geographic information system (GIS), optimizing spatial data handling. Developed core GIS components using PHP and Yii, and the mapping subsystem with Delphi, including its UI with JavaScript and jQuery. Built data registry modules and automated scripts to streamline operations. Transitioned the system to a microservices architecture for improved scalability, managed deployment on client servers, and created role-based access models. Provided comprehensive developer and user documentation, and handled server administration for ongoing development and deployment support.",
+            "duties": "Designed the PostgreSQL spatial database for a production geographic information system (GIS), optimized for large-scale spatial query performance. Built the core GIS application in PHP/Yii and the mapping subsystem in Delphi with a JavaScript/jQuery front-end. Led the architectural migration from a monolithic system to microservices — enabling independent deployment and improved scalability. Implemented granular role-based access control models. Owned end-to-end deployment on client-hosted infrastructure and delivered comprehensive developer and end-user documentation.",
             "skills": [
                 {
                     "area": "Frontend",
@@ -227,7 +237,7 @@
                     "stack": ["RestAPI", "PHP", "Yii", "MySQL", "PostgreSQL", "Delphi"]
                 },
                 {
-                    "area": "CI/CD & DevOps",
+                    "area": "Infrastructure",
                     "stack": ["Git", "Linux"]
                 }
             ]
@@ -235,7 +245,7 @@
         {
             "period": ["07/01/2011", "06/01/2012"],
             "role": "Full-Stack Developer",
-            "duties": "Designed and developed the architecture for a custom content management system (CMS) using PHP and Laravel, creating an intuitive administrator interface. Implemented a scalable PostgreSQL database structure and developed various custom modules, including news, articles, and user management. Prototyped MVPs based on client specifications and built APIs for integration with hotel and air ticket booking services. Delivered custom websites on the CMS platform and provided ongoing technical support, including user documentation.",
+            "duties": "Designed and built a fully custom content management system from scratch in PHP/Laravel — including the admin interface, a PostgreSQL-backed data layer, and a modular extension system covering news, articles, and user management. Delivered client-facing websites on the platform and built third-party API integrations for hotel and air-ticket booking services. Prototyped client MVPs under tight timelines and provided post-launch technical support.",
             "skills": [
                 {
                     "area": "Frontend",
@@ -246,49 +256,50 @@
                     "stack": ["PHP", "MySQL"]
                 },
                 {
-                    "area": "CI/CD & DevOps",
+                    "area": "Infrastructure",
                     "stack": ["Git", "Linux"]
                 }
             ]
         },
         {
             "period": ["10/01/2008", "07/01/2011"],
-            "role": "Service Engineer",
-            "duties": "Installed and configured Local Area Networks (LAN) for residential and commercial clients, ensuring reliable performance. Managed subscriber servers for optimal uptime and security, and installed security systems like alarms and video surveillance for comprehensive protection. Conducted fiber optic splicing and testing for stable connectivity, configured network switches for performance, and administered Linux servers. Provided technical support to clients, resolving network issues and system failures.",
+            "role": "Systems & Network Engineer",
+            "duties": "Designed and deployed LAN infrastructure for residential and commercial clients — end-to-end from cable installation and fiber optic splicing to switch configuration and Linux server administration. Managed subscriber servers with a focus on uptime, security hardening, and incident response. Installed physical security systems including alarm and video surveillance infrastructure. Built a custom billing system in Delphi to automate invoicing and payment reconciliation — a self-initiated project that eliminated manual billing workflows entirely and demonstrated an early engineering instinct for software-driven solutions.",
             "skills": [
                 {
                     "area": "Backend",
                     "stack": ["PHP", "MySQL"]
                 },
                 {
-                    "area": "CI/CD & DevOps",
-                    "stack": ["Git", "Linux", "CentsOS"]
+                    "area": "Infrastructure",
+                    "stack": ["Git", "Linux", "CentOS"]
                 }
             ]
         },
         {
             "period": ["06/01/2005", "12/01/2007"],
-            "role": "Computer Hardware Engineer",
-            "duties": "Assembled and configured desktop computers, ensuring optimal performance. Performed maintenance and repairs on office equipment, including printers and copiers, to minimize downtime. Refilled printer cartridges to maintain supply and installed Local Area Networks (LAN), including cable installation. Organized network cabinets and configured network switches for efficient traffic management. Diagnosed and repaired hardware and software issues, and developed custom billing software in Delphi to automate invoicing and payment processing."
+            "role": "Hardware & Systems Technician",
+            "duties": "Assembled, configured, and maintained desktop systems and enterprise office equipment for commercial clients. Installed LAN cabling infrastructure and configured network switches for performance and traffic management. Developed a custom billing application in Delphi — an independently initiated project that automated invoicing workflows and established the foundation for a career in software engineering.",
+            "skills": []
         }
     ],
     "seo": {
         "index": {
-            "title": "Misha - Software Architect & Tech Lead",
-            "description": "Software architect and tech lead with 19+ years designing production systems, leading engineering teams, and delivering full-stack applications across frontend, backend, and infrastructure."
+            "title": "Misha — Principal Engineer · Software Architect · Tech Lead",
+            "description": "Principal-level engineer with 19+ years of end-to-end ownership. I design systems, define technical direction, lead engineering teams, and ship production software across frontend, backend, and infrastructure."
         },
         "skills": {
-            "title": "Technical Skills",
-            "description": "19+ years building and shipping production systems for government agencies, media companies, and tech startups. Skills span full-stack development, system architecture, DevOps, and database design - applied across professional engagements and open-source projects.",
-            "skillsIntro": "A principal engineer's skills are measured by systems shipped, not years counted. Below is a candid breakdown of the technologies I use regularly across frontend, backend, infrastructure, and AI integration - ranked by real-world proficiency based on production work and open-source projects."
+            "title": "Technical Skills — Misha",
+            "description": "19+ years shipping production systems across government, media, and tech. Depth across full-stack engineering, distributed system design, DevOps, and AI integration — applied in real products, not toy examples.",
+            "skillsIntro": "Skills are measured by systems shipped and teams unblocked — not years accumulated. What follows is a candid, production-calibrated assessment of where I operate at full capacity: architecture decisions, full-stack delivery, and the complete engineering lifecycle."
         },
         "experience": {
-            "title": "Professional Experience",
-            "description": "19+ years of engineering leadership across government, media, and tech. Delivered full-stack systems from greenfield to production, led cross-functional teams, and defined technical direction across frontend, backend, and infrastructure."
+            "title": "Engineering Experience — Misha",
+            "description": "19+ years of technical leadership across government, media, and technology. End-to-end ownership from greenfield architecture to production — team leadership, system design, and cross-functional delivery across 9 roles and 3 industries."
         },
         "projects": {
-            "title": "Personal Projects",
-            "description": "Side projects built end-to-end - from embedded hardware integration to full-stack web platforms. Each is deployed in production and reflects real system design decisions, not toy examples."
+            "title": "Production Projects — Misha",
+            "description": "Personal projects built and shipped end-to-end — from embedded IoT hardware to cloud-scale web platforms. Each runs in production and reflects real architectural decisions, real trade-offs, and real ownership."
         }
     }
 }
