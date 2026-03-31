@@ -1,408 +1,436 @@
-# ROADMAP — Full Portfolio Audit & Improvement Plan
+# ROADMAP — Developer Portfolio Redesign
 
-Comprehensive assessment from the perspective of a **Senior Full-Stack Engineer,
-UX Architect, and Product Strategist**. Covers content, UI/UX, code architecture,
-performance, and accessibility. Tasks are grouped by theme and ordered by impact.
+Personal portfolio modernization plan. Goal: a single-page landing that is fast, visually striking, and works flawlessly on any device.
 
 ---
 
-## Current State Summary
+## Phase 1 — Single-Page Landing Architecture ✅
 
-The site is a clean, well-typed Next.js static export with strong visual identity
-(dark theme, starfield, amber accent), smooth Framer Motion animations, and a
-single-source-of-truth data model (`data.json`). Component structure is solid and
-consistently organised.
+The site currently has 4 separate pages (`/`, `/projects`, `/experience`, `/skills`). Convert to a single scrollable landing with anchor-based navigation.
 
-**Primary gaps:**
+### 1.1 Remove multi-page routing
+- Delete `pages/experience.tsx`, `pages/skills.tsx`, `pages/projects.tsx`
+- Keep `pages/index.tsx` as the only real page; keep `pages/404.tsx`
+- All content sections live in `index.tsx`: `#intro`, `#about`, `#projects`, `#experience`, `#skills`, `#contact`
 
-- Homepage signals nothing about what has been built (zero project preview)
-- No call to action or contact path anywhere on the site
-- Hardcoded text in components breaks the single source of truth
-- No mobile navigation — 4 nav links can overflow on small screens
+### 1.2 Scroll-based header navigation
+- Replace `next/router` active link detection with Intersection Observer
+- Header links scroll to section anchors (`href="#projects"`) with `scroll-behavior: smooth`
+- Active section highlighted in header as user scrolls
+- Header becomes sticky with backdrop blur on scroll (add transparency → solid transition)
 
----
-
-## Section 3 — Content & Data Improvements
-
----
-
-### D1 — Move hardcoded text from components into `data.json`
-
-**Files:** `components/introduce/Introduce.tsx:125–139`, `components/about/About.tsx:27–36`,
-`pages/skills.tsx:34–37`
-
-Three components contain hardcoded prose strings that should come from `data.json`
-to maintain a single source of truth. Currently, updating copy requires editing
-component source files rather than data.
-
-**Scope:**
-
-- Add `"description"` (array of paragraphs) to `data.json` biography for the hero.
-- Add `"about"` (array of paragraphs) to `data.json` biography for the about section.
-- Add `"skillsIntro"` string to `data.json` seo.skills for the skills page intro.
-- Update components to render from context data instead of hardcoded strings.
+### 1.3 Remove PageTransition for inter-page navigation
+- `PageTransition` wrapping becomes per-section scroll-reveal instead
+- Use Framer Motion `whileInView` / `useInView` for section entrance animations
+- Keep `StarField` as fullscreen fixed background
 
 ---
 
-## Section 4 — UI / UX Enhancements
+## Phase 2 — Mobile-First Responsive Redesign ✅
+
+Current layout is desktop-centric (800px container, no hamburger menu).
+
+### 2.1 Hamburger menu for mobile ✅
+- ✅ Add animated burger button in `Header` (visible ≤768px)
+- ✅ Slide-down mobile menu with Framer Motion AnimatePresence
+- ✅ Close on link click or outside tap
+- ✅ Burger → X CSS transform animation via `aria-expanded`
+
+### 2.2 Responsive layout improvements ✅
+- ✅ Hero (`Introduce`) — stacked vertically on mobile, center-aligned
+- ✅ Project cards — single column ≤480px, 2-col 480–768px, horizontal cards on desktop
+- ✅ Experience — duties collapsed with CSS line-clamp (3 lines) + "Show more / Show less" toggle
+- ✅ Skills grid — already single column on mobile (no change needed)
+- ✅ Container max-width: 800px → 960px; added `$smallMobileMaxWidth: 480px`
+
+### 2.3 Touch & tap improvements ✅
+- ✅ Contact links: min-width/min-height 44×44px
+- ✅ Active states added (`:active` opacity) on links and buttons
+- ✅ Burger button: 44×44px tap target
 
 ---
 
-### U1 — Collapsible/expandable duties in Experience
+## Phase 3 — Visual & UX Modernization ✅
 
-**File:** `components/experience/Experience.tsx`
+### 3.1 Hero section redesign ✅
+Current hero is functional but minimal. Make it more impactful:
+- Larger avatar with subtle ring/glow animation using `--highlight-color`
+- Typing animation for the title ("Software Architect & Tech Lead") — use `framer-motion` or CSS
+- Animated gradient or particle effect in background (keep `StarField` or augment it)
+- Prominent CTA buttons: "View My Work" (scrolls to projects) + "Download CV" (PDF)
+- Live counters (`age`, `experience`) styled as stat pills, not plain text
 
-The duties field for each role is a dense paragraph of 3–8 sentences. On the
-experience page this creates walls of similar-looking text, making it hard to
-scan. Top engineering portfolios use expand/collapse for details.
+### 3.2 Stats / numbers section ✅
+New section between Hero and About — quick impact numbers:
+- **19+** years of experience
+- **8** companies / roles
+- **5** production side-projects
+- **X** GitHub contributions (from calendar data)
+- Animated count-up on scroll-in (Framer Motion)
 
-**Scope:**
+### 3.3 Section visual design ✅
+- Add section labels (`<span class="section-label">— 03 —</span>`) for visual rhythm
+- Alternating section backgrounds: `--body-background` and `--container-background` for visual separation
+- Subtle dividers between sections (gradient lines, not hard borders)
 
-- Show only the first 2 sentences (or first 140 characters) of duties by default.
-- Add a "Show more / Show less" toggle per entry.
-- Use a `useState<boolean>(false)` per list item, or a shared `expandedIndex` state.
-- No external dependency needed — use max-height CSS transition or Framer Motion.
+### 3.4 Project cards redesign ✅
+Current cards are plain image + text. Improve:
+- Image hover zoom with overlay showing action buttons (Live / GitHub)
+- Card hover: subtle lift (`translateY(-4px)` + enhanced shadow)
+- Category/tech tags on each card
+- Lazy load images (already unoptimized in Next config, add `loading="lazy"`)
 
----
+### 3.5 Experience timeline ✅
+Replace plain list with a proper vertical timeline:
+- Left-side timeline line with dot markers per entry
+- Company/role prominent, period in a badge
+- Collapsible tech stack tags (show top 5, expand on click)
+- "Current" marker for ongoing role
 
-### U2 — Mobile navigation drawer (hamburger menu)
+### 3.6 Skills section improvements ✅
+- Radar/spider chart as an overview (optional, assess bundle cost)
+- Keep progress bars but improve visual: show percentage label on hover
+- Group tabs or accordion to switch between skill categories
+- SkillsCloud: add hover highlight + link to relevant experience entry
 
-**File:** `components/header/Header.tsx`
+### 3.7 Contact section (new) ✅
+Add a dedicated contact section at the bottom before footer:
+- Social links (existing `contactLinks`) styled as large icon buttons
+- Email address with one-click copy to clipboard
+- "Available for opportunities" status indicator (green dot)
+- Optional: simple contact form (static → mailto or Formspree)
 
-The header renders 4 navigation links in a row. On screens narrower than ~360px,
-these can overflow. More importantly, on mobile the touch targets are small.
-A standard hamburger drawer resolves both issues.
-
-**Scope:**
-
-- Render a hamburger button on screens ≤ 768px (`$mobileMaxWidth`).
-- Show/hide a full-screen or slide-in nav overlay on toggle.
-- Use `useState<boolean>` for open/close; close on link click or outside tap.
-- Keep the desktop header unchanged.
-
----
-
-### U3 — Project category filtering on the `/projects` page
-
-**File:** `components/projects/Projects.tsx`, `public/data.json`
-
-Currently all projects are listed statically with no way to filter. Adding a
-category filter (Frontend, Full-Stack, Hardware, Astronomy) lets visitors quickly
-find relevant work and signals product thinking.
-
-**Scope:**
-
-- Add an optional `"tags": string[]` field to each project in `data.json`.
-- Create a `ProjectFilter` component: a row of tag buttons.
-- `Projects` receives an active filter prop and renders matching items only.
-- Animate filter transitions with Framer Motion `AnimatePresence`.
-
----
-
-### U4 — Print / PDF-friendly resume stylesheet
-
-**File:** `styles/globals.sass` or new `styles/print.sass`
-
-Many recruiters want a one-page resume. A CSS `@media print` block can hide the
-starfield, header nav, and footer links while formatting the experience section
-as a clean resume printout.
-
-**Scope:**
-
-- Add `@media print` styles: hide `<header>`, `<canvas>`, `.footerLinks`,
-  `.activitySection`, `About`, and `SkillsCloud`.
-- Print experience and skills in a two-column layout with standard black-on-white.
-- Add a "Print Resume" `<button>` on the `/experience` page that calls
-  `window.print()`.
-- No new dependencies.
+### 3.8 Footer ✅
+Add a minimal footer:
+- Copyright line
+- "Built with Next.js" credit
+- Back-to-top button
 
 ---
 
-### U5 — Add a loading skeleton for `GithubActivity`
+## Phase 4 — Dark / Light Mode
 
-**File:** `pages/index.tsx`, `components/github-activity/GithubActivity.tsx`
+### 4.1 Theme toggle
+- Add toggle button in header (sun/moon icon)
+- CSS custom properties already in `theme.css` — add a light theme variant
+- Persist preference in `localStorage`
+- Respect `prefers-color-scheme` as default
+- Smooth CSS transition on theme switch (`transition: background 0.3s, color 0.3s`)
 
-The GitHub calendar is loaded client-side with `dynamic(..., { ssr: false })`. There
-is no loading state — the section appears blank then pops in. A skeleton prevents
-layout shift and looks polished.
-
-**Scope:**
-
-- Pass a `loading` JSX element as the `fallback` option in the `dynamic()` call.
-- The skeleton can be a `<div>` with `container-background`, matching the
-  approximate calendar dimensions, with a subtle pulse animation.
-- No external dependency — CSS `@keyframes` pulse is sufficient.
-
----
-
-### U6 — Add a skip-to-content link for keyboard navigation
-
-**File:** `pages/_app.tsx` or `pages/_document.tsx`
-
-Keyboard-only users need a way to skip the navigation and jump directly to main
-content. This is a standard WCAG 2.4.1 pattern and is present on every accessibility-
-compliant site.
-
-**Scope:** Add a visually hidden `<a href="#main-content">Skip to content</a>` as
-the first element in `_app.tsx`. Set `id="main-content"` on the `<main>` element.
-Reveal the link on `:focus` with absolute positioning and highlight color.
+### 4.2 Light theme palette
+- Background: `#f5f5f5` / `#ffffff`
+- Text: `#1b1b1b`
+- Accent: keep `#ffc107` or shift to `#e6a800` for contrast
+- StarField: reduce opacity in light mode
 
 ---
 
-### U7 — Visible `:focus-visible` styles on all interactive elements
+## Phase 5 — Performance & Technical Quality ✅
 
-**File:** `styles/globals.sass`
+### 5.1 Image optimization ✅
+- ✅ Convert `photo.jpg` (About component) and `avatar.jpg` to `.webp` (avatar: 207KB → 76KB)
+- ✅ Project images already `.webp`
+- ✅ Add `sizes` attribute and `priority` to avatar `next/image` in Introduce
+- ✅ Jest config updated to mock `.webp` imports
 
-The site has hover styles but no `:focus-visible` styles. Keyboard navigation is
-essentially invisible. All links, buttons, and interactive tags should show a clear
-focus ring (amber outline matching the `--highlight-color`).
+### 5.2 Loading states ✅
+- ✅ Shimmer skeleton added for `GithubActivity` dynamic import (`loading:` option in `dynamic()`)
+- DataProvider uses a static `import` — no async loading state needed
 
-**Scope:** Add to `globals.sass`:
+### 5.3 Accessibility (a11y) ✅
+- ✅ Skip-to-content link (`#main-content`) with CSS slide-in on focus
+- ✅ `*:focus-visible` outline styles added globally
+- ✅ `aria-label` added to all icon-only contact links in Introduce
+- ✅ `aria-label` on GithubActivity section and index sections
+- ✅ `id="main-content"` on `<main>` element
 
-```sass
-:focus-visible
-    outline: 2px solid var(--highlight-color)
-    outline-offset: 2px
-    border-radius: var(--border-radius)
+### 5.4 SEO improvements ✅
+- ✅ JSON-LD `Person` schema added to `_document.tsx`
+- ✅ `sitemap.xml` updated to single-page (old multi-page routes removed)
+- ✅ `robots.txt` already existed and is correct
+
+### 5.5 Analytics ✅
+- ✅ Yandex.Metrika loads via `next/script` (already in place)
+- ✅ `reportWebVitals` export added to `_app.tsx`
+
+---
+
+## Phase 6 — Content & Copy Improvements ✅
+
+### 6.1 Bio / About section ✅
+- ✅ Added `biography.bio` field (`lead` + `bullets`) to `data.json`
+- ✅ `About.tsx` now renders bio from data instead of hardcoded text
+- ✅ Scannable layout: lead paragraph + bullet highlights with `—` accent markers
+
+### 6.2 Testimonials / References (optional)
+- Add a `testimonials` array to `data.json`
+- Simple card carousel or static 2–3 quote blocks
+
+### 6.3 Downloadable CV ✅
+- ✅ "Download CV" button added to hero CTA group, links to `/cv.pdf`
+- Note: place the generated PDF at `public/cv.pdf` (print `PrintResume` via browser to export)
+
+### 6.4 Open-to-work indicator ✅
+- ✅ `availableForWork: true/false` flag exists in `data.json`
+- ✅ Green animated badge "Open to opportunities" shown near title in hero when true
+
+---
+
+## Phase 7 — GitHub Integration (Deep Dive)
+
+> **Architectural decision:** The site uses `output: 'export'` (fully static). All GitHub data must be
+> fetched either **at build time** (via `getStaticProps` in Pages Router) or **client-side** (on page
+> load, with a cache layer). No server runtime is available. Recommended strategy — **build-time fetch**
+> using a GitHub Personal Access Token stored as a CI/CD secret, so the data is always fresh on deploy
+> and there are zero runtime API calls.
+>
+> **Data sources:**
+> - **REST API** — `api.github.com` (60 req/hr unauthenticated, 5000/hr with token)
+> - **GraphQL API** — `api.github.com/graphql` (single request for complex queries, requires token)
+> - **Contribution proxy** — `github-contributions-api.jogruber.de/v4/{username}` (same source used
+>   by `react-github-calendar`, no auth required)
+
+---
+
+### 7.1 Custom Contribution Calendar (replaces `react-github-calendar`) ✅
+
+**Problem with current implementation:**
+- `react-github-calendar` renders cells at a fixed pixel size — calendar does not stretch to fill
+  container width on desktop, leaving whitespace on the right
+- No control over cell shape, gap, or animation
+- Bundle includes the full `react-activity-calendar` dependency
+
+**Custom implementation plan:**
+- **Data:** fetch from `https://github-contributions-api.jogruber.de/v4/{username}?y=last` at build
+  time (returns `{ total, contributions: [{ date, count, level }] }`)
+- **Layout:** CSS Grid — 53 columns (weeks) × 7 rows (days); `grid-template-columns: repeat(53, 1fr)`
+  makes every cell equal-width and fills 100% of container automatically
+- **Cell size:** `aspect-ratio: 1` — cells are always square regardless of container width
+- **Colors:** 5-level scale tied to `--highlight-color` CSS variable (levels 0–4)
+- **Mobile:** show last 16 weeks instead of full 52-week year (controlled by `weeksToShow` prop)
+- **Tooltip:** hover shows `"{count} contributions on {date}"` using a CSS `title` or a Framer Motion
+  tooltip component
+- **Animation:** Framer Motion stagger — cells fade in column by column on scroll-in (`whileInView`)
+- **Month labels:** rendered above each column group, auto-calculated from date data
+- **Legend:** 5 sample squares (None → High) below the grid
+- **Year selector:** optional tab strip to switch between years (data supports multiple years)
+- **Files:** `components/github-calendar/GithubCalendar.tsx`, `types.ts`, `utils.ts`, `styles.module.sass`
+
+---
+
+### 7.2 GitHub Stats Panel
+
+A compact stats bar (or card grid) showing high-level GitHub account numbers. Positioned either inside
+the existing `Stats` section or as a standalone row below the calendar.
+
+**Data — single REST call:** `GET /users/{username}` returns:
+- `public_repos` — total public repositories
+- `followers` — follower count
+- `following` — following count
+
+**Data — aggregate from repos list:** `GET /users/{username}/repos?per_page=100`
+- Total **stars** earned: `sum(repo.stargazers_count)`
+- Total **forks**: `sum(repo.forks_count)`
+- Total **open issues**: `sum(repo.open_issues_count)`
+- **Most used language** (by repo count): `mode(repo.language)`
+
+**Metrics to display (suggested layout — 4–5 cards):**
+
+| Metric | Source | Icon |
+|--------|--------|------|
+| Public Repositories | `/users` | repo icon |
+| Total Stars Earned | repos aggregate | star icon |
+| Total Forks | repos aggregate | fork icon |
+| Followers | `/users` | people icon |
+| Contributions (this year) | calendar data | commit icon |
+
+- Animated count-up on scroll-in (reuse existing `Stats` component pattern)
+- Skeleton loading state while data fetches (if client-side strategy)
+- **Files:** extend `public/github-stats.json` (generated at build), update `Stats` component or create
+  `components/github-stats/GithubStats.tsx`
+
+---
+
+### 7.3 Language Usage Chart
+
+Visual breakdown of programming languages used across all public repositories.
+
+**Data:** `GET /users/{username}/repos?per_page=100` — each repo has a `language` field (primary
+language). For a deeper breakdown per-repo, requires N calls to `GET /repos/{owner}/{repo}/languages`
+(returns bytes per language) — feasible at build time with a token but expensive (1 call per repo).
+
+**Recommended approach — primary language per repo** (single API call):
+- Count repos per language, sort descending, take top 8
+- Show as a horizontal bar chart or segmented progress bar
+- Each language has a color (use a standard language→color map, e.g. from `linguist`)
+
+**Alternative — byte-level accuracy** (N+1 calls at build time):
+- Aggregate `{ language: totalBytes }` across all repos
+- Calculate `%` for each language
+- More accurate but requires auth token and more build time
+
+**Display options:**
+- **Segmented bar** — single horizontal bar divided into colored segments, language labels below
+- **Donut chart** — SVG or Canvas-based, no external chart library needed (custom SVG arc path)
+- **Horizontal bar list** — each language as a labeled row with a progress bar (consistent with
+  existing `Skills` component style)
+
+- **Files:** `components/github-languages/GithubLanguages.tsx`, `styles.module.sass`
+
+---
+
+### 7.4 Pinned / Top Repositories Showcase
+
+A curated grid of the most notable public repositories — stars, forks, last commit, and tech stack.
+
+**Data:**
+- **Option A — REST:** `GET /users/{username}/repos?sort=stars&per_page=6` (top 6 by stars)
+- **Option B — GraphQL:** fetch pinned repos via `pinnedItems` query (requires token) — better control,
+  shows exactly what's pinned on the GitHub profile
+
+**Card content per repo:**
+- Repository name (links to GitHub)
+- Description
+- Primary language + color badge
+- Star count, fork count
+- Last commit date (formatted, e.g. "3 days ago")
+- Topics/tags (from `GET /repos/{owner}/{repo}/topics`)
+
+**Layout:**
+- 3-column grid on desktop, 2-col on tablet, 1-col on mobile
+- Card style consistent with existing `Projects` cards
+- Hover: subtle lift + border highlight
+
+**Note:** overlaps with existing `Projects` section. Could replace it entirely, or be kept as a
+separate "Open Source" section showing repos not in the curated projects list.
+
+- **Files:** `components/github-repos/GithubRepos.tsx`, `types.ts`, `styles.module.sass`
+
+---
+
+### 7.5 Commit Activity Sparkline
+
+A lightweight sparkline chart showing commit frequency over the last 52 weeks — useful for showing
+consistent activity without the full calendar.
+
+**Data:** `GET /repos/{owner}/{repo}/stats/commit_activity` returns weekly commit counts for a single
+repo. For a cross-repo aggregate, use the contribution calendar data (already fetched in 7.1) — sum
+contributions per week.
+
+**Display:**
+- SVG polyline — no external chart library
+- 52 data points (one per week), last 12–26 weeks on mobile
+- Area fill below the line using site accent color with opacity
+- Hover: tooltip with week start date and commit count
+- Optional: animated draw-on effect using SVG `stroke-dasharray` + Framer Motion
+
+**Placement:** inline in the Stats section or below the calendar as a compact secondary visual.
+
+- **Files:** `components/github-sparkline/GithubSparkline.tsx`, `styles.module.sass`
+
+---
+
+### 7.6 Contribution Streak Counter
+
+Derived from the calendar data already fetched in 7.1 — no additional API call required.
+
+**Metrics:**
+- **Current streak** — consecutive days with ≥1 contribution up to today
+- **Longest streak** — longest consecutive run in the full dataset
+- **Best day** — day of week with highest average contributions
+- **Total contributions (this year)** — already in calendar response as `total`
+
+**Display:** compact badge row or extend the `Stats` section with these four cells.
+Streak breaks on weekends can optionally be ignored (configurable).
+
+- **Files:** `utils/github-streak.ts` (pure calculation util), extend stats display
+
+---
+
+### 7.7 Build-Time Data Fetcher & Cache Layer ✅
+
+Infrastructure piece that all features above depend on.
+
+**Architecture:**
+```
+build time:
+  getStaticProps (pages/index.tsx)
+    └─ fetchGithubData() [utils/github-fetch.ts]
+         ├─ fetch contributions  → { weeks[], total }
+         ├─ fetch user profile   → { repos, followers, ... }
+         ├─ fetch repos list     → [{ name, stars, lang, ... }]
+         └─ fetch pinned repos   → [{ name, desc, ... }]  (GraphQL, optional)
+         → returns GithubData type → passed as page prop
 ```
 
----
+**Files:**
+- `utils/github-fetch.ts` — all fetch functions, typed responses
+- `types/github.ts` — shared TypeScript types for all GitHub data
+- `pages/index.tsx` — add `getStaticProps`, pass `githubData` prop to components that need it
 
-## Section 5 — Code & Architecture Improvements
+**Token handling:**
+- `GITHUB_TOKEN` env var — used at build time only, never shipped to the client
+- Without token: falls back to unauthenticated calls (60 req/hr limit, sufficient for one-off builds)
+- GitHub Actions secret: add `GITHUB_TOKEN` to repo secrets, pass to build step
 
----
+**Fallback / error handling:**
+- If fetch fails at build time: components receive `null` data and render gracefully (skeleton or hidden)
+- Stale data is acceptable (portfolio rebuilds on every push)
 
-### A1 — Extract TypeScript interfaces into a shared `types/` directory
-
-**Current situation:** Each component has its own `types.ts`. The site-wide data
-shape is inferred from `data.json` via `typeof data`, which makes the type system
-brittle — any change to the JSON file silently changes all downstream types.
-
-**Scope:**
-
-- Create `/types/data.ts` with explicit interfaces: `BiographyType`,
-  `ProjectType`, `ExperienceType`, `SkillGroupType`, `SeoType`, `SiteDataType`.
-- `DataProvider.tsx` imports from `/types/data.ts` instead of using `typeof data`.
-- Component-level `types.ts` files import from `/types/data.ts` to avoid duplication.
-- Benefits: explicit type contracts, no silent drift, better IDE autocomplete.
-
----
-
-### A2 — Centralise OpenGraph configuration
-
-**Files:** `pages/index.tsx:20–31`, `pages/projects.tsx:17–28`, `pages/experience.tsx:17–28`,
-`pages/skills.tsx:17–28`
-
-The same `openGraph` object (with hardcoded image URL, locale, siteName) is
-copy-pasted into every page. If the image URL or siteName changes, all 4 files
-need updating.
-
-**Scope:** Create a `config/seo.ts` constants file:
-
-```ts
-export const defaultOpenGraph = {
-    images: [{ height: 1333, url: 'https://miksoft.pro/avatar.jpg', width: 1000 }],
-    locale: 'en-US',
-    siteName: 'miksoft.pro'
-}
+**Optional: daily auto-rebuild via GitHub Actions:**
+```yaml
+# .github/workflows/rebuild.yml
+on:
+  schedule:
+    - cron: '0 6 * * *'   # rebuild daily at 06:00 UTC
 ```
-
-Each page spreads `defaultOpenGraph` and overrides only what differs.
-
----
-
-### A3 — Add an `ErrorBoundary` component
-
-No error boundaries exist. A rendering error in `GithubActivity` (which calls an
-external API) or any component would crash the entire page.
-
-**Scope:**
-
-- Create `components/error-boundary/ErrorBoundary.tsx` — a standard class component
-  implementing `componentDidCatch` and `getDerivedStateFromError`.
-- Wrap `<GithubActivity>` and `<Projects>` with `<ErrorBoundary>`.
-- Display a minimal fallback (`<p>Failed to load section</p>`) on error.
+This ensures contribution data stays fresh without manual deploys.
 
 ---
 
-### A4 — Add Suspense fallback to the dynamic `GithubActivity` import
+### 7.8 Implementation Order for Phase 7
 
-**File:** `pages/index.tsx:10`
-
-`dynamic()` accepts a `loading` option that renders while the component is
-being fetched. Currently it's undefined — the section is simply absent until loaded.
-
-**Scope:**
-
-```ts
-const GithubActivity = dynamic(
-    () => import('@/components/github-activity/GithubActivity'),
-    { ssr: false, loading: () => <GithubActivitySkeleton /> }
-)
-```
+| Priority | Feature | API calls | Effort | Visual Impact |
+|----------|---------|-----------|--------|---------------|
+| 1 | **7.7** Build-time fetcher ✅ | foundation | Low | — |
+| 2 | **7.1** Custom calendar ✅ | 1 (proxy) | Medium | Very High |
+| 3 | **7.6** Streak counter | 0 (derived) | Low | High |
+| 4 | **7.2** Stats panel | 2 (user + repos) | Low | High |
+| 5 | **7.3** Language chart | 1–N (repos) | Medium | Medium |
+| 6 | **7.4** Pinned repos | 1 (GraphQL) | Medium | Medium |
+| 7 | **7.5** Sparkline | 0 (derived) | Low | Medium |
 
 ---
 
-### A5 — Replace `ExperienceType.period: string[]` with a discriminated tuple
+## Phase 8 — i18n / Localization (future)
 
-**File:** `components/experience/types.ts`
-
-`period: string[]` allows any number of strings. The actual shape is always 1 or 2
-items. Using a tuple eliminates the need for optional chaining throughout
-`Experience.tsx`.
-
-```ts
-period: [string] | [string, string]
-```
+- Add `next-i18next` or a lightweight custom solution
+- Two locales: `en` (default) and `ru`
+- All text strings in `data.json` become locale-keyed objects
+- Language switcher in header
 
 ---
 
-### A6 — Refactor `Icon` switch to a lookup map
+## Implementation Order (full roadmap)
 
-**File:** `components/icon/Icon.tsx`
-
-A `switch` statement with 7 cases is readable but not scalable. When icons are
-added (and they will be as the site grows), a map is easier to extend and test.
-
-```ts
-const ICONS: Record<IconTypes, JSX.Element> = {
-    web: <svg>...</svg>,
-    github: <svg>...</svg>,
-    // ...
-}
-
-export const Icon: React.FC<IconProps> = ({ name }) =>
-    ICONS[name] ?? (process.env.NODE_ENV === 'development'
-        ? console.warn(`Icon: unknown "${name}"`) ?? null
-        : null)
-```
+| Priority | Phase | Effort | Impact |
+|----------|-------|--------|--------|
+| 1 | Phase 1 — Single-page landing | High | Very High |
+| 2 | Phase 2 — Mobile responsive | Medium | Very High |
+| 3 | Phase 3.1–3.3 Hero + Stats + Sections | Medium | High |
+| 4 | Phase 3.4–3.6 Cards + Timeline + Skills | Medium | High |
+| 5 | Phase 3.7–3.8 Contact + Footer | Low | High |
+| 6 | Phase 4 — Dark/Light mode | Medium | Medium |
+| 7 | Phase 5 — Performance & a11y | Medium | High |
+| 8 | Phase 6 — Content | Low | Medium |
+| 9 | Phase 7 — GitHub Integration | Medium | High |
+| 10 | Phase 8 — i18n | High | Low |
 
 ---
 
-### A7 — Memoize `tick` in `Introduce.tsx` with `useCallback`
+## Non-Goals
 
-**File:** `components/introduce/Introduce.tsx:41`
-
-`tick` is recreated on every render. While the `useEffect` dependency array now
-correctly lists `[birthTime, expTime]`, wrapping `tick` in `useCallback` with
-the same deps makes the data flow explicit and prevents unnecessary recreations.
-
-```ts
-const tick = useCallback(() => {
-    setMyAge(((Date.now() - birthTime) / divisor).toFixed(9))
-    setMyExp(((Date.now() - expTime) / divisor).toFixed(9))
-}, [birthTime, expTime])
-```
-
----
-
-## Section 7 — New Components & Features
-
----
-
-### N1 — `TechStack` component
-
-**Purpose:** Instant technology signal above the fold on the homepage.
-
-**Placement:** Between `<Introduce>` and `<About>` on `pages/index.tsx`.
-
-**Implementation:**
-
-- New `components/tech-stack/TechStack.tsx`.
-- Reads a `stack: string[]` array from `data.biography` (add to `data.json`).
-- Renders a `<ul>` of `<li>` pill tags identical in style to the SkillsCloud tags.
-- No animations needed — it's above the fold and should render immediately.
-
----
-
-### N2 — `FeaturedProjects` component
-
-**Purpose:** Show the 2–3 most impressive projects directly on the homepage.
-
-**Placement:** Between `<About>` and `<GithubActivity>` on `pages/index.tsx`.
-
-**Implementation:**
-
-- Add `"featured": true` to chosen projects in `data.json`.
-- Add a `limit?: number` prop to the existing `Projects` component that slices
-  the rendered list. Filter for `featured` items first.
-- Add a "View all projects →" `<Link>` below the cards.
-- Reuse all existing card styles — no new SASS needed.
-
----
-
-### N3 — `ContactCta` component
-
-**Purpose:** Convert page visitors into actual contacts. Currently the site has no
-call to action.
-
-**Placement:** Bottom of `pages/index.tsx`, after `<GithubActivity>`.
-
-**Implementation:**
-
-- New `components/contact-cta/ContactCta.tsx`.
-- Reads `biography.availability` and `contactLinks` from `useSiteData()`.
-- Renders:
-    - H2 or short `<p>` from `availability` field.
-    - Two `<a>` buttons: primary (LinkedIn, from `contactLinks`), secondary (email).
-- Style: centred section, `container-background`, minimal padding.
-
----
-
-### N5 — `ErrorBoundary` component _(see A3 above)_
-
-**Purpose:** Prevent external API failures (GitHub calendar) from crashing the page.
-
----
-
-### N6 — Mobile navigation drawer _(see U2 above)_
-
----
-
-### N7 — AI "Ask Me" widget (optional / stretch goal)
-
-**Purpose:** Differentiate the portfolio with an interactive AI feature that
-demonstrates both product thinking and AI engineering capability.
-
-**Concept:** A floating "Ask me anything" button (bottom-right corner) that opens
-a chat interface. The assistant has been given a system prompt containing the
-resume data and answers questions like "What stack do you use?", "Are you available
-for a role in X?", "Tell me about the Observatory project."
-
-**Implementation hints:**
-
-- Use the Anthropic Claude API (`claude-haiku-4-5` model for cost efficiency).
-- System prompt built dynamically from `data.json` at build time.
-- Client-side only (Next.js API route or direct fetch to Claude API with a
-  server-side proxy to protect the key).
-- UI: a `<dialog>` or slide-up drawer with a simple message list.
-- Requires adding `ANTHROPIC_API_KEY` to environment variables.
-- This is a stretch goal but would make the portfolio immediately memorable to
-  any AI company recruiter.
-
----
-
-## Priority Matrix
-
-| ID  | Task                             | Impact                 | Effort  | Priority |
-| --- | -------------------------------- | ---------------------- | ------- | -------- |
-| H1  | Featured projects on homepage    | Very High              | Medium  | P1       |
-| H2  | Tech-stack strip on homepage     | High                   | Low     | P1       |
-| H3  | Contact CTA section              | High                   | Low     | P1       |
-| H4  | Current role badge in hero       | Medium                 | Low     | P1       |
-| D1  | Move hardcoded text to data.json | High (maintainability) | Medium  | P1       |
-| U1  | Collapsible experience duties    | High (UX)              | Medium  | P2       |
-| U2  | Mobile nav drawer                | Medium                 | Medium  | P2       |
-| U3  | Project category filtering       | Medium                 | Medium  | P2       |
-| U4  | Print/PDF resume stylesheet      | High (recruiter)       | Medium  | P2       |
-| U5  | GitHub activity skeleton         | Low                    | Low     | P2       |
-| U6  | Skip-to-content link             | Medium (a11y)          | Trivial | P2       |
-| U7  | `:focus-visible` styles          | Medium (a11y)          | Low     | P2       |
-| A1  | Shared TypeScript interfaces     | Medium                 | Medium  | P2       |
-| A2  | Centralise OpenGraph config      | Low                    | Low     | P2       |
-| A3  | ErrorBoundary component          | Medium                 | Low     | P2       |
-| A4  | Suspense for dynamic imports     | Low                    | Low     | P2       |
-| A5  | ExperienceType period tuple      | Low                    | Trivial | P3       |
-| A6  | Icon map refactor                | Low                    | Low     | P3       |
-| A7  | Memoize tick with useCallback    | Low                    | Trivial | P3       |
-| N7  | AI "Ask Me" widget               | Very High (diff.)      | High    | P3       |
+- No CMS integration (keep data.json as single source of truth)
+- No backend/API routes (keep static export)
+- No App Router migration (Pages Router works fine for this use case)
+- No blog/articles section unless explicitly requested
