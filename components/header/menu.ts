@@ -6,18 +6,22 @@ type MenuItemType = {
 export const menu: MenuItemType[] = [
     {
         label: 'About me',
-        url: '/'
+        url: '#intro'
     },
     {
         label: 'Projects',
-        url: '/projects'
+        url: '#projects'
     },
     {
         label: 'Experience',
-        url: '/experience'
+        url: '#experience'
     },
     {
         label: 'Skills',
-        url: '/skills'
+        url: '#skills'
+    },
+    {
+        label: 'Contact',
+        url: '#contact'
     }
 ]
