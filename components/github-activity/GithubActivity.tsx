@@ -10,7 +10,10 @@ const explicitTheme: ThemeInput = {
 }
 
 export const GithubActivity: React.FC = () => (
-    <section className={styles.activitySection}>
+    <section
+        className={styles.activitySection}
+        aria-label={'GitHub contribution activity'}
+    >
         <h2 className={'pageTitle'}>{'Work activity'}</h2>
         <GitHubCalendar
             colorScheme={'dark'}

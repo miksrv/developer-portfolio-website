@@ -3,6 +3,7 @@
 exports[`GithubActivity matches snapshot 1`] = `
 <DocumentFragment>
   <section
+    aria-label="GitHub contribution activity"
     class="activitySection"
   >
     <h2
