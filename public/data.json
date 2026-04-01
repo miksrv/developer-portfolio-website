@@ -288,6 +288,10 @@
             "title": "Misha — Principal Engineer · Software Architect · Tech Lead",
             "description": "Principal-level engineer with 19+ years of end-to-end ownership. I design systems, define technical direction, lead engineering teams, and ship production software across frontend, backend, and infrastructure."
         },
+        "activity": {
+            "title": "Work Activity",
+            "description": "Real-time work activity: contributions, repositories, languages, and commit history. Open source involvement and coding patterns visualized."
+        },
         "skills": {
             "title": "Technical Skills — Misha",
             "description": "19+ years shipping production systems across government, media, and tech. Depth across full-stack engineering, distributed system design, DevOps, and AI integration — applied in real products, not toy examples.",

@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import { animate, motion, useInView, useMotionValue, useTransform } from 'framer-motion'
 
 import { findEarliestDate } from '@/components/introduce/utils'
-import { useSiteData } from '@/utils'
+import { useGithubData, useSiteData } from '@/utils'
+import { calculateStreak } from '@/utils/github-streak'
 
 import styles from './styles.module.sass'
 
@@ -44,6 +45,7 @@ const StatItem: React.FC<StatItemProps> = ({ value, suffix = '', label, delay = 
 
 export const Stats: React.FC = () => {
     const data = useSiteData()
+    const githubData = useGithubData()
 
     const yearsExp = React.useMemo(() => {
         const firstDate = data?.experience?.length ? findEarliestDate(data.experience) : null
@@ -52,10 +54,18 @@ export const Stats: React.FC = () => {
         return Math.floor((Date.now() - start) / (365.25 * 24 * 3600 * 1000))
     }, [data?.experience])
 
+    const streak = React.useMemo(() => {
+        const contributions = githubData?.contributions?.contributions ?? []
+
+        return calculateStreak(contributions)
+    }, [githubData?.contributions?.contributions])
+
     const statItems = [
         { delay: 0, label: 'Years of experience', suffix: '+', value: yearsExp },
         { delay: 0.15, label: 'Roles & companies', value: data?.experience?.length ?? 0 },
-        { delay: 0.3, label: 'Pet projects', value: data?.projects?.length ?? 0 }
+        { delay: 0.3, label: 'Pet projects', value: data?.projects?.length ?? 0 },
+        { delay: 0.45, label: 'Current streak', value: streak.currentStreak },
+        { delay: 0.6, label: 'Longest streak', value: streak.longestStreak }
     ]
 
     return (

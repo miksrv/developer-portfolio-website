@@ -5,7 +5,20 @@ import { type GetStaticProps } from 'next'
 import dynamic from 'next/dynamic'
 import { NextSeo } from 'next-seo'
 
-import { About, Contact, Experience, Introduce, Projects, Skills, SkillsCloud, Stats } from '@/components'
+import {
+    About,
+    Contact,
+    Experience,
+    GithubLanguages,
+    GithubRepos,
+    GithubSparkline,
+    GithubStats,
+    Introduce,
+    Projects,
+    Skills,
+    SkillsCloud,
+    Stats
+} from '@/components'
 import { GithubDataProvider, useSiteData } from '@/utils'
 import { fetchGithubData, type GithubData } from '@/utils/github-fetch'
 
@@ -22,26 +35,6 @@ const GithubCalendar = dynamic(() => import('@/components/github-calendar/Github
     ),
     ssr: false
 })
-
-const printIcon = (
-    <svg
-        viewBox={'0 0 24 24'}
-        fill={'none'}
-        stroke={'currentColor'}
-        strokeWidth={2}
-        strokeLinecap={'round'}
-        strokeLinejoin={'round'}
-    >
-        <polyline points={'6 9 6 2 18 2 18 9'} />
-        <path d={'M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2'} />
-        <rect
-            x={'6'}
-            y={'14'}
-            width={'12'}
-            height={'8'}
-        />
-    </svg>
-)
 
 const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
@@ -78,8 +71,28 @@ const MainPage: React.FC<MainPageProps> = ({ githubData }) => {
                 <Introduce />
                 <Stats />
                 <About />
-                <GithubCalendar />
             </div>
+
+            {/* ── GitHub Activity ─────────────────────────────────────── */}
+            <motion.div
+                id={'activity'}
+                className={styles.sectionBlock}
+                aria-label={'GitHub Activity'}
+                initial={'hidden'}
+                whileInView={'visible'}
+                viewport={{ once: true, amount: 0.08 }}
+                variants={sectionVariants}
+            >
+                <section>
+                    <h2 className={'pageTitle'}>{data?.seo?.activity?.title}</h2>
+                    <p>{data?.seo?.activity?.description}</p>
+                </section>
+                <GithubCalendar />
+                <GithubStats />
+                <GithubLanguages />
+                <GithubSparkline />
+                <GithubRepos />
+            </motion.div>
 
             {/* ── Projects ────────────────────────────────────────────── */}
             <motion.div

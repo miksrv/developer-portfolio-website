@@ -5,7 +5,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 
 import { Footer, Header, PrintResume, StarField } from '@/components'
-import { DataProvider } from '@/utils'
+import { DataProvider, ThemeProvider } from '@/utils'
 
 import '@/styles/theme.css'
 import '@/styles/globals.sass'
@@ -78,23 +78,25 @@ const App = ({ Component, pageProps }: AppProps) => {
                 backgroundColor={'black'}
             />
 
-            <DataProvider>
-                <a
-                    href={'#main-content'}
-                    className={'skipLink'}
-                >
-                    {'Skip to main content'}
-                </a>
+            <ThemeProvider>
+                <DataProvider>
+                    <a
+                        href={'#main-content'}
+                        className={'skipLink'}
+                    >
+                        {'Skip to main content'}
+                    </a>
 
-                <Header />
+                    <Header />
 
-                <main id={'main-content'}>
-                    <Component {...pageProps} />
-                </main>
+                    <main id={'main-content'}>
+                        <Component {...pageProps} />
+                    </main>
 
-                <PrintResume />
-                <Footer />
-            </DataProvider>
+                    <PrintResume />
+                    <Footer />
+                </DataProvider>
+            </ThemeProvider>
 
             {process.env.NODE_ENV === 'production' && (
                 <>

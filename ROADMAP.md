@@ -108,20 +108,20 @@ Add a minimal footer:
 
 ---
 
-## Phase 4 — Dark / Light Mode
+## Phase 4 — Dark / Light Mode ✅
 
-### 4.1 Theme toggle
-- Add toggle button in header (sun/moon icon)
-- CSS custom properties already in `theme.css` — add a light theme variant
-- Persist preference in `localStorage`
-- Respect `prefers-color-scheme` as default
-- Smooth CSS transition on theme switch (`transition: background 0.3s, color 0.3s`)
+### 4.1 Theme toggle ✅
+- ✅ Add toggle button in header (sun/moon icon)
+- ✅ CSS custom properties already in `theme.css` — add a light theme variant
+- ✅ Persist preference in `localStorage`
+- ✅ Respect `prefers-color-scheme` as default
+- ✅ Smooth CSS transition on theme switch (`transition: background 0.3s, color 0.3s`)
 
-### 4.2 Light theme palette
-- Background: `#f5f5f5` / `#ffffff`
-- Text: `#1b1b1b`
-- Accent: keep `#ffc107` or shift to `#e6a800` for contrast
-- StarField: reduce opacity in light mode
+### 4.2 Light theme palette ✅
+- ✅ Background: `#f0f2f5` / `#ffffff`
+- ✅ Text: `#1a1a1a`
+- ✅ Accent: keep `#ffc107`
+- ✅ All header/menu backgrounds use CSS vars (theme-aware)
 
 ---
 
@@ -218,7 +218,7 @@ Add a minimal footer:
 
 ---
 
-### 7.2 GitHub Stats Panel
+### 7.2 GitHub Stats Panel ✅
 
 A compact stats bar (or card grid) showing high-level GitHub account numbers. Positioned either inside
 the existing `Stats` section or as a standalone row below the calendar.
@@ -251,7 +251,7 @@ the existing `Stats` section or as a standalone row below the calendar.
 
 ---
 
-### 7.3 Language Usage Chart
+### 7.3 Language Usage Chart ✅
 
 Visual breakdown of programming languages used across all public repositories.
 
@@ -279,7 +279,7 @@ language). For a deeper breakdown per-repo, requires N calls to `GET /repos/{own
 
 ---
 
-### 7.4 Pinned / Top Repositories Showcase
+### 7.4 Pinned / Top Repositories Showcase ✅
 
 A curated grid of the most notable public repositories — stars, forks, last commit, and tech stack.
 
@@ -308,7 +308,7 @@ separate "Open Source" section showing repos not in the curated projects list.
 
 ---
 
-### 7.5 Commit Activity Sparkline
+### 7.5 Commit Activity Sparkline ✅
 
 A lightweight sparkline chart showing commit frequency over the last 52 weeks — useful for showing
 consistent activity without the full calendar.
@@ -330,7 +330,7 @@ contributions per week.
 
 ---
 
-### 7.6 Contribution Streak Counter
+### 7.6 Contribution Streak Counter ✅
 
 Derived from the calendar data already fetched in 7.1 — no additional API call required.
 
@@ -394,11 +394,11 @@ This ensures contribution data stays fresh without manual deploys.
 |----------|---------|-----------|--------|---------------|
 | 1 | **7.7** Build-time fetcher ✅ | foundation | Low | — |
 | 2 | **7.1** Custom calendar ✅ | 1 (proxy) | Medium | Very High |
-| 3 | **7.6** Streak counter | 0 (derived) | Low | High |
-| 4 | **7.2** Stats panel | 2 (user + repos) | Low | High |
-| 5 | **7.3** Language chart | 1–N (repos) | Medium | Medium |
-| 6 | **7.4** Pinned repos | 1 (GraphQL) | Medium | Medium |
-| 7 | **7.5** Sparkline | 0 (derived) | Low | Medium |
+| 3 | **7.6** Streak counter ✅ | 0 (derived) | Low | High |
+| 4 | **7.2** Stats panel ✅ | 2 (user + repos) | Low | High |
+| 5 | **7.3** Language chart ✅ | 1–N (repos) | Medium | Medium |
+| 6 | **7.4** Pinned repos ✅ | 1 (GraphQL) | Medium | Medium |
+| 7 | **7.5** Sparkline ✅ | 0 (derived) | Low | Medium |
 
 ---
 
