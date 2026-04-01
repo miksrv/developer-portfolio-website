@@ -2,6 +2,8 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
+import * as utils from '@/utils'
+
 import { About } from './About'
 
 jest.mock('next/image', () => ({
@@ -51,7 +53,7 @@ describe('About Component', () => {
     })
 
     it('renders nothing when bio is absent', () => {
-        jest.spyOn(require('@/utils'), 'useSiteData').mockReturnValue({ biography: {} })
+        jest.spyOn(utils, 'useSiteData').mockReturnValue({ biography: {} })
         render(<About />)
         expect(screen.getByRole('heading', { level: 2, name: /About me/i })).toBeInTheDocument()
     })

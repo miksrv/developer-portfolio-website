@@ -2,6 +2,8 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
+import { useGithubData } from '@/utils'
+
 import { GithubStats } from './GithubStats'
 
 jest.mock('@/utils', () => ({
@@ -14,7 +16,7 @@ jest.mock('@/components/github-calendar/utils', () => ({
 
 jest.mock('framer-motion', () => {
     const FRAMER_PROPS = new Set(['initial', 'animate', 'exit', 'variants', 'whileInView', 'viewport', 'transition'])
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
     const React = require('react')
 
     return {
@@ -44,7 +46,7 @@ beforeEach(() => {
     }))
 })
 
-const mockUseGithubData = require('@/utils').useGithubData
+const mockUseGithubData = useGithubData as jest.Mock
 
 describe('GithubStats', () => {
     afterEach(() => jest.clearAllMocks())

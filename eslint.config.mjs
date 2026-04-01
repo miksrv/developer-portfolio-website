@@ -110,8 +110,8 @@ export default defineConfig([
                 'error',
                 { commentPattern: '.*intentional fallthrough.*' },
             ],
-            // ✅ Warn if double quotes are used instead of single quotes
-            quotes: ['warn', 'single'],
+            // ✅ Warn if double quotes are used instead of single quotes (allow double quotes to avoid escaping)
+            quotes: ['warn', 'single', { avoidEscape: true }],
             // ❌ Warn if trailing commas are used (Prettier Config)
             // -> 'comma-dangle': ['warn', 'never'],
             // ❌ Prefer single quotes in JSX (Prettier Config)

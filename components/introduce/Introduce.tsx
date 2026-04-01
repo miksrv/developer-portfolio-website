@@ -62,7 +62,6 @@ export const Introduce: React.FC = () => {
                         fill
                         sizes={'(max-width: 768px) 240px, 45vw'}
                         style={{ objectFit: 'cover' }}
-                        // eslint-disable-next-line quotes
                         alt={"Hi I'm - Misha - Picture of the author"}
                         priority
                     />
@@ -73,7 +72,6 @@ export const Introduce: React.FC = () => {
                 <div className={styles.header}>
                     <div className={styles.title}>
                         <h1>
-                            {/* eslint-disable-next-line quotes */}
                             {"Hi I'm - "}
                             {/* eslint-disable-next-line react/jsx-max-depth */}
                             <span>{data?.biography?.name}</span>

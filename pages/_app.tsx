@@ -126,6 +126,7 @@ const App = ({ Component, pageProps }: AppProps) => {
                     </Script>
                     <noscript>
                         <div>
+                            {/* eslint-disable-next-line next/no-img-element */}
                             <img
                                 src={'https://mc.yandex.ru/watch/67613284'}
                                 style={{ position: 'absolute', left: '-9999px' }}

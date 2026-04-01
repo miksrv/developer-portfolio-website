@@ -2,6 +2,8 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
+import { useGithubData } from '@/utils'
+
 import { GithubCalendar } from './GithubCalendar'
 
 // ── Mocks ──────────────────────────────────────────────────────────────────────
@@ -12,7 +14,7 @@ jest.mock('@/utils', () => ({
 
 jest.mock('framer-motion', () => {
     const FRAMER_PROPS = new Set(['initial', 'animate', 'exit', 'variants', 'whileInView', 'viewport', 'transition'])
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
     const React = require('react')
 
     return {
@@ -26,7 +28,7 @@ jest.mock('framer-motion', () => {
     }
 })
 
-const mockUseGithubData = require('@/utils').useGithubData
+const mockUseGithubData = useGithubData as jest.Mock
 
 const makeContributions = (days = 30) =>
     Array.from({ length: days }, (_, i) => {

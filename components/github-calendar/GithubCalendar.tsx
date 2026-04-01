@@ -113,6 +113,7 @@ export const GithubCalendar: React.FC = () => {
                             className={styles.legend}
                             aria-label={'Contribution level legend'}
                         >
+                            {/* eslint-disable-next-line react/jsx-max-depth */}
                             <span className={styles.legendText}>{'Less'}</span>
                             {LEVEL_COLORS.map((color, level) => (
                                 <div
@@ -122,6 +123,7 @@ export const GithubCalendar: React.FC = () => {
                                     aria-label={`Level ${level}`}
                                 />
                             ))}
+                            {/* eslint-disable-next-line react/jsx-max-depth */}
                             <span className={styles.legendText}>{'More'}</span>
                         </div>
                     </div>

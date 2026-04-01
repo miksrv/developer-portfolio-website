@@ -2,6 +2,8 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
+import { useGithubData } from '@/utils'
+
 import { GithubLanguages } from './GithubLanguages'
 
 jest.mock('@/utils', () => ({
@@ -19,7 +21,7 @@ jest.mock('framer-motion', () => {
         'transition',
         'transformOrigin'
     ])
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
     const React = require('react')
 
     return {
@@ -32,7 +34,7 @@ jest.mock('framer-motion', () => {
     }
 })
 
-const mockUseGithubData = require('@/utils').useGithubData
+const mockUseGithubData = useGithubData as jest.Mock
 
 const mockData = {
     contributions: null,

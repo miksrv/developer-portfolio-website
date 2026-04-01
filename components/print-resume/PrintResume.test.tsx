@@ -174,7 +174,7 @@ describe('PrintResume', () => {
     })
 
     it('falls back to "Photo" as avatar alt text when biography name is absent', () => {
-        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
         jest.spyOn(require('@/utils'), 'useSiteData').mockReturnValue({
             biography: { title: 'Developer', location: 'Remote' }
         })
