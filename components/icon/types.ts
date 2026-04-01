@@ -5,7 +5,9 @@ export const iconNames = {
     web: 'web',
     facebook: 'facebook',
     left: 'left',
-    right: 'right'
+    right: 'right',
+    sun: 'sun',
+    moon: 'moon'
 } as const
 
 export type IconTypes = keyof typeof iconNames
