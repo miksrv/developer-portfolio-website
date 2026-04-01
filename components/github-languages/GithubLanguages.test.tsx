@@ -86,7 +86,9 @@ describe('GithubLanguages', () => {
 
     it('limits to max 8 languages', () => {
         const manyLangs: Record<string, number> = {}
-        for (let i = 0; i < 12; i++) manyLangs[`Lang${i}`] = 10 - i
+        for (let i = 0; i < 12; i++) {
+            manyLangs[`Lang${i}`] = 10 - i
+        }
         mockUseGithubData.mockReturnValue({
             contributions: null,
             stats: { languageDistribution: manyLangs, totalForks: 0, totalStars: 0 },
