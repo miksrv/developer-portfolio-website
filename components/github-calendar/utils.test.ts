@@ -17,9 +17,7 @@ describe('buildCalendarWeeks', () => {
 
     it('fills missing days with level-0 placeholder (not null)', () => {
         const weeks = buildCalendarWeeks([], 4)
-        const pastDays = weeks
-            .flatMap((w) => w.days)
-            .filter((d) => d !== null)
+        const pastDays = weeks.flatMap((w) => w.days).filter((d) => d != null)
         expect(pastDays.length).toBeGreaterThan(0)
         for (const day of pastDays) {
             expect(day!.level).toBe(0)
@@ -48,13 +46,13 @@ describe('buildCalendarWeeks', () => {
         // The last week may contain future slots (null) if today is not Sunday
         const lastWeek = weeks[weeks.length - 1]
         // At least the non-null days should exist
-        const nonNullDays = lastWeek.days.filter((d) => d !== null)
+        const nonNullDays = lastWeek.days.filter((d) => d != null)
         expect(nonNullDays.length).toBeGreaterThan(0)
     })
 
     it('sets monthLabel on the first week of each month', () => {
         const weeks = buildCalendarWeeks([], 53)
-        const labeled = weeks.filter((w) => w.monthLabel !== null)
+        const labeled = weeks.filter((w) => w.monthLabel != null)
         // Should have at least 11 and at most 13 month labels in a 53-week range
         expect(labeled.length).toBeGreaterThanOrEqual(11)
         expect(labeled.length).toBeLessThanOrEqual(13)

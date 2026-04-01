@@ -1,7 +1,7 @@
-import type { Contribution } from '@/utils/github-fetch'
+import { type Contribution } from '@/utils/github-fetch'
 
 export interface CalendarWeek {
-    days: (Contribution | null)[]
+    days: Array<Contribution | null>
     monthLabel: string | null
 }
 
@@ -39,7 +39,7 @@ export function buildCalendarWeeks(contributions: Contribution[], weeksCount: nu
     let prevMonth = -1
 
     for (let w = 0; w < weeksCount; w++) {
-        const days: (Contribution | null)[] = []
+        const days: Array<Contribution | null> = []
         let monthLabel: string | null = null
 
         for (let d = 0; d < 7; d++) {
@@ -79,8 +79,12 @@ export function formatTooltip(contribution: Contribution): string {
         year: 'numeric'
     })
 
-    if (contribution.count === 0) return `No contributions on ${formatted}`
-    if (contribution.count === 1) return `1 contribution on ${formatted}`
+    if (contribution.count === 0) {
+        return `No contributions on ${formatted}`
+    }
+    if (contribution.count === 1) {
+        return `1 contribution on ${formatted}`
+    }
     return `${contribution.count} contributions on ${formatted}`
 }
 

@@ -30,8 +30,22 @@ jest.mock('framer-motion', () => {
 const mockUseGithubData = require('@/utils').useGithubData
 
 const mockRepos = [
-    { description: 'A cool project', forks: 3, language: 'TypeScript', name: 'repo-one', stars: 42, url: 'https://github.com/test/repo-one' },
-    { description: null, forks: 1, language: 'Go', name: 'repo-two', stars: 10, url: 'https://github.com/test/repo-two' }
+    {
+        description: 'A cool project',
+        forks: 3,
+        language: 'TypeScript',
+        name: 'repo-one',
+        stars: 42,
+        url: 'https://github.com/test/repo-one'
+    },
+    {
+        description: null,
+        forks: 1,
+        language: 'Go',
+        name: 'repo-two',
+        stars: 10,
+        url: 'https://github.com/test/repo-two'
+    }
 ]
 
 describe('GithubRepos', () => {

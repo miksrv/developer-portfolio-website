@@ -37,6 +37,7 @@ export default defineConfig([
             '**/node_modules/**',
             '**/build/**',
             '**/dist/**',
+            '**/out/**',
             '**/coverage/**',
 
             // WebPack
