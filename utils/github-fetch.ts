@@ -26,10 +26,20 @@ export interface GithubStats {
     languageDistribution: Record<string, number>
 }
 
+export interface GithubRepo {
+    name: string
+    description: string | null
+    url: string
+    stars: number
+    forks: number
+    language: string | null
+}
+
 export interface GithubData {
     contributions: ContributionYear | null
     user: GithubUser | null
     stats: GithubStats | null
+    topRepos: GithubRepo[] | null
 }
 
 // ── Constants ──────────────────────────────────────────────────────────────────
@@ -69,7 +79,7 @@ async function fetchContributions(): Promise<ContributionYear | null> {
     }
 }
 
-async function fetchUserAndStats(): Promise<{ user: GithubUser; stats: GithubStats } | null> {
+async function fetchUserAndStats(): Promise<{ user: GithubUser; stats: GithubStats; topRepos: GithubRepo[] } | null> {
     try {
         const headers = buildHeaders()
 
@@ -91,6 +101,7 @@ async function fetchUserAndStats(): Promise<{ user: GithubUser; stats: GithubSta
         }
 
         let stats: GithubStats = { languageDistribution: {}, totalForks: 0, totalStars: 0 }
+        let topRepos: GithubRepo[] = []
 
         if (reposRes.ok) {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -110,9 +121,22 @@ async function fetchUserAndStats(): Promise<{ user: GithubUser; stats: GithubSta
             }
 
             stats = { languageDistribution, totalForks, totalStars }
+
+            topRepos = repos
+                .filter((r) => !r.fork)
+                .sort((a, b) => (b.stargazers_count as number) - (a.stargazers_count as number))
+                .slice(0, 6)
+                .map((r) => ({
+                    description: (r.description as string | null) ?? null,
+                    forks: r.forks_count as number,
+                    language: (r.language as string | null) ?? null,
+                    name: r.name as string,
+                    stars: r.stargazers_count as number,
+                    url: r.html_url as string
+                }))
         }
 
-        return { stats, user }
+        return { stats, topRepos, user }
     } catch {
         return null
     }
@@ -126,6 +150,7 @@ export async function fetchGithubData(): Promise<GithubData> {
     return {
         contributions,
         stats: userAndStats?.stats ?? null,
+        topRepos: userAndStats?.topRepos ?? null,
         user: userAndStats?.user ?? null
     }
 }

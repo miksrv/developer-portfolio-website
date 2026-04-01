@@ -19,4 +19,33 @@
     --text-color-third: #9a9c9e;
 
     --box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+
+    --btn-ghost-bg: rgba(255, 255, 255, 0.05);
+    --btn-ghost-bg-hover: rgba(255, 255, 255, 0.1);
+    --btn-ghost-border: rgba(255, 255, 255, 0.12);
+
+    --header-scrolled-bg: rgba(43, 45, 46, 0.85);
+    --header-scrolled-border: rgba(255, 255, 255, 0.06);
+    --mobile-menu-bg: rgba(28, 28, 28, 0.97);
+    --mobile-menu-border: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='light'] {
+    --body-background: #f0f2f5;
+    --container-background: #ffffff;
+
+    --text-color-primary: #1a1a1a;
+    --text-color-secondary: #4a4a4e;
+    --text-color-third: #6a6c6e;
+
+    --box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+
+    --btn-ghost-bg: rgba(0, 0, 0, 0.04);
+    --btn-ghost-bg-hover: rgba(0, 0, 0, 0.08);
+    --btn-ghost-border: rgba(0, 0, 0, 0.12);
+
+    --header-scrolled-bg: rgba(240, 242, 245, 0.88);
+    --header-scrolled-border: rgba(0, 0, 0, 0.08);
+    --mobile-menu-bg: rgba(248, 249, 250, 0.97);
+    --mobile-menu-border: rgba(0, 0, 0, 0.1);
 }
