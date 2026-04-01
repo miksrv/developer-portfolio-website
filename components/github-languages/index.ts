@@ -1,0 +1,1 @@
+export { GithubLanguages } from './GithubLanguages'
