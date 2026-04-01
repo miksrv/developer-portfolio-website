@@ -46,21 +46,21 @@ Dark theme (`--body-background: #1b1b1b`) with golden accent (`--highlight-color
 
 ## Component Inventory
 
-| Component | Purpose |
-|-----------|---------|
-| `Header` | Navigation bar with active link state |
-| `Introduce` | Hero section: avatar, name, live age/exp counters, contact links |
-| `About` | Bio section with photo and paragraphs |
-| `GithubActivity` | GitHub calendar (dynamic import, ssr: false) |
-| `Projects` | Project cards with images, links, GitHub links |
-| `Experience` | Job history timeline with duties and tech stack |
-| `Skills` | Grouped skill progress bars (10 segments, Framer Motion) |
-| `SkillsCloud` | Tag cloud from all experience stacks |
-| `Progress` | Single skill bar: 10 animated segments, 0–100 level |
-| `PageTransition` | Framer Motion wrapper for route transitions |
-| `PrintResume` | Hidden printable resume layout (triggered on /experience) |
-| `StarField` | Canvas-based 3D starfield background animation |
-| `Icon` | SVG icon switch (github, telegram, linkedin, facebook, web, left, right) |
+| Component        | Purpose                                                                  |
+| ---------------- | ------------------------------------------------------------------------ |
+| `Header`         | Navigation bar with active link state                                    |
+| `Introduce`      | Hero section: avatar, name, live age/exp counters, contact links         |
+| `About`          | Bio section with photo and paragraphs                                    |
+| `GithubActivity` | GitHub calendar (dynamic import, ssr: false)                             |
+| `Projects`       | Project cards with images, links, GitHub links                           |
+| `Experience`     | Job history timeline with duties and tech stack                          |
+| `Skills`         | Grouped skill progress bars (10 segments, Framer Motion)                 |
+| `SkillsCloud`    | Tag cloud from all experience stacks                                     |
+| `Progress`       | Single skill bar: 10 animated segments, 0–100 level                      |
+| `PageTransition` | Framer Motion wrapper for route transitions                              |
+| `PrintResume`    | Hidden printable resume layout (triggered on /experience)                |
+| `StarField`      | Canvas-based 3D starfield background animation                           |
+| `Icon`           | SVG icon switch (github, telegram, linkedin, facebook, web, left, right) |
 
 ## Special Cases
 
