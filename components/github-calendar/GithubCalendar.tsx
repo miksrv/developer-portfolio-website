@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react'
-
 import { motion, Variants } from 'framer-motion'
 
 import { useGithubData } from '@/utils'
@@ -41,8 +40,6 @@ export const GithubCalendar: React.FC = () => {
             className={styles.calendarSection}
             aria-label={'GitHub contribution activity'}
         >
-            <h2 className={'pageTitle'}>{'Work activity'}</h2>
-
             <div className={styles.calendarScroll}>
                 <div className={styles.calendarInner}>
                     {/* Month labels row */}
