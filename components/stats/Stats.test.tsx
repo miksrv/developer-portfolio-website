@@ -41,8 +41,8 @@ describe('Stats', () => {
         expect(screen.getByText('Years of experience')).toBeInTheDocument()
         expect(screen.getByText('Roles & companies')).toBeInTheDocument()
         expect(screen.getByText('Pet projects')).toBeInTheDocument()
-        expect(screen.getByText('Current streak (days)')).toBeInTheDocument()
-        expect(screen.getByText('Longest streak (days)')).toBeInTheDocument()
+        expect(screen.getByText('Current streak')).toBeInTheDocument()
+        expect(screen.getByText('Longest streak')).toBeInTheDocument()
     })
 
     it('renders the stats section container', () => {

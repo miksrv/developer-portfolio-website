@@ -21,9 +21,9 @@ jest.mock('framer-motion', () => {
                 const domProps = Object.fromEntries(Object.entries(rest).filter(([k]) => !FRAMER_PROPS.has(k)))
                 return React.createElement('polygon', domProps, children)
             },
-            polyline: ({ children, ...rest }: React.SVGAttributes<SVGPolylineElement>) => {
+            path: ({ children, ...rest }: React.SVGAttributes<SVGPathElement>) => {
                 const domProps = Object.fromEntries(Object.entries(rest).filter(([k]) => !FRAMER_PROPS.has(k)))
-                return React.createElement('polyline', domProps, children)
+                return React.createElement('path', domProps, children)
             }
         }
     }

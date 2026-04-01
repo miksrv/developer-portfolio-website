@@ -6,11 +6,6 @@ exports[`GithubCalendar matches snapshot 1`] = `
     aria-label="GitHub contribution activity"
     class="calendarSection"
   >
-    <h2
-      class="pageTitle"
-    >
-      Work activity
-    </h2>
     <div
       class="calendarScroll"
     >
@@ -3039,9 +3034,11 @@ exports[`GithubCalendar matches snapshot 1`] = `
               title="No contributions on Mon, March 30, 2026"
             />
             <div
-              aria-hidden="true"
-              class="cellEmpty"
+              aria-label="No contributions on Tue, March 31, 2026"
+              class="cell"
               role="gridcell"
+              style="background-color: rgb(42, 42, 42);"
+              title="No contributions on Tue, March 31, 2026"
             />
             <div
               aria-hidden="true"

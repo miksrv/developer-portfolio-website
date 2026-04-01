@@ -2,8 +2,6 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import * as utils from '@/utils'
-
 import { About } from './About'
 
 jest.mock('next/image', () => ({
@@ -12,18 +10,20 @@ jest.mock('next/image', () => ({
     default: jest.fn(({ alt }: { alt: string }) => <img alt={alt} />)
 }))
 
-jest.mock('@/utils', () => ({
-    useSiteData: () => ({
-        biography: {
-            bio: {
-                lead: 'I architect and deliver full-stack systems — from greenfield design to production.',
-                bullets: [
-                    'Full-stack ownership: system architecture, REST APIs, and frontend products',
-                    'Engineering leadership across government agencies, media companies, and tech startups'
-                ]
-            }
+const mockUseSiteData = jest.fn(() => ({
+    biography: {
+        bio: {
+            lead: 'I architect and deliver full-stack systems — from greenfield design to production.',
+            bullets: [
+                'Full-stack ownership: system architecture, REST APIs, and frontend products',
+                'Engineering leadership across government agencies, media companies, and tech startups'
+            ]
         }
-    })
+    }
+}))
+
+jest.mock('@/utils', () => ({
+    useSiteData: (...args: unknown[]) => mockUseSiteData(...args)
 }))
 
 describe('About Component', () => {
@@ -53,7 +53,7 @@ describe('About Component', () => {
     })
 
     it('renders nothing when bio is absent', () => {
-        jest.spyOn(utils, 'useSiteData').mockReturnValue({ biography: {} })
+        mockUseSiteData.mockReturnValueOnce({ biography: {} })
         render(<About />)
         expect(screen.getByRole('heading', { level: 2, name: /About me/i })).toBeInTheDocument()
     })

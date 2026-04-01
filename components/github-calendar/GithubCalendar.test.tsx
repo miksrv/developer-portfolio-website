@@ -45,10 +45,10 @@ describe('GithubCalendar', () => {
         jest.clearAllMocks()
     })
 
-    it('renders the section heading', () => {
+    it('renders the section with aria-label', () => {
         mockUseGithubData.mockReturnValue(null)
         render(<GithubCalendar />)
-        expect(screen.getByRole('heading', { level: 2, name: /Work activity/i })).toBeInTheDocument()
+        expect(screen.getByRole('region', { name: /GitHub contribution activity/i })).toBeInTheDocument()
     })
 
     it('renders the contribution grid', () => {
@@ -83,7 +83,7 @@ describe('GithubCalendar', () => {
     it('renders gracefully with null github data', () => {
         mockUseGithubData.mockReturnValue(null)
         render(<GithubCalendar />)
-        expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument()
+        expect(screen.getByRole('region', { name: /GitHub contribution activity/i })).toBeInTheDocument()
     })
 
     it('renders gracefully with empty contributions', () => {
