@@ -19,7 +19,9 @@ jest.mock('framer-motion', () => {
 
     return {
         animate: jest.fn((_, toValue, opts) => {
-            if (opts?.onUpdate) opts.onUpdate(toValue)
+            if (opts?.onUpdate) {
+                opts.onUpdate(toValue)
+            }
             return { stop: jest.fn() }
         }),
         motion: {
