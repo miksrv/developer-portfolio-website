@@ -1,91 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
+import { Icon } from '@/components/icon'
 import { useTheme } from '@/utils'
+import { cn } from '@/utils/tools'
 
 import { menu } from './menu'
 
 import styles from './styles.module.sass'
-
-const SunIcon = () => (
-    <svg
-        viewBox={'0 0 24 24'}
-        fill={'none'}
-        stroke={'currentColor'}
-        strokeWidth={'2'}
-        strokeLinecap={'round'}
-        strokeLinejoin={'round'}
-        aria-hidden={'true'}
-    >
-        <circle
-            cx={'12'}
-            cy={'12'}
-            r={'5'}
-        />
-        <line
-            x1={'12'}
-            y1={'1'}
-            x2={'12'}
-            y2={'3'}
-        />
-        <line
-            x1={'12'}
-            y1={'21'}
-            x2={'12'}
-            y2={'23'}
-        />
-        <line
-            x1={'4.22'}
-            y1={'4.22'}
-            x2={'5.64'}
-            y2={'5.64'}
-        />
-        <line
-            x1={'18.36'}
-            y1={'18.36'}
-            x2={'19.78'}
-            y2={'19.78'}
-        />
-        <line
-            x1={'1'}
-            y1={'12'}
-            x2={'3'}
-            y2={'12'}
-        />
-        <line
-            x1={'21'}
-            y1={'12'}
-            x2={'23'}
-            y2={'12'}
-        />
-        <line
-            x1={'4.22'}
-            y1={'19.78'}
-            x2={'5.64'}
-            y2={'18.36'}
-        />
-        <line
-            x1={'18.36'}
-            y1={'5.64'}
-            x2={'19.78'}
-            y2={'4.22'}
-        />
-    </svg>
-)
-
-const MoonIcon = () => (
-    <svg
-        viewBox={'0 0 24 24'}
-        fill={'none'}
-        stroke={'currentColor'}
-        strokeWidth={'2'}
-        strokeLinecap={'round'}
-        strokeLinejoin={'round'}
-        aria-hidden={'true'}
-    >
-        <path d={'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'} />
-    </svg>
-)
 
 export const Header: React.FC = () => {
     const [activeSection, setActiveSection] = useState<string>('intro')
@@ -148,7 +70,7 @@ export const Header: React.FC = () => {
     return (
         <header
             ref={headerRef}
-            className={`${styles.header}${scrolled ? ` ${styles.scrolled}` : ''}`}
+            className={cn(styles.header, scrolled && styles.scrolled)}
         >
             <section>
                 {/* Desktop navigation */}
@@ -165,15 +87,6 @@ export const Header: React.FC = () => {
                 </nav>
 
                 <div className={styles.headerActions}>
-                    {/* Theme toggle */}
-                    <button
-                        className={styles.themeToggle}
-                        aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-                        onClick={toggleTheme}
-                    >
-                        {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-                    </button>
-
                     {/* Hamburger button — mobile only */}
                     <button
                         className={styles.burgerButton}
@@ -184,6 +97,15 @@ export const Header: React.FC = () => {
                         <span className={styles.burgerLine} />
                         <span className={styles.burgerLine} />
                         <span className={styles.burgerLine} />
+                    </button>
+
+                    {/* Theme toggle */}
+                    <button
+                        className={styles.themeToggle}
+                        aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                        onClick={toggleTheme}
+                    >
+                        <Icon name={theme === 'dark' ? 'sun' : 'moon'} />
                     </button>
                 </div>
             </section>
