@@ -27,7 +27,7 @@ export default function Document() {
                 {/* Prevent flash of wrong theme — runs before React hydrates */}
                 <script
                     dangerouslySetInnerHTML={{
-                        __html: `(function(){try{var t=localStorage.getItem('theme');var p=t||(window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',p);}catch(e){}})();`
+                        __html: "(function(){try{var t=localStorage.getItem('theme');var p=t||(window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',p);}catch(e){}})();"
                     }}
                 />
                 <script

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import { AppProps, NextWebVitalsMetric } from 'next/app'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Script from 'next/script'
 
 import { Footer, Header, PrintResume, StarField } from '@/components'
@@ -12,6 +13,8 @@ import '@/styles/globals.sass'
 
 const App = ({ Component, pageProps }: AppProps) => {
     const [starCount, setStarCount] = useState(1000)
+    const router = useRouter()
+    const is404 = router.pathname === '/404'
 
     useEffect(() => {
         if (window.innerWidth <= 768) {
@@ -87,14 +90,14 @@ const App = ({ Component, pageProps }: AppProps) => {
                         {'Skip to main content'}
                     </a>
 
-                    <Header />
+                    {!is404 && <Header />}
 
                     <main id={'main-content'}>
                         <Component {...pageProps} />
                     </main>
 
-                    <PrintResume />
-                    <Footer />
+                    {!is404 && <PrintResume />}
+                    {!is404 && <Footer />}
                 </DataProvider>
             </ThemeProvider>
 
