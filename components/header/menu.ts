@@ -9,6 +9,10 @@ export const menu: MenuItemType[] = [
         url: '#intro'
     },
     {
+        label: 'Activity',
+        url: '#activity'
+    },
+    {
         label: 'Projects',
         url: '#projects'
     },

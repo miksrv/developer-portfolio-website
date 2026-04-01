@@ -5,14 +5,13 @@
     width: 100%
     position: fixed
     z-index: 5
-    border-color: var(--highlight-color)
     transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease
 
     &.scrolled
-        background-color: rgba(43, 45, 46, 0.85)
+        background-color: var(--header-scrolled-bg)
         backdrop-filter: blur(12px)
         -webkit-backdrop-filter: blur(12px)
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06)
+        border-bottom: 1px solid var(--header-scrolled-border)
 
     section
         height: 50px
@@ -32,6 +31,12 @@
 
     @media screen and (max-width: variables.$mobileMaxWidth)
         display: none
+
+// Right-side header actions (theme toggle + hamburger)
+.headerActions
+    display: flex
+    align-items: center
+    gap: 4px
 
 // Shared anchor styles
 .desktopNav a,
@@ -54,6 +59,29 @@
 
     &.active
         color: var(--highlight-color)
+
+// Theme toggle button
+.themeToggle
+    display: flex
+    align-items: center
+    justify-content: center
+    background: none
+    border: none
+    cursor: pointer
+    padding: 8px
+    min-width: 36px
+    min-height: 36px
+    border-radius: var(--border-radius)
+    color: var(--text-color-secondary)
+    transition: color 0.2s ease, background-color 0.2s ease
+
+    &:hover
+        color: var(--highlight-color)
+        background-color: var(--btn-ghost-bg)
+
+    svg
+        width: 18px
+        height: 18px
 
 // Hamburger button
 .burgerButton
@@ -101,10 +129,10 @@
         top: 50px
         left: 0
         right: 0
-        background-color: rgba(28, 28, 28, 0.97)
+        background-color: var(--mobile-menu-bg)
         backdrop-filter: blur(12px)
         -webkit-backdrop-filter: blur(12px)
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08)
+        border-bottom: 1px solid var(--mobile-menu-border)
         padding: 8px 0 12px
 
         a
