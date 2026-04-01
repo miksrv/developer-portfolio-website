@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import { PageTransition } from '@/components'
 import { childVariants, parentVariants } from '@/components/page-transition/constants'
 import { useSiteData } from '@/utils'
-import { cn } from '@/utils/tools'
 import { formatDate, formatPeriod } from '@/utils/date'
+import { cn } from '@/utils/tools'
 
 import { ExperienceType } from './types'
 
@@ -55,9 +55,7 @@ export const Experience: React.FC = () => {
 
                                 <div className={styles.roleRow}>
                                     <h3 className={styles.role}>{item.role}</h3>
-                                    {isCurrent && (
-                                        <span className={styles.currentBadge}>{'Current'}</span>
-                                    )}
+                                    {isCurrent && <span className={styles.currentBadge}>{'Current'}</span>}
                                 </div>
 
                                 <div className={cn(styles.duties, expanded.has(i) ? styles.expanded : undefined)}>
