@@ -66,7 +66,9 @@ async function fetchContributions(): Promise<ContributionYear | null> {
     try {
         const res = await fetch(`${CONTRIBUTIONS_PROXY}?y=last`)
 
-        if (!res.ok) return null
+        if (!res.ok) {
+            return null
+        }
 
         const data = await res.json()
 
@@ -88,7 +90,9 @@ async function fetchUserAndStats(): Promise<{ user: GithubUser; stats: GithubSta
             fetch(`${GITHUB_API}/users/${GITHUB_USERNAME}/repos?per_page=100&type=public`, { headers })
         ])
 
-        if (!userRes.ok) return null
+        if (!userRes.ok) {
+            return null
+        }
 
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const userData: any = await userRes.json()

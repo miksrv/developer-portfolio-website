@@ -28,7 +28,7 @@ export function calculateStreak(contributions: Contribution[]): StreakResult {
     const dateStr = (d: Date) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
 
     // Start from today; if today has no contributions, start from yesterday
-    let cursor = new Date(today)
+    const cursor = new Date(today)
     if (!activeDates.has(dateStr(cursor))) {
         cursor.setDate(cursor.getDate() - 1)
     }
@@ -50,13 +50,15 @@ export function calculateStreak(contributions: Contribution[]): StreakResult {
             continue
         }
         const d = new Date(c.date + 'T00:00:00')
-        if (prevDate === null) {
+        if (prevDate == null) {
             run = 1
         } else {
             const diff = (d.getTime() - prevDate.getTime()) / (1000 * 60 * 60 * 24)
             run = diff === 1 ? run + 1 : 1
         }
-        if (run > longest) longest = run
+        if (run > longest) {
+            longest = run
+        }
         prevDate = d
     }
 

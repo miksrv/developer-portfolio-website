@@ -10,7 +10,7 @@ const day = (offset: number): string => {
 
 describe('calculateStreak', () => {
     it('returns zeros for empty contributions', () => {
-        expect(calculateStreak([])).toEqual({ currentStreak: 0, longestStreak: 0, totalContributions: 0 })
+        expect(calculateStreak([])).toStrictEqual({ currentStreak: 0, longestStreak: 0, totalContributions: 0 })
     })
 
     it('counts a current streak ending today', () => {

@@ -28,7 +28,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             document.documentElement.setAttribute('data-theme', next)
             try {
                 localStorage.setItem('theme', next)
-            } catch (_) {}
+            } catch (e) {
+                console.error(e)
+            }
             return next
         })
     }

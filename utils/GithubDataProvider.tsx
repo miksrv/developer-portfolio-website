@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from 'react'
 
-import type { GithubData } from './github-fetch'
+import { type GithubData } from './github-fetch'
 
 const GithubDataContext = createContext<GithubData | null>(null)
 
