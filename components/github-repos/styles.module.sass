@@ -1,0 +1,86 @@
+@use '../../styles/variables' as variables
+
+.reposSection
+    margin: 20px auto
+    max-width: var(--container-width)
+    width: 100%
+    position: relative
+    z-index: 2
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        padding: 0 10px
+
+.reposGrid
+    display: grid
+    margin-top: 10px
+    grid-template-columns: repeat(3, 1fr)
+    gap: 12px
+    list-style: none
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        grid-template-columns: 1fr
+
+.repoCard
+    display: flex
+    flex-direction: column
+    gap: 8px
+    padding: 16px
+    height: 100%
+    background-color: var(--container-background)
+    border-radius: var(--border-radius)
+    border: 1px solid rgba(255, 193, 7, 0.1)
+    box-shadow: var(--box-shadow)
+    text-decoration: none
+    color: inherit
+    transition: border-color 0.2s ease, transform 0.2s ease
+
+    &:hover
+        border-color: rgba(255, 193, 7, 0.4)
+        transform: translateY(-2px)
+
+.repoHeader
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 8px
+
+.repoName
+    font-weight: 600
+    color: var(--highlight-color)
+    font-size: 0.95em
+    word-break: break-word
+
+.repoLang
+    font-size: var(--font-size-small)
+    color: var(--text-color-third)
+    flex-shrink: 0
+    background: var(--btn-ghost-bg)
+    padding: 2px 7px
+    border-radius: 10px
+
+.repoDesc
+    color: var(--text-color-secondary)
+    font-size: var(--font-size-small)
+    line-height: 1.4
+    flex: 1
+    display: -webkit-box
+    -webkit-line-clamp: 2
+    -webkit-box-orient: vertical
+    overflow: hidden
+
+.repoMeta
+    display: flex
+    gap: 12px
+    margin-top: auto
+
+.metaStat
+    display: flex
+    align-items: center
+    gap: 4px
+    color: var(--text-color-third)
+    font-size: var(--font-size-small)
+
+    svg
+        width: 13px
+        height: 13px
+        opacity: 0.7
