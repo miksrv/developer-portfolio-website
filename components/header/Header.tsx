@@ -65,7 +65,19 @@ export const Header: React.FC = () => {
         }
     }, [isMenuOpen])
 
-    const handleLinkClick = () => setIsMenuOpen(false)
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+        e.preventDefault()
+        const targetId = url.replace('#', '')
+        const targetElement = document.getElementById(targetId)
+
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            // Update URL hash without triggering browser scroll
+            window.history.pushState(null, '', url)
+        }
+
+        setIsMenuOpen(false)
+    }
 
     return (
         <header
@@ -80,6 +92,7 @@ export const Header: React.FC = () => {
                             key={link.url}
                             href={link.url}
                             className={activeSection === link.url.replace('#', '') ? styles.active : undefined}
+                            onClick={(e) => handleNavClick(e, link.url)}
                         >
                             {link.label}
                         </a>
@@ -125,7 +138,7 @@ export const Header: React.FC = () => {
                                 key={link.url}
                                 href={link.url}
                                 className={activeSection === link.url.replace('#', '') ? styles.active : undefined}
-                                onClick={handleLinkClick}
+                                onClick={(e) => handleNavClick(e, link.url)}
                             >
                                 {link.label}
                             </a>
