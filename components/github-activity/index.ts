@@ -1,1 +1,0 @@
-export { GithubActivity } from './GithubActivity'
