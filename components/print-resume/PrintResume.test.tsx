@@ -4,9 +4,9 @@ import { render, screen } from '@testing-library/react'
 
 import { PrintResume } from './PrintResume'
 
-jest.mock('@/public/avatar.jpg', () => ({
+jest.mock('@/public/avatar.webp', () => ({
     __esModule: true,
-    default: 'mocked-avatar.jpg'
+    default: 'mocked-avatar.webp'
 }))
 
 jest.mock('@/utils', () => ({
