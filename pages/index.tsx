@@ -1,5 +1,4 @@
 import React from 'react'
-import { motion, Variants } from 'framer-motion'
 
 import { type GetStaticProps } from 'next'
 import dynamic from 'next/dynamic'
@@ -36,11 +35,6 @@ const GithubCalendar = dynamic(() => import('@/components/github-calendar/Github
     ssr: false
 })
 
-const sectionVariants: Variants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } }
-}
-
 type MainPageProps = {
     githubData: GithubData
 }
@@ -74,14 +68,10 @@ const MainPage: React.FC<MainPageProps> = ({ githubData }) => {
             </div>
 
             {/* ── GitHub Activity ─────────────────────────────────────── */}
-            <motion.div
+            <div
                 id={'activity'}
                 className={styles.sectionBlock}
                 aria-label={'GitHub Activity'}
-                initial={'hidden'}
-                whileInView={'visible'}
-                viewport={{ once: true, amount: 0.08 }}
-                variants={sectionVariants}
             >
                 <section>
                     <h2 className={'pageTitle'}>{data?.seo?.activity?.title}</h2>
@@ -92,17 +82,13 @@ const MainPage: React.FC<MainPageProps> = ({ githubData }) => {
                 <GithubLanguages />
                 <GithubSparkline />
                 <GithubRepos />
-            </motion.div>
+            </div>
 
             {/* ── Projects ────────────────────────────────────────────── */}
-            <motion.div
+            <div
                 id={'projects'}
                 className={styles.sectionBlock}
                 aria-label={'Projects'}
-                initial={'hidden'}
-                whileInView={'visible'}
-                viewport={{ once: true, amount: 0.08 }}
-                variants={sectionVariants}
             >
                 <section>
                     <h2 className={'pageTitle'}>{data?.seo?.projects?.title}</h2>
@@ -110,17 +96,13 @@ const MainPage: React.FC<MainPageProps> = ({ githubData }) => {
                 </section>
 
                 <Projects />
-            </motion.div>
+            </div>
 
             {/* ── Experience ──────────────────────────────────────────── */}
-            <motion.div
+            <div
                 id={'experience'}
                 className={styles.sectionBlock}
                 aria-label={'Experience'}
-                initial={'hidden'}
-                whileInView={'visible'}
-                viewport={{ once: true, amount: 0.04 }}
-                variants={sectionVariants}
             >
                 <section className={styles.sectionHeader}>
                     <div>
@@ -130,16 +112,12 @@ const MainPage: React.FC<MainPageProps> = ({ githubData }) => {
                 </section>
 
                 <Experience />
-            </motion.div>
+            </div>
 
             {/* ── Skills ──────────────────────────────────────────────── */}
-            <motion.div
+            <div
                 id={'skills'}
                 className={styles.sectionBlock}
-                initial={'hidden'}
-                whileInView={'visible'}
-                viewport={{ once: true, amount: 0.04 }}
-                variants={sectionVariants}
             >
                 <section>
                     <h2 className={'pageTitle'}>{data?.seo?.skills?.title}</h2>
@@ -149,19 +127,15 @@ const MainPage: React.FC<MainPageProps> = ({ githubData }) => {
                 <SkillsCloud />
 
                 <Skills />
-            </motion.div>
+            </div>
 
             {/* ── Contact ─────────────────────────────────────────────── */}
-            <motion.div
+            <div
                 id={'contact'}
                 className={styles.sectionBlock}
-                initial={'hidden'}
-                whileInView={'visible'}
-                viewport={{ once: true, amount: 0.1 }}
-                variants={sectionVariants}
             >
                 <Contact />
-            </motion.div>
+            </div>
         </GithubDataProvider>
     )
 }
