@@ -68,14 +68,19 @@ export const Header: React.FC = () => {
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
         e.preventDefault()
         const targetId = url.replace('#', '')
-        const targetElement = document.getElementById(targetId)
 
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            // Update URL hash without triggering browser scroll
-            window.history.pushState(null, '', url)
+        // For intro/about section, scroll to the very top
+        if (targetId === 'intro') {
+            window.scrollTo({ behavior: 'smooth', top: 0 })
+        } else {
+            const targetElement = document.getElementById(targetId)
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }
         }
 
+        // Update URL hash without triggering browser scroll
+        window.history.pushState(null, '', url)
         setIsMenuOpen(false)
     }
 
