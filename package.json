@@ -37,9 +37,7 @@
         "next": "16.1.6",
         "next-seo": "^6.8.0",
         "react": "19.2.4",
-        "react-activity-calendar": "^3.1.1",
-        "react-dom": "19.2.4",
-        "react-github-calendar": "^5.0.5"
+        "react-dom": "19.2.4"
     },
     "devDependencies": {
         "@eslint/compat": "^2.0.2",

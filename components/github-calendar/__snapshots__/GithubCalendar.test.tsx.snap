@@ -3041,9 +3041,11 @@ exports[`GithubCalendar matches snapshot 1`] = `
               title="No contributions on Tue, March 31, 2026"
             />
             <div
-              aria-hidden="true"
-              class="cellEmpty"
+              aria-label="No contributions on Wed, April 1, 2026"
+              class="cell"
               role="gridcell"
+              style="background-color: rgb(42, 42, 42);"
+              title="No contributions on Wed, April 1, 2026"
             />
             <div
               aria-hidden="true"
