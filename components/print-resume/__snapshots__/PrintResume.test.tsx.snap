@@ -11,7 +11,7 @@ exports[`PrintResume matches snapshot 1`] = `
         <img
           alt="John Doe"
           data-testid="project-image"
-          src="mocked-avatar.jpg"
+          src="mocked-avatar.webp"
         />
       </div>
       <div>
