@@ -16,26 +16,22 @@ exports[`Skills matches snapshot 1`] = `
           class="skillList"
         >
           <li>
-            <div
+            <label
               class="label"
             >
-              <label>
-                React
-              </label>
-            </div>
+              React
+            </label>
             <div
               data-testid="progress"
               data-value="90"
             />
           </li>
           <li>
-            <div
+            <label
               class="label"
             >
-              <label>
-                TypeScript
-              </label>
-            </div>
+              TypeScript
+            </label>
             <div
               data-testid="progress"
               data-value="80"
@@ -53,13 +49,11 @@ exports[`Skills matches snapshot 1`] = `
           class="skillList"
         >
           <li>
-            <div
+            <label
               class="label"
             >
-              <label>
-                Node.js
-              </label>
-            </div>
+              Node.js
+            </label>
             <div
               data-testid="progress"
               data-value="70"

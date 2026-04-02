@@ -3,7 +3,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 
 import { Icon } from './Icon'
-import { iconNames } from './types'
+import { iconNames, type IconTypes } from './types'
 
 describe('Icon Component', () => {
     const iconKeys = Object.keys(iconNames) as Array<keyof typeof iconNames>
@@ -24,7 +24,7 @@ describe('Icon Component', () => {
     })
 
     it('returns null for an unknown icon name', () => {
-        const { container } = render(<Icon name={'unknown' as any} />)
+        const { container } = render(<Icon name={'unknown' as unknown as IconTypes} />)
         expect(container.firstChild).toBeNull()
     })
 
@@ -32,7 +32,7 @@ describe('Icon Component', () => {
         Object.defineProperty(process.env, 'NODE_ENV', { value: 'development', configurable: true, writable: true })
         const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {})
 
-        render(<Icon name={'unknown' as any} />)
+        render(<Icon name={'unknown' as unknown as IconTypes} />)
 
         expect(warnSpy).toHaveBeenCalledWith('Icon: unknown name "unknown"')
 

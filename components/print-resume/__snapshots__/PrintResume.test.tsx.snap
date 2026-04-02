@@ -11,7 +11,7 @@ exports[`PrintResume matches snapshot 1`] = `
         <img
           alt="John Doe"
           data-testid="project-image"
-          src="mocked-avatar.jpg"
+          src="mocked-avatar.webp"
         />
       </div>
       <div>
@@ -90,7 +90,7 @@ exports[`PrintResume matches snapshot 1`] = `
               Jun 2018 – Present
             </span>
             <span>
-              7 yrs 9 mos
+              7 yrs 10 mos
             </span>
           </div>
           <h3>

@@ -1,19 +1,55 @@
 import React from 'react'
+import { motion, Variants } from 'framer-motion'
 
+import { type GetStaticProps } from 'next'
 import dynamic from 'next/dynamic'
-import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 
-import { About, Icon, iconNames, Introduce, PageTransition } from '@/components'
-import { useSiteData } from '@/utils'
+import {
+    About,
+    Contact,
+    Experience,
+    GithubLanguages,
+    GithubRepos,
+    GithubSparkline,
+    GithubStats,
+    Introduce,
+    Projects,
+    Skills,
+    SkillsCloud,
+    Stats
+} from '@/components'
+import { GithubDataProvider, useSiteData } from '@/utils'
+import { fetchGithubData, type GithubData } from '@/utils/github-fetch'
 
-const GithubActivity = dynamic(() => import('@/components/github-activity/GithubActivity'), { ssr: false })
+import styles from './styles/index.module.sass'
 
-const MainPage: React.FC = () => {
+const GithubCalendar = dynamic(() => import('@/components/github-calendar/GithubCalendar'), {
+    loading: () => (
+        <section
+            className={styles.githubSkeleton}
+            aria-label={'Loading GitHub activity'}
+            aria-busy={'true'}
+            role={'status'}
+        />
+    ),
+    ssr: false
+})
+
+const sectionVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } }
+}
+
+type MainPageProps = {
+    githubData: GithubData
+}
+
+const MainPage: React.FC<MainPageProps> = ({ githubData }) => {
     const data = useSiteData()
 
     return (
-        <>
+        <GithubDataProvider data={githubData}>
             <NextSeo
                 title={data?.seo?.index?.title}
                 description={data?.seo?.index?.description}
@@ -21,7 +57,7 @@ const MainPage: React.FC = () => {
                     images: [
                         {
                             height: 1333,
-                            url: 'https://miksoft.pro/avatar.jpg',
+                            url: 'https://miksoft.pro/avatar.webp',
                             width: 1000
                         }
                     ],
@@ -30,25 +66,110 @@ const MainPage: React.FC = () => {
                 }}
             />
 
-            <PageTransition>
+            {/* ── Hero / About me ─────────────────────────────────────── */}
+            <div id={'intro'}>
                 <Introduce />
-
+                <Stats />
                 <About />
+            </div>
 
-                <GithubActivity />
-
-                <section className={'footerLinks'}>
-                    <Link
-                        href={'/projects'}
-                        title={'View my pet projects'}
-                    >
-                        {'Projects'}
-                        <Icon name={iconNames.right} />
-                    </Link>
+            {/* ── GitHub Activity ─────────────────────────────────────── */}
+            <motion.div
+                id={'activity'}
+                className={styles.sectionBlock}
+                aria-label={'GitHub Activity'}
+                initial={'hidden'}
+                whileInView={'visible'}
+                viewport={{ once: true, amount: 0.08 }}
+                variants={sectionVariants}
+            >
+                <section>
+                    <h2 className={'pageTitle'}>{data?.seo?.activity?.title}</h2>
+                    <p>{data?.seo?.activity?.description}</p>
                 </section>
-            </PageTransition>
-        </>
+                <GithubCalendar />
+                <GithubStats />
+                <GithubLanguages />
+                <GithubSparkline />
+                <GithubRepos />
+            </motion.div>
+
+            {/* ── Projects ────────────────────────────────────────────── */}
+            <motion.div
+                id={'projects'}
+                className={styles.sectionBlock}
+                aria-label={'Projects'}
+                initial={'hidden'}
+                whileInView={'visible'}
+                viewport={{ once: true, amount: 0.08 }}
+                variants={sectionVariants}
+            >
+                <section>
+                    <h2 className={'pageTitle'}>{data?.seo?.projects?.title}</h2>
+                    <p>{data?.seo?.projects?.description}</p>
+                </section>
+
+                <Projects />
+            </motion.div>
+
+            {/* ── Experience ──────────────────────────────────────────── */}
+            <motion.div
+                id={'experience'}
+                className={styles.sectionBlock}
+                aria-label={'Experience'}
+                initial={'hidden'}
+                whileInView={'visible'}
+                viewport={{ once: true, amount: 0.04 }}
+                variants={sectionVariants}
+            >
+                <section className={styles.sectionHeader}>
+                    <div>
+                        <h2 className={'pageTitle'}>{data?.seo?.experience?.title}</h2>
+                        <p>{data?.seo?.experience?.description}</p>
+                    </div>
+                </section>
+
+                <Experience />
+            </motion.div>
+
+            {/* ── Skills ──────────────────────────────────────────────── */}
+            <motion.div
+                id={'skills'}
+                className={styles.sectionBlock}
+                initial={'hidden'}
+                whileInView={'visible'}
+                viewport={{ once: true, amount: 0.04 }}
+                variants={sectionVariants}
+            >
+                <section>
+                    <h2 className={'pageTitle'}>{data?.seo?.skills?.title}</h2>
+                    <p>{data?.seo?.skills?.skillsIntro}</p>
+                </section>
+
+                <SkillsCloud />
+
+                <Skills />
+            </motion.div>
+
+            {/* ── Contact ─────────────────────────────────────────────── */}
+            <motion.div
+                id={'contact'}
+                className={styles.sectionBlock}
+                initial={'hidden'}
+                whileInView={'visible'}
+                viewport={{ once: true, amount: 0.1 }}
+                variants={sectionVariants}
+            >
+                <Contact />
+            </motion.div>
+        </GithubDataProvider>
     )
+}
+
+export const getStaticProps: GetStaticProps<MainPageProps> = async () => {
+    const githubData = await fetchGithubData()
+
+    return { props: { githubData } }
 }
 
 export default MainPage

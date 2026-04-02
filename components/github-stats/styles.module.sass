@@ -1,0 +1,61 @@
+@use '../../styles/variables' as variables
+
+.githubStatsSection
+    margin: 20px auto
+
+.statsGrid
+    display: flex
+    gap: 12px
+    margin-top: 5px
+    flex-wrap: wrap
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        gap: 10px
+
+.statCard
+    flex: 1 1 140px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 6px
+    padding: 20px 12px
+    background-color: var(--container-background)
+    border-radius: var(--border-radius)
+    border: 1px solid rgba(255, 193, 7, 0.1)
+    box-shadow: var(--box-shadow)
+    text-align: center
+    transition: border-color 0.2s ease, transform 0.2s ease
+
+    &:hover
+        border-color: rgba(255, 193, 7, 0.35)
+        transform: translateY(-2px)
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        flex: 1 1 calc(50% - 10px)
+        padding: 16px 10px
+
+.statIcon
+    color: var(--highlight-color)
+    opacity: 0.85
+
+    svg
+        width: 36px
+        height: 36px
+        display: block
+
+.statValue
+    font-size: 2em
+    font-weight: 700
+    color: var(--text-color-primary)
+    line-height: 1
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        font-size: 1.6em
+
+.statLabel
+    font-size: var(--font-size-small)
+    color: var(--text-color-secondary)
+    text-transform: uppercase
+    letter-spacing: 0.4px
+    line-height: 1.3

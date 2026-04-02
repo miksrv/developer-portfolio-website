@@ -15,13 +15,17 @@ exports[`Experience matches snapshot 1`] = `
           <li
             class="experienceRole"
           >
+            <span
+              aria-hidden="true"
+              class="timelineDot"
+            />
             <div
               class="dates"
             >
               <div
                 class="date"
               >
-                formatted-2020-01-01 - formatted-2021-01-01
+                formatted-2020-01-01 — formatted-2021-01-01
               </div>
               <div
                 class="period"
@@ -29,16 +33,26 @@ exports[`Experience matches snapshot 1`] = `
                 period-2020-01-01-2021-01-01
               </div>
             </div>
-            <h3
-              class="role"
+            <div
+              class="roleRow"
             >
-              Frontend Developer
-            </h3>
+              <h3
+                class="role"
+              >
+                Frontend Developer
+              </h3>
+            </div>
             <div
               class="duties"
             >
               Developed UI components
             </div>
+            <button
+              aria-expanded="false"
+              class="showMore"
+            >
+              Show more
+            </button>
             <ul
               class="skills"
             >
@@ -46,25 +60,43 @@ exports[`Experience matches snapshot 1`] = `
                 <span
                   class="area"
                 >
-                  Frontend:
+                  Frontend
                 </span>
-                <span
-                  class="stack"
+                <div
+                  class="tagList"
                 >
-                  React, TypeScript
-                </span>
+                  <span
+                    class="tag"
+                  >
+                    React
+                  </span>
+                  <span
+                    class="tag"
+                  >
+                    TypeScript
+                  </span>
+                </div>
               </li>
               <li>
                 <span
                   class="area"
                 >
-                  Testing:
+                  Testing
                 </span>
-                <span
-                  class="stack"
+                <div
+                  class="tagList"
                 >
-                  Jest, RTL
-                </span>
+                  <span
+                    class="tag"
+                  >
+                    Jest
+                  </span>
+                  <span
+                    class="tag"
+                  >
+                    RTL
+                  </span>
+                </div>
               </li>
             </ul>
           </li>
@@ -75,13 +107,17 @@ exports[`Experience matches snapshot 1`] = `
           <li
             class="experienceRole"
           >
+            <span
+              aria-hidden="true"
+              class="timelineDot"
+            />
             <div
               class="dates"
             >
               <div
                 class="date"
               >
-                formatted-2021-02-01 - Present
+                formatted-2021-02-01 — Present
               </div>
               <div
                 class="period"
@@ -89,16 +125,31 @@ exports[`Experience matches snapshot 1`] = `
                 period-2021-02-01-null
               </div>
             </div>
-            <h3
-              class="role"
+            <div
+              class="roleRow"
             >
-              Fullstack Developer
-            </h3>
+              <h3
+                class="role"
+              >
+                Fullstack Developer
+              </h3>
+              <span
+                class="currentBadge"
+              >
+                Current
+              </span>
+            </div>
             <div
               class="duties"
             >
               Built APIs
             </div>
+            <button
+              aria-expanded="false"
+              class="showMore"
+            >
+              Show more
+            </button>
           </li>
         </div>
       </div>

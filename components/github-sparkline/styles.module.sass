@@ -1,0 +1,39 @@
+.sparklineSection
+    margin: 20px auto
+
+.sparklineHeader
+    display: flex
+    align-items: baseline
+    gap: 12px
+    margin-bottom: 0
+
+    // pageTitle already has margin-bottom 20px; subtitle aligns baseline
+
+.sparklineSubtitle
+    font-size: var(--font-size-small)
+    color: var(--text-color-third)
+    margin-bottom: 10px
+
+.sparklineWrapper
+    background-color: var(--container-background)
+    border-radius: var(--border-radius)
+    border: 1px solid rgba(255, 193, 7, 0.1)
+    padding: 16px
+    overflow: hidden
+
+.sparklineSvg
+    width: 100%
+    height: 120px
+    display: block
+
+.sparklineLine
+    fill: none
+    stroke: var(--highlight-color)
+    stroke-width: 1.5
+    stroke-linejoin: round
+    stroke-linecap: round
+    vector-effect: non-scaling-stroke
+
+.sparklineArea
+    fill: var(--highlight-color)
+    opacity: 0.12

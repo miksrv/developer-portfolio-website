@@ -1,0 +1,1 @@
+export { GithubSparkline } from './GithubSparkline'

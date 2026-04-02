@@ -1,41 +1,60 @@
 import React from 'react'
 
-import { usePathname } from 'next/navigation'
 import { render, screen } from '@testing-library/react'
 
 import { Header } from './Header'
 import { menu } from './menu'
 
-jest.mock('next/navigation', () => ({
-    usePathname: jest.fn()
-}))
+const observeMock = jest.fn()
+const disconnectMock = jest.fn()
+
+beforeEach(() => {
+    jest.spyOn(window, 'addEventListener').mockImplementation(() => {})
+    jest.spyOn(window, 'removeEventListener').mockImplementation(() => {})
+
+    global.IntersectionObserver = jest.fn().mockImplementation(() => ({
+        disconnect: disconnectMock,
+        observe: observeMock,
+        unobserve: jest.fn()
+    }))
+})
+
+afterEach(() => {
+    jest.restoreAllMocks()
+})
 
 describe('Header Component', () => {
     it('renders all menu links', () => {
-        ;(usePathname as jest.Mock).mockReturnValue('/')
-
         render(<Header />)
 
         menu.forEach((link) => {
             const menuItem = screen.getByText(link.label)
+
             expect(menuItem).toBeInTheDocument()
             expect(menuItem).toHaveAttribute('href', link.url)
         })
     })
 
-    it('applies active class only to the link matching the current pathname', () => {
-        ;(usePathname as jest.Mock).mockReturnValue('/projects')
+    it('sets up IntersectionObserver for section tracking', () => {
+        render(<Header />)
 
+        expect(global.IntersectionObserver).toHaveBeenCalledTimes(1)
+    })
+
+    it('registers scroll event listener on mount', () => {
+        render(<Header />)
+
+        expect(window.addEventListener).toHaveBeenCalledWith('scroll', expect.any(Function), { passive: true })
+    })
+
+    it('renders anchor links (not router links)', () => {
         render(<Header />)
 
         menu.forEach((link) => {
-            const menuItem = screen.getByText(link.label)
+            const anchor = screen.getByText(link.label).closest('a')
 
-            if (link.url === '/projects') {
-                expect(menuItem).toHaveClass('active')
-            } else {
-                expect(menuItem).not.toHaveClass('active')
-            }
+            expect(anchor?.tagName).toBe('A')
+            expect(anchor).toHaveAttribute('href', link.url)
         })
     })
 })

@@ -1,86 +1,41 @@
 @use '../../styles/variables' as variables
 
 .projectsContainer
-    display: flex
-    flex-direction: column
-    gap: 15px
-    margin: 20px auto
+    margin-top: 20px
 
-    @media screen and (max-width: variables.$mobileMaxWidth)
-        flex-direction: row
-        flex-wrap: wrap
+    & > div
+        display: flex
+        flex-direction: column
+        gap: 15px
+
+        @media screen and (max-width: variables.$mobileMaxWidth)
+            flex-direction: row
+            flex-wrap: wrap
+            gap: 12px
 
     .item
         display: flex
-        justify-content: space-between
         background-color: var(--container-background)
         padding: 10px
         border-radius: var(--border-radius)
-        margin-bottom: 20px
+        transition: transform 0.25s ease, box-shadow 0.25s ease
 
         @media screen and (max-width: variables.$mobileMaxWidth)
             flex-direction: column
-            justify-content: center
-            align-items: center
-            padding: 5px 5px 10px
-
-            a
-                width: 100%
-
-        img
-            border-radius: var(--border-radius)
-            filter: grayscale(100%)
-            transition: filter 1.5s ease
-            margin-bottom: -5px
-
-            @media screen and (max-width: variables.$mobileMaxWidth)
-                margin: 0 auto
-                width: 100%
-                height: 100%
-
-        .description
+            padding: 8px 8px 12px
             width: 100%
-            padding-left: 10px
-            display: flex
-            justify-content: space-between
-            flex-direction: column
-
-            @media screen and (max-width: variables.$mobileMaxWidth)
-                //display: none
-
-            h2
-                font-weight: 300
-                font-size: 18px
-
-            p
-                margin: 5px 0
-                color: var(--text-color-secondary)
-
-        .info
-            display: flex
-            gap: 15px
-
-            .infoItem
-                display: flex
-                align-items: center
-
-            svg
-                width: 18px
-                height: 18px
-                fill: var(--text-color-third)
-                margin-right: 5px
-                transition: fill 0.25s linear
-
-            a
-                transition: color 0.25s linear
-                color: var(--text-color-secondary)
-
-            @media screen and (max-width: variables.$mobileMaxWidth)
-                //display: none
 
         &:hover
-            img
-                filter: grayscale(0%)
+            transform: translateY(-4px)
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4)
+
+            .imageWrapper
+                img
+                    filter: grayscale(0%)
+                    transform: scale(1.06)
+
+                .imageOverlay
+                    opacity: 1
 
             .info
                 svg
@@ -88,3 +43,94 @@
 
                 a
                     color: var(--highlight-color)
+
+    // ── Image wrapper with overlay ─────────────────
+    .imageWrapper
+        position: relative
+        flex-shrink: 0
+        overflow: hidden
+        border-radius: var(--border-radius)
+        width: 176px
+        height: 176px
+
+        @media screen and (max-width: variables.$mobileMaxWidth)
+            width: 100%
+            height: auto
+            aspect-ratio: 1
+            margin-bottom: 8px
+
+        a
+            display: block
+            width: 100%
+            height: 100%
+
+        img
+            border-radius: var(--border-radius)
+            filter: grayscale(100%)
+            transition: filter 0.4s ease, transform 0.4s ease
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+        .imageOverlay
+            position: absolute
+            inset: 0
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.35))
+            display: flex
+            align-items: center
+            justify-content: center
+            opacity: 0
+            transition: opacity 0.3s ease
+            border-radius: var(--border-radius)
+            pointer-events: none
+
+            span
+                color: rgba(255, 255, 255, 0.9)
+                font-size: 13px
+                font-weight: 500
+                letter-spacing: 0.5px
+                padding: 6px 14px
+                border: 1px solid rgba(255, 255, 255, 0.3)
+                border-radius: 4px
+
+    // ── Description ───────────────────────────────
+    .description
+        width: 100%
+        padding-left: 12px
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+
+        @media screen and (max-width: variables.$mobileMaxWidth)
+            padding-left: 0
+
+        h2
+            font-weight: 300
+            font-size: 18px
+            margin-bottom: 6px
+
+        p
+            margin: 4px 0
+            color: var(--text-color-secondary)
+
+    // ── Info links ─────────────────────────────────
+    .info
+        display: flex
+        gap: 15px
+        flex-wrap: wrap
+        margin-top: 8px
+
+        .infoItem
+            display: flex
+            align-items: center
+
+        svg
+            width: 18px
+            height: 18px
+            fill: var(--text-color-third)
+            margin-right: 5px
+            transition: fill 0.25s linear
+
+        a
+            transition: color 0.25s linear
+            color: var(--text-color-secondary)

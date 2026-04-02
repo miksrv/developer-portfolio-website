@@ -2,25 +2,34 @@
 
 exports[`About Component matches the snapshot 1`] = `
 <DocumentFragment>
-  <section>
+  <section
+    class="aboutSection"
+  >
     <h2
       class="pageTitle"
     >
       About me
     </h2>
-    <div>
+    <div
+      class="aboutContainer"
+    >
       <img
         alt="Photo of me"
-        data-testid="project-image"
-        src="mocked-photo.jpg"
       />
       <div>
         <p>
-          I architect and deliver full-stack systems — from greenfield design to production — and have led engineering teams for over 19 years across government infrastructure, media platforms, and tech products. My experience spans end-to-end ownership, including architecture, backend and frontend development, AI integration, and operational excellence.
+          I architect and deliver full-stack systems — from greenfield design to production.
         </p>
-        <p>
-          Outside engineering, I design and operate a fully automated home observatory for remote astrophotography.
-        </p>
+        <ul
+          class="bioBullets"
+        >
+          <li>
+            Full-stack ownership: system architecture, REST APIs, and frontend products
+          </li>
+          <li>
+            Engineering leadership across government agencies, media companies, and tech startups
+          </li>
+        </ul>
       </div>
     </div>
   </section>

@@ -9,20 +9,31 @@ exports[`Projects matches snapshot 1`] = `
       data-testid="pagetransition"
     >
       <div
-        class="item even"
+        class="item"
       >
-        <a
-          href="https://project1.com"
-          rel="noopener noreferrer"
-          target="_blank"
-          title="Project 1"
-        >
-          <img
-            alt="Project 1"
-            data-testid="project-image"
-            src="/images/project1.png"
-          />
-        </a>
+        <div>
+          <a
+            aria-hidden="true"
+            href="https://project1.com"
+            rel="noopener noreferrer"
+            tabindex="-1"
+            target="_blank"
+            title="Project 1"
+          >
+            <img
+              alt="Project 1"
+              data-testid="project-image"
+              src="/images/project1.png"
+            />
+          </a>
+          <div
+            aria-hidden="true"
+          >
+            <span>
+              View →
+            </span>
+          </div>
+        </div>
         <div
           class="description"
         >
@@ -55,20 +66,31 @@ exports[`Projects matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="item odd"
+        class="item"
       >
-        <a
-          href="https://project2.com"
-          rel="noopener noreferrer"
-          target="_blank"
-          title="Project 2"
-        >
-          <img
-            alt="Project 2"
-            data-testid="project-image"
-            src="/images/project2.png"
-          />
-        </a>
+        <div>
+          <a
+            aria-hidden="true"
+            href="https://project2.com"
+            rel="noopener noreferrer"
+            tabindex="-1"
+            target="_blank"
+            title="Project 2"
+          >
+            <img
+              alt="Project 2"
+              data-testid="project-image"
+              src="/images/project2.png"
+            />
+          </a>
+          <div
+            aria-hidden="true"
+          >
+            <span>
+              View →
+            </span>
+          </div>
+        </div>
         <div
           class="description"
         >

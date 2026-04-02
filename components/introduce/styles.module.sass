@@ -2,98 +2,322 @@
 
 $avatarDesktopWidth: 45%
 
+@keyframes glowPulse
+    0%, 100%
+        opacity: 0.25
+        box-shadow: 0 0 10px rgba(255, 193, 7, 0.2)
+    50%
+        opacity: 0.65
+        box-shadow: 0 0 22px rgba(255, 193, 7, 0.45)
+
+@keyframes subtitleReveal
+    from
+        opacity: 0
+        transform: translateY(8px)
+    to
+        opacity: 1
+        transform: translateY(0)
+
 .introduceSection
     display: flex
     justify-content: space-between
     flex-wrap: wrap
     margin-top: 10px
+    gap: 16px
 
-    .avatarContainer
-        flex-basis: calc($avatarDesktopWidth - 8px)
-        width: calc($avatarDesktopWidth - 8px)
-        height: 370px
+// ── Avatar ────────────────────────────────────────────
+.avatarWrapper
+    position: relative
+    flex-basis: calc($avatarDesktopWidth - 8px)
+    width: calc($avatarDesktopWidth - 8px)
+    align-self: stretch
 
-        img
-            border-radius: var(--border-radius)
-            box-shadow: var(--box-shadow)
-
-        @media screen and (max-width: variables.$mobileMaxWidth)
-            margin-bottom: 20px
-
-    .infoContainer
-        flex-basis: calc(100% - $avatarDesktopWidth - 8px)
-        width: calc(100% - $avatarDesktopWidth - 8px)
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        flex-basis: 100%
+        width: 100%
+        align-self: auto
         display: flex
-        flex-direction: column
-        justify-content: space-between
+        justify-content: center
+        margin-bottom: 4px
 
-        @media screen and (max-width: variables.$mobileMaxWidth)
-            gap: 20px
+.avatarGlow
+    position: absolute
+    inset: -3px
+    border-radius: calc(var(--border-radius) + 3px)
+    border: 2px solid var(--highlight-color)
+    animation: glowPulse 2.5s ease-in-out infinite
+    pointer-events: none
+    z-index: 3
 
-        .header
-            .title
+.avatarContainer
+    position: relative
+    height: 100%
+    min-height: 370px
+    border-radius: var(--border-radius)
+    overflow: hidden
+
+    img
+        border-radius: var(--border-radius)
+        box-shadow: var(--box-shadow)
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        width: 100%
+        height: 240px
+        object-fit: cover
+
+// ── Info container ─────────────────────────────────────
+.infoContainer
+    flex-basis: calc(100% - $avatarDesktopWidth - 24px)
+    width: calc(100% - $avatarDesktopWidth - 24px)
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: 12px
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        flex-basis: 100%
+        width: 100%
+        align-items: center
+        text-align: center
+
+    .header
+        width: 100%
+
+        .title
+            display: flex
+            justify-content: flex-start
+            align-items: flex-start
+
+            @media screen and (max-width: variables.$mobileMaxWidth)
+                justify-content: center
+                flex-wrap: wrap
+                gap: 8px
+
+            h1
+                margin: 0
+                font-weight: 300
+                font-size: 2em
+
+                span
+                    font-weight: 700
+                    color: var(--highlight-color)
+
+        .links
+            display: flex
+            gap: 6px
+            margin-left: 12px
+            flex-shrink: 0
+
+            @media screen and (max-width: variables.$mobileMaxWidth)
+                margin-left: 0
+
+            a
                 display: flex
-                justify-content: flex-start
+                justify-content: center
+                align-items: center
+                text-decoration: none
+                min-width: 44px
+                min-height: 44px
+                border-radius: var(--border-radius)
+                transition: background-color 0.25s linear
 
-                h1
-                    margin: 0
-                    font-weight: 300
-                    font-size: 2em
+                svg
+                    width: 24px
+                    fill: var(--text-color-secondary)
+                    transition: fill 0.25s linear
 
-                    span
-                        font-weight: 700
-                        color: var(--highlight-color)
-
-            .links
-                display: flex
-                gap: 10px
-                margin-left: 15px
-
-                a
-                    display: flex
-                    justify-content: center
-                    align-items: center
-                    text-decoration: none
-                    transition: background-color 0.25s linear
+                &:hover
+                    background-color: var(--body-background)
 
                     svg
-                        width: 24px
-                        fill: var(--text-color-secondary)
-                        transition: fill 0.25s linear
+                        fill: var(--text-color-primary)
 
-                    &:hover
-                        background-color: var(--body-background)
+                &:active
+                    opacity: 0.7
 
-                        svg
-                            fill: var(--text-color-primary)
+    .subTitle
+        margin-top: 2px
+        padding-bottom: 8px
+        font-weight: 400
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+        width: 100%
+        animation: subtitleReveal 0.7s ease 0.3s both
 
-        .subTitle
-            margin-top: 0px
-            padding-bottom: 5px
-            font-weight: 400
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+// ── Open-to-work badge ─────────────────────────────────
+@keyframes dotPulse
+    0%, 100%
+        opacity: 1
+    50%
+        opacity: 0.3
 
-        .factsList
-            margin: 10px 0
+.openToWork
+    display: inline-flex
+    align-items: center
+    gap: 6px
+    margin-top: 8px
+    padding: 4px 10px
+    border-radius: 99px
+    border: 1px solid rgba(34, 197, 94, 0.35)
+    background-color: rgba(34, 197, 94, 0.08)
+    color: #22c55e
+    font-size: 12px
+    font-weight: 500
+    letter-spacing: 0.3px
+    width: fit-content
 
-            li
-                display: flex
-                justify-content: flex-start
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        margin: 6px auto 0
 
-                .key
-                    width: 200px
-                    color: var(--text-color-third)
+.openToWorkDot
+    width: 7px
+    height: 7px
+    border-radius: 50%
+    background-color: #22c55e
+    flex-shrink: 0
+    animation: dotPulse 2s ease-in-out infinite
 
-                    @media screen and (max-width: variables.$mobileMaxWidth)
-                        width: 150px
+// ── Counter pills ──────────────────────────────────────
+.counterPills
+    display: flex
+    gap: 10px
+    flex-wrap: wrap
 
-        .description
-            p:not(:last-of-type)
-                margin-bottom: 10px
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        width: 100%
+        justify-content: center
 
-    .avatarContainer, .infoContainer
-        position: relative
+.pill
+    flex: 1
+    min-width: 140px
+    padding: 10px 14px
+    background-color: var(--container-background)
+    border: 1px solid rgba(255, 193, 7, 0.15)
+    border-radius: var(--border-radius)
+    display: flex
+    flex-direction: column
+    gap: 2px
 
-        @media screen and (max-width: variables.$mobileMaxWidth)
-            flex-basis: 100%
-            width: 100%
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        flex: 0 0 calc(50% - 5px)
+        min-width: auto
+        text-align: center
+        align-items: center
+
+.pillValue
+    font-size: 1.3em
+    font-weight: 600
+    color: var(--highlight-color)
+    font-variant-numeric: tabular-nums
+    letter-spacing: -0.5px
+    line-height: 1.3
+
+.pillLabel
+    font-size: var(--font-size-small)
+    color: var(--text-color-third)
+    text-transform: uppercase
+    letter-spacing: 0.5px
+
+// ── Facts list (location / timezone / updated) ─────────
+.factsList
+    width: 100%
+
+    li
+        display: flex
+        justify-content: flex-start
+
+    .key
+        width: 140px
+        color: var(--text-color-third)
+        flex-shrink: 0
+        text-align: left
+
+    .value
+        color: var(--text-color-primary)
+
+// ── Description ────────────────────────────────────────
+.description
+    width: 100%
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        text-align: left
+
+    p:not(:last-of-type)
+        margin-bottom: 10px
+
+// ── CTA buttons ────────────────────────────────────────
+.ctaGroup
+    display: flex
+    gap: 12px
+    flex-wrap: wrap
+    margin-top: 4px
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        flex-wrap: nowrap
+        width: 100%
+
+        a
+            flex: 1
+            justify-content: center
+            padding: 10px 8px
+
+.ctaPrimary
+    display: inline-flex
+    align-items: center
+    padding: 10px 22px
+    background-color: var(--highlight-color)
+    color: #111
+    text-decoration: none
+    border-radius: var(--border-radius)
+    font-weight: 600
+    font-size: 14px
+    transition: opacity 0.2s ease, transform 0.15s ease
+    min-height: 44px
+
+    &:hover
+        opacity: 0.88
+        color: #111
+        transform: translateY(-1px)
+
+    &:active
+        opacity: 0.75
+        transform: translateY(0)
+
+.ctaSecondary
+    display: inline-flex
+    align-items: center
+    padding: 10px 22px
+    background: transparent
+    color: var(--text-color-primary)
+    text-decoration: none
+    border-radius: var(--border-radius)
+    border: 1px solid rgba(255, 255, 255, 0.18)
+    font-size: 14px
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.15s ease
+    min-height: 44px
+
+    &:hover
+        border-color: var(--highlight-color)
+        color: var(--highlight-color)
+        transform: translateY(-1px)
+
+    &:active
+        opacity: 0.75
+        transform: translateY(0)
+
+.ctaTertiary
+    display: inline-flex
+    align-items: center
+    padding: 10px 22px
+    background: transparent
+    color: var(--text-color-third)
+    text-decoration: none
+    border-radius: var(--border-radius)
+    font-size: 14px
+    transition: color 0.2s ease
+    min-height: 44px
+
+    &:hover
+        color: var(--text-color-primary)
+
+    &:active
+        opacity: 0.75

@@ -1,29 +1,148 @@
+@use '../../styles/variables' as variables
+
 .header
-    background-color: var(--container-background)
-    margin-bottom: 50px
+    background-color: transparent
     width: 100%
     position: fixed
     z-index: 5
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease
+
+    &.scrolled
+        background-color: var(--header-scrolled-bg)
+        backdrop-filter: blur(12px)
+        -webkit-backdrop-filter: blur(12px)
+        border-bottom: 1px solid var(--header-scrolled-border)
 
     section
         height: 50px
         display: flex
-        justify-content: flex-start
+        justify-content: space-between
         align-items: center
-        gap: 10px
+        max-width: var(--container-width)
+        width: 100%
+        margin: 0 auto
+        padding: 0
 
-    a
-        display: inline-block
-        color: var(--text-color-primary)
-        text-decoration: none
-        padding: 5px 10px
-        transition: background-color 0.25s ease-in-out
-        font-weight: 400
-        border-radius: var(--border-radius)
+// Desktop navigation
+.desktopNav
+    display: flex
+    align-items: center
+    gap: 10px
 
-        &:hover
-            color: var(--highlight-color)
-            background-color: var(--body-background)
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        display: none
 
-        &.active
-            color: var(--highlight-color)
+// Right-side header actions (theme toggle + hamburger)
+.headerActions
+    display: flex
+    align-items: center
+    justify-content: end
+    gap: 4px
+    width: 100%
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        justify-content: space-between
+
+// Shared anchor styles
+.desktopNav a,
+.mobileMenu a
+    display: inline-block
+    color: var(--text-color-primary)
+    text-decoration: none
+    padding: 5px 10px
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out
+    font-weight: 400
+    border-radius: var(--border-radius)
+    cursor: pointer
+    width: max-content
+
+    &:hover
+        color: var(--highlight-color)
+        background-color: var(--body-background)
+
+    &:active
+        opacity: 0.75
+
+    &.active
+        color: var(--highlight-color)
+
+// Theme toggle button
+.themeToggle
+    display: flex
+    align-items: center
+    justify-content: center
+    background: none
+    border: none
+    cursor: pointer
+    padding: 8px
+    min-width: 36px
+    min-height: 36px
+    border-radius: var(--border-radius)
+    color: var(--text-color-secondary)
+    transition: color 0.2s ease, background-color 0.2s ease
+
+    &:hover
+        color: var(--highlight-color)
+        background-color: var(--btn-ghost-bg)
+
+    svg
+        width: 18px
+        height: 18px
+
+// Hamburger button
+.burgerButton
+    display: none
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 5px
+    background: none
+    border: none
+    cursor: pointer
+    padding: 10px
+    min-width: 44px
+    min-height: 44px
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        display: flex
+
+    &[aria-expanded='true']
+        .burgerLine
+            &:nth-child(1)
+                transform: rotate(45deg) translate(5px, 4px)
+            &:nth-child(2)
+                opacity: 0
+                transform: scaleX(0)
+            &:nth-child(3)
+                transform: rotate(-45deg) translate(5px, -4px)
+
+.burgerLine
+    width: 22px
+    height: 2px
+    background-color: var(--text-color-primary)
+    border-radius: 2px
+    transition: transform 0.25s ease, opacity 0.25s ease
+    transform-origin: center
+
+// Mobile dropdown
+.mobileMenu
+    display: none
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        display: flex
+        flex-direction: column
+        position: absolute
+        top: 50px
+        left: 0
+        right: 0
+        background-color: var(--mobile-menu-bg)
+        backdrop-filter: blur(12px)
+        -webkit-backdrop-filter: blur(12px)
+        border-bottom: 1px solid var(--mobile-menu-border)
+        padding: 8px 0 12px
+
+        a
+            padding: 12px 20px
+            font-size: 15px
+            border-radius: 0
+            width: 100%

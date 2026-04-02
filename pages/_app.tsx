@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react'
 
-import { AppProps } from 'next/app'
+import { AppProps, NextWebVitalsMetric } from 'next/app'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Script from 'next/script'
 
-import { Header, PrintResume, StarField } from '@/components'
-import { DataProvider } from '@/utils'
+import { Footer, Header, PrintResume, StarField } from '@/components'
+import { DataProvider, ThemeProvider } from '@/utils'
 
 import '@/styles/theme.css'
 import '@/styles/globals.sass'
 
 const App = ({ Component, pageProps }: AppProps) => {
     const [starCount, setStarCount] = useState(1000)
+    const router = useRouter()
+    const is404 = router.pathname === '/404'
 
     useEffect(() => {
         if (window.innerWidth <= 768) {
@@ -78,15 +81,25 @@ const App = ({ Component, pageProps }: AppProps) => {
                 backgroundColor={'black'}
             />
 
-            <DataProvider>
-                <Header />
+            <ThemeProvider>
+                <DataProvider>
+                    <a
+                        href={'#main-content'}
+                        className={'skipLink'}
+                    >
+                        {'Skip to main content'}
+                    </a>
 
-                <main>
-                    <Component {...pageProps} />
-                </main>
+                    {!is404 && <Header />}
 
-                <PrintResume />
-            </DataProvider>
+                    <main id={'main-content'}>
+                        <Component {...pageProps} />
+                    </main>
+
+                    {!is404 && <PrintResume />}
+                    {!is404 && <Footer />}
+                </DataProvider>
+            </ThemeProvider>
 
             {process.env.NODE_ENV === 'production' && (
                 <>
@@ -113,6 +126,7 @@ const App = ({ Component, pageProps }: AppProps) => {
                     </Script>
                     <noscript>
                         <div>
+                            {/* eslint-disable-next-line next/no-img-element */}
                             <img
                                 src={'https://mc.yandex.ru/watch/67613284'}
                                 style={{ position: 'absolute', left: '-9999px' }}
@@ -124,6 +138,13 @@ const App = ({ Component, pageProps }: AppProps) => {
             )}
         </>
     )
+}
+
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+    if (process.env.NODE_ENV === 'production') {
+        // eslint-disable-next-line no-console
+        console.log(metric)
+    }
 }
 
 export default App

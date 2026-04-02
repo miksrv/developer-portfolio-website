@@ -27,7 +27,3 @@ jest.mock('next/link', () => ({
         </a>
     )
 }))
-
-jest.mock('react-github-calendar', () => ({
-    GitHubCalendar: () => <div data-testid='github-calendar' />
-}))

@@ -5,7 +5,7 @@ const config: Config = {
     testEnvironment: 'jsdom',
     moduleNameMapper: {
         '\\.(css|sass|scss)$': 'identity-obj-proxy',
-        '\\.(jpg|jpeg|png)$': 'identity-obj-proxy',
+        '\\.(jpg|jpeg|png|webp|avif|gif|svg)$': 'identity-obj-proxy',
         '^@/(.*)$': '<rootDir>/$1'
     },
     transform: {
@@ -20,7 +20,7 @@ const config: Config = {
     setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.tsx'],
     collectCoverageFrom: ['components/**/*.{ts,tsx}', '!components/**/*.d.ts', '!components/**/*.test.{ts,tsx}', '!components/**/index.ts', '!components/**/types.ts', '!components/**/constants.ts'],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-    transformIgnorePatterns: ['node_modules/(?!(react-github-calendar|react-activity-calendar)/)', '/.next/']
+    transformIgnorePatterns: ['/.next/']
 }
 
 export default config

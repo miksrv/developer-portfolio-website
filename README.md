@@ -1,14 +1,13 @@
 <a id="top"></a>
 
-A modern and flexible portfolio template for React and Next.js developers. Perfect for showcasing your skills, experience, and projects. Clean, professional design, easy customization, and fast loading - everything you need to stand out from the crowd. A great choice for both personal brands and freelancers who value a convenient and stylish portfolio.
-
 <!-- PROJECT TITLE -->
 <div align="center">
-  <img src="./docs/intro.gif" alt="Project Logo"  />
-  <h3>Create Your Personal Developer Portfolio</h3>
+  <h1>Developer Portfolio Website</h1>
+  <img src="./public/app.jpg" alt="Developer Portfolio Website - Next.js & React Template" />
+  <p>A production-ready, SEO-optimized portfolio template built with Next.js and React. Showcase your skills, projects, and experience with a clean, modern design that makes a lasting impression on employers and clients.</p>
   <a href="CHANGELOG.md" target="_blank">Changelog</a>
   ·
-  <a href="https://miksoft.pro" target="_blank">Demo</a>
+  <a href="https://miksoft.pro" target="_blank">Live Demo</a>
   ·
   <a href="https://github.com/miksrv/developer-portfolio-website/issues/new?assignees=miksrv&labels=bug&projects=&template=1-bug.yml&title=%5BBug%5D%3A+">Report Bug</a>
   ·
@@ -37,27 +36,40 @@ A modern and flexible portfolio template for React and Next.js developers. Perfe
 
 ---
 
-<!-- TABLE OF CONTENTS -->
+> [!IMPORTANT]
+>
+> ### Version 2.x.x - Single-Page Landing
+>
+> Starting from version **2.0.0**, this portfolio has been redesigned as a **single-page landing** - all content is displayed on one page with smooth scrolling and a clean, modern layout.
+>
+> Looking for the **multi-page version**? The previous implementation with separate pages for skills, experience, and projects is available in earlier releases. The last multi-page release was **[v1.2.2](https://github.com/miksrv/developer-portfolio-website/tree/release/v1.2.2)**.
+
+---
 
 ### Table of Contents
 
 - [Key Features](#key-features)
 - [Why Use This Portfolio Template?](#why-use-this-portfolio-template)
 - [Built With](#built-with)
-- [About of Project](#about-of-project)
-- [How to use](#how-to-use)
+- [About the Project](#about-the-project)
+- [How to Use](#how-to-use)
 - [Contributing](#contributing)
 - [Contact](#contact)
 
-<!-- KEY FEATURES -->
+---
 
-### Key Features:
+### Key Features
 
-- **Built with React and Next.js**: Fast, scalable, and SEO-friendly framework.
-- **Customizable Design**: Easily adjust the layout, colors, and sections to suit your needs.
-- **Responsive Layout**: Optimized for all screen sizes, ensuring a seamless experience on any device.
-- **Skills and Project Showcases**: Display your technical expertise and featured projects with progress bars, icons, and descriptions.
-- **Smooth Animations**: Modern CSS animations to enhance the user experience.
+- **Next.js & React** - Blazing-fast static site generation with server-side rendering support and built-in SEO optimization.
+- **Single-Page Layout** - All sections on one page with smooth anchor scrolling and a minimal, distraction-free layout.
+- **Fully Responsive** - Pixel-perfect on every screen size, from wide desktop monitors to mobile phones.
+- **Skills Showcase** - Animated progress bars with segment indicators to visualize your technical proficiency at a glance.
+- **Project Gallery** - Rich project cards with images, live links, and GitHub repository references.
+- **GitHub Activity Calendar** - Real-time contribution graph powered by `react-github-calendar`.
+- **Smooth Animations** - Framer Motion-powered page transitions and entrance animations for a polished, modern feel.
+- **Dark Theme** - Elegant dark design with a customizable golden accent color that highlights your personal brand.
+- **Static Export** - Outputs pure HTML/CSS/JS via `next export` - deploy anywhere: Vercel, Netlify, GitHub Pages, or any CDN.
+- **One-File Content** - All personal data lives in a single `public/data.json` file. No database, no CMS required.
 
 <p align="right">
   (<a href="#top">Back to top</a>)
@@ -65,13 +77,15 @@ A modern and flexible portfolio template for React and Next.js developers. Perfe
 
 ### Why Use This Portfolio Template?
 
-- **Professional Presentation**: A portfolio is more than just a collection of work-it's a personal brand statement. With this template, you can professionally showcase your skills, projects, and expertise, leaving a lasting impression on potential employers or clients.
+- **Make a Strong First Impression** - Your portfolio is your digital business card. This template presents your skills, projects, and experience in a polished, recruiter-friendly layout that communicates professionalism before they read a single line.
 
-- **Boost Your Online Visibility**: In today’s digital world, a strong online presence is key to getting noticed. This portfolio is optimized for SEO, helping to increase your visibility in search engines, so your profile is more likely to be found by the right people.
+- **Rank Higher in Search Results** - Built with Next.js SEO best practices: semantic HTML, per-page meta tags, Open Graph support, and a perfect Lighthouse score. Your profile gets found by the right people - hiring managers, clients, and collaborators.
 
-- **Stand Out from Resumes**: A portfolio goes beyond a simple resume, offering a dynamic, interactive way to demonstrate your experience and technical knowledge. With engaging animations and structured project showcases, you can tell a compelling story about your professional journey.
+- **Go Beyond the Resume** - Static PDFs can't show animated skill bars, live GitHub contributions, or interactive project galleries. This portfolio tells your story dynamically, keeping visitors engaged longer and converting views into opportunities.
 
-- **Customizable and Easy to Use**: This template is built with React and Next.js, offering a clean codebase and a flexible structure that can be easily adapted to your unique needs. Whether you're a developer starting out or an experienced professional, it’s simple to personalize and deploy.
+- **Own Your Data, Own Your Brand** - No third-party platforms, no algorithmic feeds. You control the layout, the content, and the hosting. Update your `data.json` and your entire portfolio reflects the change instantly.
+
+- **Production-Ready from Day One** - CI/CD pipeline via GitHub Actions, SonarCloud code quality analysis, full Jest test suite with coverage reporting, and ESLint + Prettier enforcement. Fork it, personalize it, and ship it with confidence.
 
 <p align="right">
   (<a href="#top">Back to top</a>)
@@ -79,36 +93,34 @@ A modern and flexible portfolio template for React and Next.js developers. Perfe
 
 ### Built With
 
-This portfolio template is built with the following technologies:
-
-- [![JavaScript][js-badge]][js-url] Core languages used in frontend development.
-- [![TypeScript][ts-badge]][ts-url] TypeScript extends JavaScript by adding types to the language.
-- [![NextJS][nextjs-badge]][nextjs-url] React-based frontend framework for building the user interface.
-- [![NodeJS][nodejs-badge]][nodejs-url] JavaScript runtime used for frontend development and package management.
-- [![Sass][sass-badge]][sass-url] Styling the user interface.
-- [![GitHub Actions][githubactions-badge]][githubactions-url] Continuous integration and deployment pipeline for automating tests and deployment processes.
+| Technology                                                  | Role                                                |
+| ----------------------------------------------------------- | --------------------------------------------------- |
+| [![JavaScript][js-badge]][js-url]                           | Core language for frontend logic                    |
+| [![TypeScript][ts-badge]][ts-url]                           | Static typing for safer, more maintainable code     |
+| [![NextJS][nextjs-badge]][nextjs-url]                       | React framework with SSG, routing, and SEO features |
+| [![NodeJS][nodejs-badge]][nodejs-url]                       | Runtime environment and package management          |
+| [![Sass][sass-badge]][sass-url]                             | Component-scoped styles with a global theme system  |
+| [![GitHub Actions][githubactions-badge]][githubactions-url] | Automated CI/CD pipeline for checks and deployment  |
 
 <p align="right">
   (<a href="#top">Back to top</a>)
 </p>
 
-<!-- ABOUT OF PROJECT -->
+### About the Project
 
-### About of Project
-
-This project is a complete solution for building a high-quality developer portfolio website, perfect for showcasing your skills, projects, and experiences in a sleek and modern design. Built with React and Next.js, this template is optimized for performance and SEO, ensuring that your portfolio stands out not only in appearance but also in search engine visibility. It’s fully customizable, allowing you to adapt the design, structure, and content to match your personal branding or freelance work.
+This is a complete, production-ready developer portfolio built with **Next.js**, **React 19**, and **TypeScript**. It is designed to help developers, engineers, and freelancers establish a strong online presence with minimal setup - all content is driven by a single `public/data.json` file, so you can have a personalized portfolio running in minutes.
 
 ![Personal website: Main Page](./public/main.jpg)
 
-Designed with developers in mind, the template features dedicated sections for displaying technical skills with animated progress bars, detailed project showcases, and an about section to introduce yourself to potential clients or employers. The layout is fully responsive, ensuring a seamless experience across devices, from desktop to mobile. Additionally, the use of smooth CSS animations adds a dynamic feel to the portfolio, enhancing user engagement without sacrificing speed or performance.
+The template is architected for performance and maintainability. Sections include an animated hero with live age and experience counters, a visual skills breakdown with 10-segment progress bars, a full work experience timeline, and a project gallery - all within a smooth single-page experience powered by Framer Motion transitions.
 
 ![Personal website: Projects Page](./public/projects.jpg)
 
-Whether you’re looking to establish a strong online presence as a developer or need a professional portfolio to support your freelance career, this project offers the flexibility and functionality to create an impressive, personalized site. Easily deploy it to platforms like Vercel or host it on any provider supporting Next.js applications.
+The build outputs pure static HTML via `next export`, making deployment effortless. Host it on Vercel with one click, push it to GitHub Pages, or serve it from any static file host - no server required. The codebase is clean and well-tested, making it easy to extend with your own sections or integrations.
 
 ![Personal website: Skills Page](./public/skills.jpg)
 
-Feel free to use this repository for any purpose related to the development of virtual business cards. I am always ready to discuss any questions related to the use of this repository and help you in its work.
+This project is open-source and free to use for any personal or commercial portfolio purpose. Contributions, suggestions, and feedback are always welcome.
 
 <p align="right">
   (<a href="#top">Back to top</a>)
@@ -116,28 +128,38 @@ Feel free to use this repository for any purpose related to the development of v
 
 ### How to Use
 
-1. **Install Prerequisites**: Ensure you have [NodeJS](https://nodejs.org/en/download/) and [Yarn](https://yarnpkg.com/getting-started/install) installed on your system.
+1. **Install Prerequisites** - Make sure you have [Node.js](https://nodejs.org/en/download/) and [Yarn](https://yarnpkg.com/getting-started/install) installed.
 
-2. **Clone the Repository**: Clone [this repository](https://github.com/miksrv/developer-portfolio-website.git) to your local machine:
+2. **Clone the Repository**:
 
     ```bash
     git clone https://github.com/miksrv/developer-portfolio-website.git
     ```
 
-3. **Install Dependencies**: Navigate to the project directory and install all necessary dependencies:
+3. **Install Dependencies**:
 
     ```bash
     cd developer-portfolio-website
     yarn install
     ```
 
-4. **Run the Development Server**: After the installation is complete, start the local development server:
+4. **Personalize Your Content** - Edit `public/data.json` with your name, bio, skills, projects, and experience.
+
+5. **Start the Development Server**:
 
     ```bash
     yarn dev
     ```
 
-5. **Access the Application**: Open your browser and go to [http://localhost:3000/](http://localhost:3000/) to view the portfolio.
+6. **Open in Browser** - Visit [http://localhost:3000](http://localhost:3000) to preview your portfolio.
+
+7. **Build for Production**:
+
+    ```bash
+    yarn build
+    ```
+
+    The static output is exported to the `/out` directory, ready to deploy to any static hosting provider.
 
 <p align="right">
   (<a href="#top">Back to top</a>)
@@ -145,64 +167,56 @@ Feel free to use this repository for any purpose related to the development of v
 
 ### Contributing
 
-Contributions are what make the open-source community an incredible environment for learning, inspiration, and innovation. Your contributions are highly valued and greatly appreciated, whether it’s reporting bugs, suggesting improvements, or creating new features.
+Open-source thrives on collaboration. Bug reports, feature suggestions, documentation improvements, and code contributions are all genuinely appreciated - no contribution is too small.
 
-To contribute:
+**To contribute code:**
 
-1. **Fork the project** by clicking the "Fork" button at the top of this page.
-2. **Clone your fork locally**:
+1. **Fork** the repository.
+2. **Clone** your fork locally:
     ```bash
     git clone https://github.com/your-username/developer-portfolio-website.git
     ```
-3. **Create a new feature branch** for your work:
+3. **Create a feature branch**:
     ```bash
-    git checkout -b feature/AmazingFeature
+    git checkout -b feature/your-feature-name
     ```
-4. **Make your changes**, and ensure they meet the project's coding standards.
-5. **Commit your changes**:
+4. **Make your changes** and ensure they pass linting and tests:
     ```bash
-    git commit -m "Add AmazingFeature"
+    yarn eslint:check && yarn test
     ```
-6. **Push your changes** to your forked repository:
+5. **Commit** with a descriptive message:
     ```bash
-    git push origin feature/AmazingFeature
+    git commit -m "Add: description of your change"
     ```
-7. **Open a pull request** from your feature branch to the main repository.
-
-#### Creating a New Release
-
-Once your pull request has been approved and merged, follow these steps to create a new release if your changes require it:
-
-1. **Ensure your branch is up-to-date with `main`**:
+6. **Push** to your fork:
     ```bash
-    git checkout main
-    git pull origin main
+    git push origin feature/your-feature-name
     ```
-2. **Add details to the `CHANGELOG.md`**:
-    - Update the changelog with a clear description of the new feature, improvement, or bug fix.
-    - Use an appropriate versioning convention (e.g., `v1.0.1`, `v1.1.0`).
+7. **Open a Pull Request** against the `main` branch.
 
-3. **Create a new tag** for the release:
+#### Creating a Release
+
+Once a pull request is approved and merged:
+
+1. **Sync with `main`**:
+    ```bash
+    git checkout main && git pull origin main
+    ```
+2. **Update `CHANGELOG.md`** with a clear description of the changes using [Semantic Versioning](https://semver.org/) (e.g., `v2.1.0`).
+
+3. **Tag the release**:
 
     ```bash
-    git tag -a vX.X.X -m "Release notes for version X.X.X"
+    git tag -a vX.X.X -m "Release vX.X.X - summary of changes"
     ```
 
-    - Replace `vX.X.X` with the new version (e.g., `v1.0.1`).
-    - Write detailed release notes in the tag message, highlighting key changes or new features.
-
-4. **Push the tag and changes** to the repository:
+4. **Push the tag**:
 
     ```bash
     git push origin vX.X.X
     ```
 
-    - This will automatically trigger the GitHub action to create a new release if there are changes in `CHANGELOG.md` and a new tag is present.
-
-5. **Open a pull request** for your branch if not yet merged:
-    - Once the pull request is merged into `main` and the new tag is pushed, a GitHub Release will be created automatically.
-
-We encourage contributions of all kinds, whether big or small. Your efforts help improve the project for everyone!
+    Pushing the tag automatically triggers the GitHub Actions workflow to create a new GitHub Release.
 
 <p align="right">
   (<a href="#top">Back to top</a>)
@@ -210,7 +224,9 @@ We encourage contributions of all kinds, whether big or small. Your efforts help
 
 ### Contact
 
-Misha - [miksoft.pro](https://miksoft.pro)
+**Misha** - [miksoft.pro](https://miksoft.pro)
+
+Have a question, found an issue, or want to discuss a feature? Feel free to open a [GitHub Issue](https://github.com/miksrv/developer-portfolio-website/issues) or reach out directly via the website.
 
 <p align="right">
   (<a href="#top">Back to top</a>)

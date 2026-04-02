@@ -37,6 +37,7 @@ export default defineConfig([
             '**/node_modules/**',
             '**/build/**',
             '**/dist/**',
+            '**/out/**',
             '**/coverage/**',
 
             // WebPack
@@ -109,8 +110,8 @@ export default defineConfig([
                 'error',
                 { commentPattern: '.*intentional fallthrough.*' },
             ],
-            // ✅ Warn if double quotes are used instead of single quotes
-            quotes: ['warn', 'single'],
+            // ✅ Warn if double quotes are used instead of single quotes (allow double quotes to avoid escaping)
+            quotes: ['warn', 'single', { avoidEscape: true }],
             // ❌ Warn if trailing commas are used (Prettier Config)
             // -> 'comma-dangle': ['warn', 'never'],
             // ❌ Prefer single quotes in JSX (Prettier Config)
@@ -286,8 +287,8 @@ export default defineConfig([
             'import/no-duplicates': 'warn',
             // ✅ Disallow a module importing itself
             'import/no-self-import': 'error',
-            // ✅ Enforce a consistent type specifier style in imports
-            'import/consistent-type-specifier-style': 'error',
+            // ✅ Enforce a consistent type specifier style in imports (inline: `import { type Foo }`)
+            'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
 
             //
             // eslint-plugin-simple-import-sort

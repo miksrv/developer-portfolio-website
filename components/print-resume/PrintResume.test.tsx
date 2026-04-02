@@ -4,9 +4,9 @@ import { render, screen } from '@testing-library/react'
 
 import { PrintResume } from './PrintResume'
 
-jest.mock('@/public/avatar.jpg', () => ({
+jest.mock('@/public/avatar.webp', () => ({
     __esModule: true,
-    default: 'mocked-avatar.jpg'
+    default: 'mocked-avatar.webp'
 }))
 
 jest.mock('@/utils', () => ({
@@ -174,7 +174,7 @@ describe('PrintResume', () => {
     })
 
     it('falls back to "Photo" as avatar alt text when biography name is absent', () => {
-        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
         jest.spyOn(require('@/utils'), 'useSiteData').mockReturnValue({
             biography: { title: 'Developer', location: 'Remote' }
         })
