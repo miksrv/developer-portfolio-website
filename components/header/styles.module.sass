@@ -36,10 +36,12 @@
 .headerActions
     display: flex
     align-items: center
-    justify-content: space-between
+    justify-content: end
     gap: 4px
     width: 100%
-    padding: 0 10px 0 0
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        justify-content: space-between
 
 // Shared anchor styles
 .desktopNav a,
@@ -52,6 +54,7 @@
     font-weight: 400
     border-radius: var(--border-radius)
     cursor: pointer
+    width: max-content
 
     &:hover
         color: var(--highlight-color)

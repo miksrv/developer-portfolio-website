@@ -16,8 +16,9 @@
     z-index: 2
 
     @media screen and (max-width: variables.$mobileMaxWidth)
-        flex-wrap: wrap
-        gap: 16px
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: 20px 10px
         padding: 20px 15px
         margin: 20px 10px
         width: auto
@@ -25,6 +26,10 @@
 .statItem
     text-align: center
     flex: 0
+
+    @media screen and (max-width: variables.$mobileMaxWidth)
+        &:last-child
+            grid-column: 1 / -1
 
 .statNumber
     font-size: 3.4em
@@ -36,6 +41,7 @@
     align-items: baseline
     justify-content: center
     gap: 2px
+    white-space: nowrap
 
     @media screen and (max-width: variables.$mobileMaxWidth)
         font-size: 2em
