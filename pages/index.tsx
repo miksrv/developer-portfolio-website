@@ -57,7 +57,7 @@ const MainPage: React.FC<MainPageProps> = ({ githubData }) => {
                     images: [
                         {
                             height: 1333,
-                            url: 'https://miksoft.pro/avatar.jpg',
+                            url: 'https://miksoft.pro/avatar.webp',
                             width: 1000
                         }
                     ],
