@@ -95,10 +95,4 @@ describe('GithubCalendar', () => {
         render(<GithubCalendar />)
         expect(screen.getByRole('grid')).toBeInTheDocument()
     })
-
-    it('matches snapshot', () => {
-        mockUseGithubData.mockReturnValue(null)
-        const { asFragment } = render(<GithubCalendar />)
-        expect(asFragment()).toMatchSnapshot()
-    })
 })

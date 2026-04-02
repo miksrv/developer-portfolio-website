@@ -1,5 +1,29 @@
 # Changelog
 
+## 2.0.0
+
+### Major Changes
+
+- Converted multi-page app into a single-page landing: merged Experience, Projects, and Skills into `pages/index.tsx`, removed standalone pages
+- Added anchor-based navigation in Header with IntersectionObserver for active section detection and mobile menu support
+- Added light/dark theme toggle with `ThemeProvider` and sun/moon icons
+- Added GitHub data integration: fetches repos, languages, stats, streaks, and contribution calendar via `getStaticProps`
+- Added `GithubStats`, `GithubSparkline`, `GithubRepos`, and `GithubLanguages` components with tests
+- Added `GithubActivity` contributions calendar with loading skeleton (later removed in favor of raw API data)
+- Removed `GithubActivity` calendar component and its dependencies (`react-github-calendar`)
+- Added `Contact` component with social links section
+- Added `Footer` component with styles and tests
+- Added `Stats` component displaying key profile statistics
+- Added expandable timeline and tag UI to `Experience` component
+- Enhanced `Introduce` section: avatar glow effect, live counters, and CTA buttons
+- Added image overlay and refactored styles in `Projects` component
+- Added JSON-LD structured data (`Person` schema) injected in `_document.tsx`
+- Added skip-to-content accessibility link and `reportWebVitals` logging in `_app.tsx`
+- Added Yandex.Metrika analytics loaded via `next/script`
+- Switched avatar image to WebP format and updated public images
+- Hidden header, footer, and print resume on 404 pages
+- Bumped dependencies and switched TypeScript `moduleResolution` to `bundler`
+
 ## 1.2.2
 
 ### Patch Changes

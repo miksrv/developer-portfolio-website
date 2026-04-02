@@ -37,6 +37,7 @@
 ---
 
 > [!IMPORTANT]
+>
 > ### Version 2.x.x - Single-Page Landing
 >
 > Starting from version **2.0.0**, this portfolio has been redesigned as a **single-page landing** - all content is displayed on one page with smooth scrolling and a clean, modern layout.
@@ -92,14 +93,14 @@
 
 ### Built With
 
-| Technology | Role |
-|---|---|
-| [![JavaScript][js-badge]][js-url] | Core language for frontend logic |
-| [![TypeScript][ts-badge]][ts-url] | Static typing for safer, more maintainable code |
-| [![NextJS][nextjs-badge]][nextjs-url] | React framework with SSG, routing, and SEO features |
-| [![NodeJS][nodejs-badge]][nodejs-url] | Runtime environment and package management |
-| [![Sass][sass-badge]][sass-url] | Component-scoped styles with a global theme system |
-| [![GitHub Actions][githubactions-badge]][githubactions-url] | Automated CI/CD pipeline for checks and deployment |
+| Technology                                                  | Role                                                |
+| ----------------------------------------------------------- | --------------------------------------------------- |
+| [![JavaScript][js-badge]][js-url]                           | Core language for frontend logic                    |
+| [![TypeScript][ts-badge]][ts-url]                           | Static typing for safer, more maintainable code     |
+| [![NextJS][nextjs-badge]][nextjs-url]                       | React framework with SSG, routing, and SEO features |
+| [![NodeJS][nodejs-badge]][nodejs-url]                       | Runtime environment and package management          |
+| [![Sass][sass-badge]][sass-url]                             | Component-scoped styles with a global theme system  |
+| [![GitHub Actions][githubactions-badge]][githubactions-url] | Automated CI/CD pipeline for checks and deployment  |
 
 <p align="right">
   (<a href="#top">Back to top</a>)
@@ -204,11 +205,13 @@ Once a pull request is approved and merged:
 2. **Update `CHANGELOG.md`** with a clear description of the changes using [Semantic Versioning](https://semver.org/) (e.g., `v2.1.0`).
 
 3. **Tag the release**:
+
     ```bash
     git tag -a vX.X.X -m "Release vX.X.X - summary of changes"
     ```
 
 4. **Push the tag**:
+
     ```bash
     git push origin vX.X.X
     ```
