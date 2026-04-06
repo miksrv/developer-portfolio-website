@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.0.1
+
+### Patch Changes
+
+- Replaced JS-default anchor jumps with a custom `handleNavClick` in `Header.tsx`: smooth scrolls to target via `scrollIntoView`, updates URL hash with `history.pushState`, and closes the mobile menu
+- Special-cased the `intro` hash to scroll to page top; moved hash update to run after scroll logic
+- Removed global `scroll-behavior: smooth` from `globals.sass` to prevent double-scroll conflicts; reduced `scroll-padding-top` from 60px to 30px
+- Replaced `motion.div` wrappers with plain `div`s in `pages/index.tsx`, removing the last framer-motion dependency from the page layer
+- Made `ProjectType.link` optional; `Projects.tsx` now renders the image without a `<Link>` wrapper and hides the "View →" overlay when no link is present
+- Added CubeSat Sim and CubeSat Ground Station to `data.json` with description, GitHub links, and WebP images (`cubesat.webp`, `groundstation.webp`) at 352×352px
+- Added highlight-color hover transition to `.imageOverlay span` in `Projects` styles
+- Bumped dev dependencies: `@eslint/compat`, `@types/node`, `sass`
+
 ## 2.0.0
 
 ### Major Changes

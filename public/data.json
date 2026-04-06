@@ -109,6 +109,19 @@
             "title": "Astronomy Outreach Channel",
             "link": "https://t.me/look_at_stars",
             "description": "Science-accurate astronomy channel delivering celestial event coverage, astrophotography, and observational data to a growing subscriber audience. Built and operated end-to-end — editorial pipeline, production workflow, and community engagement. Demonstrates long-term ownership and consistent delivery beyond software."
+        },
+        {
+            "image": "/images/cubesat.webp",
+            "title": "CubeSat Sim",
+            "github": "https://github.com/miksrv/cubesat-sim",
+            "description": "Educational simulation platform for CubeSat satellite systems running on Raspberry Pi. Models onboard software as independent Python services (OBC, EPS, ADCS, Payload, Telemetry), each representing a physical subsystem and communicating exclusively over MQTT — mirroring real spacecraft bus architecture. Supports both real hardware sensors and local development with mock dependencies."
+        },
+        {
+            "image": "/images/groundstation.webp",
+            "title": "CubeSat Ground Station",
+            "link": "https://cubesat.miksoft.pro/",
+            "github": "https://github.com/miksrv/cubesat-groundstation",
+            "description": "Cloud-based ground station for CubeSat telemetry visualization and real-time monitoring. Receives telemetry every 30 seconds, stores it in MySQL, and surfaces interactive ECharts dashboards for EPS, ADCS, Payload, and system health. Built on a PHP/CodeIgniter 4 REST API and a React/TypeScript frontend with Redux Toolkit."
         }
     ],
     "experience": [

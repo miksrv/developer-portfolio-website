@@ -1,5 +1,5 @@
 export type ProjectType = {
-    link: string
+    link?: string
     title: string
     image: string
     github?: string
