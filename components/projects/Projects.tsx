@@ -24,18 +24,28 @@ export const Projects: React.FC = () => {
             >
                 {data?.projects.map((item: ProjectType) => (
                     <div
-                        key={`project-${item?.link}`}
+                        key={`project-${item?.link ?? item?.title}`}
                         className={styles.item}
                     >
                         <div className={styles.imageWrapper}>
-                            <Link
-                                href={item.link}
-                                title={item.title}
-                                target={'_blank'}
-                                rel={'noopener noreferrer'}
-                                tabIndex={-1}
-                                aria-hidden={'true'}
-                            >
+                            {item.link ? (
+                                <Link
+                                    href={item.link}
+                                    title={item.title}
+                                    target={'_blank'}
+                                    rel={'noopener noreferrer'}
+                                    tabIndex={-1}
+                                    aria-hidden={'true'}
+                                >
+                                    <Image
+                                        src={item.image}
+                                        alt={item.title}
+                                        width={176}
+                                        height={176}
+                                        loading={'lazy'}
+                                    />
+                                </Link>
+                            ) : (
                                 <Image
                                     src={item.image}
                                     alt={item.title}
@@ -43,13 +53,15 @@ export const Projects: React.FC = () => {
                                     height={176}
                                     loading={'lazy'}
                                 />
-                            </Link>
-                            <div
-                                className={styles.imageOverlay}
-                                aria-hidden={'true'}
-                            >
-                                <span>{'View →'}</span>
-                            </div>
+                            )}
+                            {item.link && (
+                                <div
+                                    className={styles.imageOverlay}
+                                    aria-hidden={'true'}
+                                >
+                                    <span>{'View →'}</span>
+                                </div>
+                            )}
                         </div>
 
                         <div className={styles.description}>
