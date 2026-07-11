@@ -59,7 +59,13 @@ jest.mock('@/utils', () => ({
 }))
 
 describe('PrintResume', () => {
+    beforeEach(() => {
+        jest.useFakeTimers()
+        jest.setSystemTime(new Date('2026-04-15T00:00:00Z'))
+    })
+
     afterEach(() => {
+        jest.useRealTimers()
         jest.restoreAllMocks()
     })
 
