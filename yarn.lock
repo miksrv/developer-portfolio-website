@@ -3841,7 +3841,7 @@ __metadata:
     dayjs: "npm:^1.11.21"
     eslint: "npm:^9.39.5"
     eslint-config-prettier: "npm:^10.1.8"
-    eslint-plugin-eslint-plugin: "npm:^7.4.1"
+    eslint-plugin-eslint-plugin: "npm:^7.4.2"
     eslint-plugin-import: "npm:^2.32.0"
     eslint-plugin-jest: "npm:^29.15.4"
     eslint-plugin-prettier: "npm:^5.5.6"
@@ -4363,15 +4363,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-eslint-plugin@npm:^7.4.1":
-  version: 7.4.1
-  resolution: "eslint-plugin-eslint-plugin@npm:7.4.1"
+"eslint-plugin-eslint-plugin@npm:^7.4.2":
+  version: 7.4.2
+  resolution: "eslint-plugin-eslint-plugin@npm:7.4.2"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.4.0"
     estraverse: "npm:^5.3.0"
   peerDependencies:
     eslint: ">=9.0.0"
-  checksum: 10c0/5d0a19018d11fbd174409e212d798ba6f7730f9cd041cdcd604badc6297ce632103c3ea879003be462219ffea8a1d738a5cfc4b106f7813092a98bd0b1a871f9
+  checksum: 10c0/cc807a32775e52bdd7feb0d9915b7a4936a2c6bfad6898b7f2546ee95ee59878a50cd13757c6f0229e41ca514bc36e74e13eff4d84c8920a3b192b561b180728
   languageName: node
   linkType: hard
 
