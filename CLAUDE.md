@@ -34,6 +34,7 @@ Run a single test file: `yarn test components/header/Header.test.tsx`
 **Single-page landing**: As of v2.0.0, `pages/index.tsx` renders the entire site as one scrollable page with anchor sections (`#intro`, `#activity`, `#projects`, `#experience`, `#skills`, `#contact`), each with an `id` used for in-page navigation from `Header`. There are no separate routes for skills/experience/projects — only `index.tsx`, `404.tsx`, `_app.tsx`, `_document.tsx` exist under `/pages/`.
 
 **Two independent data sources, two providers**:
+
 - `DataProvider` (`utils/DataProvider.tsx`) — wraps the whole app in `_app.tsx`; reads `/public/data.json` at build time and exposes it via `useSiteData()`. This is the static personal/portfolio content (bio, skills, projects, experience, SEO copy).
 - `GithubDataProvider` (`utils/GithubDataProvider.tsx`) — wraps only the page content in `pages/index.tsx`; fetches live GitHub data client-side on mount (contributions, user stats, language distribution, top repos) via `utils/github-fetch.ts`, exposed via `useGithubData()`. Fetches hit the GitHub REST API directly plus a public contributions-proxy (`github-contributions-api.jogruber.de`); an optional `GITHUB_TOKEN` env var raises the GitHub API rate limit, `GITHUB_USERNAME` overrides the default user (`miksrv`).
 
@@ -51,28 +52,28 @@ Dark theme by default (`--body-background: #1b1b1b`) with a golden accent (`--hi
 
 ## Component Inventory
 
-| Component         | Purpose                                                                  |
-| ------------------ | ------------------------------------------------------------------------ |
-| `Header`           | Navigation bar with active-section anchor state + theme toggle           |
-| `Footer`           | Site footer                                                              |
-| `Introduce`        | Hero section: avatar, name, live age/exp counters, contact links         |
-| `Stats`            | Summary stat tiles under the hero                                        |
-| `About`            | Bio section with photo and paragraphs                                    |
-| `GithubCalendar`   | GitHub contribution calendar (dynamic import, ssr: false)                |
-| `GithubStats`      | Stat cards from live GitHub user/repo data                               |
-| `GithubLanguages`  | Language distribution breakdown from GitHub repos                        |
-| `GithubSparkline`  | Contribution sparkline chart                                             |
-| `GithubRepos`      | Top-repos card list                                                      |
-| `Projects`         | Project cards with images, links, GitHub links                           |
-| `Experience`       | Job history timeline with duties and tech stack                          |
-| `Skills`           | Grouped skill progress bars (10 segments, Framer Motion)                 |
-| `SkillsCloud`      | Tag cloud from all experience stacks                                     |
-| `Progress`         | Single skill bar: 10 animated segments, 0–100 level                      |
-| `Contact`          | Contact section                                                          |
-| `PageTransition`   | Framer Motion wrapper for entrance transitions (used within sections, e.g. `Experience`, `Projects`) |
-| `PrintResume`      | Hidden printable resume layout (rendered on every non-404 page)          |
-| `StarField`        | Canvas-based 3D starfield background animation, rendered outside all providers in `_app.tsx` |
-| `Icon`             | SVG icon switch (github, telegram, linkedin, facebook, web, left, right) |
+| Component         | Purpose                                                                                              |
+| ----------------- | ---------------------------------------------------------------------------------------------------- |
+| `Header`          | Navigation bar with active-section anchor state + theme toggle                                       |
+| `Footer`          | Site footer                                                                                          |
+| `Introduce`       | Hero section: avatar, name, live age/exp counters, contact links                                     |
+| `Stats`           | Summary stat tiles under the hero                                                                    |
+| `About`           | Bio section with photo and paragraphs                                                                |
+| `GithubCalendar`  | GitHub contribution calendar (dynamic import, ssr: false)                                            |
+| `GithubStats`     | Stat cards from live GitHub user/repo data                                                           |
+| `GithubLanguages` | Language distribution breakdown from GitHub repos                                                    |
+| `GithubSparkline` | Contribution sparkline chart                                                                         |
+| `GithubRepos`     | Top-repos card list                                                                                  |
+| `Projects`        | Project cards with images, links, GitHub links                                                       |
+| `Experience`      | Job history timeline with duties and tech stack                                                      |
+| `Skills`          | Grouped skill progress bars (10 segments, Framer Motion)                                             |
+| `SkillsCloud`     | Tag cloud from all experience stacks                                                                 |
+| `Progress`        | Single skill bar: 10 animated segments, 0–100 level                                                  |
+| `Contact`         | Contact section                                                                                      |
+| `PageTransition`  | Framer Motion wrapper for entrance transitions (used within sections, e.g. `Experience`, `Projects`) |
+| `PrintResume`     | Hidden printable resume layout (rendered on every non-404 page)                                      |
+| `StarField`       | Canvas-based 3D starfield background animation, rendered outside all providers in `_app.tsx`         |
+| `Icon`            | SVG icon switch (github, telegram, linkedin, facebook, web, left, right)                             |
 
 ## Special Cases
 
