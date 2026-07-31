@@ -162,14 +162,33 @@
             "image": "/images/cubesat.webp",
             "title": "CubeSat Sim",
             "github": "https://github.com/miksrv/cubesat-sim",
-            "description": "Simulation platform for CubeSat satellite systems on Raspberry Pi. Models onboard software as independent Python services (OBC, EPS, ADCS, Payload, Telemetry) communicating over MQTT, mirroring a real spacecraft bus. Runs against real hardware sensors or mocked dependencies for local development."
+            "description": "Flight software stack for a real, physical CubeSat, not a simulation on paper. Five independent Python services — OBC, EPS, ADCS, Payload, COMMS — model each satellite subsystem, communicating exclusively over MQTT like a real spacecraft bus and coordinated by a mission-lifecycle state machine. Runs today on a Raspberry Pi inside a 3D-printed frame, wired to real sensors — battery gauge, IMU, GPS, camera — relaying telemetry to a companion cloud ground station over HTTP and LoRa."
         },
         {
             "image": "/images/groundstation.webp",
             "title": "CubeSat Ground Station",
             "link": "https://cubesat.miksoft.pro/",
             "github": "https://github.com/miksrv/cubesat-groundstation",
-            "description": "Cloud ground station for CubeSat telemetry visualization. Ingests telemetry every 30 seconds, stores it in MySQL, and renders it as interactive ECharts dashboards for EPS, ADCS, Payload, and system health. PHP/CodeIgniter 4 API with a React/TypeScript frontend on Redux Toolkit."
+            "description": "Cloud-side counterpart to CubeSat Sim: ingests telemetry POSTed every 30 seconds by the satellite's COMMS service, stores it in MySQL, and renders it as a widget-based mission-control dashboard — subsystem health, live telemetry graphs, a mission event log, and a 3D orbit/ground-track globe built with three.js. PHP/CodeIgniter 4 REST API on the backend, React/TypeScript frontend with Redux Toolkit (RTK Query) and Apache ECharts."
+        },
+        {
+            "image": "/images/tars.webp",
+            "title": "TARS — Telegram AI Bot",
+            "github": "https://github.com/miksrv/telegram-ai-bot",
+            "description": "Telegram AI bot for a Russian astronomy community, named after the AI from Interstellar. Runs a pluggable conversational engine (Groq or OpenAI, swappable via config) with per-user adaptive personality, unprompted proactive posting, and persistent memory in SQLite. Talks to two companion always-on services over MQTT — a CubeSat ground station for live satellite telemetry and photos, and a star-chart generator for on-demand night-sky maps — turning the bot into the shared front end for the whole CubeSat project."
+        },
+        {
+            "image": "/images/starmap.webp",
+            "title": "Starmap Service",
+            "github": "https://github.com/miksrv/starmap-service",
+            "description": "Always-on Python renderer that generates night-sky star charts on demand and serves them to the TARS Telegram bot over MQTT, keeping the heavy astronomical catalogs and matplotlib rendering out of the bot process so a crash there never takes it down. Loads star, deep-sky-object, constellation, and JPL ephemeris catalogs once at startup, then renders full-sky, galactic, zenith, horizon, and optic-view charts through a single queued worker, publishing its own online/offline status so the bot always knows whether charts are available."
+        },
+        {
+            "image": "/images/uikit.webp",
+            "title": "Simple React UI Kit",
+            "link": "https://miksrv.github.io/simple-react-ui-kit/",
+            "github": "https://github.com/miksrv/simple-react-ui-kit",
+            "description": "Open-source, fully typed React component library — 17 production-ready components (Button, Select, Table, DatePicker, Dialog, and more), documented in a live Storybook. Themeable via CSS variables, accessible by default, and kept lightweight with React/dayjs as peer dependencies. Published on npm with CI-enforced linting, tests, and SonarCloud gates; powers the IoT Weather Station dashboard above."
         }
     ],
     "experience": [
@@ -354,17 +373,17 @@
             "description": "Real-time work activity: contributions, repositories, languages, and commit history. Open source involvement and coding patterns visualized."
         },
         "skills": {
-            "title": "Technical Skills — Misha",
+            "title": "Technical Skills",
             "description": "19+ years shipping production systems across government, media, and tech — full-stack engineering, distributed system design, DevOps, and applied AI integration.",
             "skillsIntro": "These are measured by systems shipped and teams unblocked, not years accumulated. A candid read on where I operate at full capacity: architecture decisions, full-stack delivery, and the complete engineering lifecycle."
         },
         "experience": {
-            "title": "Engineering Experience — Misha",
+            "title": "Engineering Experience",
             "description": "19+ years of technical leadership across government, media, and technology — from greenfield architecture to production, across 9 roles in 3 industries."
         },
         "projects": {
-            "title": "Production Projects — Misha",
-            "description": "Personal projects built and run end-to-end, from embedded IoT hardware to cloud platforms. Each is live in production and reflects real architectural trade-offs, not portfolio filler."
+            "title": "Independent Projects",
+            "description": "Projects conceived, built, and operated end-to-end on my own — from embedded IoT hardware and satellite flight software to cloud platforms and web services. Each one is real and running, not a tutorial clone: I own every layer, from hardware interfacing and firmware to backend architecture and the frontend, and every trade-off in between."
         }
     }
 }
