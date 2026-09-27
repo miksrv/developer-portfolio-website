@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+> The live site (miksoft.pro) moved to `miksrv/miksoft.pro`. This repo keeps the v2 template only and has no deploy workflow.
+
 ## Commands
 
 ```bash
