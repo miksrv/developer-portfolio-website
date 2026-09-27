@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.4
+
+### Patch Changes
+
+- The live site moved to [miksrv/miksoft.pro](https://github.com/miksrv/miksoft.pro); this repository keeps the v2 template
+- Removed the production deploy workflow
+- Linked the new repository from README
+
 ## 2.0.3
 
 ### Patch Changes

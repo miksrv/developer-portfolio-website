@@ -7,7 +7,7 @@
   <p>A production-ready, SEO-optimized portfolio template built with Next.js and React. Showcase your skills, projects, and experience with a clean, modern design that makes a lasting impression on employers and clients.</p>
   <a href="CHANGELOG.md" target="_blank">Changelog</a>
   ·
-  <a href="https://miksoft.pro" target="_blank">Live Demo</a>
+  <a href="https://github.com/miksrv/miksoft.pro" target="_blank">New Version</a>
   ·
   <a href="https://github.com/miksrv/developer-portfolio-website/issues/new?assignees=miksrv&labels=bug&projects=&template=1-bug.yml&title=%5BBug%5D%3A+">Report Bug</a>
   ·
@@ -28,11 +28,20 @@
 [![MIT License][license-badge]][license-url]
 
 [![Checks](https://github.com/miksrv/developer-portfolio-website/actions/workflows/checks.yml/badge.svg)](https://github.com/miksrv/developer-portfolio-website/actions/workflows/checks.yml)
-[![Deployment](https://github.com/miksrv/developer-portfolio-website/actions/workflows/deploy.yml/badge.svg)](https://github.com/miksrv/developer-portfolio-website/actions/workflows/deploy.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=miksrv_developer-portfolio-website&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=miksrv_developer-portfolio-website)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=miksrv_developer-portfolio-website&metric=coverage)](https://sonarcloud.io/summary/new_code?id=miksrv_developer-portfolio-website)
 
 </div>
+
+---
+
+> [!NOTE]
+>
+> ### The live site has moved
+>
+> **[miksoft.pro](https://miksoft.pro)** is now developed in a separate repository: **[miksrv/miksoft.pro](https://github.com/miksrv/miksoft.pro)** (v3.x, a quiet one-page resume).
+>
+> This repository keeps the previous portfolio template (v1.x – v2.x) and is no longer deployed automatically.
 
 ---
 
@@ -100,7 +109,7 @@
 | [![NextJS][nextjs-badge]][nextjs-url]                       | React framework with SSG, routing, and SEO features |
 | [![NodeJS][nodejs-badge]][nodejs-url]                       | Runtime environment and package management          |
 | [![Sass][sass-badge]][sass-url]                             | Component-scoped styles with a global theme system  |
-| [![GitHub Actions][githubactions-badge]][githubactions-url] | Automated CI/CD pipeline for checks and deployment  |
+| [![GitHub Actions][githubactions-badge]][githubactions-url] | Automated CI pipeline for checks and code quality   |
 
 <p align="right">
   (<a href="#top">Back to top</a>)
